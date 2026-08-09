@@ -1,0 +1,23 @@
+{
+  "site_title": "El problema de los tres cuerpos argentinos",
+  "subtitle": "Un mapa del discurso presidencial argentino, 1983–2025",
+  "thesis_short": "Argentina no es un péndulo. Es un problema de tres cuerpos.",
+  "thesis_long": "El péndulo describe la superficie: la alternancia entre apertura y proteccionismo, entre endeudamiento y mercado interno. Pero la estructura profunda del discurso presidencial argentino no oscila entre dos polos. Interactúa entre tres fuerzas: modernización tecnocrática, mesianismo redentor y paternalismo conservador. Este proyecto mide esa interacción en los discursos de apertura legislativa y asunción de los presidentes argentinos desde 1983. Los resultados son provisionales y los caveats son parte del argumento.",
+  "version": "v0.2",
+  "publication_version": "SITE_PUBLICATION_v0_2",
+  "map_version": "MAPA_ORBITAL_ARGENTINO_v0_1",
+  "corpus_version": "HCDN_v0_1",
+  "canonical_language": "es",
+  "caveat_banner": "Sitio v0.2 · mapa orbital y corpus v0.1 — todos los perfiles de actor son hipótesis provisionales, no clasificaciones definitivas. Ver Evidencia para entender los niveles de validación.",
+  "footer_text": "Este sitio presenta el mapa orbital preliminar v0.1 del proyecto “El problema de los tres cuerpos argentinos.” No es el mapa integrado final. Todos los perfiles son hipótesis provisionales derivadas del corpus HCDN 1983–2025 y de dos documentos limpios de la pipeline alternativa de fuentes de Perón (1946, 1954). La comparación numérica entre Perón y los actores democráticos no está autorizada en este estado de la investigación.",
+  "universal_actor_caveat": "Hipótesis provisional — no clasificación histórica definitiva",
+  "blocked_label": "Evidencia no disponible — ver Roadmap",
+  "last_updated": "2026-08-04",
+  "canonical_url": "",
+  "authority_files": [
+    "empirical/UNIFIED_CLEAN_CORPUS_INTERPRETIVE_SYNTHESIS_v0_1.md",
+    "empirical/UNIFIED_CLEAN_CASE_MATRIX_v0_1.csv",
+    "empirical/MAPA_ORBITAL_ARGENTINO_v0_1.md"
+  ],
+  "source_reference": "SITE_COPY_DECK_v0_1.md §1"
+}

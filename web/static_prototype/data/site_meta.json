@@ -1,0 +1,26 @@
+{
+  "site_title": "El problema de los tres cuerpos argentinos",
+  "subtitle": "Un mapa del discurso presidencial argentino, 1983–2026",
+  "thesis_short": "Argentina no es un péndulo. Es un problema de tres cuerpos.",
+  "thesis_long": "El péndulo describe la superficie: la alternancia entre apertura y proteccionismo, entre endeudamiento y mercado interno. Pero la estructura profunda del discurso presidencial argentino no oscila entre dos polos. Interactúa entre tres fuerzas: modernización tecnocrática, mesianismo redentor y paternalismo conservador. Este proyecto mide esa interacción en los discursos de apertura legislativa y asunción de los presidentes argentinos desde 1983. Los resultados son provisionales y los caveats son parte del argumento.",
+  "version": "v0.3",
+  "publication_version": "SITE_PUBLICATION_v0_3",
+  "map_version": "MAPA_ORBITAL_ARGENTINO_v0_3",
+  "whitepaper_version": "WHITEPAPER_FULL_DRAFT_v0_3",
+  "corpus_version": "HCDN_v0_1_PLUS_2026_NB15",
+  "canonical_language": "es",
+  "footer_text": "Investigación, doctrina y videojuego publicados en conjunto. Los alcances y límites del corpus se explican en Evidencia y método.",
+  "universal_actor_caveat": "Hipótesis provisional — no clasificación histórica definitiva",
+  "blocked_label": "Evidencia no disponible — ver Roadmap",
+  "last_updated": "2026-08-05",
+  "canonical_url": "",
+  "authority_files": [
+    "empirical/UNIFIED_CLEAN_CORPUS_INTERPRETIVE_SYNTHESIS_v0_1.md",
+    "empirical/UNIFIED_CLEAN_CASE_MATRIX_v0_1.csv",
+    "empirical/mapa_orbital_v0_3/MAPA_ORBITAL_ARGENTINO_v0_3.md",
+    "web/WHITEPAPER_FULL_DRAFT_v0_3.md",
+    "argentina_tres_cuerpos_corpus/notebooks/NB15_milei_2026_out_of_sample_v0_1.py",
+    "argentina_tres_cuerpos_corpus/notebooks/NB16_orbital_map_v0_3.py"
+  ],
+  "source_reference": "NB15 + NB16 + WHITEPAPER_FULL_DRAFT_v0_3.md"
+}

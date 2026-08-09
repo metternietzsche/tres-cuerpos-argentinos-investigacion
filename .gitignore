@@ -1,0 +1,7 @@
+.DS_Store
+*.log
+.env
+.env.*
+audit/
+web/static_prototype/game/
+web/static_prototype/mobile_game_concept/

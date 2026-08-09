@@ -1,0 +1,35 @@
+{
+  "title": "Tres Cuerpos: República inestable",
+  "version": "0.30.0",
+  "display_version": "v0.30",
+  "status": "frozen_playable",
+  "status_label": "Build congelada y jugable",
+  "updated": "2026-08-04",
+  "public_url": "../videojuego/?v=20260804e",
+  "local_url": "../videojuego/?v=20260804e",
+  "repository_path": "videogame/tres_cuerpos_v30_research_conflicts/app",
+  "modes": ["Carrera", "Leyenda"],
+  "metrics": {
+    "situations": 304,
+    "bindings": 912,
+    "decisions_per_run": 12,
+    "campaigns_per_run": 3,
+    "municipalities": 7,
+    "playable_legends": 15,
+    "signatures": 60,
+    "career_research_events": 56,
+    "legend_research_challenges": 20
+  },
+  "audit": {
+    "engine_runs": 540,
+    "engine_options_inspected": 58862,
+    "browser_runs": 126,
+    "career_browser_runs": 81,
+    "legend_browser_runs": 45,
+    "browser_decisions": 2268,
+    "browser_options_inspected": 10044,
+    "vitest_tests": 120,
+    "failures": 0
+  },
+  "evidence_boundary": "Las situaciones, figuras y consecuencias son construcciones lúdicas autoradas. No constituyen evidencia empírica ni completan las brechas del corpus doctrinario."
+}

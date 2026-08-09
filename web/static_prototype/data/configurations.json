@@ -1,0 +1,166 @@
+[
+  {
+    "configuration_id": "pat_tec",
+    "dominant_vector": "paternalismo",
+    "secondary_vector": "tecnocracia",
+    "directed_label": "paternalismo+tecnocracia",
+    "document_count": 25,
+    "actor_count": 7,
+    "corpus_percentage": 48.1,
+    "plain_language_definition": "La configuración más frecuente. El lenguaje de protección social encuadra el discurso; la tecnocracia lo instrumenta. Aparece en contextos políticos opuestos. El caso Menem es el más robusto: discurso paternalista sostenido durante la mayor reforma de mercado de la democracia argentina. El discurso y el gobierno no son lo mismo.",
+    "interpretation": "Most common configuration: 21 documents, 9 actors. The baseline configuration of Argentine democratic-period rhetoric. Menem holds this in 9/11 documents; de la Rúa in 2/3; Alfonsín in 2; CFK in 5.",
+    "interpretation_language_note": "Texto en inglés preservado de NB10_configuration_map_v0_1.csv. Reemplazar con texto en español del MAPA §4 para display público.",
+    "associated_case_unit_ids": [
+      "ALBERTOF_2019_2022",
+      "MENEM_1990_1999",
+      "CFK_2007_2015",
+      "DELARUA_1999_2001",
+      "MACRI_2015_2019",
+      "KIRCHNER_2003_2007",
+      "ALFONSIN_1983_1989"
+    ],
+    "featured_case_unit_id": "MENEM_1990_1999",
+    "caveats": [
+      "El registro discursivo paternalista no describe la orientación gubernamental. El caso Menem es el ejemplo más robusto de esta disociación.",
+      "Hipótesis provisional — no clasificación definitiva de los actores asociados."
+    ],
+    "status": "dominant",
+    "source_reference": "NB10 + NB15 adjudication 2026 + NB16 map v0.3"
+  },
+  {
+    "configuration_id": "tec_pat",
+    "dominant_vector": "tecnocracia",
+    "secondary_vector": "paternalismo",
+    "directed_label": "tecnocracia+paternalismo",
+    "document_count": 19,
+    "actor_count": 8,
+    "corpus_percentage": 36.5,
+    "plain_language_definition": "La cara inversa del díada. El lenguaje de modernización técnica, eficiencia institucional o racionalización del Estado domina; el registro tutelar acompaña. CFK es el caso más robusto: seis de nueve documentos con atractor fuerte, nivel de cautela bajo.",
+    "interpretation": "Modal configuration of the democratic corpus: 17 documents, 7 actors. Anchors transitions from paternalismo+tecnocracia. Associated with strong attractor in Macri (2016–2017), Alfonsín (1986–1987), CFK (2008, 2011), Kirchner (2005–2007).",
+    "interpretation_language_note": "Texto en inglés preservado de NB10_configuration_map_v0_1.csv. Reemplazar con texto en español del MAPA §4 para display público.",
+    "associated_case_unit_ids": [
+      "ALBERTOF_2019_2022",
+      "MENEM_1990_1999",
+      "CFK_2007_2015",
+      "DUHALDE_2002_2003",
+      "DELARUA_1999_2001",
+      "MACRI_2015_2019",
+      "KIRCHNER_2003_2007",
+      "ALFONSIN_1983_1989"
+    ],
+    "featured_case_unit_id": "CFK_2007_2015",
+    "caveats": [
+      "La distincción entre pat+tec y tec+pat es analíticamente central. No fusionar bajo “díada tec/pat”.",
+      "Hipótesis provisional — no clasificación definitiva de los actores asociados."
+    ],
+    "status": "dominant",
+    "source_reference": "NB10 + NB15 adjudication 2026 + NB16 map v0.3"
+  },
+  {
+    "configuration_id": "tec_mes",
+    "dominant_vector": "tecnocracia",
+    "secondary_vector": "mesianismo",
+    "directed_label": "tecnocracia+mesianismo",
+    "document_count": 3,
+    "actor_count": 2,
+    "corpus_percentage": 5.8,
+    "plain_language_definition": "Tres documentos de la línea de base: Alfonsín 1988 y Milei 2024–2025. La auditoría funcional reabre la dirección agregada de Milei y la publica como MES→TEC↺.",
+    "interpretation": "Distinctive minority configuration: Milei (both documents) + Alfonsín 1988 extraordinary. Milei's case is medium/strong across 2 documents; Alfonsín's is indeterminate (Carapintada crisis). May represent crisis-legitimation technocracy.",
+    "interpretation_language_note": "Texto en inglés preservado de NB10_configuration_map_v0_1.csv. Reemplazar con texto en español del MAPA §4 para display público.",
+    "associated_case_unit_ids": [
+      "MILEI_2023_PRESENTE",
+      "ALFONSIN_1983_1989"
+    ],
+    "featured_case_unit_id": "MILEI_2023_PRESENTE",
+    "caveats": [
+      "La familia conserva la pantalla documental histórica; no reemplaza la adjudicación de mandato v0.3."
+    ],
+    "status": "minor",
+    "source_reference": "NB10 + NB15 adjudication 2026 + NB16 map v0.3"
+  },
+  {
+    "configuration_id": "pat_mes",
+    "dominant_vector": "paternalismo",
+    "secondary_vector": "mesianismo",
+    "directed_label": "paternalismo+mesianismo",
+    "document_count": 2,
+    "actor_count": 2,
+    "corpus_percentage": 3.8,
+    "plain_language_definition": "Aparece en las inauguraciones de Rodríguez Saá (diciembre 2001) y Duhalde (enero 2002). Ambos casos coinciden con ruptura institucional aguda: el colapso del Estado y el default. El patrón no describe a estos actores: describe el contexto.",
+    "interpretation": "Two documents: Duhalde 2002 inaugural + Rodríguez Saá 2001 inaugural. Both are crisis-period inaugurations. Suggests paternalismo+mesianismo is a crisis-assumption rhetorical mode distinct from stable apertura discourse.",
+    "interpretation_language_note": "Texto en inglés preservado de NB10_configuration_map_v0_1.csv. Reemplazar con texto en español del MAPA §4 para display público.",
+    "associated_case_unit_ids": [
+      "RODRIGUEZSA_2001",
+      "DUHALDE_2002_2003"
+    ],
+    "featured_case_unit_id": "RODRIGUEZSA_2001",
+    "caveats": [
+      "El patrón describe el contexto de crisis, no a los actores como tipo estructural.",
+      "n=2 documentos de dos actores distintos — no generalizar como configuración de actor."
+    ],
+    "status": "minor",
+    "source_reference": "NB10 + NB15 adjudication 2026 + NB16 map v0.3"
+  },
+  {
+    "configuration_id": "pat_none",
+    "dominant_vector": "paternalismo",
+    "secondary_vector": null,
+    "directed_label": "paternalismo+none",
+    "document_count": 1,
+    "actor_count": 1,
+    "corpus_percentage": 1.9,
+    "plain_language_definition": "Un único documento: apertura de Menem de 1996 sin vector secundario discernible. Único en el corpus: paternalismo sin acompañamiento secundario, con atractor débil.",
+    "interpretation": "Single document: Menem 1996 apertura (secondary vector absent). Unique in corpus — paternalismo with no discernible secondary presence. Scored as weak attractor.",
+    "interpretation_language_note": "Texto en inglés preservado de NB10_configuration_map_v0_1.csv. Reemplazar con texto en español del MAPA §4 para display público.",
+    "associated_case_unit_ids": [
+      "MENEM_1990_1999"
+    ],
+    "featured_case_unit_id": "MENEM_1990_1999",
+    "caveats": [
+      "n=1 documento. No generalizar como configuración estable de ningún actor."
+    ],
+    "status": "marginal",
+    "source_reference": "NB10 + NB15 adjudication 2026 + NB16 map v0.3"
+  },
+  {
+    "configuration_id": "mes_tec",
+    "dominant_vector": "mesianismo",
+    "secondary_vector": "tecnocracia",
+    "directed_label": "mesianismo+tecnocracia",
+    "document_count": 2,
+    "actor_count": 2,
+    "corpus_percentage": 3.8,
+    "plain_language_definition": "Dos documentos adjudicados: la última apertura de Alfonsín en 1989 y la apertura de Milei de 2026. Comparten primer plano MES–TEC, pero no el mismo contexto ni la misma certeza.",
+    "interpretation": "Configuración minoritaria. En Milei 2026 la dirección es recursiva MES→TEC↺; en Alfonsín 1989 responde a una crisis terminal de mandato.",
+    "interpretation_language_note": "Texto en inglés preservado de NB10_configuration_map_v0_1.csv. Reemplazar con texto en español del MAPA §4 para display público.",
+    "associated_case_unit_ids": [
+      "ALFONSIN_1983_1989",
+      "MILEI_2023_PRESENTE"
+    ],
+    "featured_case_unit_id": "MILEI_2023_PRESENTE",
+    "caveats": [
+      "No igualar Alfonsín 1989 y Milei 2026: la pareja coincide, el régimen temporal y el estado de evidencia no."
+    ],
+    "status": "minor",
+    "source_reference": "NB10 + NB15 adjudication 2026 + NB16 map v0.3"
+  },
+  {
+    "configuration_id": "indeterminate",
+    "dominant_vector": null,
+    "secondary_vector": null,
+    "directed_label": "indeterminate",
+    "document_count": 0,
+    "actor_count": 0,
+    "corpus_percentage": 0.0,
+    "plain_language_definition": "Documentos sin configuración determinable: empate exacto entre vectores o score total insuficiente para establecer dominancia.",
+    "interpretation": null,
+    "interpretation_language_note": null,
+    "associated_case_unit_ids": [],
+    "featured_case_unit_id": null,
+    "caveats": [
+      "Los documentos indeterminate se registran pero no contribuyen a perfiles de actor con igual peso que los documentos con atractor definido."
+    ],
+    "status": "indeterminate",
+    "source_reference": "NB10 + NB15 adjudication 2026 + NB16 map v0.3"
+  }
+]

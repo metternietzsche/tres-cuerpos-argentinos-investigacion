@@ -1,0 +1,50 @@
+[
+  {
+    "vector_id": "tecnocracia",
+    "name": "Modernización tecnocrática",
+    "short_name": "Tecnocracia",
+    "short_definition": "El lenguaje presidencial de la modernización técnica del Estado. Reforma, eficiencia, gestión, racionalización. El discurso de quien gobierna presentando sus decisiones como respuestas técnicas a problemas objetivos.",
+    "what_it_is_not": "La tecnocracia como vector no es sinónimo de neoliberalismo ni de ninguna orientación económica específica. Aparece en gobiernos de distinto signo cuando el énfasis discursivo recae en la transformación institucional o la modernización del aparato del Estado. No describe la política. Describe el registro retórico.",
+    "discourse_signals": [
+      "Reforma del Estado como necesidad inevitable, no como elección política",
+      "Instituciones presentadas como instrumentos de eficiencia",
+      "El gobierno como gestor técnico de problemas objetivos",
+      "Modernización, transparencia, orden fiscal como vocabulario central"
+    ],
+    "over_detection_warning": "El lenguaje técnico-institucional puede aparecer como cobertura formal obligada sin que organice el discurso. La calibración del corpus HCDN (TM×1.00 / TCM×0.50 / AGN×0.00) intenta distinguir la proposición tecnocrática estructurante de la mención incidental.",
+    "link_to_method": "#metodo-tecnocracia",
+    "source_reference": "SITE_COPY_DECK_v0_1.md §4"
+  },
+  {
+    "vector_id": "mesianismo",
+    "name": "Mesianismo redentor",
+    "short_name": "Mesianismo",
+    "short_definition": "El lenguaje presidencial de la ruptura histórica y el mandato trascendente. Un pueblo que espera ser redimido, un momento que reclama ser consumado, un liderazgo que se presenta como vehículo de algo más grande que sí mismo.",
+    "what_it_is_not": "El mesianismo como vector no es equivalente a autoritarismo ni a populismo en sentido técnico. En el corpus democrático, el mesianismo como vector primario aparece casi exclusivamente en momentos de crisis institucional aguda: hiperinflación, colapso del Estado, default. No es el registro de ninguna corriente política en particular. Es una respuesta retórica a situaciones extremas —con la excepción provisoria de Milei, cuyo corpus es aún insuficiente para confirmar el patrón.",
+    "discourse_signals": [
+      "La asunción presidencial narrada como momento histórico excepcional",
+      "El pueblo como sujeto de una redención debida o consumada",
+      "El liderazgo como misión, no como función",
+      "Fechas y eventos convertidos en marcas de discontinuidad histórica"
+    ],
+    "over_detection_warning": "El género inaugural tiende a elevar el tono retórico. Una asunción presidencial tiene mayor probabilidad de activar proposiciones mesiánicas que una apertura legislativa ordinaria. El corpus HCDN controla este efecto comparando asunciones con aperturas del mismo actor donde es posible.",
+    "link_to_method": "#metodo-mesianismo",
+    "source_reference": "SITE_COPY_DECK_v0_1.md §4"
+  },
+  {
+    "vector_id": "paternalismo",
+    "name": "Paternalismo conservador",
+    "short_name": "Paternalismo",
+    "short_definition": "El lenguaje presidencial de la tutela social. El Estado que protege, conduce y se responsabiliza por el bienestar del pueblo. No la ruptura ni la reforma técnica: el cuidado como eje del discurso.",
+    "what_it_is_not": "El paternalismo como vector no es sinónimo de política social ni de gasto público. Un gobierno puede no tener programas sociales expansivos y aun así operar en un registro paternalista. Y viceversa. El vector describe el registro retórico, no el programa. La paradoja Menem —discurso paternalista durante la reforma de mercado más intensa de la democracia argentina— es el ejemplo más robusto de esta separación.",
+    "discourse_signals": [
+      "El pueblo interpelado como sujeto de derechos que el Estado garantiza",
+      "La justicia social como mandato del gobierno",
+      "El cuidado de los trabajadores, los más vulnerables, la familia",
+      "El Estado como protector activo ante las amenazas del mercado o del exterior"
+    ],
+    "over_detection_warning": "El paternalismo puede aparecer como vocabulario retórico convencional sin que estructure el discurso. La calibración busca proposiciones que coloquen al Estado en posición tutelar activa, no menciones genéricas de bienestar social.",
+    "link_to_method": "#metodo-paternalismo",
+    "source_reference": "SITE_COPY_DECK_v0_1.md §4"
+  }
+]

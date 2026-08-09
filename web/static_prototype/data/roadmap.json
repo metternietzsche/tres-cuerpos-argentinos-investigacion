@@ -1,0 +1,111 @@
+[
+  {
+    "roadmap_id": "P1",
+    "title": "Fuente verificada del discurso de Perón del 12 de octubre de 1973",
+    "description": "El discurso existe históricamente. El archivo identificado como fuente (PERON_SRC_015) contiene el discurso del Dr. José Antonio Allende, no el de Perón. Se necesita una fuente que contenga el texto real: BCN, archivos de prensa del 13-10-1973, o repositorios históricos.",
+    "status": "pendiente",
+    "depends_on": [],
+    "unlocks": [
+      "P2"
+    ],
+    "related_blocked_content": [
+      "PERON_1973_ASUNCION_BLOQUEADA"
+    ],
+    "priority": "alta",
+    "source_reference": "MAPA_ORBITAL_ARGENTINO_v0_1.md §9 / SITE_COPY_DECK_v0_1.md §10"
+  },
+  {
+    "roadmap_id": "P2",
+    "title": "Procesamiento de esa fuente con controles BLQ equivalentes a 1946 y 1954",
+    "description": "Extracción, limpieza, micro-revisión, segmentación y revisión proposicional con los mismos estándares de calidad que 1946 y 1954.",
+    "status": "bloqueado",
+    "depends_on": [
+      "P1"
+    ],
+    "unlocks": [
+      "P3"
+    ],
+    "related_blocked_content": [
+      "PERON_1973_ASUNCION_BLOQUEADA"
+    ],
+    "priority": "alta",
+    "source_reference": "MAPA_ORBITAL_ARGENTINO_v0_1.md §9"
+  },
+  {
+    "roadmap_id": "P3",
+    "title": "Perfil tri-documento de Perón (PERON_NB04: 1946 + 1954 + 1973)",
+    "description": "El contraste entre las tres fases —fundación (1946), consolidación (1954), retorno del exilio (1973)— es el perfil mínimo para una caracterización de actor Perón.",
+    "status": "bloqueado",
+    "depends_on": [
+      "P2"
+    ],
+    "unlocks": [
+      "P4"
+    ],
+    "related_blocked_content": [
+      "PERON_1973_ASUNCION_BLOQUEADA"
+    ],
+    "priority": "alta",
+    "source_reference": "MAPA_ORBITAL_ARGENTINO_v0_1.md §9"
+  },
+  {
+    "roadmap_id": "P4",
+    "title": "Nota puente formal entre PERON_ALT_PIPELINE y corpus HCDN",
+    "description": "Sin esa nota, la comparación numérica entre Perón y los actores democráticos no tiene base metodológica. La nota debe cubrir alineación de instrumentos, calibración cruzada y límites de comparabilidad.",
+    "status": "bloqueado",
+    "depends_on": [
+      "P3"
+    ],
+    "unlocks": [
+      "P7"
+    ],
+    "related_blocked_content": [
+      "PERON_1973_ASUNCION_BLOQUEADA"
+    ],
+    "priority": "alta",
+    "source_reference": "MAPA_ORBITAL_ARGENTINO_v0_1.md §9"
+  },
+  {
+    "roadmap_id": "P5",
+    "title": "Completar la línea Milei a n≥4",
+    "description": "La apertura 2026 ya fue incorporada como tercer documento HCDN y prueba temporal NB15. Resta integrar formalmente la asunción de diciembre 2023 a la misma serie cuantitativa y replicar la adjudicación con codificación independiente.",
+    "status": "parcial",
+    "depends_on": [],
+    "unlocks": [
+      "P7"
+    ],
+    "related_blocked_content": [],
+    "priority": "media",
+    "source_reference": "NB15 + NB16 + WHITEPAPER v0.3 §11"
+  },
+  {
+    "roadmap_id": "P6",
+    "title": "Validación ciega y re-run HCDN por actor × mandato",
+    "description": "Revisar las firmas NB13, codificar independientemente Macri y los casos indeterminados, propagar la ventana de Rodríguez Saá, integrar Milei 2023 y reconstruir agregaciones con Menem I/II y CFK I/II separados.",
+    "status": "pendiente",
+    "depends_on": [],
+    "unlocks": [
+      "P7"
+    ],
+    "related_blocked_content": [],
+    "priority": "media",
+    "source_reference": "WHITEPAPER v0.3 §11 / MAPA_ORBITAL_ARGENTINO_v0_3.md §8"
+  },
+  {
+    "roadmap_id": "P7",
+    "title": "Producción de MAPA_ORBITAL_ARGENTINO_v1.md",
+    "description": "Solo con P1–P6 satisfechas será posible caracterizar de manera integrada el campo del discurso presidencial argentino, manteniendo explícitos los tiers y sin forzar a Perón dentro de la escala numérica HCDN.",
+    "status": "bloqueado",
+    "depends_on": [
+      "P4",
+      "P5",
+      "P6"
+    ],
+    "unlocks": [],
+    "related_blocked_content": [
+      "PERON_1973_ASUNCION_BLOQUEADA"
+    ],
+    "priority": "alta",
+    "source_reference": "WHITEPAPER v0.3 §11 / MAPA_ORBITAL_ARGENTINO_v0_3.md §8"
+  }
+]

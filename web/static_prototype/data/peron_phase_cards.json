@@ -1,0 +1,103 @@
+[
+  {
+    "phase_id": "peron_1946",
+    "year": 1946,
+    "title": "1946 — Asunción inaugural, 4 de junio de 1946",
+    "source_id": "PERON_SRC_003",
+    "source_status": "usable_one_document_hypothesis",
+    "corpus_lineage": "PERON_ALT_PIPELINE",
+    "configuration_hypothesis": "mesianismo+paternalismo",
+    "vector_ranking": {
+      "first": "mesianismo",
+      "second": "paternalismo",
+      "third": "tecnocracia"
+    },
+    "peron_mes_score": 82,
+    "peron_pat_score": 64,
+    "peron_tec_score": 63,
+    "n_segments": 45,
+    "word_count": 5072,
+    "ocr_uncertainty": 2.8,
+    "phase_interpretation": "El discurso inaugural de Perón del 4 de junio de 1946 organiza el mandato como ruptura fundacional (MES): derrumbe de la antigua farsa política, voluntad popular como legitimidad histórica, fechas fundacionales (17-oct, 24-feb) como marcas de un quiebre irreversible. El paternalismo es promisorio: la justicia social adeudada a las masas trabajadoras, el acceso educativo comprometido. La tecnocracia nombra un mandato activo de reconstrucción (Consejo Nacional de Posguerra, industrialización, planificación hidráulica). Los tres vectores son casi co-iguales.",
+    "caveats": [
+      "No comparar numéricamente con actores HCDN. Un documento no establece perfil de actor.",
+      "Sin calibración TM/TCM/AGN. Sin nota puente entre pipelines."
+    ],
+    "caveat_badges": [
+      "PROVISIONAL",
+      "PERON_ALT_SOURCE",
+      "NO_COMPARABLE_NUMERICAMENTE"
+    ],
+    "blocked": false,
+    "blocked_reason": null,
+    "next_action": "Adquirir fuente verificada del discurso de Perón del 12 de octubre de 1973 para producir el perfil tri-documento (PERON_NB04).",
+    "linked_roadmap_item_id": "P1",
+    "source_reference": "PERON_NB03_1946_1954_phase_contrast_v0_1.csv"
+  },
+  {
+    "phase_id": "peron_1954",
+    "year": 1954,
+    "title": "1954 — Apertura anual, 19 de mayo de 1954",
+    "source_id": "PERON_SRC_013",
+    "source_status": "usable_one_document_hypothesis",
+    "corpus_lineage": "PERON_ALT_PIPELINE",
+    "configuration_hypothesis": "mesianismo+paternalismo",
+    "vector_ranking": {
+      "first": "mesianismo",
+      "second": "paternalismo",
+      "third": "tecnocracia"
+    },
+    "peron_mes_score": 122,
+    "peron_pat_score": 110,
+    "peron_tec_score": 54,
+    "n_segments": 90,
+    "word_count": 4621,
+    "ocr_uncertainty": 2.16,
+    "phase_interpretation": "El mesianismo de 1954 es de consagración providencial-doctrinal: las tres banderas como trívium mesiánico (7×), el peronismo como movimiento de salvación histórica (7×), la Providencia como legitimadora de la misión (4×). El paternalismo es el de un pueblo organizado, no receptor de un programa. La tecnocracia es aparato asumido: la agenda de reconstrucción de 1946 opera en 1954 como hecho de fondo. TEC es el único vector cuyo score absoluto decrece respecto a 1946 (63→54, Δ=−9) a pesar de que el corpus de 1954 tiene el doble de segmentos: el hallazgo más analíticamente robusto del contraste de fase.",
+    "caveats": [
+      "No comparar numéricamente con actores HCDN. Un documento no establece perfil de actor.",
+      "Sin calibración TM/TCM/AGN. Sin nota puente entre pipelines."
+    ],
+    "caveat_badges": [
+      "PROVISIONAL",
+      "PERON_ALT_SOURCE",
+      "NO_COMPARABLE_NUMERICAMENTE"
+    ],
+    "blocked": false,
+    "blocked_reason": null,
+    "next_action": "Adquirir fuente verificada del discurso de Perón del 12 de octubre de 1973 para producir el perfil tri-documento (PERON_NB04).",
+    "linked_roadmap_item_id": "P1",
+    "source_reference": "PERON_NB03_1946_1954_phase_contrast_v0_1.csv"
+  },
+  {
+    "phase_id": "peron_1973_blocked",
+    "year": 1973,
+    "title": "1973 — BLOQUEADO",
+    "source_id": "PERON_SRC_015",
+    "source_status": "exclude_from_propositional_review — BLQ-02c (2026-04-30)",
+    "corpus_lineage": "PERON_ALT_PIPELINE",
+    "configuration_hypothesis": null,
+    "vector_ranking": null,
+    "peron_mes_score": null,
+    "peron_pat_score": null,
+    "peron_tec_score": null,
+    "n_segments": null,
+    "word_count": null,
+    "ocr_uncertainty": null,
+    "phase_interpretation": null,
+    "caveats": [
+      "Ningún análisis sobre el discurso de Perón del 12 de octubre de 1973 es posible en este estado. No hay fuente verificada en ninguna pipeline activa.",
+      "PERON_SRC_015 contiene el discurso de Allende, no el de Perón. No usar como proxy."
+    ],
+    "caveat_badges": [
+      "BLOQUEADO",
+      "SOURCE_FAILURE",
+      "PERON_ALT_SOURCE"
+    ],
+    "blocked": true,
+    "blocked_reason": "PERON_SRC_015 es el Diario de Sesiones de la Asamblea Legislativa del 12 de octubre de 1973. El archivo contiene: lista de delegaciones extranjeras (~100 países); el discurso del Dr. José Antonio Allende (presidente de la Asamblea) dirigido a Perón en segunda persona; y el juramento constitucional de Perón (~60 palabras de fórmula legal fija). El discurso inaugural real de Perón ('Yo llevo en mis oídos la más maravillosa música...') fue pronunciado desde el balcón de la Casa Rosada y no está registrado en este Diario de Sesiones. El OCR quality=80 midió precisión de reconocimiento de caracteres —no que el archivo contuviera el discurso buscado.",
+    "next_action": "Adquisición de fuente alternativa para el discurso de Perón del 12 oct 1973: prioridad 1) BCN — Mensajes presidenciales; prioridad 2) La Nación 13-10-1973; prioridad 3) Casa Rosada archivo histórico. Registrar como PERON_SRC_020 (próximo ID disponible). Verificar contenido y autoría antes de cualquier extracción BLQ.",
+    "linked_roadmap_item_id": "P1",
+    "source_reference": "UNIFIED_CLEAN_CASE_MATRIX_v0_1.csv — PERON_1973_ASUNCION_BLOQUEADA"
+  }
+]

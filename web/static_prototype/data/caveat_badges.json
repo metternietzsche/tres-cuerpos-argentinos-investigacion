@@ -1,0 +1,131 @@
+[
+  {
+    "badge_id": "CANONICO",
+    "label": "CANÓNICO",
+    "meaning": "Datos derivados de fuentes canónicas verificadas del proyecto.",
+    "severity": "info",
+    "blocks_interaction": false,
+    "display_locations": [
+      "C01_site_header",
+      "C02_corpus_overview"
+    ],
+    "required_microcopy": "Fuente canónica del proyecto.",
+    "source_reference": "VISUAL_COMPONENT_SPEC_v0_1.md §12"
+  },
+  {
+    "badge_id": "PROVISIONAL",
+    "label": "HIPÓTESIS PROVISIONAL",
+    "meaning": "Hipótesis provisional — no clasificación histórica definitiva. Ver Método para entender los niveles de evidencia.",
+    "severity": "caution",
+    "blocks_interaction": false,
+    "display_locations": [
+      "C04_actor_map",
+      "C06_actor_card",
+      "C07_actor_timeline"
+    ],
+    "required_microcopy": "Hipótesis provisional — no clasificación histórica definitiva.",
+    "source_reference": "VISUAL_COMPONENT_SPEC_v0_1.md §12"
+  },
+  {
+    "badge_id": "LOW_N",
+    "label": "CORPUS INSUFICIENTE (n=X)",
+    "meaning": "Corpus insuficiente para afirmaciones de actor. El perfil requiere más documentos para evaluarse con solidez.",
+    "severity": "caution",
+    "blocks_interaction": false,
+    "display_locations": [
+      "C04_actor_map",
+      "C06_actor_card"
+    ],
+    "required_microcopy": "Corpus insuficiente. No citar como perfil confirmado.",
+    "source_reference": "VISUAL_COMPONENT_SPEC_v0_1.md §12"
+  },
+  {
+    "badge_id": "REVIEW_ONLY",
+    "label": "SOLO REFERENCIA — NO CITADO COMO EVIDENCIA",
+    "meaning": "Solo para referencia interna. No citar como evidencia en ninguna afirmación analítica.",
+    "severity": "high",
+    "blocks_interaction": true,
+    "display_locations": [
+      "C08_evidence_drawer"
+    ],
+    "required_microcopy": "Solo referencia. No citar como evidencia.",
+    "source_reference": "VISUAL_COMPONENT_SPEC_v0_1.md §12"
+  },
+  {
+    "badge_id": "BLOQUEADO",
+    "label": "BLOQUEADO — EVIDENCIA NO DISPONIBLE",
+    "meaning": "Contenido bloqueado. La razón del bloqueo está documentada en el campo blocked_reason.",
+    "severity": "blocking",
+    "blocks_interaction": true,
+    "display_locations": [
+      "C10_peron_separated_lane",
+      "C11_roadmap"
+    ],
+    "required_microcopy": "El contenido de esta entrada no está disponible en ninguna pipeline activa. La razón del bloqueo está documentada en el campo blocked_reason. Ver Roadmap para la condición de desbloqueo.",
+    "source_reference": "VISUAL_COMPONENT_SPEC_v0_1.md §12"
+  },
+  {
+    "badge_id": "NO_COMPARABLE_NUMERICAMENTE",
+    "label": "NO COMPARABLE NUMÉRICAMENTE CON CORPUS HCDN",
+    "meaning": "Los datos de la PERON_ALT_PIPELINE (scores MES/PAT/TEC de PERON_NB02) son conteos de patrones proposicionales extraídos manualmente. Los datos del corpus HCDN son scores calibrados NB05 (TM×1.00 / TCM×0.50 / AGN×0.00). No existe nota puente entre las dos pipelines que establezca condiciones de comparabilidad.",
+    "severity": "blocking",
+    "blocks_interaction": true,
+    "display_locations": [
+      "C10_peron_separated_lane",
+      "C08_evidence_drawer_when_peron",
+      "any_numeric_display_of_peron_data"
+    ],
+    "required_microcopy": "Los datos numéricos de Perón no están en la misma escala que los scores NB05 del corpus democrático. No existe nota puente. Este badge no autoriza la comparación: la comparación numérica está prohibida incluso cuando el badge está presente.",
+    "source_reference": "VISUAL_COMPONENT_SPEC_v0_1.md §12"
+  },
+  {
+    "badge_id": "METADATA_CORREGIDA",
+    "label": "PERFIL CORREGIDO — PENDIENTE VALIDACIÓN",
+    "meaning": "Perfil corregido por patch de metadatos v0_2 (2026-04-29). Pendiente de validación por re-run completo de pipeline.",
+    "severity": "caution",
+    "blocks_interaction": false,
+    "display_locations": [
+      "C04_actor_map",
+      "C06_actor_card"
+    ],
+    "required_microcopy": "Perfil corregido. Pendiente de validación por v1 re-run.",
+    "source_reference": "VISUAL_COMPONENT_SPEC_v0_1.md §12"
+  },
+  {
+    "badge_id": "SOURCE_FAILURE",
+    "label": "FALLA DE FUENTE DOCUMENTADA",
+    "meaning": "La fuente identificada no contiene el material que debería contener. Se requiere una fuente alternativa verificada.",
+    "severity": "blocking",
+    "blocks_interaction": true,
+    "display_locations": [
+      "C10_peron_separated_lane"
+    ],
+    "required_microcopy": "La fuente identificada para este contenido no contiene el material que debería contener. Se requiere una fuente alternativa verificada antes de cualquier análisis.",
+    "source_reference": "VISUAL_COMPONENT_SPEC_v0_1.md §12"
+  },
+  {
+    "badge_id": "HCDN_ONLY",
+    "label": "CORPUS HCDN — NO INCLUYE PERÓN",
+    "meaning": "El perfil de este actor se basa exclusivamente en el corpus democrático HCDN 1983–2025. No incluye documentos de la pipeline alternativa de Perón.",
+    "severity": "info",
+    "blocks_interaction": false,
+    "display_locations": [
+      "C04_actor_map",
+      "C06_actor_card"
+    ],
+    "required_microcopy": "Corpus HCDN — no incluye Perón ni pipeline alternativa.",
+    "source_reference": "VISUAL_COMPONENT_SPEC_v0_1.md §12"
+  },
+  {
+    "badge_id": "PERON_ALT_SOURCE",
+    "label": "PERON_ALT_PIPELINE — INSTRUMENTO DIFERENTE AL CORPUS HCDN",
+    "meaning": "Datos de la pipeline alternativa de fuentes de Perón. Instrumento diferente al corpus HCDN. Ver sección metodológica.",
+    "severity": "caution",
+    "blocks_interaction": false,
+    "display_locations": [
+      "C10_peron_separated_lane"
+    ],
+    "required_microcopy": "PERON_ALT_PIPELINE. Instrumento diferente al corpus HCDN. No comparar numéricamente.",
+    "source_reference": "VISUAL_COMPONENT_SPEC_v0_1.md §12"
+  }
+]

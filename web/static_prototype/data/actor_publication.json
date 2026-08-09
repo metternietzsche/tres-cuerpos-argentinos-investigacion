@@ -1,0 +1,232 @@
+{
+  "version": "v0.43-alignment-2",
+  "game_version": "v0.49 beta",
+  "source_note": "Correspondencia editorial derivada de actors_hcdn.json y del videojuego publicado. El bump v0.3 modifica sólo la capa de investigación.",
+  "layers": {
+    "research_title": "Diez personas · doce unidades de mandato",
+    "research_description": "La investigación agrupa los documentos por actor × mandato: Menem I/II y CFK I/II son unidades distintas. Las fichas personales sirven como acceso editorial y no definen una personalidad política.",
+    "game_title": "Leyendas jugables",
+    "game_description": "Son quince encarnaciones diseñadas para el Modo Leyenda. El juego separa momentos de una misma persona cuando cambian su configuración y sus firmas. Cada Leyenda entra al presente: no reconstruye una biografía ni autoriza una clasificación histórica.",
+    "difference_note": "Las unidades de investigación y las Leyendas jugables no son equivalentes. El mapa separa mandatos; el juego separa encarnaciones cuando el diseño lo requiere. Perón pertenece a una pipeline histórica aparte y Rodríguez Saá no tiene Leyenda jugable."
+  },
+  "actors": [
+    {
+      "actor_id": "alfonsin",
+      "legend_ids": [
+        "alfonsin_1983",
+        "alfonsin_1986"
+      ],
+      "summary_es": "El corpus de Alfonsín es el de mayor variación orbital del período democrático: la conducción cambia entre tecnocracia, paternalismo y mesianismo a lo largo de ocho documentos. El mesianismo crece en los momentos de mayor presión institucional; por eso la trayectoria importa más que una etiqueta única.",
+      "caveat_es": "Dos documentos conservan cautelas activas y el giro mesiánico de 1989 corresponde a un solo año. La ficha describe una secuencia documental, no un tipo estable de liderazgo."
+    },
+    {
+      "actor_id": "menem",
+      "legend_ids": [
+        "menem_I_1989",
+        "menem_II_1995"
+      ],
+      "summary_es": "En once documentos, el discurso de Menem sostiene mayormente una configuración paternalismo + tecnocracia. El hallazgo central es la distancia entre ese registro tutelar y la reorientación de mercado del gobierno: el corpus mide cómo se legitima una acción, no el programa que esa acción ejecuta.",
+      "caveat_es": "Dos años muestran empates o correcciones relevantes. La lectura no debe convertir el registro discursivo paternalista en una descripción automática de las políticas de gobierno."
+    },
+    {
+      "actor_id": "delarua",
+      "legend_ids": [
+        "delarua_2000"
+      ],
+      "summary_es": "Los tres documentos disponibles pasan de paternalismo + tecnocracia en 1999–2000 a tecnocracia + paternalismo en 2001, cuando la crisis económica y el ajuste fiscal reorganizan el encuadre presidencial.",
+      "caveat_es": "Tres documentos no alcanzan para fijar una trayectoria robusta. El corpus termina antes de la renuncia y no incluye un discurso de salida."
+    },
+    {
+      "actor_id": "rodriguezsa",
+      "legend_ids": [],
+      "summary_es": "El único documento codificado —la asunción de diciembre de 2001— combina paternalismo y mesianismo bajo condiciones de colapso institucional. Es un punto de crisis dentro del corpus, no una trayectoria presidencial agregable.",
+      "caveat_es": "Con un solo documento no puede inferirse estabilidad ni clasificarse al actor. Rodríguez Saá no integra el plantel de Leyendas de la versión v0.49 beta."
+    },
+    {
+      "actor_id": "duhalde",
+      "legend_ids": [
+        "duhalde_2002"
+      ],
+      "summary_es": "La asunción de enero de 2002 combina paternalismo y mesianismo; las dos aperturas posteriores se desplazan hacia tecnocracia + paternalismo. La secuencia acompaña el paso desde la emergencia hacia una gramática de estabilización.",
+      "caveat_es": "El corpus reúne sólo tres documentos y dos presentan ambigüedad entre vectores. La lectura es situacional y provisoria."
+    },
+    {
+      "actor_id": "kirchner",
+      "legend_ids": [
+        "nestor_kirchner_2003"
+      ],
+      "summary_es": "Los cinco documentos de Néstor Kirchner mantienen una cercanía excepcional entre tecnocracia y paternalismo. La asunción inclina la configuración hacia el paternalismo; las aperturas de 2005–2007 invierten la dirección sin romper la convivencia entre ambos vectores.",
+      "caveat_es": "Cuatro de cinco documentos presentan ambigüedad y el promedio entre los dos vectores es casi un empate. Toda afirmación direccional debe leerse con esa restricción."
+    },
+    {
+      "actor_id": "cfk",
+      "legend_ids": [
+        "cfk_I_2007",
+        "cfk_II_2011"
+      ],
+      "summary_es": "Cristina Fernández de Kirchner presenta la mayor proporción de documentos con atractor fuerte. La trayectoria permanece dentro de tecnocracia y paternalismo, pero cambia cuál de los dos cuerpos conduce en distintos momentos de sus mandatos.",
+      "caveat_es": "El corpus disponible tiene una brecha en 2009 y requiere una futura desagregación por mandato. La configuración agregada no reemplaza esas fases."
+    },
+    {
+      "actor_id": "macri",
+      "legend_ids": [
+        "macri_2015"
+      ],
+      "summary_es": "Tras corregir una asunción de 2019 que estaba mal atribuida, los cinco documentos de Macri muestran tecnocracia + paternalismo como configuración predominante durante las aperturas de gobierno. La asunción de 2015 invierte esa dirección.",
+      "caveat_es": "Es un perfil corregido y todavía pendiente de validación mediante un nuevo procesamiento integral. El documento de 2018 tiene baja fuerza atractora."
+    },
+    {
+      "actor_id": "albertof",
+      "legend_ids": [
+        "albertoF_2019"
+      ],
+      "summary_es": "El corpus de Alberto Fernández comienza con la asunción de 2019 recuperada de una atribución errónea. Los cuatro documentos mantienen tecnocracia y paternalismo muy próximos y cambian la dirección interna de esa relación.",
+      "caveat_es": "Los cuatro documentos presentan ambigüedad y falta la apertura de 2023. La cercanía entre vectores puede ser el hallazgo, pero impide una clasificación firme."
+    },
+    {
+      "actor_id": "milei",
+      "legend_ids": [
+        "milei_2023"
+      ],
+      "summary_es": "Las aperturas 2024–2026 y la asunción 2023 sostienen una relación MES→TEC: la misión y el cambio de era encuadran un programa técnico; en 2026, sus resultados vuelven como prueba de la promesa. El mapa la escribe MES→TEC↺.",
+      "caveat_es": "La pantalla léxica 2026 marca PAT–TEC, mientras la adjudicación funcional favorece MES–TEC en 8/8 controles. Es una prueba temporal autoral, no una réplica ciega. La Leyenda del juego sigue siendo una construcción lúdica separada."
+    }
+  ],
+  "legends": [
+    {
+      "id": "peron_I_1946",
+      "name": "Juan Domingo Perón",
+      "incarnation": "Perón fundacional",
+      "year_ref": 1946,
+      "actor_id": null,
+      "dominant_vector": "PAT",
+      "portrait": "assets/legend-art/peron_I_1946.webp"
+    },
+    {
+      "id": "peron_II_1951",
+      "name": "Juan Domingo Perón",
+      "incarnation": "Perón orbital",
+      "year_ref": 1951,
+      "actor_id": null,
+      "dominant_vector": "PAT",
+      "portrait": "assets/legend-art/peron_II_1951.webp"
+    },
+    {
+      "id": "peron_III_1973",
+      "name": "Juan Domingo Perón",
+      "incarnation": "Perón rector",
+      "year_ref": 1973,
+      "actor_id": null,
+      "dominant_vector": "PAT",
+      "portrait": "assets/legend-art/peron_III_1973.webp"
+    },
+    {
+      "id": "alfonsin_1983",
+      "name": "Raúl Alfonsín",
+      "incarnation": "Alfonsín democrático",
+      "year_ref": 1983,
+      "actor_id": "alfonsin",
+      "dominant_vector": "MES",
+      "portrait": "assets/legend-art/alfonsin_1983.webp"
+    },
+    {
+      "id": "alfonsin_1986",
+      "name": "Raúl Alfonsín",
+      "incarnation": "Alfonsín austral",
+      "year_ref": 1986,
+      "actor_id": "alfonsin",
+      "dominant_vector": "TEC",
+      "portrait": "assets/legend-art/alfonsin_1986.webp"
+    },
+    {
+      "id": "menem_I_1989",
+      "name": "Carlos Menem",
+      "incarnation": "Menem caudillo",
+      "year_ref": 1989,
+      "actor_id": "menem",
+      "dominant_vector": "MES",
+      "portrait": "assets/legend-art/menem_I_1989.webp"
+    },
+    {
+      "id": "menem_II_1995",
+      "name": "Carlos Menem",
+      "incarnation": "Menem moderno",
+      "year_ref": 1995,
+      "actor_id": "menem",
+      "dominant_vector": "PAT",
+      "portrait": "assets/legend-art/menem_II_1995.webp"
+    },
+    {
+      "id": "delarua_2000",
+      "name": "Fernando de la Rúa",
+      "incarnation": "De la Rúa alianza",
+      "year_ref": 2000,
+      "actor_id": "delarua",
+      "dominant_vector": "PAT",
+      "portrait": "assets/legend-art/delarua_2000.webp"
+    },
+    {
+      "id": "duhalde_2002",
+      "name": "Eduardo Duhalde",
+      "incarnation": "Duhalde transición",
+      "year_ref": 2002,
+      "actor_id": "duhalde",
+      "dominant_vector": "MES",
+      "portrait": "assets/legend-art/duhalde_2002.webp"
+    },
+    {
+      "id": "nestor_kirchner_2003",
+      "name": "Néstor Kirchner",
+      "incarnation": "Kirchner restaurador",
+      "year_ref": 2003,
+      "actor_id": "kirchner",
+      "dominant_vector": "PAT",
+      "portrait": "assets/legend-art/nestor_kirchner_2003.webp"
+    },
+    {
+      "id": "cfk_I_2007",
+      "name": "Cristina Fernández de Kirchner",
+      "incarnation": "CFK primera",
+      "year_ref": 2007,
+      "actor_id": "cfk",
+      "dominant_vector": "TEC",
+      "portrait": "assets/legend-art/cfk_I_2007.webp"
+    },
+    {
+      "id": "cfk_II_2011",
+      "name": "Cristina Fernández de Kirchner",
+      "incarnation": "CFK conducción",
+      "year_ref": 2011,
+      "actor_id": "cfk",
+      "dominant_vector": "TEC",
+      "portrait": "assets/legend-art/cfk_II_2011.webp"
+    },
+    {
+      "id": "macri_2015",
+      "name": "Mauricio Macri",
+      "incarnation": "Macri modernizador",
+      "year_ref": 2015,
+      "actor_id": "macri",
+      "dominant_vector": "TEC",
+      "portrait": "assets/legend-art/macri_2015.webp"
+    },
+    {
+      "id": "albertoF_2019",
+      "name": "Alberto Fernández",
+      "incarnation": "Alberto coalición",
+      "year_ref": 2019,
+      "actor_id": "albertof",
+      "dominant_vector": "PAT",
+      "portrait": "assets/legend-art/albertoF_2019.webp"
+    },
+    {
+      "id": "milei_2023",
+      "name": "Javier Milei",
+      "incarnation": "Milei disruptor",
+      "year_ref": 2023,
+      "actor_id": "milei",
+      "dominant_vector": "TEC",
+      "portrait": "assets/legend-art/milei_2023.webp"
+    }
+  ]
+}

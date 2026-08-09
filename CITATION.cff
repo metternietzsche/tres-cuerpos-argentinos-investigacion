@@ -1,0 +1,51 @@
+cff-version: 1.2.0
+message: "Si usás este trabajo, por favor citalo como se indica a continuación."
+type: software
+title: "El problema de los tres cuerpos argentinos: una lectura orbital del presidencialismo argentino"
+version: "0.2.0"
+date-released: "2026-08-09"
+abstract: >
+  Proyecto de investigación teórico-empírica que mapea configuraciones
+  político-epistémicas en los discursos presidenciales de la democracia argentina
+  (1983–2025). El proyecto propone que el campo retórico del presidencialismo
+  argentino está organizado por la interacción entre tres vectores —modernización
+  tecnocrática, mesianismo redentor y paternalismo conservador— y no por la
+  alternancia entre dos polos. Basado en análisis computacional del corpus
+  HCDN 1983–2025 (51 documentos, 10 actores democráticos) y dos documentos
+  del corpus alternativo de Perón (1946, 1954). Estado editorial: sitio v0.2;
+  mapa orbital y corpus provisional v0.1.
+authors:
+  - family-names: "Bustos Frati"
+    given-names: "Alexandra"
+    name-suffix: "PhD"
+license: "CC-BY-NC-4.0"
+keywords:
+  - "presidencialismo argentino"
+  - "análisis de discurso"
+  - "política argentina"
+  - "configuraciones político-epistémicas"
+  - "tecnocracia"
+  - "mesianismo"
+  - "paternalismo"
+  - "prototipo de investigación"
+  - "corpus HCDN"
+  - "democracia argentina 1983-2025"
+identifiers:
+  - type: other
+    value: "SITIO_v0_2_CORPUS_HCDN_v0_1"
+    description: "Identificador interno de la publicación y del corpus"
+references: []
+preferred-citation:
+  type: generic
+  authors:
+    - family-names: "Bustos Frati"
+      given-names: "Alexandra"
+      name-suffix: "PhD"
+  title: >
+    El problema de los tres cuerpos argentinos:
+    una lectura orbital del presidencialismo argentino
+  year: 2026
+  version: "sitio v0.2; corpus v0.1"
+  notes: >
+    Proyecto de investigación teórico-empírica. Sitio v0.2; corpus provisional v0.1.
+    Datos no aptos para cita académica formal.
