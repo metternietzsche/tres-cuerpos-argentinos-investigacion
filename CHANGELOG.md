@@ -1,5 +1,10 @@
 # Changelog
 
+## Sin publicar
+
+- Aclarado que la beta web del videojuego es pública, pero su repositorio de
+  implementación y su código permanecen privados y bajo derechos reservados.
+
 ## v0.2.0 · 2026-08-09
 
 - Primera publicación autónoma del repositorio de investigación.

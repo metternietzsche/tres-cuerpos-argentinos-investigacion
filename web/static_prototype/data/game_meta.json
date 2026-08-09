@@ -7,7 +7,7 @@
   "updated": "2026-08-09",
   "public_url": "https://metternietzsche.github.io/tres-cuerpos-argentinos-game/",
   "local_url": "http://127.0.0.1:5184/",
-  "repository_path": "https://github.com/metternietzsche/tres-cuerpos-argentinos-game",
+  "repository_visibility": "private",
   "modes": [
     "Carrera",
     "Leyenda"

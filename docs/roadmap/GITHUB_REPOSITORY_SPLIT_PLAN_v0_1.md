@@ -3,7 +3,8 @@
 > **Documento histórico supersedido para estado de publicación.** Conserva la
 > decisión arquitectónica de separar investigación y juego, pero sus referencias
 > a v0.8/v0.9 fueron reemplazadas por `PUBLICATION_NOTES.md` y
-> `docs/videojuego.md` en el bump editorial v0.2.
+> `docs/videojuego.md` en el bump editorial v0.2. La decisión vigente es:
+> investigación pública, repositorio del juego privado y beta web jugable.
 
 **Proyecto:** El problema de los tres cuerpos argentinos  
 **Autora:** Alexandra Bustos Frati, PhD  

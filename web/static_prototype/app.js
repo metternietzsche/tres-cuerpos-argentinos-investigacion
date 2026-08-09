@@ -2578,12 +2578,12 @@ function renderVideojuego() {
     ? `<a href="${esc(gameUrl)}" class="btn btn-primary vj-play-cta" data-game-cta target="_blank" rel="noopener">Jugar ${esc(game.display_version || 'v0.49 beta')} →</a>`
     : `<span class="btn btn-primary" aria-disabled="true" title="Falta configurar game_meta.public_url">Publicación web pendiente</span>`;
   const releaseCopy = jointlyPublished
-    ? `El juego vive en un repositorio autónomo y se abre sin cuenta ni descarga.`
-    : `La URL pública del repositorio del juego todavía debe configurarse en <code>game_meta.json</code>.`;
+    ? `La beta se despliega de manera autónoma y se abre sin cuenta ni descarga; su código permanece privado.`
+    : `La URL pública de la beta todavía debe configurarse en <code>game_meta.json</code>.`;
   const publicationStatus = jointlyPublished
     ? `<div class="vj-status-item vj-status-done">
         <span class="vj-status-icon" aria-hidden="true">✓</span>
-        <div><strong>Dos repositorios, una conversación</strong><p class="muted">La investigación conserva la autoridad empírica; el juego mantiene su código, assets y pruebas por separado.</p></div>
+        <div><strong>Dos capas, una conversación</strong><p class="muted">La investigación es pública y conserva la autoridad empírica; la beta es jugable, pero su código, assets y pruebas permanecen privados.</p></div>
       </div>`
     : `<div class="vj-status-item vj-status-progress">
         <span class="vj-status-icon" aria-hidden="true">→</span>
@@ -2804,7 +2804,7 @@ function renderLicencia() {
 
     <div class="lic-section">
       <h2>Publicación separada</h2>
-      <p>La investigación y el videojuego se publican en repositorios separados. Los textos públicos conservan CC BY-NC 4.0; el código, el arte y el audio del juego siguen reservados o sujetos a las condiciones de cada fuente.</p>
+      <p>La investigación se publica en este repositorio y el videojuego se ofrece como una beta web separada. El repositorio del juego es privado: su código, arte y audio siguen reservados o sujetos a las condiciones de cada fuente.</p>
     </div>
 
     <div class="lic-section" style="border-bottom:none;padding-bottom:0;">

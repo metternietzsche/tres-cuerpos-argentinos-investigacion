@@ -1,7 +1,9 @@
 # Videojuego v0.49 beta · frontera de evidencia
 
-El videojuego se publica en un repositorio autónomo:
-[metternietzsche/tres-cuerpos-argentinos-game](https://github.com/metternietzsche/tres-cuerpos-argentinos-game).
+El videojuego se ofrece como
+[beta web jugable](https://metternietzsche.github.io/tres-cuerpos-argentinos-game/).
+El repositorio de implementación es privado: jugar la beta no abre ni licencia
+su código, arte o audio.
 
 ## Estado validado
 

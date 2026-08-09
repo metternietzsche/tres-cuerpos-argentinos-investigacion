@@ -48,9 +48,11 @@ Luego abrir `http://localhost:8000/web/static_prototype/`.
 └── web/static_prototype/ # sitio doctrinario estático
 ```
 
-El juego se publica por separado en
-[tres-cuerpos-argentinos-game](https://github.com/metternietzsche/tres-cuerpos-argentinos-game).
-Esa separación evita que una construcción lúdica se presente como evidencia.
+El juego se despliega por separado como
+[beta web jugable](https://metternietzsche.github.io/tres-cuerpos-argentinos-game/).
+Su código permanece en un repositorio privado y bajo todos los derechos
+reservados. Esa separación evita que una construcción lúdica se presente como
+evidencia o que el acceso al juego implique una licencia sobre su código.
 
 ## Licencia y cita
 
