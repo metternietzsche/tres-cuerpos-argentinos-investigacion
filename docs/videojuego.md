@@ -1,7 +1,7 @@
 # Videojuego v0.49 beta · frontera de evidencia
 
 El videojuego se ofrece como
-[beta web jugable](https://metternietzsche.github.io/tres-cuerpos-argentinos-game/).
+[beta web jugable](https://trescuerpos.arcagaucha.com/).
 El repositorio de implementación es privado: jugar la beta no abre ni licencia
 su código, arte o audio.
 

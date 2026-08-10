@@ -4,6 +4,9 @@
 
 - Aclarado que la beta web del videojuego es pública, pero su repositorio de
   implementación y su código permanecen privados y bajo derechos reservados.
+- Dominios canónicos fijados en `lore.trescuerpos.arcagaucha.com` para la
+  investigación y `trescuerpos.arcagaucha.com` para el videojuego.
+- Documentadas las guardas DNS que preservan el correo de Arca Gaucha.
 
 ## v0.2.0 · 2026-08-09
 
