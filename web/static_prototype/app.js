@@ -2815,8 +2815,8 @@ function renderLicencia() {
     <div class="notice notice-amber" style="margin-top:2rem;">
       <strong>Contacto:</strong>
       <span class="lic-contact-links">
-        <a href="https://www.linkedin.com/in/lexbustosfrati/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        · <a href="https://github.com/metternietzsche" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://github.com/metternietzsche" target="_blank" rel="noopener noreferrer">GitHub</a>
+        · <a href="https://www.linkedin.com/in/lexbustosfrati/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         · <a href="https://www.threads.net/@lexy.futura" target="_blank" rel="noopener noreferrer">Threads</a>
         · <a href="https://alexandrabustosfrati.substack.com" target="_blank" rel="noopener noreferrer">Substack</a>
         · <a href="https://www.researchgate.net/profile/Alexandra-Bustos-Frati" target="_blank" rel="noopener noreferrer">ResearchGate</a>

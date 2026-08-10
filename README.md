@@ -4,6 +4,8 @@
 **Autora:** Alexandra Bustos Frati, PhD  
 **Estado empírico:** provisional; no apto todavía para cita académica formal
 
+**Dominio canónico:** `https://lore.trescuerpos.arcagaucha.com`
+
 Proyecto de investigación que mapea configuraciones político-epistémicas en los
 discursos presidenciales de la democracia argentina (1983–2025) mediante análisis
 computacional de texto.
@@ -49,7 +51,7 @@ Luego abrir `http://localhost:8000/web/static_prototype/`.
 ```
 
 El juego se despliega por separado como
-[beta web jugable](https://metternietzsche.github.io/tres-cuerpos-argentinos-game/).
+[beta web jugable](https://trescuerpos.arcagaucha.com/).
 Su código permanece en un repositorio privado y bajo todos los derechos
 reservados. Esa separación evita que una construcción lúdica se presente como
 evidencia o que el acceso al juego implique una licencia sobre su código.
@@ -62,9 +64,12 @@ las excepciones detalladas en [LICENSE.md](LICENSE.md).
 
 La cita estructurada está en [CITATION.cff](CITATION.cff).
 
+La configuración del dominio está documentada en
+[docs/DEPLOYMENT.md](docs/DEPLOYMENT.md).
+
 ## Contacto
 
-- [LinkedIn](https://www.linkedin.com/in/lexbustosfrati/)
 - [GitHub](https://github.com/metternietzsche)
+- [LinkedIn](https://www.linkedin.com/in/lexbustosfrati/)
 - [Substack](https://alexandrabustosfrati.substack.com)
 - [ResearchGate](https://www.researchgate.net/profile/Alexandra-Bustos-Frati)
