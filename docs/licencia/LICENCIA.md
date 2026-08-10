@@ -47,8 +47,8 @@ Prohibido sin licencia comercial escrita y separada otorgada por Alexandra Busto
 
 | Plataforma | Enlace |
 |-----------|--------|
-| LinkedIn | https://www.linkedin.com/in/lexbustosfrati/ |
 | GitHub | https://github.com/metternietzsche |
+| LinkedIn | https://www.linkedin.com/in/lexbustosfrati/ |
 | Threads | https://www.threads.net/@lexy.futura |
 | Substack | https://alexandrabustosfrati.substack.com |
 | ResearchGate | https://www.researchgate.net/profile/Alexandra-Bustos-Frati |

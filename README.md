@@ -69,7 +69,7 @@ La configuración del dominio está documentada en
 
 ## Contacto
 
-- [LinkedIn](https://www.linkedin.com/in/lexbustosfrati/)
 - [GitHub](https://github.com/metternietzsche)
+- [LinkedIn](https://www.linkedin.com/in/lexbustosfrati/)
 - [Substack](https://alexandrabustosfrati.substack.com)
 - [ResearchGate](https://www.researchgate.net/profile/Alexandra-Bustos-Frati)
