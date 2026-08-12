@@ -3,7 +3,7 @@
 // ─── Constants ─────────────────────────────────────────────────────────────────
 
 const DATA_PATH = 'data/';
-const PUBLICATION_CACHE_KEY = '20260805l';
+const PUBLICATION_CACHE_KEY = '20260811b';
 
 const DATA_FILES = [
   'site_meta.json',
@@ -160,18 +160,32 @@ function legendVectorLabel(vector) {
 }
 
 function buildActorVisual(actor, legends, detail = false) {
-  const visualClass = legends.length > 1 ? 'is-multiple' : legends.length === 1 ? 'is-single' : 'is-corpus-only';
+  const hasActorPortrait = !legends.length && Boolean(actor.portrait);
+  const visualClass = legends.length > 1
+    ? 'is-multiple'
+    : legends.length === 1
+      ? 'is-single'
+      : hasActorPortrait
+        ? 'is-single is-corpus-only has-documentary-portrait'
+        : 'is-corpus-only';
   const art = legends.length
     ? legends.slice(0, 2).map(legend =>
         `<img src="${esc(legend.portrait)}" alt="Retrato lúdico de ${esc(legend.incarnation)}" loading="lazy">`
       ).join('')
-    : `<span class="actor-monogram" aria-hidden="true">${esc(actorInitials(actor.display_name))}</span>`;
+    : hasActorPortrait
+      ? `<img src="${esc(actor.portrait)}" alt="${esc(actor.portrait_alt || `Retrato documental de ${actor.display_name}`)}" loading="lazy">`
+      : `<span class="actor-monogram" aria-hidden="true">${esc(actorInitials(actor.display_name))}</span>`;
   const label = legends.length
     ? `${legends.length} ${legends.length === 1 ? 'Leyenda' : 'Leyendas'} en el juego`
-    : 'Sólo en el corpus';
+    : hasActorPortrait
+      ? 'Actor del corpus · sin Leyenda jugable'
+      : 'Sólo en el corpus';
+  const credit = hasActorPortrait && actor.portrait_source_url
+    ? `<small class="actor-visual-credit"><a href="${esc(actor.portrait_source_url)}" target="_blank" rel="noopener noreferrer">${esc(actor.portrait_credit || 'Fuente documental')}</a></small>`
+    : '';
   return `<div class="actor-visual ${visualClass} ${detail ? 'is-detail' : ''}">
     <div class="actor-visual-art">${art}</div>
-    <span class="actor-visual-caption">${esc(label)}</span>
+    <span class="actor-visual-caption">${esc(label)}${credit}</span>
   </div>`;
 }
 

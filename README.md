@@ -1,6 +1,6 @@
 # El problema de los tres cuerpos argentinos
 
-**Sitio doctrinario y publicación v0.4.1**
+**Sitio doctrinario y publicación v0.4.2**
 **Autora:** Alexandra Bustos Frati, PhD  
 **Estado empírico:** provisional; no apto todavía para cita académica formal
 

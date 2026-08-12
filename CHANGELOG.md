@@ -4,6 +4,12 @@
 
 - Sin cambios.
 
+## v0.4.2 · 2026-08-11
+
+- Incorporado un retrato documental de Adolfo Rodríguez Saá en su ficha del
+  corpus, sin presentarlo como Leyenda jugable.
+- Añadidas atribución, fuente y licencia CC BY 2.0 visibles y trazables.
+
 ## v0.4.1 · 2026-08-11
 
 - Corregidas las fichas de Actores y Leyendas: ahora usan quince retratos WebP

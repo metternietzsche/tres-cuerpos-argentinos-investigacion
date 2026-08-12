@@ -779,6 +779,22 @@ strong { color: var(--text); }
   letter-spacing: .07em;
   text-transform: uppercase;
 }
+.actor-visual-credit {
+  display: block;
+  margin-top: .24rem;
+  color: var(--text-2);
+  font-size: .52rem;
+  letter-spacing: 0;
+  line-height: 1.25;
+  text-transform: none;
+}
+.actor-visual-credit a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: rgba(174,204,226,.34);
+  text-underline-offset: 2px;
+}
+.actor-visual-credit a:hover { color: var(--paper); }
 .actor-monogram {
   place-self: center;
   font-family: Georgia, serif;
