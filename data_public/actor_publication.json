@@ -3,11 +3,11 @@
   "game_version": "v0.43",
   "source_note": "Correspondencia editorial basada en NB17–NB21. El videojuego queda fuera de esta recalibración.",
   "layers": {
-    "research_title": "Diez personas · doce unidades de mandato",
-    "research_description": "La investigación agrupa los documentos por actor × mandato: Menem I/II y CFK I/II son unidades distintas. Las fichas personales sirven como acceso editorial y no definen una personalidad política.",
+    "research_title": "Once personas medidas · dos pipelines",
+    "research_description": "Diez personas forman doce unidades actor × mandato en HCDN. Perón agrega dos fases medidas, 1946 y 1954, mediante una pipeline histórica separada. Las fichas personales sirven como acceso editorial y no definen una personalidad política.",
     "game_title": "Leyendas jugables",
     "game_description": "Son quince encarnaciones diseñadas para el Modo Leyenda. El juego separa momentos de una misma persona cuando cambian su configuración y sus firmas. Cada Leyenda entra al presente: no reconstruye una biografía ni autoriza una clasificación histórica.",
-    "difference_note": "Las unidades de investigación y las Leyendas jugables no son equivalentes. El mapa separa mandatos; el juego separa encarnaciones cuando el diseño lo requiere. Perón pertenece a una pipeline histórica aparte y Rodríguez Saá no tiene Leyenda jugable."
+    "difference_note": "Las unidades de investigación y las Leyendas jugables no son equivalentes. Perón es un actor medido con fuente y escala propias; por eso ocupa un bloque histórico anterior al corpus HCDN y no un punto del mismo mapa numérico. Rodríguez Saá no tiene Leyenda jugable."
   },
   "actors": [
     {

@@ -709,6 +709,7 @@ strong { color: var(--text); }
   gap: 1rem;
   margin: 0 0 1.5rem;
 }
+.actor-grid-historical { grid-template-columns: minmax(0, 1fr); }
 .actor-card {
   min-width: 0;
   min-height: 238px;
@@ -718,6 +719,21 @@ strong { color: var(--text); }
   border: 1px solid var(--line);
   overflow: hidden;
   transition: border-color .2s, transform .2s;
+}
+.actor-card-historical {
+  min-height: 280px;
+  grid-template-columns: 220px minmax(0, 1fr);
+  background:
+    linear-gradient(105deg, rgba(239,182,75,.055), transparent 48%),
+    rgba(13,20,32,.88);
+  border-color: rgba(239,182,75,.3);
+}
+.actor-card-historical .actor-visual { min-height: 280px; }
+.actor-config-caveat {
+  margin-left: .35rem;
+  color: var(--text-3);
+  font-family: var(--font-mono);
+  font-size: .66rem;
 }
 .actor-card:hover { border-color: rgba(174,204,226,.34); transform: translateY(-2px); }
 .actor-card.tier-3 { border-color: rgba(239,182,75,.2); }

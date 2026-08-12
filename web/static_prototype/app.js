@@ -3,7 +3,7 @@
 // ─── Constants ─────────────────────────────────────────────────────────────────
 
 const DATA_PATH = 'data/';
-const PUBLICATION_CACHE_KEY = '20260811c';
+const PUBLICATION_CACHE_KEY = '20260811d';
 
 const DATA_FILES = [
   'site_meta.json',
@@ -1279,20 +1279,22 @@ function buildConfigCard(c, allActors) {
 
 function renderActores() {
   const actors = (D.actors_hcdn || []).filter(a => a.include_in_actor_map !== false);
+  const peronPhases = D.peron_phase_cards || [];
   const publication = D.actor_publication || {};
   const layers = publication.layers || {};
   const legends = publication.legends || [];
+  const peronLegends = legends.filter(legend => String(legend.id || '').startsWith('peron_'));
   return `<section class="page-section">
     <div class="breadcrumb"><a href="#inicio">Inicio</a> <span>›</span> Actores y Leyendas</div>
     <div class="actor-page-header">
       <div class="actor-page-kicker">DOS CAPAS · UNA CORRESPONDENCIA EXPLÍCITA</div>
-      <h1>Actores del corpus y Leyendas del juego</h1>
-      <p class="hero-sub">La investigación agrupa documentos por persona. El videojuego construye encarnaciones jugables de momentos políticos.</p>
+      <h1>Actores medidos y Leyendas del juego</h1>
+      <p class="hero-sub">La investigación agrupa documentos por persona y conserva visible cuándo cambia la fuente. El videojuego construye encarnaciones jugables de momentos políticos.</p>
     </div>
 
     <div class="actor-layer-explainer" aria-label="Diferencia entre actores y Leyendas">
       <article>
-        <span class="actor-layer-number">10</span>
+        <span class="actor-layer-number">11</span>
         <div><h2>${esc(layers.research_title || 'Actores del corpus')}</h2><p>${esc(layers.research_description || '')}</p></div>
       </article>
       <article>
@@ -1303,9 +1305,20 @@ function renderActores() {
     </div>
 
     <nav class="actor-layer-jump" aria-label="Capas de actores y Leyendas">
-      <a href="#actores-corpus">Actores del corpus</a>
+      <a href="#actor-peron">Perón histórico</a>
+      <a href="#actores-corpus">Actores HCDN</a>
       <a href="#leyendas-jugables">Leyendas jugables</a>
     </nav>
+
+    <section id="actor-peron" class="actor-layer-section actor-historical-section">
+      <div class="actor-section-heading">
+        <div><span class="section-kicker">INVESTIGACIÓN · PIPELINE HISTÓRICA 1946–1954</span><h2>El primer actor medido</h2></div>
+        <p>Fuente y escala separadas del corpus HCDN; la diferencia impide mezclar cifras, no excluir al actor.</p>
+      </div>
+      <div class="actor-grid actor-grid-historical">
+        ${buildPeronActorCard(peronPhases, peronLegends)}
+      </div>
+    </section>
 
     <section id="actores-corpus" class="actor-layer-section">
       <div class="actor-section-heading">
@@ -1353,6 +1366,29 @@ function buildActorCard(a) {
           : 'Sin Leyenda jugable en v0.49 beta'}
       </div>
       <a href="#actores/${esc(a.actor_id)}" class="actor-card-link">Abrir ficha del corpus →</a>
+    </div>
+  </article>`;
+}
+
+function buildPeronActorCard(phases, legends) {
+  const measured = phases.filter(phase => !phase.blocked && phase.configuration_hypothesis);
+  const measuredYears = measured.map(phase => phase.year).filter(Boolean);
+  const coverage = measuredYears.length ? measuredYears.join(' · ') : 'Sin fases disponibles';
+  const peronActor = { display_name: 'Juan Domingo Perón' };
+  return `<article class="actor-card actor-card-historical tier-3">
+    ${buildActorVisual(peronActor, legends)}
+    <div class="actor-card-copy">
+      <div class="actor-kind">ACTOR MEDIDO · PIPELINE HISTÓRICA</div>
+      <div class="actor-name">Juan Domingo Perón</div>
+      <div class="actor-period"><span>Cobertura documental medida</span>${esc(coverage)}</div>
+      <div class="actor-config-label">Síntesis de fases</div>
+      <div class="actor-config-line"><code>MES + PAT</code> <span class="actor-config-caveat">escala propia</span></div>
+      <div class="actor-meta-row">
+        ${measured.length} documentos medidos · fuente separada de HCDN
+      </div>
+      <div class="actor-game-status is-empty">1973 · fuente primaria bloqueada</div>
+      <div class="actor-game-status">${legends.length} correspondencias jugables</div>
+      <a href="#evidencia/peron" class="actor-card-link">Abrir evidencia histórica →</a>
     </div>
   </article>`;
 }
@@ -1499,7 +1535,7 @@ function renderPeronMethodSection() {
     <hr class="light">
     <div class="section-kicker">CONTRAPUNTO · FUERA DE LA SERIE 1983–2026</div>
     <h3>§3.1 — Perón: otra fuente, otra escala</h3>
-    <p>Perón no constituye una vista paralela ni un punto adicional del mapa democrático. Es un caso metodológico que permite probar el marco conceptual con otra documentación, otro período y otro instrumento.</p>
+    <p>Perón es un actor medido mediante una pipeline histórica propia. No constituye un punto adicional del mapa democrático porque su fuente y su escala no son numéricamente comparables; esa separación metodológica no lo excluye del registro de actores.</p>
     <div class="notice notice-red">
       <p><strong>Separación estructural:</strong> Los períodos peronistas (1946–1955 y 1973–1974)
          son anteriores a la transición democrática de 1983. El HCDN no constituyó el corpus

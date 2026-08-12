@@ -4,6 +4,15 @@
 
 - Sin cambios.
 
+## v0.4.4 · 2026-08-11
+
+- Incorporado Perón como actor medido en un bloque histórico propio, anterior
+  a los actores HCDN por orden cronológico.
+- Preservada la separación metodológica: 1946 y 1954 usan una pipeline y una
+  escala distintas; 1973 permanece bloqueado por falta de fuente verificable.
+- Actualizado el encabezado a once personas medidas y dos pipelines, sin sumar
+  a Perón como punto numéricamente comparable del mapa democrático.
+
 ## v0.4.3 · 2026-08-11
 
 - Reemplazada la fotografía documental de Rodríguez Saá por un retrato
