@@ -43,6 +43,17 @@ Prohibido sin licencia comercial escrita y separada otorgada por Alexandra Busto
 
 ---
 
+## Procedencia de referencias visuales
+
+El retrato ilustrado de Rodríguez Saá es una pieza original de la serie. Para
+preservar su identidad se utilizó como referencia *Adolfo Rodríguez Saá.jpg*,
+atribuida a la Presidencia de la Nación Argentina y publicada en
+[Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Adolfo_Rodríguez_Saá.jpg)
+bajo [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/). La fotografía
+no forma parte de los assets distribuidos por el sitio.
+
+---
+
 ## Contacto
 
 | Plataforma | Enlace |
