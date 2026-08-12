@@ -2,7 +2,8 @@
 
 ## Sin publicar
 
-- Sin cambios.
+- Corregidas las fichas de Actores y Leyendas: ahora usan quince retratos WebP
+  editoriales independientes y no rutas hacia el runtime privado del juego.
 
 ## v0.4.0 · 2026-08-11
 

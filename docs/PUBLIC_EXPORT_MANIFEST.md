@@ -29,10 +29,10 @@ su build ni sus assets de runtime.
 | `web/static_prototype/app.js` | `generate` | Retirar publicación conjunta y enlazar al repo real del juego. |
 | `web/static_prototype/styles.css` | `include` | Estilos del sitio. |
 | `web/static_prototype/data/` | `include` | Datos del sitio, sin runtime del juego. |
-| `web/static_prototype/assets/` | `include` | Logo y capturas editoriales seleccionadas. |
+| `web/static_prototype/assets/` | `include` | Logo, figuras y quince retratos editoriales WebP optimizados para el puente con las Leyendas. |
 | `web/static_prototype/game/` | `exclude` | Build v0.42 obsoleto y duplicado. |
 | `web/static_prototype/mobile_game_concept/` | `exclude` | Prototipo interno. |
-| `audio/`, `card-art/`, `hand-art/`, `legend-art/`, `scenario-art/`, `table-art/` | `exclude` | Assets runtime pertenecen al repo del juego. |
+| `audio/`, `card-art/`, `hand-art/`, `legend-art/`, `scenario-art/`, `table-art/` | `exclude` | Los árboles completos del runtime pertenecen al repo del juego; sólo se publican derivados editoriales seleccionados bajo `assets/`. |
 | `audit/` | `exclude` | Auditoría interna pesada. |
 | `PUBLICATION_MANIFEST_v0_1.md`, `PUBLICATION_MANIFEST_v0_2.md` | `release-only` | Conservar fuera del clone inicial. |
 | `PUBLICATION_NOTES.md` | `exclude` | Decisión conjunta ya reemplazada. |

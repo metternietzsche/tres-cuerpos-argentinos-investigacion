@@ -120,7 +120,7 @@
       "year_ref": 1946,
       "actor_id": null,
       "dominant_vector": "PAT",
-      "portrait": "game/legend-art/v17/peron_I_1946.png"
+      "portrait": "assets/portraits/peron_I_1946.webp"
     },
     {
       "id": "peron_II_1951",
@@ -129,7 +129,7 @@
       "year_ref": 1951,
       "actor_id": null,
       "dominant_vector": "PAT",
-      "portrait": "game/legend-art/v17/peron_II_1951.png"
+      "portrait": "assets/portraits/peron_II_1951.webp"
     },
     {
       "id": "peron_III_1973",
@@ -138,7 +138,7 @@
       "year_ref": 1973,
       "actor_id": null,
       "dominant_vector": "PAT",
-      "portrait": "game/legend-art/v17/peron_III_1973.png"
+      "portrait": "assets/portraits/peron_III_1973.webp"
     },
     {
       "id": "alfonsin_1983",
@@ -147,7 +147,7 @@
       "year_ref": 1983,
       "actor_id": "alfonsin",
       "dominant_vector": "MES",
-      "portrait": "game/legend-art/v17/alfonsin_1983.png"
+      "portrait": "assets/portraits/alfonsin_1983.webp"
     },
     {
       "id": "alfonsin_1986",
@@ -156,7 +156,7 @@
       "year_ref": 1986,
       "actor_id": "alfonsin",
       "dominant_vector": "TEC",
-      "portrait": "game/legend-art/v17/alfonsin_1986.png"
+      "portrait": "assets/portraits/alfonsin_1986.webp"
     },
     {
       "id": "menem_I_1989",
@@ -165,7 +165,7 @@
       "year_ref": 1989,
       "actor_id": "menem",
       "dominant_vector": "MES",
-      "portrait": "game/legend-art/v17/menem_I_1989.png"
+      "portrait": "assets/portraits/menem_I_1989.webp"
     },
     {
       "id": "menem_II_1995",
@@ -174,7 +174,7 @@
       "year_ref": 1995,
       "actor_id": "menem",
       "dominant_vector": "PAT",
-      "portrait": "game/legend-art/v17/menem_II_1995.png"
+      "portrait": "assets/portraits/menem_II_1995.webp"
     },
     {
       "id": "delarua_2000",
@@ -183,7 +183,7 @@
       "year_ref": 2000,
       "actor_id": "delarua",
       "dominant_vector": "PAT",
-      "portrait": "game/legend-art/v17/delarua_2000.png"
+      "portrait": "assets/portraits/delarua_2000.webp"
     },
     {
       "id": "duhalde_2002",
@@ -192,7 +192,7 @@
       "year_ref": 2002,
       "actor_id": "duhalde",
       "dominant_vector": "MES",
-      "portrait": "game/legend-art/v17/duhalde_2002.png"
+      "portrait": "assets/portraits/duhalde_2002.webp"
     },
     {
       "id": "nestor_kirchner_2003",
@@ -201,7 +201,7 @@
       "year_ref": 2003,
       "actor_id": "kirchner",
       "dominant_vector": "PAT",
-      "portrait": "game/legend-art/v17/nestor_kirchner_2003.png"
+      "portrait": "assets/portraits/nestor_kirchner_2003.webp"
     },
     {
       "id": "cfk_I_2007",
@@ -210,7 +210,7 @@
       "year_ref": 2007,
       "actor_id": "cfk",
       "dominant_vector": "TEC",
-      "portrait": "game/legend-art/v17/cfk_I_2007.png"
+      "portrait": "assets/portraits/cfk_I_2007.webp"
     },
     {
       "id": "cfk_II_2011",
@@ -219,7 +219,7 @@
       "year_ref": 2011,
       "actor_id": "cfk",
       "dominant_vector": "TEC",
-      "portrait": "game/legend-art/v17/cfk_II_2011.png"
+      "portrait": "assets/portraits/cfk_II_2011.webp"
     },
     {
       "id": "macri_2015",
@@ -228,7 +228,7 @@
       "year_ref": 2015,
       "actor_id": "macri",
       "dominant_vector": "TEC",
-      "portrait": "game/legend-art/v17/macri_2015.png"
+      "portrait": "assets/portraits/macri_2015.webp"
     },
     {
       "id": "albertoF_2019",
@@ -237,7 +237,7 @@
       "year_ref": 2019,
       "actor_id": "albertof",
       "dominant_vector": "PAT",
-      "portrait": "game/legend-art/v17/albertoF_2019.png"
+      "portrait": "assets/portraits/albertoF_2019.webp"
     },
     {
       "id": "milei_2023",
@@ -246,7 +246,7 @@
       "year_ref": 2023,
       "actor_id": "milei",
       "dominant_vector": "TEC",
-      "portrait": "game/legend-art/v17/milei_2023.png"
+      "portrait": "assets/portraits/milei_2023.webp"
     }
   ]
 }
