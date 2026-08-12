@@ -3,7 +3,7 @@
 // ─── Constants ─────────────────────────────────────────────────────────────────
 
 const DATA_PATH = 'data/';
-const PUBLICATION_CACHE_KEY = '20260811b';
+const PUBLICATION_CACHE_KEY = '20260811c';
 
 const DATA_FILES = [
   'site_meta.json',
@@ -180,12 +180,9 @@ function buildActorVisual(actor, legends, detail = false) {
     : hasActorPortrait
       ? 'Actor del corpus · sin Leyenda jugable'
       : 'Sólo en el corpus';
-  const credit = hasActorPortrait && actor.portrait_source_url
-    ? `<small class="actor-visual-credit"><a href="${esc(actor.portrait_source_url)}" target="_blank" rel="noopener noreferrer">${esc(actor.portrait_credit || 'Fuente documental')}</a></small>`
-    : '';
   return `<div class="actor-visual ${visualClass} ${detail ? 'is-detail' : ''}">
     <div class="actor-visual-art">${art}</div>
-    <span class="actor-visual-caption">${esc(label)}${credit}</span>
+    <span class="actor-visual-caption">${esc(label)}</span>
   </div>`;
 }
 

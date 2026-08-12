@@ -4,6 +4,15 @@
 
 - Sin cambios.
 
+## v0.4.3 · 2026-08-11
+
+- Reemplazada la fotografía documental de Rodríguez Saá por un retrato
+  ilustrado original coherente con la serie visual de las quince Leyendas.
+- Retirados de la tarjeta el tratamiento excepcional y la atribución visual
+  que rompían la gramática de la pestaña.
+- Conservada la distinción conceptual: tiene retrato como actor del corpus,
+  pero no se lo presenta como Leyenda jugable.
+
 ## v0.4.2 · 2026-08-11
 
 - Incorporado un retrato documental de Adolfo Rodríguez Saá en su ficha del

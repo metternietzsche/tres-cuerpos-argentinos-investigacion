@@ -14,7 +14,6 @@
 | Código del prototipo web | Todos los derechos reservados |
 | Datasets, notebooks, corpus | No cubiertos automáticamente — pendiente de revisión |
 | Logo, marca, identidad visual | Todos los derechos reservados |
-| Retrato documental de Rodríguez Saá | **CC BY 2.0** · Presidencia de la Nación Argentina |
 
 ---
 
@@ -41,14 +40,6 @@ Cita sugerida:
 ## Uso comercial
 
 Prohibido sin licencia comercial escrita y separada otorgada por Alexandra Bustos Frati, PhD.
-
-## Material documental de terceros
-
-El retrato `assets/portraits/rodriguezsa_2001.webp` deriva de
-[*Adolfo Rodríguez Saá.jpg*](https://commons.wikimedia.org/wiki/File:Adolfo_Rodríguez_Saá.jpg),
-atribuido a la Presidencia de la Nación Argentina y distribuido bajo
-[CC BY 2.0](https://creativecommons.org/licenses/by/2.0/). La copia publicada
-fue redimensionada y convertida a WebP sin alterar su contenido editorial.
 
 ---
 

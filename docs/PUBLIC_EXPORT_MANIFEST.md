@@ -1,7 +1,7 @@
 # Manifiesto de export público de investigación v0.4
 
 **Repositorio objetivo:** `metternietzsche/tres-cuerpos-argentinos-investigacion`  
-**Versión:** `v0.4.2`
+**Versión:** `v0.4.3`
 **Fuente:** `web/static_prototype/` + derivados promovidos NB17–NB21
 **Fecha:** 2026-08-11
 
@@ -29,7 +29,7 @@ su build ni sus assets de runtime.
 | `web/static_prototype/app.js` | `generate` | Retirar publicación conjunta y enlazar al repo real del juego. |
 | `web/static_prototype/styles.css` | `include` | Estilos del sitio. |
 | `web/static_prototype/data/` | `include` | Datos del sitio, sin runtime del juego. |
-| `web/static_prototype/assets/` | `include` | Logo, figuras, quince retratos lúdicos y un retrato documental WebP con atribución propia. |
+| `web/static_prototype/assets/` | `include` | Logo, figuras y dieciséis retratos editoriales WebP: quince Leyendas y Rodríguez Saá como actor del corpus. |
 | `web/static_prototype/game/` | `exclude` | Build v0.42 obsoleto y duplicado. |
 | `web/static_prototype/mobile_game_concept/` | `exclude` | Prototipo interno. |
 | `audio/`, `card-art/`, `hand-art/`, `legend-art/`, `scenario-art/`, `table-art/` | `exclude` | Los árboles completos del runtime pertenecen al repo del juego; sólo se publican derivados editoriales seleccionados bajo `assets/`. |

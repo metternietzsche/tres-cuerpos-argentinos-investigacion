@@ -22,11 +22,6 @@ La atribución requerida es: **Alexandra Bustos Frati, PhD**.
 | Materiales de terceros | Conservan su licencia y atribución originales. |
 | Videojuego | Vive en otro repositorio y conserva su propia licencia. |
 
-El retrato documental `assets/portraits/rodriguezsa_2001.webp` deriva de
-*Adolfo Rodríguez Saá.jpg*, Presidencia de la Nación Argentina, publicado en
-Wikimedia Commons bajo **CC BY 2.0**. Fue redimensionado y convertido a WebP.
-Fuente: https://commons.wikimedia.org/wiki/File:Adolfo_Rodríguez_Saá.jpg
-
 El uso comercial requiere una autorización escrita y separada de la autora.
 
 ## Estado editorial
