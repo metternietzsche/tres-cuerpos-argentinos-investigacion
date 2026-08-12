@@ -67,34 +67,34 @@
   },
   {
     "roadmap_id": "P5",
-    "title": "Corpus Milei ampliado a n≥4",
-    "description": "El inaugural de diciembre de 2023 posiblemente no fue procesado. La apertura de 2026 estará disponible al inicio del período legislativo. Con cuatro documentos, la hipótesis de tecnocracia+mesianismo puede evaluarse.",
-    "status": "pendiente",
+    "title": "Completar la línea Milei a n≥4",
+    "description": "Las aperturas 2024–2026 forman el calibrador longitudinal. Resta integrar cuantitativamente la asunción de diciembre 2023 y replicar la adjudicación con codificación humana independiente.",
+    "status": "parcial",
     "depends_on": [],
     "unlocks": [
       "P7"
     ],
     "related_blocked_content": [],
     "priority": "media",
-    "source_reference": "MAPA_ORBITAL_ARGENTINO_v0_1.md §9"
+    "source_reference": "NB17–NB21 + WHITEPAPER v0.4 §11"
   },
   {
     "roadmap_id": "P6",
-    "title": "Decisión sobre re-run completo de pipeline HCDN v1",
-    "description": "La corrección del perfil de Macri de 2026 fue aplicada mediante patch. Un re-run completo produciría agregaciones validadas para todos los actores.",
-    "status": "pendiente",
+    "title": "Completar réplica humana del re-run HCDN por actor × mandato",
+    "description": "NB17–NB21 ya congelaron 52 documentos, corrigieron la ventana de Rodríguez Saá, aplicaron el instrumento simétrico a 1.048 señales y publicaron LODO, bootstrap y trayectoria. Resta doble codificación humana o muestra estratificada suficiente, adjudicación de desacuerdos y cierre de brechas del corpus.",
+    "status": "parcial",
     "depends_on": [],
     "unlocks": [
       "P7"
     ],
     "related_blocked_content": [],
     "priority": "media",
-    "source_reference": "MAPA_ORBITAL_ARGENTINO_v0_1.md §9"
+    "source_reference": "METHOD_PIPELINE_v0_2 + WHITEPAPER v0.4 §11"
   },
   {
     "roadmap_id": "P7",
     "title": "Producción de MAPA_ORBITAL_ARGENTINO_v1.md",
-    "description": "Solo con las condiciones P1–P6 satisfechas será posible producir el mapa integrado que incluya a Perón y al corpus democrático en el mismo marco interpretativo controlado.",
+    "description": "Solo con P1–P6 satisfechas será posible caracterizar de manera integrada el campo del discurso presidencial argentino, manteniendo explícitos los tiers y sin forzar a Perón dentro de la escala numérica HCDN.",
     "status": "bloqueado",
     "depends_on": [
       "P4",
@@ -106,6 +106,6 @@
       "PERON_1973_ASUNCION_BLOQUEADA"
     ],
     "priority": "alta",
-    "source_reference": "MAPA_ORBITAL_ARGENTINO_v0_1.md §9"
+    "source_reference": "WHITEPAPER v0.4 §11 / MAPA_ORBITAL_ARGENTINO_v0_4.md"
   }
 ]

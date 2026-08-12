@@ -1,0 +1,164 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="drawio" version="26.0.0">
+  <diagram name="Mapa orbital v0.4">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" page="1" pageWidth="1800" pageHeight="1400">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="MAPA ORBITAL ARGENTINO · v0.4" style="text;html=1;fontSize=25;fontStyle=1;fontColor=#F3D98A;align=left;" vertex="1" parent="1">
+          <mxGeometry x="40" y="30" width="900" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="sub" value="52 documentos · función antes que conteo · promedio y trayectoria separados" style="text;html=1;fontSize=13;fontColor=#E5D5B9;align=left;" vertex="1" parent="1">
+          <mxGeometry x="40" y="76" width="1100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="row0" value="01 · Alfonsín&amp;#xa;1983–1989 · n=8" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4B1014;strokeColor=#7B333B;fontColor=#FFF7E6;align=left;spacingLeft=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="130" width="420" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="cfg0" value="PAT↔TEC" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#271E1B;strokeColor=#D3A52D;fontColor=#FFF7E6;fontSize=16;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="500" y="136" width="210" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="status0" value="TRAYECTORIA INESTABLE" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8B45C;strokeColor=none;fontColor=#1D1713;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="750" y="136" width="260" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="reason0" value="La masa agregada favorece PAT, pero cinco transiciones documentales y dos cierres MES→TEC impiden convertirla en tipo fijo." style="text;html=1;whiteSpace=wrap;fontColor=#E5D5B9;fontSize=10;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="130" width="650" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="row1" value="02 · Menem I&amp;#xa;1989–1995 · n=6" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4B1014;strokeColor=#7B333B;fontColor=#FFF7E6;align=left;spacingLeft=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="208" width="420" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="cfg1" value="PAT→TEC" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#271E1B;strokeColor=#D3A52D;fontColor=#FFF7E6;fontSize=16;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="500" y="214" width="210" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="status1" value="ESTABLE" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#9BD6B2;strokeColor=none;fontColor=#1D1713;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="750" y="214" width="260" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="reason1" value="PAT encuadra beneficiarios y continuidad; TEC ejecuta la transformación y aporta prueba." style="text;html=1;whiteSpace=wrap;fontColor=#E5D5B9;fontSize=10;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="208" width="650" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="row2" value="03 · Menem II&amp;#xa;1995–1999 · n=5" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4B1014;strokeColor=#7B333B;fontColor=#FFF7E6;align=left;spacingLeft=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="286" width="420" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="cfg2" value="PAT→TEC" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#271E1B;strokeColor=#D3A52D;fontColor=#FFF7E6;fontSize=16;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="500" y="292" width="210" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="status2" value="ESTABLE" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#9BD6B2;strokeColor=none;fontColor=#1D1713;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="750" y="292" width="260" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="reason2" value="La segunda presidencia conserva la pareja y la flecha bajo siete de ocho controles LODO." style="text;html=1;whiteSpace=wrap;fontColor=#E5D5B9;fontSize=10;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="286" width="650" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="row3" value="04 · De la Rúa&amp;#xa;1999–2001 · n=3" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4B1014;strokeColor=#7B333B;fontColor=#FFF7E6;align=left;spacingLeft=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="364" width="420" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="cfg3" value="PAT↔TEC" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#271E1B;strokeColor=#D3A52D;fontColor=#FFF7E6;fontSize=16;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="500" y="370" width="210" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="status3" value="TRAYECTORIA INESTABLE" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8B45C;strokeColor=none;fontColor=#1D1713;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="750" y="370" width="260" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="reason3" value="La secuencia pasa de PAT→TEC a equilibrio y luego TEC↔PAT; el agregado no resuelve una dirección histórica única." style="text;html=1;whiteSpace=wrap;fontColor=#E5D5B9;fontSize=10;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="364" width="650" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="row4" value="05 · R. Saá&amp;#xa;2001 · n=1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4B1014;strokeColor=#7B333B;fontColor=#FFF7E6;align=left;spacingLeft=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="442" width="420" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="cfg4" value="PAT→MES" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#271E1B;strokeColor=#D3A52D;fontColor=#FFF7E6;fontSize=16;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="500" y="448" width="210" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="status4" value="BAJA N" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C7A6E8;strokeColor=none;fontColor=#1D1713;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="750" y="448" width="260" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="reason4" value="PAT organiza la promesa material y MES dramatiza la excepción; n=1 exige cautela máxima." style="text;html=1;whiteSpace=wrap;fontColor=#E5D5B9;fontSize=10;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="442" width="650" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="row5" value="06 · Duhalde&amp;#xa;2002–2003 · n=3" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4B1014;strokeColor=#7B333B;fontColor=#FFF7E6;align=left;spacingLeft=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="520" width="420" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="cfg5" value="PAT→TEC" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#271E1B;strokeColor=#D3A52D;fontColor=#FFF7E6;fontSize=16;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="500" y="526" width="210" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="status5" value="SENSIBLE A FASE" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8B45C;strokeColor=none;fontColor=#1D1713;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="750" y="526" width="260" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="reason5" value="La asunción de crisis abre PAT↔MES; las aperturas siguientes estabilizan PAT→TEC." style="text;html=1;whiteSpace=wrap;fontColor=#E5D5B9;fontSize=10;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="520" width="650" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="row6" value="07 · N. Kirchner&amp;#xa;2003–2007 · n=5" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4B1014;strokeColor=#7B333B;fontColor=#FFF7E6;align=left;spacingLeft=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="598" width="420" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="cfg6" value="PAT→TEC" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#271E1B;strokeColor=#D3A52D;fontColor=#FFF7E6;fontSize=16;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="500" y="604" width="210" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="status6" value="TRAYECTORIA INESTABLE" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8B45C;strokeColor=none;fontColor=#1D1713;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="750" y="604" width="260" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="reason6" value="La pareja es estable, pero su dirección documental alterna; PAT gobierna el agregado y TEC realiza." style="text;html=1;whiteSpace=wrap;fontColor=#E5D5B9;fontSize=10;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="598" width="650" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="row7" value="08 · CFK I&amp;#xa;2007–2011 · n=4" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4B1014;strokeColor=#7B333B;fontColor=#FFF7E6;align=left;spacingLeft=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="676" width="420" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="cfg7" value="PAT→TEC" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#271E1B;strokeColor=#D3A52D;fontColor=#FFF7E6;fontSize=16;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="500" y="682" width="210" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="status7" value="ESTABLE" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#9BD6B2;strokeColor=none;fontColor=#1D1713;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="750" y="682" width="260" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="reason7" value="La recodificación funcional ordena la antigua indeterminación: PAT encuadra y TEC opera/prueba." style="text;html=1;whiteSpace=wrap;fontColor=#E5D5B9;fontSize=10;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="676" width="650" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="row8" value="09 · CFK II&amp;#xa;2011–2015 · n=5" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4B1014;strokeColor=#7B333B;fontColor=#FFF7E6;align=left;spacingLeft=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="754" width="420" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="cfg8" value="PAT→TEC" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#271E1B;strokeColor=#D3A52D;fontColor=#FFF7E6;fontSize=16;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="500" y="760" width="210" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="status8" value="SENSIBLE A FASE" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8B45C;strokeColor=none;fontColor=#1D1713;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="750" y="760" width="260" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="reason8" value="El agregado permanece PAT→TEC aunque 2011 y 2014 abren configuraciones alternativas." style="text;html=1;whiteSpace=wrap;fontColor=#E5D5B9;fontSize=10;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="754" width="650" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="row9" value="10 · Macri&amp;#xa;2015–2019 · n=5" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4B1014;strokeColor=#7B333B;fontColor=#FFF7E6;align=left;spacingLeft=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="832" width="420" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="cfg9" value="TEC↔PAT" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#271E1B;strokeColor=#D3A52D;fontColor=#FFF7E6;fontSize=16;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="500" y="838" width="210" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="status9" value="FRONTERA" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8B45C;strokeColor=none;fontColor=#1D1713;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="750" y="838" width="260" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="reason9" value="TEC domina gobierno activo, PAT organiza la asunción; el bootstrap no autoriza una flecha única." style="text;html=1;whiteSpace=wrap;fontColor=#E5D5B9;fontSize=10;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="832" width="650" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="row10" value="11 · A. Fernández&amp;#xa;2019–2023 · n=4" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4B1014;strokeColor=#7B333B;fontColor=#FFF7E6;align=left;spacingLeft=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="910" width="420" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="cfg10" value="PAT→TEC" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#271E1B;strokeColor=#D3A52D;fontColor=#FFF7E6;fontSize=16;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="500" y="916" width="210" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="status10" value="ESTABLE PROVISIONAL" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#9BD6B2;strokeColor=none;fontColor=#1D1713;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="750" y="916" width="260" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="reason10" value="PAT conserva el encuadre agregado y TEC opera; falta la apertura 2023." style="text;html=1;whiteSpace=wrap;fontColor=#E5D5B9;fontSize=10;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="910" width="650" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="row11" value="12 · Milei&amp;#xa;2023– · n=3" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4B1014;strokeColor=#7B333B;fontColor=#FFF7E6;align=left;spacingLeft=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="988" width="420" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="cfg11" value="MES→TEC↺" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#271E1B;strokeColor=#D3A52D;fontColor=#FFF7E6;fontSize=16;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="500" y="994" width="210" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="status11" value="CALIBRADOR LONGITUDINAL" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#9BD6B2;strokeColor=none;fontColor=#1D1713;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="750" y="994" width="260" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="reason11" value="MES define tiempo, enemigo, autoridad y telos; TEC ejecuta y sus resultados retrovalidan la misión. PAT queda subordinado." style="text;html=1;whiteSpace=wrap;fontColor=#E5D5B9;fontSize=10;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="988" width="650" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" value="↔ sin jerarquía autorizada · ↺ prueba que retrovalida · la inestabilidad es un resultado" style="text;html=1;fontSize=12;fontColor=#D3A52D;align=left;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1080" width="1300" height="35" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

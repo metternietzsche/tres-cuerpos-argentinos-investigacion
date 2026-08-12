@@ -1,0 +1,58 @@
+{
+  "schema_version": "HCDN_NB17_v0_3",
+  "unit": "nb04_match_within_validated_presidential_segment",
+  "required_fields": [
+    "blind_signal_id",
+    "polaridad",
+    "funcion_principal",
+    "funcion_secundaria",
+    "posicion",
+    "confidence",
+    "rationale"
+  ],
+  "enums": {
+    "polaridad": [
+      "afirmada",
+      "subordinada",
+      "atribuida",
+      "negada_rechazada",
+      "descriptiva"
+    ],
+    "funcion_principal": [
+      "tiempo",
+      "problema",
+      "autoridad",
+      "sujeto_enemigo",
+      "telos",
+      "sacrificio",
+      "medios",
+      "prueba"
+    ],
+    "funcion_secundaria": [
+      null,
+      "tiempo",
+      "problema",
+      "autoridad",
+      "sujeto_enemigo",
+      "telos",
+      "sacrificio",
+      "medios",
+      "prueba"
+    ],
+    "posicion": [
+      "encuadre",
+      "operacion",
+      "prueba",
+      "payload_beneficiario",
+      "exterior"
+    ],
+    "confidence": ["alta", "media", "baja"]
+  },
+  "constraints": {
+    "single_primary_function": true,
+    "secondary_function_has_zero_additional_weight": true,
+    "attributed_or_rejected_position": "exterior",
+    "rationale_max_words": 18,
+    "coder_blind_to_actor_year_prior_map_and_other_coder": true
+  }
+}

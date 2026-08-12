@@ -23,7 +23,7 @@ const DATA_FILES = [
 ];
 
 const TEXT_FILES = [
-  { file: 'WHITEPAPER_FULL_DRAFT_v0_3.md', key: 'whitepaper_v0_3' },
+  { file: 'WHITEPAPER_FULL_DRAFT_v0_4.md', key: 'whitepaper_v0_4' },
 ];
 
 const VECTOR_COLORS = {
@@ -296,9 +296,9 @@ const ROUTE_META = {
   'mapa-orbital': { title: 'Mapa orbital', description: 'Campo ternario interactivo con 52 discursos, doce unidades de mandato y los tres vectores simultáneos del corpus presidencial democrático argentino.' },
   actores: { title: 'Actores y Leyendas', description: 'Actores del corpus presidencial y su correspondencia explícita con las Leyendas jugables.' },
   evidencia: { title: 'Cómo leemos un discurso', description: 'Método, ejemplos, fuentes y límites para reconstruir relaciones entre los tres vectores.' },
-  whitepaper: { title: 'Whitepaper v0.3', description: 'Auditoría abductiva del mapa orbital con la prueba temporal Milei 2026 y una separación explícita entre masa, función y dirección.' },
+  whitepaper: { title: 'Whitepaper v0.4', description: 'Recalibración funcional simétrica de los tres vectores, con polaridad, función, posición, sensibilidad y trayectoria publicadas.' },
   figuras: { title: 'Figuras', description: 'Galería guiada de figuras empíricas del corpus HCDN.' },
-  videojuego: { title: 'Videojuego', description: 'Tres Cuerpos: República inestable, una traducción jugable del marco doctrinario.' },
+  videojuego: { title: 'Videojuego', description: 'Tres Cuerpos: República inestable, una traducción jugable del marco doctrinario desarrollada por Arca Gaucha.' },
   licencia: { title: 'Licencia', description: 'Licencias, atribución y condiciones de uso del sitio, los datos y el videojuego.' },
 };
 
@@ -504,7 +504,7 @@ function renderInicio() {
         </div>
         <!-- Content column -->
         <div class="inicio-hero-content-col">
-          <div class="inicio-hero-eyebrow">PROTOTIPO DE INVESTIGACIÓN · ${esc(meta.version || 'v0.3')} · CORPUS HCDN 1983–2026</div>
+          <div class="inicio-hero-eyebrow">PROTOTIPO DE INVESTIGACIÓN · ${esc(meta.version || 'v0.4')} · CORPUS HCDN 1983–2026</div>
           <h1 class="inicio-hero-headline">${esc(meta.site_title || 'El problema de los tres cuerpos argentinos')}</h1>
           <p class="inicio-hero-sub">Argentina no es un péndulo. Es un problema de tres cuerpos.</p>
           <nav class="cta-group inicio-hero-cta inicio-hero-nav" aria-label="Accesos principales del proyecto">
@@ -580,12 +580,12 @@ function renderInicio() {
         <div class="evidence-findings-list">
           <div class="ef-item">
             <div class="ef-label">Configuración modal</div>
-            <div class="ef-value">${colorConfig('paternalismo+tecnocracia')} — 48% del corpus</div>
+            <div class="ef-value">${colorConfig('paternalismo+tecnocracia')} — 58% del corpus</div>
             <div class="ef-note">Reúne a Menem y CFK, a De la Rúa y Kirchner. No es el sello de ninguna corriente política.</div>
           </div>
           <div class="ef-item">
             <div class="ef-label">Núcleo dominante</div>
-            <div class="ef-value">${colorConfig('tecnocracia')} / ${colorConfig('paternalismo')} — 85% del mapa adjudicado</div>
+            <div class="ef-value">${colorConfig('tecnocracia')} / ${colorConfig('paternalismo')} — 83% del mapa adjudicado</div>
             <div class="ef-note">Aparece en gobiernos con programas opuestos. El discurso y el programa son dimensiones separables.</div>
           </div>
           <div class="ef-item">
@@ -627,7 +627,7 @@ function renderInicio() {
           <a href="#videojuego" class="entry-card entry-card-vj">
             <div class="entry-card-icon" aria-hidden="true">▶</div>
             <div class="entry-card-title">Videojuego</div>
-            <div class="entry-card-desc">Build v0.49 beta jugable: el final distingue el cuerpo que conduce, el que lo obliga a negociar y el límite que ninguno resolvió.</div>
+            <div class="entry-card-desc">Beta v0.49 jugable: el final distingue el cuerpo que conduce, el que lo obliga a negociar y el límite que ninguno resolvió.</div>
           </a>
           <a href="#evidencia/roadmap" class="entry-card">
             <div class="entry-card-icon" aria-hidden="true">→</div>
@@ -648,7 +648,7 @@ function renderInicio() {
           </div>
           <div class="vj-teaser-content">
             <h3 class="vj-teaser-title">Una teoría que se puede jugar</h3>
-            <p><em>Tres Cuerpos: República Inestable</em> ya tiene un build v0.49 beta jugable: Carrera desde tres escalas y Modo Leyenda con quince Leyendas frente a conflictos contemporáneos.</p>
+            <p><em>Tres Cuerpos: República Inestable</em> ya tiene una beta v0.49 jugable: Carrera desde tres escalas y Modo Leyenda con quince Leyendas frente a conflictos contemporáneos.</p>
             <p>Las decisiones TEC, MES y PAT distribuyen capacidad, legitimidad, cohesión y costos. Las nuevas familias de acontecimientos traducen deep research a conflictos lúdicos sin convertir la partida en evidencia histórica.</p>
             <div class="cta-group mt-2">
               <a href="#videojuego"   class="btn btn-primary">Ver videojuego →</a>
@@ -660,7 +660,7 @@ function renderInicio() {
 
       <!-- ── CAVEAT STRIP ───────────────────────────────────────────────────────── -->
       <div class="inicio-caveat-strip" role="note">
-        <div class="cs-item">${buildBadgeGroup(['PROVISIONAL'])} v0.3 de trabajo — con fuentes, linaje y límites publicados</div>
+        <div class="cs-item">${buildBadgeGroup(['PROVISIONAL'])} v0.4 de trabajo — con fuentes, linaje y límites publicados</div>
         <div class="cs-sep" aria-hidden="true">·</div>
         <div class="cs-item">Discurso ≠ gobierno — el marco mide registro retórico, no política de Estado</div>
         <div class="cs-sep" aria-hidden="true">·</div>
@@ -714,8 +714,8 @@ function renderTesisLegacyV02() {
 
     <h3>El campo tiene tres cuerpos; cada mandato suele articular dos</h3>
     <p>La inestabilidad pertenece al conjunto de tres fuerzas, no a una pareja miserablemente aislada. Una presidencia no necesita encarnar los tres vectores a la vez. En el corpus suele poner dos en primer plano, normalmente con uno más organizador que el otro; el tercero conserva presión, límite o exterior polémico.</p>
-    <p>El 85% del mapa adjudicado (1983–2026) deja a tecnocracia y paternalismo en primer plano. Eso describe una inercia del campo, no una conciliación estable ni una identidad común de los gobiernos. En Milei, la relación principal es MES–TEC y PAT sigue presente como masa y frontera.</p>
-    <p>Por eso v0.3 separa tres preguntas: cuánto aparece cada vector, qué pareja organiza el texto y qué dirección tiene esa relación. Las respuestas pueden coincidir; en 2026, no coinciden.</p>
+    <p>El 83% del mapa adjudicado (1983–2026) deja a tecnocracia y paternalismo en primer plano. Eso describe una inercia del campo, no una conciliación estable ni una identidad común de los gobiernos. En Milei, la relación principal es MES–TEC y PAT sigue presente como masa y frontera.</p>
+    <p>Por eso v0.4 separa tres preguntas: cuánto aparece cada vector, qué pareja organiza el texto y qué dirección tiene esa relación. Las respuestas pueden coincidir; en 2026, no coinciden.</p>
 
     <hr class="light">
 
@@ -734,8 +734,8 @@ function renderTesisLegacyV02() {
     <h3>Qué muestra la evidencia limpia</h3>
     <p>Los hallazgos centrales del corpus democrático HCDN 1983–2026 (52 documentos, 10 personas, 12 unidades de mandato):</p>
     <ol class="tesis-findings-list">
-      <li><strong>La pareja tecnocracia/paternalismo domina (85%).</strong> Aparece en gobiernos de coaliciones radicalmente distintas: no es el sello de ninguna corriente política.</li>
-      <li><strong>La configuración modal es paternalismo + tecnocracia (48%).</strong> Reúne a Menem y CFK, a De la Rúa y Kirchner, con programas opuestos.</li>
+      <li><strong>La pareja tecnocracia/paternalismo domina (83%).</strong> Aparece en gobiernos de coaliciones radicalmente distintas: no es el sello de ninguna corriente política.</li>
+      <li><strong>La configuración dirigida modal es paternalismo → tecnocracia (58%).</strong> Reúne documentos de gobiernos con programas opuestos.</li>
       <li><strong>Los actores son trayectorias, no tipos.</strong> Alfonsín recorre 5 configuraciones en 8 documentos. El mesianismo aparece en los 3 momentos de crisis institucional, no en los demás.</li>
       <li><strong>La disociación discurso/gobierno es documentable.</strong> Menem: registro paternalista más alto del corpus durante la mayor reforma de mercado. El discurso y el programa son dimensiones separables.</li>
     </ol>
@@ -766,7 +766,7 @@ function renderTesisLegacyV02() {
 function renderTesis() {
   return `<section class="page-section tesis-page">
     <div class="breadcrumb"><a href="#inicio">Inicio</a> <span>›</span> La tesis</div>
-    <div class="section-kicker">TESIS v0.3 · MAPA ORBITAL 1983–2026</div>
+    <div class="section-kicker">TESIS v0.4 · MAPA ORBITAL 1983–2026</div>
     <h1>La tesis</h1>
     <p class="hero-sub">Tres fuerzas ordenan el campo; cada mandato resuelve, casi siempre, una relación entre dos.</p>
 
@@ -798,7 +798,7 @@ function renderTesis() {
 
     <hr class="light">
     <h3>Tres niveles de lectura</h3>
-    <p>La versión v0.3 evita pedirle a una sola cifra que responda preguntas distintas.</p>
+    <p>La versión v0.4 evita pedirle a una sola cifra que responda preguntas distintas.</p>
     <div class="tesis-reading-grid">
       <div class="tesis-reading-card">
         <span class="tesis-reading-n">1</span>
@@ -857,11 +857,11 @@ function renderTesis() {
     </section>
 
     <hr class="light">
-    <h3>Qué muestra el mapa v0.3</h3>
+    <h3>Qué muestra el mapa v0.4</h3>
     <p>El corpus democrático reúne 52 documentos, 10 personas y 12 unidades de actor por mandato. La separación por mandato es decisiva: Menem I y II, y CFK I y II, no se funden en una biografía única.</p>
     <ol class="tesis-findings-list">
-      <li><strong>TEC y PAT forman la pareja de primer plano en el 85% del mapa adjudicado.</strong> Es una inercia del campo, no una identidad política compartida.</li>
-      <li><strong>PAT→TEC es la configuración modal (48%).</strong> Reúne gobiernos con programas contrarios y confirma que discurso y programa no son equivalentes.</li>
+      <li><strong>TEC y PAT forman la pareja de primer plano en el 83% del mapa adjudicado.</strong> Es una inercia del campo, no una identidad política compartida.</li>
+      <li><strong>PAT→TEC es la configuración dirigida modal (58%).</strong> Reúne documentos de gobiernos con programas contrarios y confirma que discurso y programa no son equivalentes.</li>
       <li><strong>Los actores son trayectorias.</strong> Alfonsín atraviesa cinco configuraciones en ocho documentos; los mandatos largos muestran desplazamientos que una etiqueta personal ocultaría.</li>
       <li><strong>Milei amplía el catálogo.</strong> Entre 2024 y 2026, <code>MES→TEC↺</code> evoluciona desde la ruptura y el sacrificio hacia la prueba por resultados y la proyección civilizatoria.</li>
     </ol>
@@ -877,8 +877,8 @@ function renderTesis() {
     </ul>
 
     <div class="cta-group mt-4">
-      <a href="#mapa-orbital" class="btn btn-primary">Explorar el mapa v0.3 →</a>
-      <a href="#whitepaper" class="btn btn-secondary">Leer whitepaper v0.3</a>
+      <a href="#mapa-orbital" class="btn btn-primary">Explorar el mapa v0.4 →</a>
+      <a href="#whitepaper" class="btn btn-secondary">Leer whitepaper v0.4</a>
       <a href="#evidencia/metodologia" class="btn btn-secondary">Ver método</a>
     </div>
   </section>`;
@@ -1062,8 +1062,8 @@ function renderOrbitalOverview() {
   const documents = D.orbital_documents || [];
   const units = D.orbital_case_units || [];
   const tecPat = documents.filter(doc => {
-    const foreground = new Set([doc.dominant_vector, doc.secondary_vector]);
-    return foreground.has('tecnocracia') && foreground.has('paternalismo');
+    const notation = String(doc.adjudicated_notation || '');
+    return notation.includes('TEC') && notation.includes('PAT');
   }).length;
   return `<div class="orbital-inspector-kicker">CORPUS COMPLETO · HCDN 1983–2026</div>
     <h3>El campo antes que la etiqueta</h3>
@@ -1090,7 +1090,7 @@ function renderOrbitalActorInspector(caseUnitId, documentId = '') {
         <span>${unit.n_documents || 0} documentos</span>
         <span>${esc(unit.evidence_tier || '')}</span>
       </div>
-      <div class="orbital-actor-config">Base: ${esc(unit.baseline_notation || '—')} · v0.3: <strong>${esc(unit.adjudicated_notation || '—')}</strong></div>
+      <div class="orbital-actor-config">Base: ${esc(unit.baseline_notation || '—')} · v0.4: <strong>${esc(unit.adjudicated_notation || '—')}</strong></div>
       <p>${esc(publication.summary_es || 'La línea une sus documentos en orden temporal. La posición de cada punto conserva los tres vectores.')}</p>
       <div class="orbital-reading-condition"><strong>Estado:</strong> ${esc(unit.direction_status_es || unit.direction_status || '')} · ${esc(unit.pair_review_status || '')}</div>
       <p class="orbital-inspector-prompt">Activá un año en el campo o en la cronología para leer los tres cuerpos de ese documento.</p>`;
@@ -1113,7 +1113,7 @@ function renderOrbitalActorInspector(caseUnitId, documentId = '') {
     && doc.screen_configuration !== doc.adjudicated_configuration;
   return `<div class="orbital-inspector-kicker">${esc(unit.short_label || actor.display_name)} · DOCUMENTO</div>
     <h3>${esc(doc.year)}</h3>
-    <div class="orbital-document-config">Adjudicación v0.3: ${colorConfig(doc.adjudicated_configuration || doc.configuration)}${doc.adjudicated_notation ? ` · <strong>${esc(doc.adjudicated_notation)}</strong>` : ''}</div>
+    <div class="orbital-document-config">Adjudicación v0.4: ${colorConfig(doc.adjudicated_configuration || doc.configuration)}${doc.adjudicated_notation ? ` · <strong>${esc(doc.adjudicated_notation)}</strong>` : ''}</div>
     ${screenConflict ? `<div class="notice notice-amber"><p><strong>La masa y la función discrepan.</strong> La pantalla léxica marca ${colorConfig(doc.screen_configuration)}; NB15 adjudica ${colorConfig(doc.adjudicated_configuration)}. El punto conserva los pesos de pantalla y la ficha publica la decisión funcional.</p></div>` : ''}
     <p class="orbital-strength">${esc(orbitalStrengthLabel(doc.attractor_strength))}</p>
     <div class="orbital-weight-list" aria-label="Orden relativo de los tres vectores">${bars}</div>
@@ -1178,7 +1178,7 @@ function renderMapaOrbital() {
         <span><strong>2.</strong> Cada punto usa los tres pesos.</span>
         <span><strong>3.</strong> La línea temporal es la órbita del mandato.</span>
       </div>
-      <p class="muted mapa-tc-footer"><code>PAT+TEC</code> resume sólo el primer plano: PAT encuadra y TEC modula. El tercer cuerpo sigue dentro del cálculo y de la posición. La abreviatura no convierte al sistema en una pareja autónoma.</p>
+      <p class="muted mapa-tc-footer"><code>PAT→TEC</code> indica que PAT encuadra y TEC opera o prueba; <code>PAT↔TEC</code> conserva una dirección indeterminada. El tercer cuerpo sigue dentro del cálculo y de la posición.</p>
     </div>
 
     <section class="orbital-map" data-orbital-map>
@@ -1310,7 +1310,7 @@ function renderActores() {
 
     <section id="leyendas-jugables" class="actor-layer-section legend-roster-section">
       <div class="actor-section-heading">
-        <div><span class="section-kicker">VIDEOJUEGO · MODO LEYENDA v0.49 beta</span><h2>Quince Leyendas jugables</h2></div>
+        <div><span class="section-kicker">VIDEOJUEGO · MODO LEYENDA v0.49 BETA</span><h2>Quince Leyendas jugables</h2></div>
         <p>Cada tarjeta es una encarnación lúdica. Una persona puede ocupar más de una.</p>
       </div>
       <div class="legend-roster-grid">${legends.map(buildLegendRosterCard).join('')}</div>
@@ -1332,7 +1332,7 @@ function buildActorCard(a) {
       <div class="actor-name">${esc(a.display_name)}</div>
       <div class="actor-period"><span>Cobertura documental</span>${esc(a.period || '')}</div>
       <div class="actor-config-label">Síntesis del corpus</div>
-      <div class="actor-config-line">${colorConfig(a.directed_configuration)}</div>
+      <div class="actor-config-line"><code>${esc(a.adjudicated_notation || a.directed_configuration || '—')}</code></div>
       <div class="actor-meta-row">
         ${a.n_documents || 0} ${a.n_documents === 1 ? 'documento' : 'documentos'} · ${esc(publicCautionLabel(a))}
       </div>
@@ -1382,7 +1382,7 @@ function renderActorDetail(actorId) {
           <span>Cobertura documental ${esc(actor.period || '')}</span>
           <span>${actor.n_documents || 0} ${actor.n_documents === 1 ? 'documento' : 'documentos'}</span>
         </div>
-        <div class="actor-detail-config">${colorConfig(actor.directed_configuration)}</div>
+        <div class="actor-detail-config">Mapa v0.4 · <code>${esc(actor.adjudicated_notation || actor.directed_configuration || '—')}</code></div>
       </div>
     </div>
 
@@ -1404,13 +1404,14 @@ function renderActorDetail(actorId) {
         <thead><tr><th>Campo</th><th>Valor</th></tr></thead>
         <tbody>
           <tr>
-            <td>Vector dominante</td>
+            <td>Masa dominante histórica</td>
             <td style="color:${vectorColor(actor.dominant_vector)};">${esc(actor.dominant_vector || '—')}</td>
           </tr>
           <tr>
-            <td>Vector secundario</td>
+            <td>Masa secundaria histórica</td>
             <td style="color:${vectorColor(actor.secondary_vector)};">${esc(actor.secondary_vector || '—')}</td>
           </tr>
+          <tr><td>Adjudicación funcional v0.4</td><td><code>${esc(actor.adjudicated_notation || '—')}</code></td></tr>
           <tr><td>Cambios entre documentos</td><td>${actor.transition_count != null ? actor.transition_count : '—'}</td></tr>
           <tr><td>Trayectoria</td><td>${esc(publicStabilityLabel(actor))}</td></tr>
           <tr><td>Condición de lectura</td><td>${esc(publicCautionLabel(actor))}</td></tr>
@@ -1574,7 +1575,12 @@ const EVIDENCIA_NOTEBOOKS = [
   { id: 'NB13', name: 'Auditoría de dirección',       purpose: 'Reabre la flecha del corpus base por actor × mandato mediante tiempo, problema, autoridad, sujeto, telos, sacrificio y medios/prueba.', status: 'completado', sharing: 'needs_cleanup' },
   { id: 'NB14', name: 'Mapa orbital v0.2',            purpose: 'Separa Menem I/II y CFK I/II y publica las doce unidades de mandato.', status: 'completado', sharing: 'needs_cleanup' },
   { id: 'NB15', name: 'Prueba temporal Milei 2026',   purpose: 'Incorpora la apertura oficial de 2026, conserva la pantalla heredada y adjudica el conflicto masa/función entre cuatro parejas rivales.', status: 'completado', sharing: 'needs_cleanup' },
-  { id: 'NB16', name: 'Mapa orbital v0.3',            purpose: 'Agrega el documento 52, actualiza Milei a MES→TEC↺ y verifica que las otras once unidades permanezcan idénticas.', status: 'completado', sharing: 'needs_cleanup' },
+  { id: 'NB16', name: 'Mapa orbital v0.3',            purpose: 'Agrega el documento 52, actualiza Milei a MES→TEC↺ y cierra la etapa abductiva anterior.', status: 'completado', sharing: 'needs_cleanup' },
+  { id: 'NB17', name: 'Calibrador longitudinal',      purpose: 'Codifica exhaustivamente 72 señales de Milei 2024–2026 por polaridad, función y posición y congela el corpus de 52 documentos.', status: 'completado', sharing: 'needs_cleanup' },
+  { id: 'NB18', name: 'Recalibración simétrica',      purpose: 'Aplica el mismo instrumento a TEC, MES y PAT en 1.048 señales. La primera pasada automática se conserva como stress test, no como verdad de terreno.', status: 'completado', sharing: 'needs_cleanup' },
+  { id: 'NB19', name: 'Mapa candidato v0.4',          purpose: 'Separa masa, pareja, dirección y trayectoria para las doce unidades actor × mandato.', status: 'completado', sharing: 'needs_cleanup' },
+  { id: 'NB20', name: 'Sensibilidad',                 purpose: 'Ejecuta LODO sobre ocho funciones y 2.000 remuestreos documentales por unidad.', status: 'completado', sharing: 'needs_cleanup' },
+  { id: 'NB21', name: 'Mapa orbital v0.4',            purpose: 'Promueve doce adjudicaciones, cinco cambios de notación y ninguna alteración de pareja; publica límites de réplica.', status: 'completado', sharing: 'needs_cleanup' },
 ];
 
 const EVIDENCIA_PERON_NOTEBOOKS = [
@@ -1588,7 +1594,7 @@ const EVIDENCIA_DATASETS = [
   { name: 'NB10 — actor_avg matrix',            contains: 'Perfil nivel-actor: directed_configuration, caution_level, attractor_strength, avg vectoriales.', lineage: 'NB05 → NB10',           shareable: false, note: 'Requiere limpieza de nomenclatura.' },
   { name: 'NB10 — document table',              contains: 'Scores nivel-documento y configuración por período.',                                               lineage: 'NB05 → NB10',           shareable: false, note: 'Requiere limpieza.' },
   { name: 'NB10 — configuration map',           contains: 'Distribución de configuraciones: n actores, n documentos, porcentaje del corpus.',                 lineage: 'NB10_configuration_map', shareable: true,  note: 'Publicable. Figuras promovidas disponibles.' },
-  { name: 'JSON static data (web/data/*.json)', contains: '14 archivos JSON versionados: corpus, unidades de mandato, mapa orbital, vectores, configuraciones, Perón, roadmap y metadatos editoriales.', lineage: 'NB10 → NB16 + exportación web', shareable: true, note: 'Publicados actualmente en este sitio.' },
+  { name: 'JSON static data (web/data/*.json)', contains: 'Archivos JSON versionados: corpus, unidades de mandato, mapa orbital, vectores, configuraciones, Perón, roadmap y metadatos editoriales.', lineage: 'NB10 → NB21 + exportación web v0.4', shareable: true, note: 'Publicados actualmente en este sitio.' },
   { name: 'Registro Perón + contraste de fase', contains: 'Registro PERON_SRC_015/BLQ-02c; tablas de conteo proposicional 1946 vs 1954 (MES/PAT/TEC).',    lineage: 'PERON_ALT_PIPELINE',     shareable: false, note: 'Requiere nota metodológica antes de publicar.' },
 ];
 
@@ -1750,7 +1756,8 @@ function renderEvidenceTechnicalAppendix(badges, hcdnNbRows, peronNbRows, dsRows
           <div class="ev-pipeline-step ev-ps-key"><span class="ev-ps-num">5</span><div><strong>Calibración (NB05 + NB15)</strong> — TEC distingue modernización sustantiva (TM×1), catálogo técnico (TCM×0,5) y administración genérica (AGN×0). Los valores se normalizan por extensión.</div></div>
           <div class="ev-pipeline-step"><span class="ev-ps-num">6</span><div><strong>Auditoría de base (NB06)</strong> — Coherencia interna y corrección de metadatos.</div></div>
           <div class="ev-pipeline-step ev-ps-key"><span class="ev-ps-num">7–10</span><div><strong>Del documento al mapa (NB07–NB10)</strong> — Perfiles, configuraciones, cambios entre discursos y síntesis interpretativa.</div></div>
-          <div class="ev-pipeline-step ev-ps-key"><span class="ev-ps-num">12–16</span><div><strong>Capa abductiva</strong> — Compara hipótesis rivales y separa presencia, pareja funcional y dirección. NB16 publica el mapa orbital v0.3.</div></div>
+          <div class="ev-pipeline-step ev-ps-key"><span class="ev-ps-num">12–16</span><div><strong>Capa abductiva</strong> — Compara hipótesis rivales y distingue presencia, pareja funcional, dirección y retroalimentación.</div></div>
+          <div class="ev-pipeline-step ev-ps-key"><span class="ev-ps-num">17–21</span><div><strong>Recalibración simétrica</strong> — Aplica polaridad, función y posición a TEC, MES y PAT; ejecuta LODO y bootstrap; NB21 publica el mapa orbital v0.4.</div></div>
         </div>
         <p class="muted" style="font-size:.84rem;">Perón usa una pipeline alternativa sobre segmentos extraídos manualmente. La comparación con HCDN es conceptual, no numérica.</p>
       </div>
@@ -1759,7 +1766,7 @@ function renderEvidenceTechnicalAppendix(badges, hcdnNbRows, peronNbRows, dsRows
     <details class="ev-tech-details">
       <summary><span>4.3 · Notebooks y datasets</span><small>Linaje y estado de publicación</small></summary>
       <div class="ev-tech-details-body">
-        <p class="muted" style="font-size:.84rem;">Estado al 2026-08-05. El whitepaper publica método y resultados; el código ejecutable todavía no se descarga desde esta interfaz.</p>
+        <p class="muted" style="font-size:.84rem;">Estado al 2026-08-11. El whitepaper, el codebook, la metodología y los resultados v0.4 están publicados; la doble codificación humana permanece pendiente.</p>
         <div class="ev-table-wrap">
           <table class="ev-table">
             <thead><tr><th>ID</th><th>Nombre</th><th>Propósito</th><th>Estado</th></tr></thead>
@@ -1793,7 +1800,9 @@ function renderEvidenceTechnicalAppendix(badges, hcdnNbRows, peronNbRows, dsRows
           <div>
             <h4>Ya visible</h4>
             <ul>
-              <li>Mapa orbital v0.3 y figuras canónicas NB16.</li>
+              <li>Mapa orbital v0.4 y figuras canónicas NB21.</li>
+              <li><a href="data/METHOD_PIPELINE_v0_2.md" target="_blank" rel="noopener noreferrer">Metodología funcional simétrica v0.2 ↗</a>.</li>
+              <li><a href="data/CODEBOOK_FUNCIONAL_SIMETRICO_v0_3.md" target="_blank" rel="noopener noreferrer">Codebook de polaridad, función y posición ↗</a>.</li>
               <li>Fuentes y límites junto a los resultados principales.</li>
               <li>Ejemplo cualitativo Menem 1999.</li>
               <li>Whitepaper descargable en PDF.</li>
@@ -1802,10 +1811,10 @@ function renderEvidenceTechnicalAppendix(badges, hcdnNbRows, peronNbRows, dsRows
           <div>
             <h4>Falta para una réplica completa</h4>
             <ul>
-              <li>Diccionario de datos y README del corpus.</li>
-              <li>Notas consolidadas de fuente y licencia.</li>
-              <li>Notebooks ejecutables sin rutas locales.</li>
-              <li>Snapshot versionado de tablas, código y figuras.</li>
+              <li>Doble codificación humana y adjudicación de desacuerdos.</li>
+              <li>Integración cuantitativa de la asunción Milei 2023.</li>
+              <li>Cierre de las brechas documentales del corpus.</li>
+              <li>Nota puente antes de cualquier comparación numérica con Perón.</li>
             </ul>
           </div>
           <div>
@@ -2176,9 +2185,8 @@ function wpFigureFromQuote(lines) {
   const source = field('Fuente');
   const imageMatch = source.match(/([A-Za-z0-9_.-]+\.png)/);
   const publishedFigures = new Set([
-    'MAPA_ORBITAL_DIRECTION_MATRIX_v0_3.png',
-    'MAPA_ORBITAL_DOCUMENT_LAYER_v0_3.png',
-    'MAPA_ORBITAL_ARGENTINO_v0_3.png',
+    'MAPA_ORBITAL_DIRECTION_MATRIX_v0_4.png',
+    'MAPA_ORBITAL_DOCUMENT_TRAJECTORIES_v0_4.png',
     'MAPA_ORBITAL_COMPARABILITY_TIERS_v0_3.drawio.png',
   ]);
   const file = imageMatch && publishedFigures.has(imageMatch[1]) ? imageMatch[1] : '';
@@ -2213,7 +2221,7 @@ function whitepaperToc(markdown) {
 
 function renderWhitepaperMarkdown(markdown) {
   const lines = String(markdown || '').replace(/\r/g, '').split('\n');
-  const start = lines.findIndex(line => /^###\s+Antes de leer: qué es NB13\s*$/.test(line));
+  const start = lines.findIndex(line => /^###\s+Antes de leer: qué cambia en NB17–NB21\s*$/.test(line));
   const source = start >= 0 ? lines.slice(start) : lines;
   const html = [];
   let sectionOpen = false;
@@ -2234,7 +2242,7 @@ function renderWhitepaperMarkdown(markdown) {
         const numbered = heading[2].match(/^(\d+)\.\s+(.+)$/);
         const id = numbered
           ? `wp-sec-${numbered[1]}`
-          : (heading[2].includes('NB13') ? 'wp-nb13' : 'wp-resumen');
+          : (heading[2].includes('NB17') ? 'wp-nb17' : 'wp-resumen');
         html.push(`<section class="wp-section" id="${id}"><h2 class="wp-section-title">${renderWpInline(heading[2])}</h2>`);
         sectionOpen = true;
       } else {
@@ -2274,33 +2282,33 @@ function renderWhitepaperMarkdown(markdown) {
 }
 
 function renderWhitepaper() {
-  const markdown = D.whitepaper_v0_3 || '';
+  const markdown = D.whitepaper_v0_4 || '';
   const toc = whitepaperToc(markdown);
   const body = markdown
     ? renderWhitepaperMarkdown(markdown)
-    : '<div class="notice notice-red"><p>No se pudo cargar el whitepaper v0.3.</p></div>';
+    : '<div class="notice notice-red"><p>No se pudo cargar el whitepaper v0.4.</p></div>';
 
   return `<section class="page-section wp-page">
-    <div class="breadcrumb"><a href="#inicio">Inicio</a> <span>›</span> Whitepaper v0.3</div>
+    <div class="breadcrumb"><a href="#inicio">Inicio</a> <span>›</span> Whitepaper v0.4</div>
 
     <div class="wp-header">
-      <div class="wp-eyebrow">WHITEPAPER · v0.3 · AUTORA: ALEXANDRA BUSTOS FRATI, PhD</div>
+      <div class="wp-eyebrow">WHITEPAPER · v0.4 · AUTORA: ALEXANDRA BUSTOS FRATI, PhD</div>
       <h1 class="wp-title">El problema de los tres cuerpos argentinos:<br>una lectura orbital del presidencialismo argentino</h1>
       ${buildBadgeGroup(['HCDN_ONLY'])}
       <div class="notice notice-amber mt-2">
-        <p><strong>NB13 reabre la flecha; NB15 prueba 2026; NB16 publica el mapa.</strong> La versión v0.3 separa masa, pareja funcional, dirección y retroalimentación. En Milei 2026, la pantalla PAT–TEC y la adjudicación MES–TEC se publican juntas.</p>
+        <p><strong>NB17 calibra; NB18 aplica el instrumento simétrico; NB19–NB20 miden sensibilidad; NB21 publica el mapa.</strong> La versión v0.4 separa masa, función, posición y trayectoria, y publica también dónde la automatización no alcanza.</p>
       </div>
       <dl class="wp-provenance" aria-label="Autoría, origen y datos editoriales del whitepaper">
         <dt>Autora</dt><dd>Alexandra Bustos Frati, PhD</dd>
         <dt>Origen</dt><dd>Mensajes presidenciales de los Diarios de Sesiones de la HCDN, 1983–2026; Perón 1946 y 1954 en una pipeline documental separada.</dd>
         <dt>Corpus</dt><dd>52 documentos · 10 personas · 12 unidades actor × mandato.</dd>
-        <dt>Linaje</dt><dd>NB10 → NB12 → NB13 → NB14 → NB15 → NB16.</dd>
-        <dt>Cita</dt><dd>Bustos Frati, Alexandra (2026). <em>El problema de los tres cuerpos argentinos: una lectura orbital del presidencialismo argentino.</em> Whitepaper v0.3.</dd>
+        <dt>Linaje</dt><dd>NB10 → NB12–NB16 → NB17 → NB18 → NB19–NB20 → NB21.</dd>
+        <dt>Cita</dt><dd>Bustos Frati, Alexandra (2026). <em>El problema de los tres cuerpos argentinos: una lectura orbital del presidencialismo argentino.</em> Whitepaper v0.4.</dd>
         <dt>Licencia</dt><dd>Texto y figuras: CC BY-NC 4.0.</dd>
       </dl>
       <div class="wp-release-actions">
-        <a class="btn btn-primary" href="data/EL_PROBLEMA_DE_LOS_TRES_CUERPOS_ARGENTINOS_WHITEPAPER_v0_3.pdf" download>Descargar whitepaper (.pdf)</a>
-        <a class="btn btn-secondary" href="#mapa-orbital">Abrir mapa orbital v0.3</a>
+        <a class="btn btn-primary" href="data/EL_PROBLEMA_DE_LOS_TRES_CUERPOS_ARGENTINOS_WHITEPAPER_v0_4.pdf" download>Descargar whitepaper (.pdf)</a>
+        <a class="btn btn-secondary" href="#mapa-orbital">Abrir mapa orbital v0.4</a>
       </div>
     </div>
 
@@ -2320,7 +2328,7 @@ function renderWhitepaper() {
     </div>
 
     <div class="cta-group mt-4">
-      <a href="#mapa-orbital" class="btn btn-primary">Explorar el mapa v0.3</a>
+      <a href="#mapa-orbital" class="btn btn-primary">Explorar el mapa v0.4</a>
       <a href="#evidencia" class="btn btn-secondary">Evidencia y método</a>
       <a href="#evidencia/roadmap" class="btn btn-secondary">Roadmap →</a>
     </div>
@@ -2415,11 +2423,11 @@ const FIGURES_DATA = [
         notebook: 'NB10',
         status: 'promoted',
         version_note: 'Versión más reciente — análisis NB10 v0.1.',
-        caption: 'Figura histórica de la base NB10 v0.1: paternalismo + tecnocracia reúne 49% y la pareja TEC–PAT 86% en los 51 documentos 1983–2025. El mapa vigente v0.3 agrega 2026 y publica 48% / 85%.',
+        caption: 'Figura histórica de la base NB10 v0.1: paternalismo + tecnocracia reunía 49% y la pareja TEC–PAT 86% en los 51 documentos 1983–2025. El mapa vigente v0.4 aplica la recodificación funcional simétrica y deja la pareja TEC–PAT en 43 de 52 documentos (83%).',
         alt: 'Gráfico de barras de frecuencia de configuraciones dirigidas en el corpus HCDN. La barra más alta corresponde a paternalismo + tecnocracia.',
-        como_leer: 'Cada barra representa una configuración dirigida de la base NB10. La dirección importa: paternalismo + tecnocracia y tecnocracia + paternalismo son distintas. Esta figura se conserva para documentar el linaje; no sustituye el conteo adjudicado v0.3.',
+        como_leer: 'Cada barra representa una configuración dirigida de la base NB10. La dirección importa: paternalismo + tecnocracia y tecnocracia + paternalismo son distintas. Esta figura se conserva para documentar el linaje; no sustituye el conteo adjudicado v0.4.',
         no_prueba: 'No prueba que todos los presidentes hayan implementado las mismas políticas. Es una figura de base de 51 documentos, no la distribución vigente de 52.',
-        caveat: 'Artefacto histórico NB10 — consultar el mapa orbital v0.3 para el documento 2026 y la adjudicación masa/función.',
+        caveat: 'Artefacto histórico NB10 — consultar el mapa orbital v0.4 para el documento 2026 y la adjudicación masa/función.',
       },
       {
         id: 'NB08_dem_config_counts',
@@ -2450,7 +2458,7 @@ const FIGURES_DATA = [
         alt: 'Gráfico de barras horizontales con actores en filas y número de transiciones configuracionales en el eje horizontal. Alfonsín tiene la barra más larga.',
         como_leer: 'Una transición ocurre cuando la configuración dominante de un actor cambia de un documento al siguiente. Un actor con 5 transiciones en 8 documentos (Alfonsín) cambió de registro discursivo 5 veces. Esto no indica incoherencia política: indica que el discurso presidencial respondió a contextos distintos con registros distintos. El conteo de transiciones es sensible al N de documentos por actor: actores con más documentos tienen más oportunidades de transición.',
         no_prueba: 'No indica que los actores con más transiciones sean políticamente inconsistentes. No mide cambios en política de Estado. Las transiciones son propiedades del discurso formal de apertura legislativa, no del gobierno completo.',
-        caveat: 'Figura histórica NB10 v0.1. Milei tenía n=2 en esa base; v0.3 ya publica n=3 HCDN. Rodríguez Saá permanece n=1.',
+        caveat: 'Figura histórica NB10 v0.1. Milei tenía n=2 en esa base; v0.4 ya publica n=3 HCDN. Rodríguez Saá permanece n=1.',
       },
       {
         id: 'NB08_config_timeline',
@@ -2578,16 +2586,16 @@ function renderVideojuego() {
     ? `<a href="${esc(gameUrl)}" class="btn btn-primary vj-play-cta" data-game-cta target="_blank" rel="noopener">Jugar ${esc(game.display_version || 'v0.49 beta')} →</a>`
     : `<span class="btn btn-primary" aria-disabled="true" title="Falta configurar game_meta.public_url">Publicación web pendiente</span>`;
   const releaseCopy = jointlyPublished
-    ? `La beta se despliega de manera autónoma y se abre sin cuenta ni descarga; su código permanece privado.`
-    : `La URL pública de la beta todavía debe configurarse en <code>game_meta.json</code>.`;
+    ? `El build forma parte de este mismo paquete editorial y se abre sin cuenta ni descarga.`
+    : `El build local se abre sin cuenta ni descarga. La URL pública todavía debe configurarse en <code>game_meta.json</code> antes del despliegue externo.`;
   const publicationStatus = jointlyPublished
     ? `<div class="vj-status-item vj-status-done">
         <span class="vj-status-icon" aria-hidden="true">✓</span>
-        <div><strong>Dos capas, una conversación</strong><p class="muted">La investigación es pública y conserva la autoridad empírica; la beta es jugable, pero su código, assets y pruebas permanecen privados.</p></div>
+        <div><strong>Publicación conjunta preparada</strong><p class="muted">El sitio doctrinario y el videojuego comparten paquete, origen y control de versión.</p></div>
       </div>`
     : `<div class="vj-status-item vj-status-progress">
         <span class="vj-status-icon" aria-hidden="true">→</span>
-        <div><strong>Despliegue público pendiente</strong><p class="muted">El juego está preparado como beta autónoma; falta habilitar su URL pública.</p></div>
+        <div><strong>Despliegue público pendiente</strong><p class="muted">El artefacto local es jugable. Falta asignar dominio, URL canónica y política de distribución del código y los assets.</p></div>
       </div>`;
 
   return `<section class="page-section vj-page">
@@ -2611,7 +2619,7 @@ function renderVideojuego() {
     </div>
 
     <div class="notice notice-green vj-release-note">
-      <strong>${esc(game.display_version || 'v0.49 beta')} validada el ${esc(game.updated || '2026-08-09')}.</strong>
+      <strong>${esc(game.display_version || 'v0.49 beta')} publicada el ${esc(game.updated || '2026-08-09')}.</strong>
       ${releaseCopy}
     </div>
 
@@ -2651,11 +2659,11 @@ function renderVideojuego() {
 
     <div class="vj-screenshot-grid">
       <figure>
-        <img src="assets/game-career-v49.png?v=20260809" alt="Configuración de una Carrera en la beta v0.49" loading="lazy">
+        <img src="assets/game-career-final-v42.png?v=20260804" alt="Final de una Carrera v0.43: conductor, segundo cuerpo y tercer límite nacidos de decisiones jugadas" loading="lazy">
         <figcaption>Carrera: el cargo no borra la disputa entre los dos cuerpos que gobernaron ni el límite del tercero.</figcaption>
       </figure>
       <figure>
-        <img src="assets/game-legend-v49.png?v=20260809" alt="Selección del Modo Leyenda en la beta v0.49" loading="lazy">
+        <img src="assets/game-legend-final-v42.png?v=20260804" alt="Final del Modo Leyenda v0.43 con los tres cuerpos, campañas y archivo de decisiones" loading="lazy">
         <figcaption>Leyenda: el presente responde a la figura jugada; no regresa a una vida histórica.</figcaption>
       </figure>
     </div>
@@ -2663,7 +2671,7 @@ function renderVideojuego() {
     <hr class="light">
 
     <h2>Del deep research a una escritura de época</h2>
-    <p>v0.30 incorporó acontecimientos derivados de investigación. v0.40 hizo persistentes las posiciones sobre humanidad, demografía, pertenencia, soberanía cognitiva, frontera material y orden interdependiente. v0.42 volvió legible la biografía híbrida. v0.49 enlaza decisión, campaña y cierre para que cada consecuencia pueda rastrearse hasta lo jugado.</p>
+    <p>v0.40 incorporó acontecimientos derivados de investigación. v0.40 hizo persistentes las posiciones sobre humanidad, demografía, pertenencia, soberanía cognitiva, frontera material y orden interdependiente. v0.41 las llevó a la prosa. v0.42 preservó la biografía híbrida del cierre. v0.43 reancla la evidencia de las quince Leyendas y distribuye una agenda de 41 desafíos sin volver casi fija la apertura.</p>
     <div class="vj-research-grid">
       <div><strong>${esc(metrics.career_civilizational_events || 16)}</strong><span>situaciones civilizatorias nuevas en Carrera</span><small>transhumanismo, demografía, identidad y Luna en las tres escalas</small></div>
       <div><strong>${esc(metrics.legend_civilizational_challenges || 4)}</strong><span>desafíos civilizatorios nuevos en Leyenda</span><small>integrados al presente, no a una recreación histórica</small></div>
@@ -2725,11 +2733,11 @@ function renderVideojuego() {
     <div class="vj-status-list mt-4">
       <div class="vj-status-item vj-status-done">
         <span class="vj-status-icon" aria-hidden="true">✓</span>
-        <div><strong>Motor e interfaz auditados</strong><p class="muted">${esc((game.audit || {}).engine_options_inspected || (game.audit || {}).options_inspected || 58862)} opciones de motor y ${esc((game.audit || {}).browser_options_inspected || 10044)} opciones de navegador examinadas; ${esc((game.audit || {}).vitest_tests || 126)} pruebas unitarias y cero fallas de aceptación.</p></div>
+        <div><strong>Motor e interfaz auditados</strong><p class="muted">${esc((game.audit || {}).engine_options_inspected || (game.audit || {}).options_inspected || 58895)} opciones de motor y ${esc((game.audit || {}).browser_options_inspected || 10044)} opciones de navegador examinadas; ${esc((game.audit || {}).vitest_tests || 126)} pruebas unitarias y cero fallas de aceptación.</p></div>
       </div>
       <div class="vj-status-item vj-status-done">
         <span class="vj-status-icon" aria-hidden="true">✓</span>
-        <div><strong>Build reproducible</strong><p class="muted">Versión visible, package y actas sincronizados en 0.42.0.</p></div>
+        <div><strong>Build reproducible</strong><p class="muted">Versión visible, package y actas sincronizados en 0.49.0-beta.1.</p></div>
       </div>
       ${publicationStatus}
     </div>
@@ -2752,7 +2760,7 @@ function renderLicencia() {
     <div class="notice notice-amber" style="margin-bottom:2rem;">
       <span class="badge badge-caution">PROTOTIPO</span>
       Los <em>datos</em> son provisionales y no aptos para cita académica formal.
-      Los <em>términos de licencia</em> que siguen están definidos y son vigentes para el sitio v0.3, el mapa orbital v0.3 y el whitepaper v0.3.
+      Los <em>términos de licencia</em> que siguen están definidos y son vigentes para el sitio v0.4, el mapa orbital v0.4 y el whitepaper v0.4.
     </div>
 
     <div class="lic-section">
@@ -2767,7 +2775,7 @@ function renderLicencia() {
       <p>Toda reproducción, cita o adaptación debe atribuirse a:</p>
       <blockquote class="lic-quote"><strong>Alexandra Bustos Frati, PhD</strong></blockquote>
       <p style="margin-top:.75rem;">Cita sugerida:</p>
-      <blockquote class="lic-quote">Bustos Frati, Alexandra. <em>El problema de los tres cuerpos argentinos: una lectura orbital del presidencialismo argentino.</em> Sitio doctrinario y whitepaper v0.3; mapa orbital v0.3.</blockquote>
+      <blockquote class="lic-quote">Bustos Frati, Alexandra. <em>El problema de los tres cuerpos argentinos: una lectura orbital del presidencialismo argentino.</em> Sitio doctrinario y whitepaper v0.4; mapa orbital v0.4.</blockquote>
     </div>
 
     <div class="lic-section">
@@ -2803,8 +2811,8 @@ function renderLicencia() {
     </div>
 
     <div class="lic-section">
-      <h2>Publicación separada</h2>
-      <p>La investigación se publica en este repositorio y el videojuego se ofrece como una beta web separada. El repositorio del juego es privado: su código, arte y audio siguen reservados o sujetos a las condiciones de cada fuente.</p>
+      <h2>Publicación conjunta</h2>
+      <p>El sitio doctrinario enlaza la beta v0.49 del videojuego, desplegada por separado. Esa relación editorial no mezcla el juego con el corpus ni cambia su licencia: los textos públicos conservan CC BY-NC 4.0 y el código, arte y audio del juego siguen reservados según sus condiciones propias.</p>
     </div>
 
     <div class="lic-section" style="border-bottom:none;padding-bottom:0;">
@@ -2815,8 +2823,9 @@ function renderLicencia() {
     <div class="notice notice-amber" style="margin-top:2rem;">
       <strong>Contacto:</strong>
       <span class="lic-contact-links">
-        <a href="https://github.com/metternietzsche" target="_blank" rel="noopener noreferrer">GitHub</a>
-        · <a href="https://www.linkedin.com/in/lexbustosfrati/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://www.instagram.com/arcagaucha/" target="_blank" rel="noopener noreferrer">Instagram · @arcagaucha</a> ·
+        <a href="https://www.linkedin.com/in/lexbustosfrati/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        · <a href="https://github.com/metternietzsche" target="_blank" rel="noopener noreferrer">GitHub</a>
         · <a href="https://www.threads.net/@lexy.futura" target="_blank" rel="noopener noreferrer">Threads</a>
         · <a href="https://alexandrabustosfrati.substack.com" target="_blank" rel="noopener noreferrer">Substack</a>
         · <a href="https://www.researchgate.net/profile/Alexandra-Bustos-Frati" target="_blank" rel="noopener noreferrer">ResearchGate</a>

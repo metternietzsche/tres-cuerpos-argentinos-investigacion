@@ -1,19 +1,20 @@
 cff-version: 1.2.0
 message: "Si usás este trabajo, por favor citalo como se indica a continuación."
-type: software
+type: dataset
 title: "El problema de los tres cuerpos argentinos: una lectura orbital del presidencialismo argentino"
-version: "0.2.0"
-date-released: "2026-08-09"
+version: "0.4.0"
+date-released: "2026-08-11"
 abstract: >
   Proyecto de investigación teórico-empírica que mapea configuraciones
   político-epistémicas en los discursos presidenciales de la democracia argentina
-  (1983–2025). El proyecto propone que el campo retórico del presidencialismo
+  (1983–2026). El proyecto propone que el campo retórico del presidencialismo
   argentino está organizado por la interacción entre tres vectores —modernización
   tecnocrática, mesianismo redentor y paternalismo conservador— y no por la
   alternancia entre dos polos. Basado en análisis computacional del corpus
-  HCDN 1983–2025 (51 documentos, 10 actores democráticos) y dos documentos
-  del corpus alternativo de Perón (1946, 1954). Estado editorial: sitio v0.2;
-  mapa orbital y corpus provisional v0.1.
+  HCDN 1983–2026 (52 documentos, 10 personas, 12 unidades actor × mandato y
+  1.048 señales) y dos documentos del corpus alternativo de Perón (1946, 1954).
+  La versión v0.4 aplica polaridad, función y posición de manera simétrica a los
+  tres vectores y publica sensibilidad; permanece pendiente la réplica humana.
 authors:
   - family-names: "Bustos Frati"
     given-names: "Alexandra"
@@ -29,10 +30,11 @@ keywords:
   - "paternalismo"
   - "prototipo de investigación"
   - "corpus HCDN"
-  - "democracia argentina 1983-2025"
+  - "democracia argentina 1983-2026"
+  - "recalibración funcional simétrica"
 identifiers:
   - type: other
-    value: "SITIO_v0_2_CORPUS_HCDN_v0_1"
+    value: "SITIO_v0_4_MAPA_ORBITAL_v0_4"
     description: "Identificador interno de la publicación y del corpus"
 references: []
 preferred-citation:
@@ -45,7 +47,7 @@ preferred-citation:
     El problema de los tres cuerpos argentinos:
     una lectura orbital del presidencialismo argentino
   year: 2026
-  version: "sitio v0.2; corpus v0.1"
+  version: "sitio v0.4; mapa orbital v0.4"
   notes: >
-    Proyecto de investigación teórico-empírica. Sitio v0.2; corpus provisional v0.1.
-    Datos no aptos para cita académica formal.
+    Proyecto de investigación teórico-empírica. Sitio y mapa orbital v0.4.
+    Recalibración provisional pendiente de réplica humana independiente.

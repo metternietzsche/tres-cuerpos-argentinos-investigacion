@@ -17,8 +17,8 @@
     "stability_label": "unstable",
     "caution_level": "medium",
     "readiness_status": "provisional",
-    "main_hypothesis": "Alfonsín's discourse is characterized by high orbital instability: the dominant vector shifts repeatedly among tecnocracia, paternalismo, and mesianismo across the eight-year term. The 1983 inauguration and 1986–1987 aperturas anchor tecnocracia; the 1984–1985 addresses show paternalismo dominance; the 1989 final address pivots to mesianismo. The 1988 extraordinary session (Carapintada crisis) shows the only tec+mes configuration in the corpus, reflecting constitutional-juridical defense combined with democratic-mission appeal. No single configuration is stable across the presidency.",
-    "required_caveat": "Two documents retain active caution flags: 1985 (still_ambiguous near-tie, gap=0.822) and 1988 extraordinary (indeterminate attractor, tec=mes exact tie, session-record format). The 1989 mesianismo dominance is a single-year signal and should not be over-weighted. Mesianismo secondary is notable across the term (avg_mes=5.09, highest of all democratic actors).",
+    "main_hypothesis": "La trayectoria de Alfonsín alterna entre PAT, TEC y dos cierres MES→TEC. El agregado queda PAT↔TEC porque el promedio no borra esa inestabilidad.",
+    "required_caveat": "Ocho documentos y seis transiciones: la indeterminación es un resultado de trayectoria, no falta de lectura.",
     "document_ids": [
       "1983_12_10_mensaje_presidencial_alfonsin_asuncixn",
       "mensaje_presidencial_1984",
@@ -35,7 +35,9 @@
       "HCDN_ONLY"
     ],
     "include_in_actor_map": true,
-    "source_reference": "NB10_democratic_actor_interpretive_matrix_v0_1.csv"
+    "source_reference": "NB17–NB21 · MAPA_ORBITAL_ARGENTINO_v0_4",
+    "adjudicated_notation": "PAT↔TEC",
+    "adjudication_status": "provisional_functional_symmetric_v0.4"
   },
   {
     "actor_id": "menem",
@@ -55,8 +57,8 @@
     "stability_label": "moderate",
     "caution_level": "low",
     "readiness_status": "strong_provisional",
-    "main_hypothesis": "Menem's discourse is persistently paternalismo-dominant across eleven years — the largest corpus in the democratic period. The paternalismo+tecnocracia configuration holds in 9 of 11 documents. The paternalist mass in Menem's rhetoric is robust across the neoliberal economic reorientation of the 1990s: the government's market-liberalizing program is articulated in a paternalist rhetorical register, not a technocratic one. The 1996 apertura is uniquely paternalismo+none (secondary vector absent), and 1997 is the only tecnocracia+paternalismo instance. The 1994 (possible_overcorrection) and 1995 (still_ambiguous) flags are cleared but note near-ties and AGN suppression respectively.",
-    "required_caveat": "Caution level: low (n=11, share_problematic=0.182). Two cleared flags remain interpretively relevant: 1994 possible_overcorrection (AGN exclusion suppressed tec; constitutional reform year); 1995 still_ambiguous (effective tec=pat co-dominance, gap=0.911/82.893 = 1.1%). The 1995 second-term inaugural is a distinct weak-attractor document. Do not conflate Menem's rhetorical register with his policy orientation.",
+    "main_hypothesis": "Menem I y Menem II conservan PAT→TEC al separarse por mandato: PAT encuadra beneficiarios y continuidad; TEC ejecuta y ofrece prueba.",
+    "required_caveat": "La coincidencia de flecha no vuelve idénticos los dos mandatos ni describe automáticamente su programa económico.",
     "document_ids": [
       "mensaje_presidencial_1990",
       "mensaje_presidencial_1991",
@@ -76,7 +78,9 @@
       "HCDN_ONLY"
     ],
     "include_in_actor_map": true,
-    "source_reference": "NB10_democratic_actor_interpretive_matrix_v0_1.csv"
+    "source_reference": "NB17–NB21 · MAPA_ORBITAL_ARGENTINO_v0_4",
+    "adjudicated_notation": "PAT→TEC",
+    "adjudication_status": "provisional_functional_symmetric_v0.4"
   },
   {
     "actor_id": "delarua",
@@ -96,8 +100,8 @@
     "stability_label": "moderate",
     "caution_level": "medium",
     "readiness_status": "provisional",
-    "main_hypothesis": "De la Rúa's three-document corpus shows a paternalismo+tecnocracia configuration in 2000 (strong) and 1999 (inauguration, medium), shifting to tecnocracia+paternalismo in 2001 as economic crisis deepened. The 2001 flip coincides with IMF adjustment pressure and the political context of austerity. The overall actor profile (paternalismo dominant) reflects the 2000 strong-attractor document's weight.",
-    "required_caveat": "n=3 documents only. Medium caution. The 2001 address (tecnocracia+paternalismo, NB05 ambiguity flag) represents a rhetorical shift consistent with fiscal-austerity framing but the corpus is too small for confident trajectory claims. Corpus ends with resignation (Dec 2001) — no exit speech in corpus.",
+    "main_hypothesis": "De la Rúa queda PAT↔TEC y trayectoria inestable: los tres documentos no autorizan una jerarquía única.",
+    "required_caveat": "n=3 y cambio interno; no leer el agregado como tipo personal.",
     "document_ids": [
       "1999_12_10_mensaje_presidencial_de_la_rua_asuncixn",
       "2000_03_01_mensaje_presidencial_de_la_rua",
@@ -110,7 +114,9 @@
       "LOW_N"
     ],
     "include_in_actor_map": true,
-    "source_reference": "NB10_democratic_actor_interpretive_matrix_v0_1.csv"
+    "source_reference": "NB17–NB21 · MAPA_ORBITAL_ARGENTINO_v0_4",
+    "adjudicated_notation": "PAT↔TEC",
+    "adjudication_status": "provisional_functional_symmetric_v0.4"
   },
   {
     "actor_id": "rodriguezsa",
@@ -130,8 +136,8 @@
     "stability_label": "stable",
     "caution_level": "high",
     "readiness_status": "single_document",
-    "main_hypothesis": "Rodríguez Saá's single corpus document (inauguration, Dec 22–23 2001) shows a distinctive paternalismo+mesianismo configuration — the only paternalismo+mesianismo in the democratic corpus. The strong attractor reflects the high-intensity populist and crisis-redemption rhetoric of his brief presidency. No trajectory is assessable from one document.",
-    "required_caveat": "n=1 document. HIGH caution. Single-document actor — no aggregation is valid. Treat as a single data point only. The strong attractor may reflect the extraordinary political circumstances (financial collapse, default declaration) rather than a stable discourse pattern.",
+    "main_hypothesis": "Rodríguez Saá queda PAT→MES: PAT organiza la promesa material y MES dramatiza la excepción.",
+    "required_caveat": "n=1. La ventana presidencial fue corregida y excluye 58 matches legislativos ajenos.",
     "document_ids": [
       "2001_12_22_23_mensaje_presidencial_rodrxguez_sax_asuncixn"
     ],
@@ -142,7 +148,9 @@
       "LOW_N"
     ],
     "include_in_actor_map": true,
-    "source_reference": "NB10_democratic_actor_interpretive_matrix_v0_1.csv"
+    "source_reference": "NB17–NB21 · MAPA_ORBITAL_ARGENTINO_v0_4",
+    "adjudicated_notation": "PAT→MES",
+    "adjudication_status": "provisional_functional_symmetric_v0.4"
   },
   {
     "actor_id": "duhalde",
@@ -162,8 +170,8 @@
     "stability_label": "moderate",
     "caution_level": "medium",
     "readiness_status": "provisional",
-    "main_hypothesis": "Duhalde's three-document corpus shows an inaugural paternalismo+mesianismo configuration (Jan 2002) followed by a shift to tecnocracia+paternalismo in both apertura addresses (2002 and 2003). The transition from crisis-redemption to technocratic-governance framing across 2002 tracks the stabilization phase of the post-collapse administration.",
-    "required_caveat": "n=3 documents. Medium caution. Mesianismo is elevated at actor level (avg_mes=10.962 — highest among multi-year democratic actors) due to the 2002 inaugural. The two apertura addresses are NB05 ambiguous (ambiguity_flag=True). Duhalde profile is provisional and should not be cited for strong configuration claims.",
+    "main_hypothesis": "Duhalde queda PAT→TEC, con sensibilidad de fase entre la emergencia inicial y la normalización operativa.",
+    "required_caveat": "Tres documentos; la flecha agregada no elimina el episodio PAT–MES inaugural.",
     "document_ids": [
       "2002_01_01_mensaje_presidencial_duhalde_asuncixn",
       "2002_03_01_mensaje_presidencial_duhalde",
@@ -176,7 +184,9 @@
       "LOW_N"
     ],
     "include_in_actor_map": true,
-    "source_reference": "NB10_democratic_actor_interpretive_matrix_v0_1.csv"
+    "source_reference": "NB17–NB21 · MAPA_ORBITAL_ARGENTINO_v0_4",
+    "adjudicated_notation": "PAT→TEC",
+    "adjudication_status": "provisional_functional_symmetric_v0.4"
   },
   {
     "actor_id": "kirchner",
@@ -196,8 +206,8 @@
     "stability_label": "stable",
     "caution_level": "medium",
     "readiness_status": "provisional",
-    "main_hypothesis": "Kirchner's five-document corpus shows a paternalismo+tecnocracia inaugural (2003) followed by a shift to tecnocracia+paternalismo in 2005–2007 (three consecutive years). The overall actor profile (paternalismo barely dominant at avg: 28.448 vs 27.833) reflects genuine near-parity across the term. The 2003 inauguration's possible_overcorrection flag (cleared) notes that TCM downweighting drove the paternalismo assignment; the 2005–2007 apertura run anchors the tecnocracia signal. Kirchner's discourse is the most balanced tec/pat dyad in the democratic corpus.",
-    "required_caveat": "n=5 documents. Medium caution. share_ambiguous=0.8 (4/5 documents have NB05 ambiguity flag). The tec/pat near-parity makes any strong directional claim about Kirchner's dominant vector unreliable. The 2007 last apertura (gap=0.935, total=56.606 = 1.7%) is effectively a tie. Kirchner's corpus is the most ambiguous in the democratic period.",
+    "main_hypothesis": "Néstor Kirchner queda PAT→TEC, pero la secuencia documental es inestable y debe leerse por fases.",
+    "required_caveat": "La relación agregada no convierte el mandato en un tipo fijo.",
     "document_ids": [
       "2003_05_25_mensaje_presidencial_kirchner_asuncixn",
       "2004_03_01_mensaje_presidencial_kirchner",
@@ -211,7 +221,9 @@
       "HCDN_ONLY"
     ],
     "include_in_actor_map": true,
-    "source_reference": "NB10_democratic_actor_interpretive_matrix_v0_1.csv"
+    "source_reference": "NB17–NB21 · MAPA_ORBITAL_ARGENTINO_v0_4",
+    "adjudicated_notation": "PAT→TEC",
+    "adjudication_status": "provisional_functional_symmetric_v0.4"
   },
   {
     "actor_id": "cfk",
@@ -231,8 +243,8 @@
     "stability_label": "moderate",
     "caution_level": "low",
     "readiness_status": "strong_provisional",
-    "main_hypothesis": "CFK shows the most consistent strong-attractor configuration in the democratic corpus: 6 of 9 documents score strong attractor strength. The actor modal configuration paternalismo+tecnocracia (5 documents) is interrupted by four tecnocracia+paternalismo instances (2008, 2011 apertura, 2011 inauguration, and 2012 inverted). The 2008 tecnocracia+paternalismo document is particularly strong (gap=38.408, strength=strong) — the sharpest technocratic dominance in the CFK corpus. Overall the actor profile shows tecnocracia as the average-dominant vector (avg_tec=18.305 > avg_pat=15.958) despite the modal configuration being paternalismo+tecnocracia. CFK's discourse shifts across her two terms in ways that warrant intra-term disaggregation in future analysis.",
-    "required_caveat": "n=9 documents. LOW caution. share_ambiguous=0.111 (1/9). One cleared flag: 2014 still_ambiguous (gap=0.983/2.6% — near-tie). The 2009 document is in the registry but not in the NB08 democratic corpus (possible pipeline gap — not in NB08 table). The 2015 apertura (last document) is in the 'Macrismo' period boundary — filed under CFK/Kirchnerismo in NB09 but listed under period 10 in NB08. Nominal actor caution=low is the strongest reading confidence in the democratic corpus.",
+    "main_hypothesis": "CFK I y CFK II quedan PAT→TEC; el primer mandato es estable y el segundo conserva sensibilidad de fase.",
+    "required_caveat": "Los dos mandatos se informan por separado aunque compartan notación. Persiste una brecha documental en 2009.",
     "document_ids": [
       "asuncion_cristina_2007",
       "mensaje_presidencial_2008",
@@ -250,7 +262,9 @@
       "HCDN_ONLY"
     ],
     "include_in_actor_map": true,
-    "source_reference": "NB10_democratic_actor_interpretive_matrix_v0_1.csv"
+    "source_reference": "NB17–NB21 · MAPA_ORBITAL_ARGENTINO_v0_4",
+    "adjudicated_notation": "PAT→TEC",
+    "adjudication_status": "provisional_functional_symmetric_v0.4"
   },
   {
     "actor_id": "macri",
@@ -270,8 +284,8 @@
     "stability_label": "unstable",
     "caution_level": "medium",
     "readiness_status": "provisional",
-    "main_hypothesis": "Macri's corrected profile (n=5, after removing the misattributed Alberto Fernández 2019 inauguration) shows tecnocracia+paternalismo as the modal configuration across the Macrismo period: the 2016 and 2017 aperturas and the 2019 final apertura anchor tecnocracia dominance with strong attractor. The 2015 inauguration is the only paternalismo+tecnocracia document (characteristic of inaugural addresses across actors). The 2018 apertura retains an indeterminate attractor (low total score, tec_TM=0.0 despite TM-type content) and should not carry full weight. The corrected profile is internally coherent: tecnocracia dominates the working-presidency aperturas.",
-    "required_caveat": "CORRECTED PROFILE. Metadata correction applied 2026-04-29. Profile based on 5 documents (was 6 before correction). Medium caution. The 2018 document has indeterminate attractor (total_score=10.44, tec_TM=0.0) — treat as low-weight. The 2018 document's tec_TM=0.0 despite clear TM-type content (digital government, Estado moderno) may indicate a pattern-set gap for this speech style. The corrected profile should not be cited as final until a full pipeline v1 re-run confirms actor-level aggregations.",
+    "main_hypothesis": "Macri queda TEC↔PAT: TEC domina los documentos de gobierno activo y PAT organiza la asunción; el bootstrap no autoriza una flecha única.",
+    "required_caveat": "La frontera se publica como indeterminación, no como PAT→TEC forzado.",
     "document_ids": [
       "2015_12_10_mensaje_presidencial_macri_asuncixn",
       "2016_03_01_asamblea_legislativa_macri",
@@ -286,7 +300,9 @@
       "METADATA_CORREGIDA"
     ],
     "include_in_actor_map": true,
-    "source_reference": "NB10_democratic_actor_interpretive_matrix_v0_1.csv"
+    "source_reference": "NB17–NB21 · MAPA_ORBITAL_ARGENTINO_v0_4",
+    "adjudicated_notation": "TEC↔PAT",
+    "adjudication_status": "provisional_functional_symmetric_v0.4"
   },
   {
     "actor_id": "albertof",
@@ -306,8 +322,8 @@
     "stability_label": "moderate",
     "caution_level": "high",
     "readiness_status": "provisional_high_caution",
-    "main_hypothesis": "Alberto Fernández's corpus begins in 2019 after metadata correction (the inauguration address was previously misattributed to Macri). The four-document profile shows paternalismo+tecnocracia as the modal configuration (2021 and 2022). The 2019 and 2020 addresses are tecnocracia+paternalismo — the inversion is consistent across the transition from inauguration to first-year governance. Overall actor averages show paternalismo barely above tecnocracia (16.356 vs 15.456), making this the most tightly paired actor-level dyad in the democratic corpus after Kirchner. The 2019 inauguration retains an indeterminate attractor (exact tie tec=pat=14.001).",
-    "required_caveat": "CORRECTED PROFILE. Profile includes 2019 inauguration recovered from Macri misattribution. HIGH caution (share_problematic_audit=0.5, n=4). The 2019 document has indeterminate attractor (exact tec=pat tie). The 2022 address is still_ambiguous (cleared_provisional, gap=1.49/3.9%). share_ambiguous_nb05=1.0 (all 4 documents have NB05 ambiguity flag). This profile should not be used for strong configuration claims. Caution remains high pending corpus expansion (2023 apertura not in corpus). Interpret separately from Macri; do not use the pre-correction merged profile.",
+    "main_hypothesis": "Alberto Fernández queda provisionalmente PAT→TEC en cuatro documentos disponibles.",
+    "required_caveat": "El corpus del mandato está incompleto y la apertura 2023 permanece ausente.",
     "document_ids": [
       "mensaje_presidencial_2020",
       "mensaje_presidencial_2021",
@@ -321,7 +337,9 @@
       "METADATA_CORREGIDA"
     ],
     "include_in_actor_map": true,
-    "source_reference": "NB10_democratic_actor_interpretive_matrix_v0_1.csv"
+    "source_reference": "NB17–NB21 · MAPA_ORBITAL_ARGENTINO_v0_4",
+    "adjudicated_notation": "PAT→TEC",
+    "adjudication_status": "provisional_functional_symmetric_v0.4"
   },
   {
     "actor_id": "milei",
@@ -341,8 +359,8 @@
     "stability_label": "direction_revised",
     "caution_level": "medium",
     "readiness_status": "provisional_temporal_holdout",
-    "main_hypothesis": "En 2023–2026, MES organiza el cambio de era, la misión y el telos; TEC realiza el programa y sus resultados retrovalidan esa misión. La apertura 2026 sostiene MES–TEC en una prueba temporal aunque la pantalla léxica acumule más masa PAT.",
-    "required_caveat": "n=3 HCDN y cuatro discursos leídos. NB15 es una prueba temporal, no una réplica ciega. La masa 2026 marca PAT–TEC; la pareja funcional MES–TEC debe ser replicada por codificación independiente.",
+    "main_hypothesis": "Milei queda MES→TEC↺: MES encuadra la transición y TEC realiza y prueba; PAT es positivo pero subordinado o mixto, no conductor.",
+    "required_caveat": "Tres aperturas HCDN y cuatro discursos leídos. La asunción 2023 debe integrarse cuantitativamente y falta réplica humana.",
     "document_ids": [
       "2024_mensaje_asamblea_legislativa_milei",
       "2025_mensaje_asamblea_legislativa_milei",
@@ -355,7 +373,9 @@
       "DIRECCION_REVISADA"
     ],
     "include_in_actor_map": true,
-    "source_reference": "NB10 + NB12 + NB13 + NB15 + NB16",
-    "screen_transition_count": 1
+    "source_reference": "NB17–NB21 · MAPA_ORBITAL_ARGENTINO_v0_4",
+    "screen_transition_count": 1,
+    "adjudicated_notation": "MES→TEC↺",
+    "adjudication_status": "provisional_functional_symmetric_v0.4"
   }
 ]

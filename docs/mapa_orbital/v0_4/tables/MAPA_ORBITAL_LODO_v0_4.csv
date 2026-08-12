@@ -1,0 +1,109 @@
+case_unit_id,short_label,omitted_function,screen_winner,candidate_winner,margin,indeterminate,preserves_candidate
+ALFONSIN_1983_1989,Alfonsín,none,paternalismo,paternalismo,0.3545624999999999,False,True
+ALFONSIN_1983_1989,Alfonsín,tiempo,paternalismo,paternalismo,0.3545624999999999,False,True
+ALFONSIN_1983_1989,Alfonsín,problema,paternalismo,paternalismo,0.8151875,False,True
+ALFONSIN_1983_1989,Alfonsín,autoridad,paternalismo,paternalismo,0.3545624999999999,False,True
+ALFONSIN_1983_1989,Alfonsín,sujeto_enemigo,paternalismo,paternalismo,0.16412499999999985,False,True
+ALFONSIN_1983_1989,Alfonsín,telos,tecnocracia,tecnocracia,0.7391875000000001,False,False
+ALFONSIN_1983_1989,Alfonsín,sacrificio,paternalismo,paternalismo,0.3545624999999999,False,True
+ALFONSIN_1983_1989,Alfonsín,medios,paternalismo,paternalismo,0.5555625,False,True
+ALFONSIN_1983_1989,Alfonsín,prueba,paternalismo,paternalismo,0.6225624999999999,False,True
+MENEM_I_1989_1995,Menem I,none,paternalismo,paternalismo,0.7703333333333333,False,True
+MENEM_I_1989_1995,Menem I,tiempo,paternalismo,paternalismo,0.7703333333333333,False,True
+MENEM_I_1989_1995,Menem I,problema,paternalismo,paternalismo,0.8931666666666666,False,True
+MENEM_I_1989_1995,Menem I,autoridad,paternalismo,paternalismo,0.7703333333333333,False,True
+MENEM_I_1989_1995,Menem I,sujeto_enemigo,paternalismo,paternalismo,0.7061666666666666,False,True
+MENEM_I_1989_1995,Menem I,telos,tecnocracia,tecnocracia,0.4796666666666666,False,False
+MENEM_I_1989_1995,Menem I,sacrificio,paternalismo,paternalismo,0.7703333333333333,False,True
+MENEM_I_1989_1995,Menem I,medios,paternalismo,paternalismo,0.8340000000000001,False,True
+MENEM_I_1989_1995,Menem I,prueba,paternalismo,paternalismo,1.1276666666666666,False,True
+MENEM_II_1995_1999,Menem II,none,paternalismo,paternalismo,1.221,False,True
+MENEM_II_1995_1999,Menem II,tiempo,paternalismo,paternalismo,1.221,False,True
+MENEM_II_1995_1999,Menem II,problema,paternalismo,paternalismo,1.3684,False,True
+MENEM_II_1995_1999,Menem II,autoridad,paternalismo,paternalismo,1.221,False,True
+MENEM_II_1995_1999,Menem II,sujeto_enemigo,paternalismo,paternalismo,0.781,False,True
+MENEM_II_1995_1999,Menem II,telos,tecnocracia,tecnocracia,0.029000000000000026,True,False
+MENEM_II_1995_1999,Menem II,sacrificio,paternalismo,paternalismo,1.221,False,True
+MENEM_II_1995_1999,Menem II,medios,paternalismo,paternalismo,1.3281999999999998,False,True
+MENEM_II_1995_1999,Menem II,prueba,paternalismo,paternalismo,1.4354,False,True
+DELARUA_1999_2001,De la Rúa,none,paternalismo,paternalismo,0.2968333333333333,False,True
+DELARUA_1999_2001,De la Rúa,tiempo,paternalismo,paternalismo,0.2968333333333333,False,True
+DELARUA_1999_2001,De la Rúa,problema,paternalismo,paternalismo,1.0338333333333334,False,True
+DELARUA_1999_2001,De la Rúa,autoridad,paternalismo,paternalismo,0.2968333333333333,False,True
+DELARUA_1999_2001,De la Rúa,sujeto_enemigo,paternalismo,paternalismo,0.15566666666666684,False,True
+DELARUA_1999_2001,De la Rúa,telos,tecnocracia,tecnocracia,0.9531666666666666,False,False
+DELARUA_1999_2001,De la Rúa,sacrificio,paternalismo,paternalismo,0.2968333333333333,False,True
+DELARUA_1999_2001,De la Rúa,medios,paternalismo,paternalismo,0.2968333333333335,False,True
+DELARUA_1999_2001,De la Rúa,prueba,paternalismo,paternalismo,0.6541666666666666,False,True
+RODRIGUEZ_SAA_2001,R. Saá,none,paternalismo,paternalismo,0.536,False,True
+RODRIGUEZ_SAA_2001,R. Saá,tiempo,paternalismo,paternalismo,1.786,False,True
+RODRIGUEZ_SAA_2001,R. Saá,problema,paternalismo,paternalismo,0.536,False,True
+RODRIGUEZ_SAA_2001,R. Saá,autoridad,paternalismo,paternalismo,0.536,False,True
+RODRIGUEZ_SAA_2001,R. Saá,sujeto_enemigo,paternalismo,paternalismo,0.536,False,True
+RODRIGUEZ_SAA_2001,R. Saá,telos,mesianismo,mesianismo,0.714,False,False
+RODRIGUEZ_SAA_2001,R. Saá,sacrificio,paternalismo,paternalismo,0.536,False,True
+RODRIGUEZ_SAA_2001,R. Saá,medios,mesianismo,mesianismo,0.0,True,False
+RODRIGUEZ_SAA_2001,R. Saá,prueba,paternalismo,paternalismo,0.536,False,True
+DUHALDE_2002_2003,Duhalde,none,paternalismo,paternalismo,0.47191666666666654,False,True
+DUHALDE_2002_2003,Duhalde,tiempo,paternalismo,paternalismo,0.47191666666666654,False,True
+DUHALDE_2002_2003,Duhalde,problema,paternalismo,paternalismo,0.96325,False,True
+DUHALDE_2002_2003,Duhalde,autoridad,paternalismo,paternalismo,0.47191666666666654,False,True
+DUHALDE_2002_2003,Duhalde,sujeto_enemigo,paternalismo,paternalismo,0.4013333333333331,False,True
+DUHALDE_2002_2003,Duhalde,telos,tecnocracia,tecnocracia,0.7780833333333335,False,False
+DUHALDE_2002_2003,Duhalde,sacrificio,paternalismo,paternalismo,0.47191666666666654,False,True
+DUHALDE_2002_2003,Duhalde,medios,paternalismo,paternalismo,0.47191666666666665,False,True
+DUHALDE_2002_2003,Duhalde,prueba,paternalismo,paternalismo,0.8292499999999999,False,True
+KIRCHNER_2003_2007,N. Kirchner,none,paternalismo,paternalismo,0.4235500000000001,False,True
+KIRCHNER_2003_2007,N. Kirchner,tiempo,paternalismo,paternalismo,0.4235500000000001,False,True
+KIRCHNER_2003_2007,N. Kirchner,problema,paternalismo,paternalismo,1.1605500000000002,False,True
+KIRCHNER_2003_2007,N. Kirchner,autoridad,paternalismo,paternalismo,0.4235500000000001,False,True
+KIRCHNER_2003_2007,N. Kirchner,sujeto_enemigo,paternalismo,paternalismo,0.08420000000000005,False,True
+KIRCHNER_2003_2007,N. Kirchner,telos,tecnocracia,tecnocracia,0.8264499999999999,False,False
+KIRCHNER_2003_2007,N. Kirchner,sacrificio,paternalismo,paternalismo,0.4235500000000001,False,True
+KIRCHNER_2003_2007,N. Kirchner,medios,paternalismo,paternalismo,0.42354999999999987,False,True
+KIRCHNER_2003_2007,N. Kirchner,prueba,paternalismo,paternalismo,0.8523499999999999,False,True
+CFK_I_2007_2011,CFK I,none,paternalismo,paternalismo,1.0292499999999998,False,True
+CFK_I_2007_2011,CFK I,tiempo,paternalismo,paternalismo,1.0292499999999998,False,True
+CFK_I_2007_2011,CFK I,problema,paternalismo,paternalismo,1.3977499999999998,False,True
+CFK_I_2007_2011,CFK I,autoridad,paternalismo,paternalismo,0.7167499999999998,False,True
+CFK_I_2007_2011,CFK I,sujeto_enemigo,paternalismo,paternalismo,0.6579999999999999,False,True
+CFK_I_2007_2011,CFK I,telos,tecnocracia,tecnocracia,0.22075000000000022,False,False
+CFK_I_2007_2011,CFK I,sacrificio,paternalismo,paternalismo,1.0292499999999998,False,True
+CFK_I_2007_2011,CFK I,medios,paternalismo,paternalismo,1.1632500000000001,False,True
+CFK_I_2007_2011,CFK I,prueba,paternalismo,paternalismo,1.43125,False,True
+CFK_II_2011_2015,CFK II,none,paternalismo,paternalismo,0.3166,False,True
+CFK_II_2011_2015,CFK II,tiempo,paternalismo,paternalismo,0.3166,False,True
+CFK_II_2011_2015,CFK II,problema,paternalismo,paternalismo,0.46399999999999997,False,True
+CFK_II_2011_2015,CFK II,autoridad,paternalismo,paternalismo,0.3166,False,True
+CFK_II_2011_2015,CFK II,sujeto_enemigo,paternalismo,paternalismo,0.3166,False,True
+CFK_II_2011_2015,CFK II,telos,tecnocracia,tecnocracia,0.6834,False,False
+CFK_II_2011_2015,CFK II,sacrificio,paternalismo,paternalismo,0.3166,False,True
+CFK_II_2011_2015,CFK II,medios,paternalismo,paternalismo,0.3166,False,True
+CFK_II_2011_2015,CFK II,prueba,paternalismo,paternalismo,0.8526,False,True
+MACRI_2015_2019,Macri,none,tecnocracia,tecnocracia,0.25164999999999993,False,True
+MACRI_2015_2019,Macri,tiempo,tecnocracia,tecnocracia,0.25164999999999993,False,True
+MACRI_2015_2019,Macri,problema,paternalismo,paternalismo,0.1905500000000001,False,False
+MACRI_2015_2019,Macri,autoridad,tecnocracia,tecnocracia,0.25164999999999993,False,True
+MACRI_2015_2019,Macri,sujeto_enemigo,tecnocracia,tecnocracia,0.371,False,True
+MACRI_2015_2019,Macri,telos,tecnocracia,tecnocracia,0.75165,False,True
+MACRI_2015_2019,Macri,sacrificio,tecnocracia,tecnocracia,0.25164999999999993,False,True
+MACRI_2015_2019,Macri,medios,tecnocracia,tecnocracia,0.14444999999999997,False,True
+MACRI_2015_2019,Macri,prueba,paternalismo,paternalismo,0.06995000000000007,False,False
+ALBERTOF_2019_2023,A. Fernández,none,paternalismo,paternalismo,0.4292499999999999,False,True
+ALBERTOF_2019_2023,A. Fernández,tiempo,paternalismo,paternalismo,0.4292499999999999,False,True
+ALBERTOF_2019_2023,A. Fernández,problema,paternalismo,paternalismo,0.982,False,True
+ALBERTOF_2019_2023,A. Fernández,autoridad,paternalismo,paternalismo,0.4292499999999999,False,True
+ALBERTOF_2019_2023,A. Fernández,sujeto_enemigo,paternalismo,paternalismo,0.4292499999999999,False,True
+ALBERTOF_2019_2023,A. Fernández,telos,tecnocracia,tecnocracia,0.8207500000000001,False,False
+ALBERTOF_2019_2023,A. Fernández,sacrificio,paternalismo,paternalismo,0.4292499999999999,False,True
+ALBERTOF_2019_2023,A. Fernández,medios,paternalismo,paternalismo,0.4292499999999999,False,True
+ALBERTOF_2019_2023,A. Fernández,prueba,paternalismo,paternalismo,0.6972499999999999,False,True
+MILEI_2023_PRESENTE,Milei,none,mesianismo,mesianismo,0.6409999999999996,False,True
+MILEI_2023_PRESENTE,Milei,tiempo,tecnocracia,mesianismo,0.6090000000000002,False,True
+MILEI_2023_PRESENTE,Milei,problema,mesianismo,mesianismo,1.3779999999999997,False,True
+MILEI_2023_PRESENTE,Milei,autoridad,mesianismo,mesianismo,0.6409999999999996,False,True
+MILEI_2023_PRESENTE,Milei,sujeto_enemigo,mesianismo,mesianismo,0.2743333333333333,False,True
+MILEI_2023_PRESENTE,Milei,telos,tecnocracia,mesianismo,0.1923333333333337,False,True
+MILEI_2023_PRESENTE,Milei,sacrificio,mesianismo,mesianismo,0.6409999999999996,False,True
+MILEI_2023_PRESENTE,Milei,medios,mesianismo,mesianismo,1.1769999999999996,False,True
+MILEI_2023_PRESENTE,Milei,prueba,mesianismo,mesianismo,1.1769999999999996,False,True

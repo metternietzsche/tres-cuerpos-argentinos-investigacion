@@ -2,6 +2,22 @@
 
 ## Sin publicar
 
+- Sin cambios.
+
+## v0.4.0 · 2026-08-11
+
+- Aplicado el instrumento funcional simétrico a 1.048 señales de 52 documentos
+  y doce unidades `actor × mandato`.
+- Publicados polaridad, función, posición, LODO y 2.000 remuestreos por unidad.
+- Promovido el mapa orbital v0.4: cinco cambios de notación y ninguna alteración
+  de pareja respecto de v0.3.
+- Actualizados whitepaper, mapa, metodología, codebook, datos y sitio doctrinario.
+- Documentado que los codificadores locales y la primera pasada automática no
+  alcanzan para sustituir la réplica humana independiente.
+- Corregida y propagada la ventana presidencial de Rodríguez Saá; 58 matches
+  legislativos ajenos quedan excluidos.
+- El videojuego y sus coeficientes permanecen explícitamente fuera del bump.
+
 - Aclarado que la beta web del videojuego es pública, pero su repositorio de
   implementación y su código permanecen privados y bajo derechos reservados.
 - Dominios canónicos fijados en `lore.trescuerpos.arcagaucha.com` para la

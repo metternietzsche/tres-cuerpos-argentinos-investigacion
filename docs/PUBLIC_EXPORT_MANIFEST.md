@@ -1,9 +1,9 @@
-# Manifiesto de export público de investigación v0.3
+# Manifiesto de export público de investigación v0.4
 
 **Repositorio objetivo:** `metternietzsche/tres-cuerpos-argentinos-investigacion`  
-**Versión inicial:** `v0.2.0`  
-**Fuente:** `public_export/investigacion/`  
-**Fecha:** 2026-08-09
+**Versión:** `v0.4.0`
+**Fuente:** `web/static_prototype/` + derivados promovidos NB17–NB21
+**Fecha:** 2026-08-11
 
 Este manifiesto separa la autoridad doctrinaria y empírica del videojuego. El
 sitio conserva su puente editorial hacia el juego, pero no vuelve a empaquetar
@@ -15,10 +15,10 @@ su build ni sus assets de runtime.
 |---|---|---|
 | `README.md` | `generate` | Actualizar la estructura separada y el estado v0.49 beta del juego. |
 | `LICENSE.md` | `generate` | CC BY-NC 4.0 para contenido público; excepciones claras. |
-| `CITATION.cff` | `include` | Conservar versión doctrinaria v0.2.0 y caveat empírico. |
+| `CITATION.cff` | `include` | Citar sitio y mapa v0.4 con caveat de réplica humana. |
 | `docs/whitepaper/` | `include` | Whitepaper y materiales editoriales. |
-| `docs/mapa_orbital/` | `include` | Marco y brief del mapa. |
-| `docs/metodologia/` | `include` | Contratos y especificaciones metodológicas. |
+| `docs/mapa_orbital/v0_4/` | `include` | Mapa, fuente Draw.io y nueve tablas derivadas de sensibilidad. |
+| `docs/metodologia/` | `include` | Pipeline v0.2, codebook y esquema de codificación. |
 | `docs/evidencia/` | `include` | Síntesis y matrices derivadas públicas. |
 | `docs/licencia/` | `include` | Política ampliada. |
 | `docs/roadmap/` | `include` | Roadmap histórico, marcado como tal. |
@@ -47,6 +47,8 @@ su build ni sus assets de runtime.
 - enlaces cruzados al repositorio público real del videojuego;
 - caveat visible: datos provisionales, no aptos para cita académica formal;
 - Page estática navegable por rutas hash y sin errores de consola.
+- ningún documento bruto del corpus ni ruta secreta o credencial;
+- videojuego y coeficientes de Leyendas sin modificaciones.
 
 ## Decisión de licencia
 

@@ -68,7 +68,7 @@
   {
     "roadmap_id": "P5",
     "title": "Completar la línea Milei a n≥4",
-    "description": "La apertura 2026 ya fue incorporada como tercer documento HCDN y prueba temporal NB15. Resta integrar formalmente la asunción de diciembre 2023 a la misma serie cuantitativa y replicar la adjudicación con codificación independiente.",
+    "description": "Las aperturas 2024–2026 forman el calibrador longitudinal. Resta integrar cuantitativamente la asunción de diciembre 2023 y replicar la adjudicación con codificación humana independiente.",
     "status": "parcial",
     "depends_on": [],
     "unlocks": [
@@ -76,20 +76,20 @@
     ],
     "related_blocked_content": [],
     "priority": "media",
-    "source_reference": "NB15 + NB16 + WHITEPAPER v0.3 §11"
+    "source_reference": "NB17–NB21 + WHITEPAPER v0.4 §11"
   },
   {
     "roadmap_id": "P6",
-    "title": "Validación ciega y re-run HCDN por actor × mandato",
-    "description": "Revisar las firmas NB13, codificar independientemente Macri y los casos indeterminados, propagar la ventana de Rodríguez Saá, integrar Milei 2023 y reconstruir agregaciones con Menem I/II y CFK I/II separados.",
-    "status": "pendiente",
+    "title": "Completar réplica humana del re-run HCDN por actor × mandato",
+    "description": "NB17–NB21 ya congelaron 52 documentos, corrigieron la ventana de Rodríguez Saá, aplicaron el instrumento simétrico a 1.048 señales y publicaron LODO, bootstrap y trayectoria. Resta doble codificación humana o muestra estratificada suficiente, adjudicación de desacuerdos y cierre de brechas del corpus.",
+    "status": "parcial",
     "depends_on": [],
     "unlocks": [
       "P7"
     ],
     "related_blocked_content": [],
     "priority": "media",
-    "source_reference": "WHITEPAPER v0.3 §11 / MAPA_ORBITAL_ARGENTINO_v0_3.md §8"
+    "source_reference": "METHOD_PIPELINE_v0_2 + WHITEPAPER v0.4 §11"
   },
   {
     "roadmap_id": "P7",
@@ -106,6 +106,6 @@
       "PERON_1973_ASUNCION_BLOQUEADA"
     ],
     "priority": "alta",
-    "source_reference": "WHITEPAPER v0.3 §11 / MAPA_ORBITAL_ARGENTINO_v0_3.md §8"
+    "source_reference": "WHITEPAPER v0.4 §11 / MAPA_ORBITAL_ARGENTINO_v0_4.md"
   }
 ]

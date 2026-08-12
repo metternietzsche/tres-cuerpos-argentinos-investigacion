@@ -1,14 +1,14 @@
 # El problema de los tres cuerpos argentinos
 
-**Sitio doctrinario y publicación v0.2.0**  
+**Sitio doctrinario y publicación v0.4.0**
 **Autora:** Alexandra Bustos Frati, PhD  
 **Estado empírico:** provisional; no apto todavía para cita académica formal
 
 **Dominio canónico:** `https://lore.trescuerpos.arcagaucha.com`
 
 Proyecto de investigación que mapea configuraciones político-epistémicas en los
-discursos presidenciales de la democracia argentina (1983–2025) mediante análisis
-computacional de texto.
+discursos presidenciales de la democracia argentina (1983–2026) mediante una
+recalibración funcional simétrica y análisis computacional de texto.
 
 La hipótesis central es que la política argentina no oscila limpiamente entre dos
 polos. **Tecnocracia, Mesianismo y Paternalismo** gravitan al mismo tiempo. La
@@ -17,17 +17,32 @@ a la política.
 
 ## Hallazgos provisionales
 
-- 86% de los documentos democráticos muestran Tecnocracia + Paternalismo como
-  configuración primaria y secundaria;
-- la configuración modal es Paternalismo + Tecnocracia: 25 documentos, 49% del
-  corpus y siete actores;
-- Milei aparece provisionalmente como Tecnocracia + Mesianismo con `n=2`;
+- 43 de 52 documentos (83%) conservan la pareja Tecnocracia–Paternalismo;
+- ninguna de las doce parejas agregadas cambia respecto de v0.3, pero cinco
+  relaciones cambian de dirección o pasan a indeterminación explícita;
+- Milei aparece provisionalmente como `MES→TEC↺` en un calibrador longitudinal
+  de tres aperturas HCDN y cuatro discursos leídos;
+- Macri queda `TEC↔PAT`: el remuestreo no autoriza una flecha única;
 - los dos documentos limpios de Perón (1946 y 1954) muestran Mesianismo dominante
   y Paternalismo secundario.
 
 > Los perfiles de actor son hipótesis, no clasificaciones definitivas. El corpus
-> HCDN v0.1 reúne 51 documentos y todavía no está autorizado para cita académica
-> formal.
+> HCDN v0.4 reúne 52 documentos, 12 unidades actor × mandato y 1.048 señales.
+> La automatización es una prueba de estrés: todavía falta réplica humana
+> independiente y la clasificación no está autorizada como resultado histórico
+> definitivo.
+
+## Qué cambia en v0.4
+
+Cada señal de Tecnocracia, Mesianismo y Paternalismo recibe el mismo instrumento:
+polaridad, función y posición. La masa propone la pareja, la función ordena la
+relación y la trayectoria limita el agregado. Se publican también LODO sobre
+ocho funciones, 2.000 remuestreos por unidad y el diff completo frente a v0.3.
+
+- [Whitepaper v0.4](docs/whitepaper/WHITEPAPER_FULL_DRAFT_v0_4.md)
+- [Mapa orbital v0.4](docs/mapa_orbital/v0_4/MAPA_ORBITAL_ARGENTINO_v0_4.md)
+- [Metodología v0.2](docs/metodologia/METHOD_PIPELINE_v0_2.md)
+- [Codebook simétrico](docs/metodologia/CODEBOOK_FUNCIONAL_SIMETRICO_v0_3.md)
 
 ## Abrir el sitio
 
@@ -44,7 +59,7 @@ Luego abrir `http://localhost:8000/web/static_prototype/`.
 ├── README.md
 ├── LICENSE.md
 ├── CITATION.cff
-├── docs/                 # whitepaper, método, evidencia y mapa orbital
+├── docs/                 # whitepaper, método, codebook, evidencia y mapa orbital
 ├── figures/              # figuras empíricas promovidas
 ├── data_public/          # derivados públicos seleccionados
 └── web/static_prototype/ # sitio doctrinario estático
