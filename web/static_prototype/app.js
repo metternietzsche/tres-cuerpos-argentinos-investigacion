@@ -3,7 +3,7 @@
 // ─── Constants ─────────────────────────────────────────────────────────────────
 
 const DATA_PATH = 'data/';
-const PUBLICATION_CACHE_KEY = '20260811d';
+const PUBLICATION_CACHE_KEY = '20260814a';
 
 const DATA_FILES = [
   'site_meta.json',
@@ -190,7 +190,7 @@ function buildActorLegendBridge(actor, legends) {
   if (!legends.length) {
     return `<div class="actor-legend-bridge is-empty">
       <span class="actor-legend-bridge-label">Correspondencia con el videojuego</span>
-      <p>Este actor integra el corpus HCDN, pero no tiene una Leyenda jugable en v0.49 beta.</p>
+      <p>Este actor integra el corpus HCDN, pero no tiene una Leyenda jugable en la beta pública.</p>
     </div>`;
   }
   return `<div class="actor-legend-bridge">
@@ -1334,7 +1334,7 @@ function renderActores() {
 
     <section id="leyendas-jugables" class="actor-layer-section legend-roster-section">
       <div class="actor-section-heading">
-        <div><span class="section-kicker">VIDEOJUEGO · MODO LEYENDA v0.49 BETA</span><h2>Quince Leyendas jugables</h2></div>
+        <div><span class="section-kicker">VIDEOJUEGO · MODO LEYENDA</span><h2>Quince Leyendas jugables</h2></div>
         <p>Cada tarjeta es una encarnación lúdica. Una persona puede ocupar más de una.</p>
       </div>
       <div class="legend-roster-grid">${legends.map(buildLegendRosterCard).join('')}</div>
@@ -1363,7 +1363,7 @@ function buildActorCard(a) {
       <div class="actor-game-status ${legends.length ? '' : 'is-empty'}">
         ${legends.length
           ? `${legends.length} ${legends.length === 1 ? 'correspondencia jugable' : 'correspondencias jugables'}`
-          : 'Sin Leyenda jugable en v0.49 beta'}
+          : 'Sin Leyenda jugable en la beta pública'}
       </div>
       <a href="#actores/${esc(a.actor_id)}" class="actor-card-link">Abrir ficha del corpus →</a>
     </div>
@@ -2630,7 +2630,7 @@ function renderVideojuego() {
   const gameUrl = resolveGameUrl(game);
   const jointlyPublished = Boolean(game.public_url);
   const playCta = gameUrl
-    ? `<a href="${esc(gameUrl)}" class="btn btn-primary vj-play-cta" data-game-cta target="_blank" rel="noopener">Jugar ${esc(game.display_version || 'v0.49 beta')} →</a>`
+    ? `<a href="${esc(gameUrl)}" class="btn btn-primary vj-play-cta" data-game-cta target="_blank" rel="noopener">Jugar ${esc(game.display_version || 'la beta pública')} →</a>`
     : `<span class="btn btn-primary" aria-disabled="true" title="Falta configurar game_meta.public_url">Publicación web pendiente</span>`;
   const releaseCopy = jointlyPublished
     ? `El build forma parte de este mismo paquete editorial y se abre sin cuenta ni descarga.`
@@ -2655,7 +2655,7 @@ function renderVideojuego() {
         <div class="vj-logo-placeholder" hidden aria-hidden="true"><span class="vj-logo-placeholder-icon">◈</span></div>
       </div>
       <div class="vj-header-text">
-        <div class="vj-eyebrow">VIDEOJUEGO · ${esc(game.display_version || 'v0.49 beta')} · ${esc(game.status_label || 'BETA JUGABLE')}</div>
+        <div class="vj-eyebrow">VIDEOJUEGO · ${esc(game.display_version || 'BETA PÚBLICA')} · ${esc(game.status_label || 'BETA JUGABLE')}</div>
         <h1 class="vj-title">Tres cuerpos, una república inestable</h1>
         <p class="vj-subtitle">Ganar no alcanza para representar este tiempo. <em>${esc(game.title || 'Tres Cuerpos: República Inestable')}</em> vuelve sobre lo que hiciste: un cuerpo conduce, otro conserva fuerza propia y el tercero queda como práctica lateral o capacidad ausente. No los reconcilia.</p>
         <div class="cta-group vj-primary-actions">
@@ -2666,7 +2666,7 @@ function renderVideojuego() {
     </div>
 
     <div class="notice notice-green vj-release-note">
-      <strong>${esc(game.display_version || 'v0.49 beta')} publicada el ${esc(game.updated || '2026-08-09')}.</strong>
+      <strong>${esc(game.display_version || 'Beta pública')} publicada el ${esc(game.updated || 'fecha no informada')}.</strong>
       ${releaseCopy}
     </div>
 
@@ -2784,7 +2784,7 @@ function renderVideojuego() {
       </div>
       <div class="vj-status-item vj-status-done">
         <span class="vj-status-icon" aria-hidden="true">✓</span>
-        <div><strong>Build reproducible</strong><p class="muted">Versión visible, package y actas sincronizados en 0.49.0-beta.1.</p></div>
+        <div><strong>Build reproducible</strong><p class="muted">Versión visible, package y actas sincronizados en ${esc(game.version || 'la versión publicada')}.</p></div>
       </div>
       ${publicationStatus}
     </div>
@@ -2851,7 +2851,7 @@ function renderLicencia() {
           <div class="lic-status"><strong>Todos los derechos reservados.</strong> No autorizado para uso externo.</div>
         </div>
         <div class="lic-row">
-          <div class="lic-type">Videojuego v0.49 beta, código y assets</div>
+          <div class="lic-type">Videojuego publicado, código y assets</div>
           <div class="lic-status"><strong>Todos los derechos reservados / UNLICENSED.</strong> El acceso al build publicado no concede permiso de copia, redistribución, adaptación ni uso comercial. El archivo sonoro conserva además sus atribuciones y licencias por pieza.</div>
         </div>
       </div>
@@ -2859,7 +2859,7 @@ function renderLicencia() {
 
     <div class="lic-section">
       <h2>Publicación conjunta</h2>
-      <p>El sitio doctrinario enlaza la beta v0.49 del videojuego, desplegada por separado. Esa relación editorial no mezcla el juego con el corpus ni cambia su licencia: los textos públicos conservan CC BY-NC 4.0 y el código, arte y audio del juego siguen reservados según sus condiciones propias.</p>
+      <p>El sitio doctrinario enlaza la beta pública del videojuego, desplegada por separado. Esa relación editorial no mezcla el juego con el corpus ni cambia su licencia: los textos públicos conservan CC BY-NC 4.0 y el código, arte y audio del juego siguen reservados según sus condiciones propias.</p>
     </div>
 
     <div class="lic-section" style="border-bottom:none;padding-bottom:0;">

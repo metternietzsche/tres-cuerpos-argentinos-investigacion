@@ -4,6 +4,14 @@
 
 - Sin cambios.
 
+## v0.4.5 · 2026-08-14
+
+- Sincronizada la vista Videojuego con `v0.52.0-beta.12` y su fecha pública.
+- El CTA, encabezado, ficha reproducible y documento de frontera dejan de
+  presentar `v0.49 beta` como la versión jugable actual.
+- Los textos auxiliares hablan de la beta pública sin fijar un número para
+  evitar divergencias futuras respecto de `game_meta.json`.
+
 ## v0.4.4 · 2026-08-11
 
 - Incorporado Perón como actor medido en un bloque histórico propio, anterior
