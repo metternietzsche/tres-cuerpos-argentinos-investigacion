@@ -14,13 +14,20 @@ const publicationWeb = json('web/static_prototype/data/actor_publication.json');
 const publicationPublic = json('data_public/actor_publication.json');
 const gameWeb = json('web/static_prototype/data/game_meta.json');
 const gamePublic = json('data_public/game_meta.json');
+const analysisRegistryWeb = json('web/static_prototype/data/text_analysis_registry.v0.1.json');
+const analysisRegistryPublic = json('data_public/text_analysis_registry.v0.1.json');
+const analysisReferenceWeb = json('web/static_prototype/data/text_analysis_reference.v0.1.json');
+const analysisReferencePublic = json('data_public/text_analysis_reference.v0.1.json');
 const site = json('web/static_prototype/data/site_meta.json');
 const index = read('web/static_prototype/index.html');
 const app = read('web/static_prototype/app.js');
+const analyzer = read('web/static_prototype/orbital-analyzer.js');
 
 check(JSON.stringify(translationWeb) === JSON.stringify(translationPublic), 'La traducción de Leyendas difiere entre web y data_public.');
 check(JSON.stringify(publicationWeb) === JSON.stringify(publicationPublic), 'actor_publication difiere entre web y data_public.');
 check(JSON.stringify(gameWeb) === JSON.stringify(gamePublic), 'game_meta difiere entre web y data_public.');
+check(JSON.stringify(analysisRegistryWeb) === JSON.stringify(analysisRegistryPublic), 'El registro del analizador difiere entre web y data_public.');
+check(JSON.stringify(analysisReferenceWeb) === JSON.stringify(analysisReferencePublic), 'La referencia del analizador difiere entre web y data_public.');
 check(translationWeb.translations?.length === 15, 'La traducción debe contener exactamente 15 Leyendas.');
 
 const legendIds = new Set(publicationWeb.legends.map(item => item.id));
@@ -47,13 +54,32 @@ for (const item of translationWeb.translations) {
 
 check(gameWeb.display_version === publicationWeb.game_version, 'game_meta.display_version y actor_publication.game_version no coinciden.');
 check(gameWeb.audit.vitest_tests === 227, 'El conteo público de tests del juego debe ser 227.');
-check(site.site_release === 'v0.5.0', 'site_meta.site_release debe ser v0.5.0.');
+check(site.site_release === 'v0.6.0', 'site_meta.site_release debe ser v0.6.0.');
 check(!/v0\.49|game-(career|legend)-final-v42/.test(app), 'app.js conserva referencias visuales o de versión obsoletas.');
 check(/name="robots" content="index, follow/.test(index), 'index.html no habilita indexación.');
 check(/rel="canonical"/.test(index) && /application\/ld\+json/.test(index), 'index.html carece de canonical o datos estructurados.');
 check(!/noindex|nofollow/.test(index), 'index.html todavía bloquea robots.');
+check(/orbital-analyzer\.js/.test(index) && /#laboratorio/.test(index), 'La portada no carga o no enlaza el laboratorio orbital.');
+check(/WebApplication/.test(index), 'Faltan datos estructurados del laboratorio.');
 
-for (const file of ['robots.txt', 'sitemap.xml', 'manifest.webmanifest', 'assets/logo.webp', 'tesis.html', 'mapa-orbital.html', 'actores.html', 'leyendas.html', 'evidencia.html', 'whitepaper.html', 'videojuego.html']) {
+check(analysisRegistryWeb.patterns?.length === 60, 'El analizador debe publicar exactamente 60 patrones.');
+check(new Set(analysisRegistryWeb.patterns?.map(item => item.patternId)).size === 60, 'Los patternId del analizador deben ser únicos.');
+for (const vector of ['tecnocracia', 'mesianismo', 'paternalismo']) {
+  check(analysisRegistryWeb.patterns?.filter(item => item.vector === vector).length === 20, `${vector}: deben publicarse 20 patrones.`);
+}
+for (const pattern of analysisRegistryWeb.patterns || []) {
+  try { new RegExp(pattern.regex, 'giu'); } catch { failures.push(`${pattern.patternId}: regex inválida.`); }
+}
+check(analysisReferenceWeb.documents?.length === 52, 'La referencia diagnóstica debe contener 52 discursos.');
+for (const document of analysisReferenceWeb.documents || []) {
+  const weightSum = Object.values(document.weights || {}).reduce((sum, value) => sum + Number(value), 0);
+  check(Math.abs(weightSum - 1) < 0.00001, `${document.filename}: pesos diagnósticos no suman uno.`);
+  check(!('text' in document) && !('fullText' in document), `${document.filename}: la referencia no debe publicar texto fuente.`);
+}
+check(/fullTextIncludedInResult:\s*false/.test(analyzer), 'El contrato del analizador debe excluir el texto completo del resultado.');
+check(/processedLocally:\s*true/.test(analyzer) && /storedBySite:\s*false/.test(analyzer), 'El contrato local/privado del analizador no está declarado.');
+
+for (const file of ['robots.txt', 'sitemap.xml', 'manifest.webmanifest', 'assets/logo.webp', 'orbital-analyzer.js', 'tesis.html', 'mapa-orbital.html', 'laboratorio.html', 'actores.html', 'leyendas.html', 'evidencia.html', 'whitepaper.html', 'videojuego.html']) {
   try { statSync(resolve(web, file)); } catch { failures.push(`Falta archivo público requerido: ${file}.`); }
 }
 check(statSync(resolve(web, 'assets/logo.webp')).size < 100_000, 'El logo optimizado debe pesar menos de 100 KB.');

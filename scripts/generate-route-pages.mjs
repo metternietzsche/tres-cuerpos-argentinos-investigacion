@@ -7,6 +7,7 @@ const routes = [
   ['empeza-aca.html', 'recorrido', 'Empezá acá', 'Un recorrido breve por la tesis, el mapa, la evidencia, las Leyendas y el videojuego.'],
   ['tesis.html', 'tesis', 'La tesis', 'Por qué la política argentina no se reduce a un péndulo y cómo interactúan sus tres cuerpos.'],
   ['mapa-orbital.html', 'mapa-orbital', 'Mapa orbital', 'Campo ternario interactivo con 52 discursos y doce unidades actor × mandato.'],
+  ['laboratorio.html', 'laboratorio', 'Analizá un discurso', 'Laboratorio orbital local para explorar señales de tecnocracia, mesianismo y paternalismo en un texto político.'],
   ['actores.html', 'actores', 'Actores y Leyendas', 'Actores del corpus presidencial y su correspondencia explícita con las Leyendas jugables.'],
   ['leyendas.html', 'leyendas', 'Trazabilidad de Leyendas', 'Fuentes, cautelas y reglas detrás de los puntajes de las quince Leyendas jugables.'],
   ['evidencia.html', 'evidencia', 'Evidencia y método', 'Método, ejemplos, fuentes y límites de la investigación.'],
@@ -39,7 +40,7 @@ for (const [file, hash, title, description] of routes) {
   <meta property="og:image" content="${canonical}/assets/logo.webp?v=20260815">
   <meta name="twitter:card" content="summary_large_image">
   <meta http-equiv="refresh" content="0; url=./#${hash}">
-  <link rel="stylesheet" href="styles.css?v=20260815a">
+  <link rel="stylesheet" href="styles.css?v=20260815b">
 </head>
 <body>
   <main class="redirect-page">
@@ -63,4 +64,3 @@ ${routes.map(([file]) => `  <url><loc>${canonical}/${file}</loc><lastmod>2026-08
 </urlset>
 `;
 writeFileSync(resolve(root, 'sitemap.xml'), sitemap);
-

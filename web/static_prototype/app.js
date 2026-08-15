@@ -3,7 +3,7 @@
 // ─── Constants ─────────────────────────────────────────────────────────────────
 
 const DATA_PATH = 'data/';
-const PUBLICATION_CACHE_KEY = '20260815a';
+const PUBLICATION_CACHE_KEY = '20260815b';
 const OFFICIAL_HCDN_ARCHIVE = 'https://www.hcdn.gob.ar/secparl/dgral_info_parlamentaria/mensajes_presidenciales/index.html';
 const RESEARCH_REPOSITORY = 'https://github.com/metternietzsche/tres-cuerpos-argentinos-investigacion';
 
@@ -23,6 +23,8 @@ const DATA_FILES = [
   'roadmap.json',
   'evidence_excerpts.json',
   'legend_gameplay_translation.v0.2.json',
+  'text_analysis_registry.v0.1.json',
+  'text_analysis_reference.v0.1.json',
 ];
 
 const REQUIRED_DATA_FILES = new Set(['site_meta.json', 'vectors.json', 'caveat_badges.json']);
@@ -58,6 +60,13 @@ let badgeMap = {};  // badge_id → badge object
 let actorMap = {};  // actor_id → actor object
 let whitepaperPromise = null;
 let routeEpoch = 0;
+let latestLaboratoryResult = null;
+
+const LABORATORY_SAMPLE = `Este es un texto sintético preparado para mostrar el laboratorio. Nuestro gobierno propone un plan de desarrollo con inversión pública, infraestructura energética y una reforma del Estado que publique datos oficiales. Vamos a sostener una gestión transparente, una política económica verificable y un presupuesto nacional capaz de financiar ciencia y tecnología. La planificación estratégica debe aumentar la capacidad productiva sin ocultar sus costos.
+
+También afirmamos que vivimos un momento histórico. La voluntad popular nos dio un mandato popular para abrir una nueva etapa histórica y superar el viejo orden. Asumimos una causa nacional que convoque a la ciudadanía, renueve el deber democrático y haga visible el destino de nuestro país.
+
+Ese rumbo sólo vale si produce justicia social. Nuestro gobierno va a garantizar seguridad social, salud pública, educación pública y vivienda digna. Vamos a proteger los derechos de los trabajadores, fortalecer el salario mínimo y ampliar la protección social de las familias más vulnerables. El Estado debe garantizar que la modernización no abandone a quienes necesitan cuidado. Este ejemplo no pertenece a una candidatura real y no debe leerse como evidencia histórica.`;
 
 // ─── Helpers ───────────────────────────────────────────────────────────────────
 
@@ -349,6 +358,7 @@ const ROUTE_META = {
   tesis: { title: 'La tesis', description: 'Por qué la política argentina no se reduce a un péndulo y cómo interactúan sus tres cuerpos.' },
   recorrido: { title: 'Empezá acá', description: 'Un recorrido breve por la tesis, el mapa, la evidencia, las Leyendas y el videojuego.' },
   'mapa-orbital': { title: 'Mapa orbital', description: 'Campo ternario interactivo con 52 discursos, doce unidades de mandato y los tres vectores simultáneos del corpus presidencial democrático argentino.' },
+  laboratorio: { title: 'Analizá un discurso', description: 'Laboratorio orbital local para explorar señales de tecnocracia, mesianismo y paternalismo en un texto político.' },
   actores: { title: 'Actores y Leyendas', description: 'Actores del corpus presidencial y su correspondencia explícita con las Leyendas jugables.' },
   leyendas: { title: 'Trazabilidad de Leyendas', description: 'Cómo se traducen fuentes, cautelas y configuraciones del mapa orbital a los puntajes del videojuego.' },
   buscar: { title: 'Buscar', description: 'Buscar conceptos, actores, Leyendas, fuentes y secciones dentro de la publicación.' },
@@ -404,6 +414,7 @@ async function router() {
     case 'tesis':        app.innerHTML = renderTesis();                     break;
     case 'tres-cuerpos': location.replace('#tesis'); return;
     case 'mapa-orbital': app.innerHTML = renderMapaOrbital();               break;
+    case 'laboratorio':  app.innerHTML = renderLaboratory();                break;
     case 'actores':
       app.innerHTML = param ? renderActorDetail(param) : renderActores();
       break;
@@ -429,6 +440,7 @@ async function router() {
   bindAccordions();
   if (section === 'whitepaper') bindWpToc();
   if (section === 'mapa-orbital') bindOrbitalMap();
+  if (section === 'laboratorio') bindLaboratory();
   if (section === 'evidencia' && param) scrollEvidenceSubsection(param);
   if (section === 'buscar') bindSearchPage(param);
 }
@@ -545,6 +557,309 @@ function bindOrbitalMap() {
   update('all', '');
 }
 
+// ─── Laboratory: local text analysis ──────────────────────────────────────────
+
+function laboratoryVectorName(vector) {
+  return ORBITAL_VECTOR_LABELS[vector] || vector;
+}
+
+function laboratoryPercent(value) {
+  return `${(Number(value || 0) * 100).toFixed(1).replace('.', ',')}%`;
+}
+
+function renderLaboratory() {
+  const registry = D['text_analysis_registry.v0.1'];
+  const reference = D['text_analysis_reference.v0.1'];
+  if (!registry?.patterns?.length || !reference?.documents?.length) {
+    return `<section class="page-section error-panel"><h1>El laboratorio no está disponible</h1><p>Falta cargar el registro de señales o el corpus de referencia. El resto de la publicación sigue funcionando.</p></section>`;
+  }
+  const genreOptions = registry.genres.map(genre => `<option value="${esc(genre.id)}">${esc(genre.label)}</option>`).join('');
+  return `<section class="page-section laboratory-page">
+    <div class="breadcrumb"><a href="#inicio">Inicio</a> <span>›</span> Laboratorio orbital</div>
+    <header class="laboratory-hero">
+      <div>
+        <span class="section-kicker">LABORATORIO ORBITAL · DIAGNÓSTICO AUTOMÁTICO V0.1</span>
+        <h1>¿Qué tres cuerpos aparecen en este discurso?</h1>
+        <p class="hero-sub">Pegá un texto político o abrí un archivo <code>.txt</code>/<code>.md</code>. El motor localiza señales de tecnocracia, mesianismo y paternalismo, muestra la evidencia y ubica el texto en el mismo campo formal que el corpus HCDN.</p>
+      </div>
+      <aside class="laboratory-privacy-card" aria-label="Privacidad del análisis">
+        <span aria-hidden="true">LOCAL</span>
+        <strong>El texto no sale de tu dispositivo</strong>
+        <p>Se procesa dentro de este navegador. No se sube, no se almacena y no entra en el JSON descargable.</p>
+      </aside>
+    </header>
+
+    <div class="laboratory-boundary" role="note">
+      <strong>Qué responde:</strong> qué señales contiene este texto y cómo se distribuyen. <strong>Qué no responde:</strong> quién “es” su autoría, qué hará en el gobierno o si una candidatura pertenece para siempre a un vector.
+    </div>
+
+    <form id="laboratory-form" class="laboratory-form" novalidate>
+      <div class="laboratory-meta-grid">
+        <label><span>Título o identificación <small>opcional</small></span><input id="laboratory-title" name="title" maxlength="160" placeholder="Ej.: discurso de lanzamiento"></label>
+        <label><span>Autoría <small>opcional</small></span><input id="laboratory-author" name="author" maxlength="120" placeholder="Ej.: nombre de la candidatura"></label>
+        <label><span>Fecha <small>opcional</small></span><input id="laboratory-date" name="date" type="date"></label>
+        <label><span>Género del texto</span><select id="laboratory-genre" name="genre">${genreOptions}</select></label>
+      </div>
+
+      <label class="laboratory-text-field" for="laboratory-text"><span>Texto a analizar</span></label>
+      <textarea id="laboratory-text" name="text" rows="16" maxlength="${esc(registry.limits.maxCharacters)}" aria-describedby="laboratory-counter laboratory-file-status laboratory-privacy-copy" placeholder="Pegá acá el discurso completo. Para una lectura responsable hacen falta al menos ${esc(registry.limits.minWords)} palabras…"></textarea>
+      <div class="laboratory-input-meta">
+        <span id="laboratory-counter">0 palabras · 0 caracteres</span>
+        <span id="laboratory-file-status" aria-live="polite">Sin archivo abierto</span>
+      </div>
+      <p id="laboratory-privacy-copy" class="laboratory-privacy-copy">El selector sólo lee el archivo en tu navegador. Límite: 1 MB y ${Number(registry.limits.maxCharacters).toLocaleString('es-AR')} caracteres.</p>
+
+      <div class="laboratory-form-actions">
+        <label class="btn btn-secondary laboratory-file-button">Abrir .txt o .md<input id="laboratory-file" type="file" accept=".txt,.md,text/plain,text/markdown" hidden></label>
+        <button type="button" class="btn btn-secondary" id="laboratory-sample">Cargar ejemplo</button>
+        <button type="button" class="btn btn-quiet" id="laboratory-clear">Limpiar</button>
+        <button type="submit" class="btn btn-primary laboratory-submit">Analizar discurso →</button>
+      </div>
+      <div id="laboratory-error" class="laboratory-error" role="alert" hidden></div>
+    </form>
+
+    <div id="laboratory-result" class="laboratory-result-root" aria-live="polite"></div>
+
+    <section class="laboratory-method-bridge">
+      <span class="field-label">Cómo funciona</span>
+      <h2>Un primer diagnóstico reproducible, no una sentencia</h2>
+      <div class="laboratory-method-steps">
+        <article><b>01</b><h3>Detecta</h3><p>${registry.patterns.length} patrones proposicionales simétricos: 20 por cuerpo.</p></article>
+        <article><b>02</b><h3>Lee contexto</h3><p>Distingue afirmación, subordinación, atribución, rechazo y posición en el argumento.</p></article>
+        <article><b>03</b><h3>Agrega</h3><p>La masa positiva selecciona la pareja; las funciones intentan ordenar su dirección.</p></article>
+        <article><b>04</b><h3>Explica</h3><p>Devuelve fragmentos, cautelas y cercanía diagnóstica con ${reference.documents.length} discursos.</p></article>
+      </div>
+      <p><a href="#evidencia/metodologia">Leer metodología y límites →</a> · <a href="data/text_analysis_registry.v0.1.json" target="_blank" rel="noopener">Abrir registro del motor ↗</a></p>
+    </section>
+  </section>`;
+}
+
+function renderLaboratoryOrbital(result) {
+  const documents = D['text_analysis_reference.v0.1']?.documents || [];
+  const nearestKeys = new Set((result.comparison?.nearest || []).map(item => `${item.actor}|${item.year}`));
+  const referencePoints = documents.map(document => {
+    const point = orbitalPoint(document);
+    const nearest = nearestKeys.has(`${document.actor}|${document.year}`);
+    return `<circle class="laboratory-reference-point ${nearest ? 'is-nearest' : ''}" cx="${point.x.toFixed(2)}" cy="${point.y.toFixed(2)}" r="${nearest ? 4 : 2.25}"><title>${esc(document.actor)} · ${esc(document.year)} · referencia automática</title></circle>`;
+  }).join('');
+  const userPoint = orbitalPoint({ weights: result.weights });
+  return `<div class="laboratory-orbital-frame">
+    <svg class="orbital-field laboratory-field" viewBox="0 0 720 620" role="img" aria-labelledby="laboratory-field-title laboratory-field-desc">
+      <title id="laboratory-field-title">Ubicación diagnóstica del texto en el mapa orbital</title>
+      <desc id="laboratory-field-desc">Los puntos pequeños representan 52 discursos procesados por la misma capa automática. El punto grande representa el texto ingresado.</desc>
+      <polygon class="orbital-field-plane" points="360,54 76,548 644,548" />
+      ${renderOrbitalGrid()}
+      <line class="orbital-axis axis-tec-mes" x1="360" y1="54" x2="76" y2="548" />
+      <line class="orbital-axis axis-mes-pat" x1="76" y1="548" x2="644" y2="548" />
+      <line class="orbital-axis axis-pat-tec" x1="644" y1="548" x2="360" y2="54" />
+      <g class="orbital-vertex orbital-vertex-tec"><circle cx="360" cy="54" r="7" /><text x="360" y="25" text-anchor="middle">TECNOCRACIA</text></g>
+      <g class="orbital-vertex orbital-vertex-mes"><circle cx="76" cy="548" r="7" /><text x="62" y="584" text-anchor="start">MESIANISMO</text></g>
+      <g class="orbital-vertex orbital-vertex-pat"><circle cx="644" cy="548" r="7" /><text x="658" y="584" text-anchor="end">PATERNALISMO</text></g>
+      <g class="laboratory-reference-cloud">${referencePoints}</g>
+      <g class="laboratory-user-point" transform="translate(${userPoint.x.toFixed(2)} ${userPoint.y.toFixed(2)})">
+        <circle class="laboratory-user-halo" r="17" />
+        <circle class="laboratory-user-core" r="9" />
+        <text x="0" y="-24" text-anchor="middle">TU TEXTO</text>
+      </g>
+    </svg>
+    <p><span class="laboratory-dot is-user"></span> Tu texto <span class="laboratory-dot is-reference"></span> ${documents.length} referencias automáticas <span class="laboratory-dot is-nearest"></span> Más cercanas</p>
+  </div>`;
+}
+
+function renderLaboratoryEvidence(result, vector) {
+  const items = result.evidence?.[vector] || [];
+  if (!items.length) return `<article class="laboratory-evidence-column is-${esc(vector)}"><h3>${esc(laboratoryVectorName(vector))}</h3><p class="muted">No aparecieron fragmentos de este cuerpo.</p></article>`;
+  const polarityNames = {
+    afirmada: 'afirmada', subordinada: 'subordinada', descriptiva: 'descriptiva',
+    atribuida: 'atribuida a otra voz', negada_rechazada: 'negada o rechazada',
+  };
+  return `<article class="laboratory-evidence-column is-${esc(vector)}">
+    <h3>${esc(laboratoryVectorName(vector))}</h3>
+    ${items.slice(0, 3).map(item => `<div class="laboratory-evidence-item">
+      <div><code>${esc(item.patternId)}</code><strong>${esc(item.patternLabel)}</strong></div>
+      <blockquote>“${esc(item.excerpt)}”</blockquote>
+      <p>${esc(polarityNames[item.polarity] || item.polarity)} · función ${esc(item.function)} · ${esc(item.position)}</p>
+    </div>`).join('')}
+  </article>`;
+}
+
+function renderLaboratoryResult(result) {
+  const confidenceTitle = result.diagnostics.confidence === 'comparable_provisional'
+    ? 'Comparación provisional dentro del dominio HCDN'
+    : 'Lectura exploratoria fuera del dominio HCDN';
+  const confidenceCopy = result.diagnostics.confidence === 'comparable_provisional'
+    ? 'El género es comparable con el corpus de aperturas y asunciones, pero la pasada automática todavía requiere adjudicación humana.'
+    : 'El formato puede cambiar el uso de las señales. La posición sirve para explorar el texto, no para equipararlo históricamente con una apertura presidencial.';
+  const vectorCards = ['tecnocracia', 'mesianismo', 'paternalismo'].map(vector => {
+    const metrics = result.vectorMetrics[vector];
+    return `<article class="laboratory-score is-${esc(vector)}" data-vector="${esc(vector)}" data-weight="${esc(result.weights[vector])}">
+      <span>${esc(laboratoryVectorName(vector))}</span><strong>${laboratoryPercent(result.weights[vector])}</strong>
+      <div aria-hidden="true"><i style="width:${Math.max(2, Number(result.weights[vector]) * 100).toFixed(2)}%"></i></div>
+      <p>${esc(metrics.positiveSignals)} señales positivas · retención ${laboratoryPercent(metrics.positiveRetention)}</p>
+    </article>`;
+  }).join('');
+  const nearest = (result.comparison?.nearest || []).map((item, index) => `<li><b>${index + 1}</b><span><strong>${esc(item.actor)} · ${esc(item.year)}</strong><small>${esc(item.caseUnit)} · distancia ${Number(item.distance).toFixed(3).replace('.', ',')}</small></span></li>`).join('');
+  const title = result.metadata.title || 'Texto sin título';
+  const byline = [result.metadata.author, result.metadata.date].filter(Boolean).join(' · ');
+  return `<section class="laboratory-output" tabindex="-1">
+    <header class="laboratory-output-header">
+      <div><span class="section-kicker">RESULTADO · ${esc(result.analyzerVersion)}</span><h2>${esc(title)}</h2>${byline ? `<p>${esc(byline)}</p>` : ''}</div>
+      <div class="laboratory-result-stamp"><span>CONFIGURACIÓN</span><strong>${esc(result.configuration.notation)}</strong><small>${result.configuration.directionStatus === 'directed' ? 'dirección automática' : 'orden indeterminado'}</small></div>
+    </header>
+    <div class="laboratory-confidence is-${esc(result.diagnostics.confidence)}" role="status"><strong>${esc(confidenceTitle)}</strong><p>${esc(confidenceCopy)}</p></div>
+    <div class="laboratory-score-grid">${vectorCards}</div>
+    <div class="laboratory-result-main">
+      <div>${renderLaboratoryOrbital(result)}</div>
+      <aside class="laboratory-diagnostics">
+        <span class="field-label">Lectura técnica</span>
+        <dl>
+          <div><dt>Palabras</dt><dd>${Number(result.diagnostics.wordCount).toLocaleString('es-AR')}</dd></div>
+          <div><dt>Segmentos</dt><dd>${esc(result.diagnostics.segmentCount)}</dd></div>
+          <div><dt>Señales</dt><dd>${esc(result.diagnostics.signalCount)}</dd></div>
+          <div><dt>Positivas</dt><dd>${esc(result.diagnostics.positiveSignals)}</dd></div>
+          <div><dt>Cobertura</dt><dd>${laboratoryPercent(result.diagnostics.segmentCoverage)}</dd></div>
+          <div><dt>Densidad</dt><dd>percentil ${esc(result.comparison.densityPercentile)}</dd></div>
+        </dl>
+        <h3>Referencias más cercanas</h3>
+        <ol class="laboratory-nearest">${nearest}</ol>
+        <p class="muted">La cercanía usa la misma capa automática, no la adjudicación histórica final del mapa v0.4.</p>
+      </aside>
+    </div>
+    <section class="laboratory-evidence">
+      <span class="field-label">Por qué aparece cada cuerpo</span>
+      <h2>Fragmentos auditables</h2>
+      <div class="laboratory-evidence-grid">${['tecnocracia', 'mesianismo', 'paternalismo'].map(vector => renderLaboratoryEvidence(result, vector)).join('')}</div>
+    </section>
+    <div class="laboratory-caveats">
+      <strong>Leé el resultado con estas cautelas</strong>
+      <ul>${result.caveats.map(caveat => `<li>${esc(caveat)}</li>`).join('')}</ul>
+    </div>
+    <div class="laboratory-output-actions">
+      <button type="button" class="btn btn-secondary" data-laboratory-download>Descargar diagnóstico JSON</button>
+      <button type="button" class="btn btn-secondary" data-laboratory-print>Imprimir resultado</button>
+      <a href="#mapa-orbital" class="btn btn-quiet">Comparar con el mapa adjudicado →</a>
+    </div>
+  </section>`;
+}
+
+function bindLaboratory() {
+  const form = document.getElementById('laboratory-form');
+  const textInput = document.getElementById('laboratory-text');
+  const fileInput = document.getElementById('laboratory-file');
+  const fileStatus = document.getElementById('laboratory-file-status');
+  const counter = document.getElementById('laboratory-counter');
+  const error = document.getElementById('laboratory-error');
+  const resultRoot = document.getElementById('laboratory-result');
+  const registry = D['text_analysis_registry.v0.1'];
+  const reference = D['text_analysis_reference.v0.1'];
+  if (!form || !textInput || !registry || !reference || !globalThis.OrbitalAnalyzer) return;
+
+  const setError = message => {
+    error.textContent = message || '';
+    error.hidden = !message;
+  };
+  const updateCounter = () => {
+    const words = globalThis.OrbitalAnalyzer.countWords(textInput.value);
+    counter.textContent = `${words.toLocaleString('es-AR')} ${words === 1 ? 'palabra' : 'palabras'} · ${textInput.value.length.toLocaleString('es-AR')} caracteres`;
+  };
+  const resetOutput = () => {
+    latestLaboratoryResult = null;
+    resultRoot.innerHTML = '';
+    setError('');
+  };
+
+  textInput.addEventListener('input', () => { updateCounter(); setError(''); });
+  fileInput.addEventListener('change', async () => {
+    const file = fileInput.files?.[0];
+    if (!file) return;
+    const extension = file.name.slice(file.name.lastIndexOf('.')).toLowerCase();
+    if (!registry.limits.acceptedFileExtensions.includes(extension)) {
+      fileInput.value = '';
+      fileStatus.textContent = 'Archivo rechazado';
+      setError('Usá un archivo de texto con extensión .txt o .md.');
+      return;
+    }
+    if (file.size > registry.limits.maxFileBytes) {
+      fileInput.value = '';
+      fileStatus.textContent = 'Archivo rechazado';
+      setError('El archivo supera el límite de 1 MB.');
+      return;
+    }
+    const contents = await file.text();
+    if (contents.length > registry.limits.maxCharacters) {
+      fileInput.value = '';
+      fileStatus.textContent = 'Archivo rechazado';
+      setError(`El texto supera el límite de ${Number(registry.limits.maxCharacters).toLocaleString('es-AR')} caracteres.`);
+      return;
+    }
+    textInput.value = contents;
+    fileStatus.textContent = `${file.name} · ${(file.size / 1024).toFixed(1).replace('.', ',')} KB · leído localmente`;
+    resetOutput();
+    updateCounter();
+    textInput.focus();
+  });
+  document.getElementById('laboratory-sample')?.addEventListener('click', () => {
+    textInput.value = LABORATORY_SAMPLE;
+    document.getElementById('laboratory-title').value = 'Ejemplo sintético del laboratorio';
+    document.getElementById('laboratory-author').value = 'Texto de demostración';
+    document.getElementById('laboratory-genre').value = 'documento_programatico';
+    fileInput.value = '';
+    fileStatus.textContent = 'Ejemplo sintético · no pertenece al corpus';
+    resetOutput();
+    updateCounter();
+    textInput.focus();
+  });
+  document.getElementById('laboratory-clear')?.addEventListener('click', () => {
+    form.reset();
+    fileStatus.textContent = 'Sin archivo abierto';
+    textInput.value = '';
+    resetOutput();
+    updateCounter();
+    textInput.focus();
+  });
+  form.addEventListener('submit', event => {
+    event.preventDefault();
+    setError('');
+    try {
+      latestLaboratoryResult = globalThis.OrbitalAnalyzer.analyze(textInput.value, {
+        registry,
+        reference,
+        title: document.getElementById('laboratory-title').value,
+        author: document.getElementById('laboratory-author').value,
+        date: document.getElementById('laboratory-date').value,
+        genre: document.getElementById('laboratory-genre').value,
+      });
+      resultRoot.innerHTML = renderLaboratoryResult(latestLaboratoryResult);
+      requestAnimationFrame(() => {
+        const output = resultRoot.querySelector('.laboratory-output');
+        output?.focus({ preventScroll: true });
+        output?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    } catch (analysisError) {
+      resetOutput();
+      setError(analysisError.message || 'No pudimos analizar este texto.');
+      error.focus?.();
+    }
+  });
+  resultRoot.addEventListener('click', event => {
+    if (event.target.closest('[data-laboratory-print]')) {
+      window.print();
+      return;
+    }
+    if (!event.target.closest('[data-laboratory-download]') || !latestLaboratoryResult) return;
+    const blob = new Blob([JSON.stringify(latestLaboratoryResult, null, 2)], { type: 'application/json;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'diagnostico-orbital.json';
+    document.body.append(link);
+    link.click();
+    link.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 0);
+  });
+  updateCounter();
+}
+
 // ─── Guided reading, search and Legend traceability ───────────────────────────
 
 function renderRecorrido() {
@@ -552,16 +867,17 @@ function renderRecorrido() {
   return `<section class="page-section guided-page">
     <div class="breadcrumb"><a href="#inicio">Inicio</a> <span>›</span> Empezá acá</div>
     <div class="guided-hero">
-      <span class="section-kicker">RECORRIDO BREVE · CINCO PARADAS</span>
+      <span class="section-kicker">RECORRIDO BREVE · SEIS PARADAS</span>
       <h1>Una puerta de entrada al proyecto</h1>
       <p class="hero-sub">Si es tu primera visita, este recorrido separa la hipótesis, la evidencia y el videojuego antes de volver a conectarlos.</p>
     </div>
     <ol class="guided-steps">
       <li><span>01</span><div><h2>La hipótesis</h2><p>Argentina no se organiza como un péndulo de dos polos. Tecnocracia, mesianismo y paternalismo forman combinaciones dirigidas y trayectorias.</p><a href="#tesis">Leer la tesis →</a></div></li>
       <li><span>02</span><div><h2>El mapa</h2><p>El campo orbital ubica 52 discursos y doce unidades actor × mandato. Muestra masa relativa y adjudicación funcional; no mide personalidad ni gobierno efectivo.</p><a href="#mapa-orbital">Explorar el mapa →</a></div></li>
-      <li><span>03</span><div><h2>La prueba y sus límites</h2><p>Cada conclusión debe poder volver a un documento, una regla de lectura y una cautela. Las brechas no se rellenan con relato.</p><a href="#evidencia">Revisar evidencia y método →</a></div></li>
-      <li><span>04</span><div><h2>De actor a Leyenda</h2><p>Una Leyenda es una ventana jugable, no un tipo histórico. La ficha muestra alcance, fuentes, puntaje anterior, puntaje vigente y regla de traducción.</p><a href="#leyendas">Abrir trazabilidad de las 15 Leyendas →</a></div></li>
-      <li><span>05</span><div><h2>El experimento lúdico</h2><p><em>${esc(game.title || 'Tres Cuerpos: República Inestable')}</em> usa ese marco para producir decisiones contemporáneas. Juego ≠ evidencia: una partida no prueba una tesis histórica.</p><a href="#videojuego">Ver ${esc(game.display_version || 'la beta')} →</a></div></li>
+      <li><span>03</span><div><h2>Tu texto en el campo</h2><p>El laboratorio aplica una primera pasada automática a un discurso que pegues o abras localmente. Devuelve señales y evidencia; no diagnostica a una persona.</p><a href="#laboratorio">Analizar un discurso →</a></div></li>
+      <li><span>04</span><div><h2>La prueba y sus límites</h2><p>Cada conclusión debe poder volver a un documento, una regla de lectura y una cautela. Las brechas no se rellenan con relato.</p><a href="#evidencia">Revisar evidencia y método →</a></div></li>
+      <li><span>05</span><div><h2>De actor a Leyenda</h2><p>Una Leyenda es una ventana jugable, no un tipo histórico. La ficha muestra alcance, fuentes, puntaje anterior, puntaje vigente y regla de traducción.</p><a href="#leyendas">Abrir trazabilidad de las 15 Leyendas →</a></div></li>
+      <li><span>06</span><div><h2>El experimento lúdico</h2><p><em>${esc(game.title || 'Tres Cuerpos: República Inestable')}</em> usa ese marco para producir decisiones contemporáneas. Juego ≠ evidencia: una partida no prueba una tesis histórica.</p><a href="#videojuego">Ver ${esc(game.display_version || 'la beta')} →</a></div></li>
     </ol>
     <div class="guided-boundary" role="note">
       <strong>La cadena completa:</strong>
@@ -580,6 +896,7 @@ function searchEntries() {
     ['#recorrido', 'Empezá acá', 'Recorrido guiado por tesis, mapa, evidencia, Leyendas y videojuego'],
     ['#tesis', 'La tesis', 'Tecnocracia, mesianismo, paternalismo, configuración y trayectoria'],
     ['#mapa-orbital', 'Mapa orbital', '52 discursos, doce unidades de mandato y campo ternario'],
+    ['#laboratorio', 'Analizá un discurso', 'Laboratorio local para detectar señales TEC, MES y PAT y ubicar un texto en el campo orbital'],
     ['#actores', 'Actores y Leyendas', 'Personas del corpus y encarnaciones jugables'],
     ['#leyendas', 'Trazabilidad de Leyendas', 'Fuentes, puntajes, regla T1 y cautelas'],
     ['#evidencia', 'Evidencia y método', 'Corpus HCDN, codificación, fuentes, límites y roadmap'],
@@ -794,14 +1111,14 @@ function renderInicio() {
         </div>
         <!-- Content column -->
         <div class="inicio-hero-content-col">
-          <div class="inicio-hero-eyebrow">PUBLICACIÓN ${esc(meta.site_release || 'v0.5.0')} · MAPA ${esc(meta.version || 'v0.4')} · CORPUS HCDN 1983–2026</div>
+          <div class="inicio-hero-eyebrow">PUBLICACIÓN ${esc(meta.site_release || 'v0.6.0')} · MAPA ${esc(meta.version || 'v0.4')} · CORPUS HCDN 1983–2026</div>
           <h1 class="inicio-hero-headline">${esc(meta.site_title || 'El problema de los tres cuerpos argentinos')}</h1>
           <p class="inicio-hero-sub">Argentina no es un péndulo. Es un problema de tres cuerpos.</p>
           <nav class="cta-group inicio-hero-cta inicio-hero-nav" aria-label="Accesos principales del proyecto">
-            <a href="#recorrido" class="btn btn-primary" data-hero-section="recorrido">Empezá acá →</a>
+            <a href="#laboratorio" class="btn btn-primary" data-hero-section="laboratorio">Analizá un discurso →</a>
             <a href="#mapa-orbital" class="btn btn-secondary" data-hero-section="mapa-orbital">Explorar mapa orbital</a>
           </nav>
-          <div class="inicio-hero-text-links"><a href="#tesis">Leer la tesis</a><span>·</span><a href="#leyendas">Trazar puntajes</a><span>·</span><a href="#videojuego">Ver videojuego</a></div>
+          <div class="inicio-hero-text-links"><a href="#recorrido">Empezá acá</a><span>·</span><a href="#tesis">Leer la tesis</a><span>·</span><a href="#leyendas">Trazar puntajes</a><span>·</span><a href="#videojuego">Ver videojuego</a></div>
           <div class="inicio-hero-synthesis">
             <p>El problema de los tres cuerpos argentinos es un prototipo de investigación teórico-empírica que lee el discurso presidencial argentino a través de tres vectores político-históricos: modernización tecnocrática, mesianismo redentor y paternalismo conservador. No clasifica actores como tipos fijos; reconstruye configuraciones, trayectorias y atractores temporales.</p>
             <p>El péndulo entre apertura/endeudamiento y protección/mercado interno describe una alternancia visible, pero no alcanza para explicar la gramática con la que el liderazgo presidencial argentino organiza legitimidad. La hipótesis es que una órbita política estable suele requerir al menos dos cuerpos: un vector dominante y otro secundario o modulador.</p>

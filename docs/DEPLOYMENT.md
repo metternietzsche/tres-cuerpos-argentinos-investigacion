@@ -28,5 +28,7 @@ No modificar `NS`, `MX`, SPF, DKIM ni DMARC. El correo
 5. `info@arcagaucha.com` continúa enviando y recibiendo correo.
 6. `robots.txt`, `sitemap.xml`, `manifest.webmanifest` y las páginas indexables
    responden HTTP 200.
-7. El workflow ejecuta validación estática, matriz Playwright desktop/móvil y
-   smoke de producción antes de dar el despliegue por cerrado.
+7. `laboratorio.html`, `orbital-analyzer.js` y sus dos registros JSON responden
+   HTTP 200; un texto de muestra se analiza sin iniciar requests nuevos.
+8. El workflow ejecuta validación estática, tests unitarios, matriz Playwright
+   desktop/móvil y smoke de producción antes de dar el despliegue por cerrado.

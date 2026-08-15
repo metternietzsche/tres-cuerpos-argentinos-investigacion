@@ -1,0 +1,507 @@
+{
+  "version": "ORBITAL_TEXT_ANALYZER_v0_1",
+  "publishedAt": "2026-08-15",
+  "language": "es-AR",
+  "execution": "client_side_only",
+  "methodology": {
+    "signalRegistry": "NB04_propositional_segment_signals.py",
+    "symmetricRuleEngine": "HCDN_NB18_symmetric_rule_engine_v0_1.py",
+    "aggregation": "HCDN_NB19_symmetric_candidate_map_v0_1.py",
+    "statement": "La masa positiva selecciona la pareja; las funciones ordenan la relación. El resultado automático no reemplaza adjudicación humana."
+  },
+  "sourceHashes": {
+    "signals": "bef8341addd17278f327a66ea352935e31fda814b828304fe9a3b17c685c203e",
+    "rules": "3cbdde228b027967fbc76eba0b3a728db7d3285b2521d70de1c938e7f9c6e891",
+    "aggregation": "f72f1aba515d7f8faf516a11807fce8e8f3ad8f3abd40953922ce368351fd910"
+  },
+  "limits": {
+    "minWords": 120,
+    "maxCharacters": 120000,
+    "maxFileBytes": 1048576,
+    "acceptedFileExtensions": [
+      ".txt",
+      ".md"
+    ]
+  },
+  "genres": [
+    {
+      "id": "apertura_legislativa",
+      "label": "Apertura legislativa",
+      "domain": "hcdn_comparable"
+    },
+    {
+      "id": "asuncion",
+      "label": "Discurso de asunción",
+      "domain": "hcdn_comparable"
+    },
+    {
+      "id": "acto_campana",
+      "label": "Acto o lanzamiento de campaña",
+      "domain": "out_of_domain"
+    },
+    {
+      "id": "debate_entrevista",
+      "label": "Debate o entrevista",
+      "domain": "out_of_domain"
+    },
+    {
+      "id": "documento_programatico",
+      "label": "Documento programático",
+      "domain": "out_of_domain"
+    },
+    {
+      "id": "otro",
+      "label": "Otro género",
+      "domain": "out_of_domain"
+    }
+  ],
+  "weights": {
+    "positive": {
+      "afirmada": 1,
+      "subordinada": 0.55,
+      "descriptiva": 0.2,
+      "atribuida": 0,
+      "negada_rechazada": 0
+    },
+    "position": {
+      "encuadre": 1,
+      "operacion": 0.67,
+      "prueba": 0.67,
+      "payload_beneficiario": 0.35,
+      "exterior": 0
+    },
+    "function": {
+      "tiempo": 1.25,
+      "problema": 1.1,
+      "autoridad": 1.25,
+      "sujeto_enemigo": 1.1,
+      "telos": 1.25,
+      "sacrificio": 1.1,
+      "medios": 0.8,
+      "prueba": 0.8
+    },
+    "directionMargin": 0.055
+  },
+  "patterns": [
+    {
+      "vector": "tecnocracia",
+      "patternId": "TEC-01",
+      "signalStrength": 3,
+      "label": "plan de desarrollo/obras/fomento",
+      "regex": "\\bplan(?:es)?\\s+de\\s+(?:desarrollo|industrialización|fomento|obras|acción|gobierno)\\b"
+    },
+    {
+      "vector": "tecnocracia",
+      "patternId": "TEC-02",
+      "signalStrength": 3,
+      "label": "modernización del estado/productiva/industrial",
+      "regex": "\\bmodernización\\s+(?:del\\s+estado|del\\s+aparato|productiva|industrial|económica|administrativa|tecnológica)\\b"
+    },
+    {
+      "vector": "tecnocracia",
+      "patternId": "TEC-03",
+      "signalStrength": 3,
+      "label": "reforma del estado/estructural/administrativa",
+      "regex": "\\breforma\\s+(?:del\\s+estado|estructural|tributaria|administrativa|institucional|fiscal)\\b"
+    },
+    {
+      "vector": "tecnocracia",
+      "patternId": "TEC-04",
+      "signalStrength": 3,
+      "label": "inversión pública/en infraestructura/productiva",
+      "regex": "\\binversión\\s+(?:pública|en\\s+infraestructura|productiva|nacional|privada|extranjera)\\b"
+    },
+    {
+      "vector": "tecnocracia",
+      "patternId": "TEC-05",
+      "signalStrength": 3,
+      "label": "infraestructura pública/vial/energética/nacional",
+      "regex": "\\binfraestructura\\s+(?:pública|nacional|básica|vial|energética|de\\s+transporte|productiva)\\b"
+    },
+    {
+      "vector": "tecnocracia",
+      "patternId": "TEC-06",
+      "signalStrength": 3,
+      "label": "planificación económica/nacional/estratégica",
+      "regex": "\\bplanificación\\s+(?:económica|nacional|estratégica|integral|del\\s+desarrollo)\\b"
+    },
+    {
+      "vector": "tecnocracia",
+      "patternId": "TEC-07",
+      "signalStrength": 3,
+      "label": "desarrollo económico/productivo/industrial/tecnológico",
+      "regex": "\\bdesarrollo\\s+(?:económico|productivo|industrial|tecnológico|sustentable|sostenible|agropecuario)\\b"
+    },
+    {
+      "vector": "tecnocracia",
+      "patternId": "TEC-08",
+      "signalStrength": 3,
+      "label": "política económica/fiscal/monetaria/industrial",
+      "regex": "\\bpolítica\\s+(?:económica|fiscal|monetaria|industrial|comercial|cambiaria|de\\s+desarrollo)\\b"
+    },
+    {
+      "vector": "tecnocracia",
+      "patternId": "TEC-09",
+      "signalStrength": 3,
+      "label": "presupuesto nacional/del estado/equilibrado",
+      "regex": "\\bpresupuesto\\s+(?:nacional|del\\s+estado|público|equilibrado|de\\s+la\\s+nación)\\b"
+    },
+    {
+      "vector": "tecnocracia",
+      "patternId": "TEC-10",
+      "signalStrength": 3,
+      "label": "gestión eficiente/pública/administrativa",
+      "regex": "\\bgestión\\s+(?:eficiente|pública|del\\s+estado|administrativa|transparente|de\\s+gobierno)\\b"
+    },
+    {
+      "vector": "tecnocracia",
+      "patternId": "TEC-11",
+      "signalStrength": 2,
+      "label": "sustitución de importaciones",
+      "regex": "\\bsustitución\\s+de\\s+importaciones\\b"
+    },
+    {
+      "vector": "tecnocracia",
+      "patternId": "TEC-12",
+      "signalStrength": 2,
+      "label": "productividad laboral/del sector/industrial",
+      "regex": "\\bproductividad\\s+(?:laboral|del\\s+sector|industrial|agrícola|agropecuaria|nacional)\\b"
+    },
+    {
+      "vector": "tecnocracia",
+      "patternId": "TEC-13",
+      "signalStrength": 2,
+      "label": "capacidad productiva/instalada/del estado",
+      "regex": "\\bcapacidad\\s+(?:productiva|instalada|industrial|del\\s+estado|exportadora|de\\s+gestión)\\b"
+    },
+    {
+      "vector": "tecnocracia",
+      "patternId": "TEC-14",
+      "signalStrength": 2,
+      "label": "racionalización del gasto/del estado",
+      "regex": "\\bracionalización\\s+(?:del\\s+gasto|del\\s+estado|de\\s+los\\s+recursos|administrativa)\\b"
+    },
+    {
+      "vector": "tecnocracia",
+      "patternId": "TEC-15",
+      "signalStrength": 2,
+      "label": "obras de infraestructura/públicas/viales",
+      "regex": "\\bobras\\s+(?:de\\s+infraestructura|públicas|de\\s+saneamiento|de\\s+riego|viales|portuarias|de\\s+fomento)\\b"
+    },
+    {
+      "vector": "tecnocracia",
+      "patternId": "TEC-16",
+      "signalStrength": 2,
+      "label": "equilibrio/déficit/superávit fiscal",
+      "regex": "\\b(?:equilibrio|déficit|superávit)\\s+(?:fiscal|presupuestario|de\\s+las\\s+cuentas)\\b"
+    },
+    {
+      "vector": "tecnocracia",
+      "patternId": "TEC-17",
+      "signalStrength": 2,
+      "label": "administración pública/eficiente/racional",
+      "regex": "\\badministración\\s+(?:pública|del\\s+estado|eficiente|transparente|racional)\\b"
+    },
+    {
+      "vector": "tecnocracia",
+      "patternId": "TEC-18",
+      "signalStrength": 2,
+      "label": "ciencia y tecnología/investigación científica",
+      "regex": "\\b(?:ciencia\\s+y\\s+tecnología|investigación\\s+(?:científica|tecnológica)|desarrollo\\s+científico)\\b"
+    },
+    {
+      "vector": "tecnocracia",
+      "patternId": "TEC-19",
+      "signalStrength": 1,
+      "label": "sistema productivo/económico/financiero/tributario",
+      "regex": "\\bsistema\\s+(?:productivo|económico|financiero|tributario|bancario|cambiario)\\b"
+    },
+    {
+      "vector": "tecnocracia",
+      "patternId": "TEC-20",
+      "signalStrength": 1,
+      "label": "datos estadísticos/de producción/macroeconómicos",
+      "regex": "\\bdatos\\s+(?:estadísticos|del\\s+sector|de\\s+la\\s+producción|macroeconómicos|oficiales)\\b"
+    },
+    {
+      "vector": "mesianismo",
+      "patternId": "MES-01",
+      "signalStrength": 3,
+      "label": "destino histórico/manifiesto/glorioso de la nación",
+      "regex": "\\bdestino\\s+(?:histórico|manifiesto|glorioso|de\\s+la\\s+(?:patria|nación|república|argentina))\\b"
+    },
+    {
+      "vector": "mesianismo",
+      "patternId": "MES-02",
+      "signalStrength": 3,
+      "label": "misión histórica/providencial/sagrada",
+      "regex": "\\bmisión\\s+(?:histórica|providencial|sagrada|de\\s+la\\s+argentina|de\\s+la\\s+nación)\\b"
+    },
+    {
+      "vector": "mesianismo",
+      "patternId": "MES-03",
+      "signalStrength": 3,
+      "label": "refundación del estado/nacional/de la república",
+      "regex": "\\brefundación\\s+(?:del\\s+estado|nacional|de\\s+la\\s+(?:república|argentina|nación))\\b"
+    },
+    {
+      "vector": "mesianismo",
+      "patternId": "MES-04",
+      "signalStrength": 3,
+      "label": "hora histórica/decisiva/trascendente/crucial",
+      "regex": "\\bhora\\s+(?:histórica|decisiva|trascendente|crucial|de\\s+la\\s+patria)\\b"
+    },
+    {
+      "vector": "mesianismo",
+      "patternId": "MES-05",
+      "signalStrength": 3,
+      "label": "nueva argentina/nueva república/nueva era",
+      "regex": "\\bnueva\\s+(?:argentina|república|nación|era|etapa\\s+histórica)\\b"
+    },
+    {
+      "vector": "mesianismo",
+      "patternId": "MES-06",
+      "signalStrength": 3,
+      "label": "casta política/privilegiada/dominante",
+      "regex": "\\bcasta\\s+(?:política|privilegiada|dominante|gobernante|dirigente)\\b"
+    },
+    {
+      "vector": "mesianismo",
+      "patternId": "MES-07",
+      "signalStrength": 3,
+      "label": "enemigos de la patria/nación/libertad",
+      "regex": "\\benemigos\\s+de\\s+la\\s+(?:patria|nación|república|libertad)\\b"
+    },
+    {
+      "vector": "mesianismo",
+      "patternId": "MES-08",
+      "signalStrength": 3,
+      "label": "decadencia argentina/moral/nacional",
+      "regex": "\\bdecadencia\\s+(?:argentina|moral|nacional|económica|institucional|del\\s+país)\\b"
+    },
+    {
+      "vector": "mesianismo",
+      "patternId": "MES-09",
+      "signalStrength": 3,
+      "label": "regeneración/renacimiento moral/nacional",
+      "regex": "\\b(?:regeneración|renacimiento)\\s+(?:moral|nacional|espiritual|de\\s+la\\s+(?:argentina|república|nación))\\b"
+    },
+    {
+      "vector": "mesianismo",
+      "patternId": "MES-10",
+      "signalStrength": 3,
+      "label": "hombre providencial/nuevo/de la patria",
+      "regex": "\\bhombre\\s+(?:providencial|histórico|nuevo|de\\s+la\\s+patria)\\b"
+    },
+    {
+      "vector": "mesianismo",
+      "patternId": "MES-11",
+      "signalStrength": 2,
+      "label": "redención/salvación nacional/de la patria",
+      "regex": "\\b(?:redención|salvación)\\s+(?:nacional|de\\s+la\\s+(?:patria|nación|argentina|república))\\b"
+    },
+    {
+      "vector": "mesianismo",
+      "patternId": "MES-12",
+      "signalStrength": 2,
+      "label": "providencia divina/histórica; mandato de Dios",
+      "regex": "\\b(?:providencia\\s+(?:divina|histórica|de\\s+dios)|voluntad\\s+de\\s+dios|mandato\\s+(?:divino|de\\s+dios))\\b"
+    },
+    {
+      "vector": "mesianismo",
+      "patternId": "MES-13",
+      "signalStrength": 2,
+      "label": "ruptura con el pasado/viejo orden/corrupción sistémica",
+      "regex": "\\b(?:terminar?\\s+con|romper?\\s+con|superar?)\\s+(?:el\\s+)?(?:pasado|viejo\\s+orden|vieja\\s+política|sistema\\s+corrupto|la\\s+corrupción)\\b"
+    },
+    {
+      "vector": "mesianismo",
+      "patternId": "MES-14",
+      "signalStrength": 2,
+      "label": "sacrificio por la patria/heroico/nacional",
+      "regex": "\\bsacrificio\\s+(?:por\\s+la\\s+patria|de\\s+la\\s+patria|nacional|heroico|de\\s+la\\s+nación)\\b"
+    },
+    {
+      "vector": "mesianismo",
+      "patternId": "MES-15",
+      "signalStrength": 2,
+      "label": "mandato histórico del pueblo/de la nación",
+      "regex": "\\bmandato\\s+(?:histórico|del\\s+pueblo|de\\s+la\\s+nación|popular)\\b"
+    },
+    {
+      "vector": "mesianismo",
+      "patternId": "MES-16",
+      "signalStrength": 2,
+      "label": "traición a la patria/nación/república",
+      "regex": "\\btraición\\s+a\\s+la\\s+(?:patria|nación|república)\\b"
+    },
+    {
+      "vector": "mesianismo",
+      "patternId": "MES-17",
+      "signalStrength": 2,
+      "label": "lucha heroica/sagrada/gloriosa de la argentina",
+      "regex": "\\blucha\\s+(?:heroica|sagrada|gloriosa|de\\s+la\\s+(?:argentina|nación|patria))\\b"
+    },
+    {
+      "vector": "mesianismo",
+      "patternId": "MES-18",
+      "signalStrength": 2,
+      "label": "momento histórico/trascendente/decisivo",
+      "regex": "\\b(?:momento|instante)\\s+(?:histórico|trascendente|decisivo|crucial)\\b"
+    },
+    {
+      "vector": "mesianismo",
+      "patternId": "MES-19",
+      "signalStrength": 1,
+      "label": "destino de la nación/patria/argentina (genérico)",
+      "regex": "\\bdestino\\s+de\\s+(?:la\\s+(?:nación|patria|argentina|república)|nuestro\\s+país)\\b"
+    },
+    {
+      "vector": "mesianismo",
+      "patternId": "MES-20",
+      "signalStrength": 1,
+      "label": "causa nacional/sagrada/de la patria",
+      "regex": "\\bcausa\\s+(?:nacional|sagrada|de\\s+la\\s+(?:patria|nación|libertad)|histórica)\\b"
+    },
+    {
+      "vector": "paternalismo",
+      "patternId": "PAT-01",
+      "signalStrength": 3,
+      "label": "justicia social",
+      "regex": "\\bjusticia\\s+social\\b"
+    },
+    {
+      "vector": "paternalismo",
+      "patternId": "PAT-02",
+      "signalStrength": 3,
+      "label": "seguridad social",
+      "regex": "\\bseguridad\\s+social\\b"
+    },
+    {
+      "vector": "paternalismo",
+      "patternId": "PAT-03",
+      "signalStrength": 3,
+      "label": "derechos de los trabajadores/laborales",
+      "regex": "\\bderechos\\s+(?:de\\s+los\\s+trabajadores|laborales|del\\s+trabajador|sociales\\s+de\\s+los\\s+trabajadores)\\b"
+    },
+    {
+      "vector": "paternalismo",
+      "patternId": "PAT-04",
+      "signalStrength": 3,
+      "label": "protección social/de la familia/de los vulnerables",
+      "regex": "\\bprotección\\s+(?:social|de\\s+la\\s+familia|de\\s+los\\s+trabajadores|de\\s+los\\s+(?:más\\s+)?(?:pobres|humildes|vulnerables|necesitados))\\b"
+    },
+    {
+      "vector": "paternalismo",
+      "patternId": "PAT-05",
+      "signalStrength": 3,
+      "label": "bienestar social/del pueblo/general",
+      "regex": "\\bbienestar\\s+(?:social|del\\s+pueblo|de\\s+la\\s+familia|general|común|de\\s+todos)\\b"
+    },
+    {
+      "vector": "paternalismo",
+      "patternId": "PAT-06",
+      "signalStrength": 3,
+      "label": "los más humildes/pobres/vulnerables/necesitados",
+      "regex": "\\blos\\s+más\\s+(?:humildes|pobres|vulnerables|necesitados|desfavorecidos)\\b"
+    },
+    {
+      "vector": "paternalismo",
+      "patternId": "PAT-07",
+      "signalStrength": 3,
+      "label": "tutela/amparo/conducción del estado para trabajadores",
+      "regex": "\\b(?:tutela|amparo|conducción)\\s+(?:del\\s+estado|estatal|de\\s+los\\s+trabajadores|de\\s+los\\s+más\\s+necesitados)\\b"
+    },
+    {
+      "vector": "paternalismo",
+      "patternId": "PAT-08",
+      "signalStrength": 3,
+      "label": "inclusión social",
+      "regex": "\\binclusión\\s+social\\b"
+    },
+    {
+      "vector": "paternalismo",
+      "patternId": "PAT-09",
+      "signalStrength": 3,
+      "label": "el pueblo trabajador/argentino/humilde/sufriente",
+      "regex": "\\bel\\s+pueblo\\s+(?:trabajador|argentino\\s+trabajador|humilde|sufriente)\\b"
+    },
+    {
+      "vector": "paternalismo",
+      "patternId": "PAT-10",
+      "signalStrength": 3,
+      "label": "salario mínimo/digno/vital/justo",
+      "regex": "\\bsalario\\s+(?:mínimo|digno|vital|justo|de\\s+los\\s+trabajadores)\\b"
+    },
+    {
+      "vector": "paternalismo",
+      "patternId": "PAT-11",
+      "signalStrength": 2,
+      "label": "asistencia social/a los pobres/del estado",
+      "regex": "\\basistencia\\s+(?:social|a\\s+los\\s+(?:pobres|necesitados|desempleados)|pública|del\\s+estado)\\b"
+    },
+    {
+      "vector": "paternalismo",
+      "patternId": "PAT-12",
+      "signalStrength": 2,
+      "label": "vivienda digna/popular/social",
+      "regex": "\\bvivienda\\s+(?:digna|popular|social|pública|para\\s+los\\s+(?:trabajadores|más\\s+pobres|familias))\\b"
+    },
+    {
+      "vector": "paternalismo",
+      "patternId": "PAT-13",
+      "signalStrength": 2,
+      "label": "educación pública/gratuita/universal/popular",
+      "regex": "\\beducación\\s+(?:pública|gratuita|universal|primaria\\s+(?:pública|gratuita)|popular)\\b"
+    },
+    {
+      "vector": "paternalismo",
+      "patternId": "PAT-14",
+      "signalStrength": 2,
+      "label": "salud pública/sistema de salud/atención médica",
+      "regex": "\\b(?:salud\\s+pública|sistema\\s+de\\s+salud|atención\\s+médica\\s+(?:pública|gratuita|universal))\\b"
+    },
+    {
+      "vector": "paternalismo",
+      "patternId": "PAT-15",
+      "signalStrength": 2,
+      "label": "pobreza infantil/niños desamparados/menores",
+      "regex": "\\b(?:pobreza\\s+infantil|niños\\s+(?:pobres|en\\s+situación\\s+de\\s+calle|desamparados|hambrientos)|menores\\s+desamparados)\\b"
+    },
+    {
+      "vector": "paternalismo",
+      "patternId": "PAT-16",
+      "signalStrength": 2,
+      "label": "solidaridad social/nacional",
+      "regex": "\\bsolidaridad\\s+(?:social|nacional|entre\\s+(?:los\\s+argentinos|todos))\\b"
+    },
+    {
+      "vector": "paternalismo",
+      "patternId": "PAT-17",
+      "signalStrength": 2,
+      "label": "dignidad del trabajador/humana/del pueblo",
+      "regex": "\\bdignidad\\s+(?:del\\s+(?:trabajador|pueblo|ser\\s+humano|hombre)|humana|de\\s+los\\s+trabajadores)\\b"
+    },
+    {
+      "vector": "paternalismo",
+      "patternId": "PAT-18",
+      "signalStrength": 2,
+      "label": "previsión social/sistema jubilatorio/jubilados",
+      "regex": "\\b(?:previsión\\s+social|sistema\\s+(?:previsional|jubilatorio)|jubilados\\s+y\\s+pensionados)\\b"
+    },
+    {
+      "vector": "paternalismo",
+      "patternId": "PAT-19",
+      "signalStrength": 1,
+      "label": "política social/políticas sociales",
+      "regex": "\\bpolítica(?:s)?\\s+social(?:es)?\\b"
+    },
+    {
+      "vector": "paternalismo",
+      "patternId": "PAT-20",
+      "signalStrength": 1,
+      "label": "el estado protector/garante/debe garantizar",
+      "regex": "\\bel\\s+estado\\s+(?:protector|garante|organizador|responsable\\s+de|debe\\s+garantizar)\\b"
+    }
+  ]
+}

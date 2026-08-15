@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 
-const mainRoutes = ['inicio', 'recorrido', 'tesis', 'mapa-orbital', 'actores', 'leyendas', 'evidencia', 'whitepaper', 'videojuego', 'licencia'];
+const mainRoutes = ['inicio', 'recorrido', 'tesis', 'mapa-orbital', 'laboratorio', 'actores', 'leyendas', 'evidencia', 'whitepaper', 'videojuego', 'licencia'];
 const legendIds = ['peron_I_1946', 'peron_II_1951', 'peron_III_1973', 'alfonsin_1983', 'alfonsin_1986', 'menem_I_1989', 'menem_II_1995', 'delarua_2000', 'duhalde_2002', 'nestor_kirchner_2003', 'cfk_I_2007', 'cfk_II_2011', 'macri_2015', 'albertoF_2019', 'milei_2023'];
 
 function collectRuntimeFailures(page) {
@@ -52,6 +52,84 @@ test('la búsqueda encuentra actores y abre la ficha correcta', async ({ page })
   await expect(page.locator('.legend-trace-page h1')).toContainText('Por qué Kirchner restaurador');
 });
 
+test('el laboratorio analiza localmente, explica y descarga sin el texto original', async ({ page }) => {
+  const failures = collectRuntimeFailures(page);
+  await page.goto('/#laboratorio');
+  await expect(page.getByRole('heading', { name: '¿Qué tres cuerpos aparecen en este discurso?' })).toBeVisible();
+  await page.getByRole('button', { name: 'Cargar ejemplo' }).click();
+  const originalText = await page.getByLabel('Texto a analizar').inputValue();
+  const postLoadRequests = [];
+  page.on('request', request => postLoadRequests.push(request.url()));
+  await page.getByRole('button', { name: 'Analizar discurso' }).click();
+
+  await expect(page.locator('.laboratory-output')).toBeVisible();
+  await expect(page.locator('.laboratory-score')).toHaveCount(3);
+  await expect(page.locator('.laboratory-result-stamp')).toContainText(/TEC|MES|PAT/);
+  await expect(page.locator('.laboratory-confidence')).toContainText('fuera del dominio HCDN');
+  await expect(page.locator('.laboratory-evidence-column')).toHaveCount(3);
+  await expect(page.locator('.laboratory-reference-point')).toHaveCount(52);
+  expect(postLoadRequests).toEqual([]);
+
+  const downloadPromise = page.waitForEvent('download');
+  await page.getByRole('button', { name: 'Descargar diagnóstico JSON' }).click();
+  const download = await downloadPromise;
+  expect(download.suggestedFilename()).toBe('diagnostico-orbital.json');
+  const stream = await download.createReadStream();
+  const chunks = [];
+  for await (const chunk of stream) chunks.push(Buffer.from(chunk));
+  const payload = JSON.parse(Buffer.concat(chunks).toString('utf8'));
+  expect(payload.privacy).toEqual({ processedLocally: true, storedBySite: false, fullTextIncludedInResult: false });
+  expect(JSON.stringify(payload)).not.toContain(originalText);
+  expect(failures).toEqual([]);
+});
+
+test('el laboratorio lee .md en memoria y rechaza archivos o textos inválidos', async ({ page }) => {
+  await page.goto('/#laboratorio');
+  await page.getByRole('button', { name: 'Cargar ejemplo' }).click();
+  const sample = await page.getByLabel('Texto a analizar').inputValue();
+  await page.getByRole('button', { name: 'Limpiar' }).click();
+  await page.locator('#laboratory-file').setInputFiles({
+    name: 'discurso.md',
+    mimeType: 'text/markdown',
+    buffer: Buffer.from(sample),
+  });
+  await expect(page.getByLabel('Texto a analizar')).toHaveValue(sample);
+  await expect(page.locator('#laboratory-file-status')).toContainText('leído localmente');
+
+  await page.locator('#laboratory-file').setInputFiles({
+    name: 'discurso.html',
+    mimeType: 'text/html',
+    buffer: Buffer.from('<script>alert(1)</script>'),
+  });
+  await expect(page.getByRole('alert')).toContainText('.txt o .md');
+  await page.getByRole('button', { name: 'Limpiar' }).click();
+  await page.getByLabel('Texto a analizar').fill('Esto es demasiado corto.');
+  await page.getByRole('button', { name: 'Analizar discurso' }).click();
+  await expect(page.getByRole('alert')).toContainText('al menos 120 palabras');
+});
+
+test('el laboratorio escapa metadatos y evidencia aportados por la persona usuaria', async ({ page }) => {
+  await page.goto('/#laboratorio');
+  await page.getByRole('button', { name: 'Cargar ejemplo' }).click();
+  await page.getByLabel('Título o identificación opcional').fill('<img src=x onerror="window.__laboratoryXss=true">');
+  await page.getByRole('button', { name: 'Analizar discurso' }).click();
+  await expect(page.locator('.laboratory-output-header h2')).toContainText('<img src=x');
+  expect(await page.evaluate(() => globalThis.__laboratoryXss === true)).toBe(false);
+  await expect(page.locator('.laboratory-output img')).toHaveCount(0);
+});
+
+test('el resultado del laboratorio permanece responsivo después del análisis', async ({ page }, testInfo) => {
+  test.skip(!testInfo.project.name.includes('mobile'), 'Control específico de viewport móvil.');
+  await page.goto('/#laboratorio');
+  await page.getByRole('button', { name: 'Cargar ejemplo' }).click();
+  await page.getByRole('button', { name: 'Analizar discurso' }).click();
+  await expect(page.locator('.laboratory-output')).toBeVisible();
+  const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
+  expect(overflow).toBeLessThanOrEqual(1);
+  const svgBox = await page.locator('.laboratory-field').boundingBox();
+  expect(svgBox.width).toBeLessThanOrEqual(390);
+});
+
 test('un JSON opcional roto no derriba la publicación', async ({ page }) => {
   await page.route('**/roadmap.json*', route => route.fulfill({ status: 503, contentType: 'application/json', body: '{}' }));
   await page.goto('/#inicio');
@@ -79,7 +157,7 @@ test('menú móvil y logo conservan navegación', async ({ page }, testInfo) => 
   await expect(page.locator('#inicio-page')).toBeVisible();
 });
 
-for (const route of ['inicio', 'mapa-orbital', 'leyendas', 'leyendas/alfonsin_1983', 'videojuego']) {
+for (const route of ['inicio', 'mapa-orbital', 'laboratorio', 'leyendas', 'leyendas/alfonsin_1983', 'videojuego']) {
   test(`accesibilidad sin violaciones serias en ${route}`, async ({ page }) => {
     await page.goto(`/#${route}`);
     await expect(page.locator('main#app h1').first()).toBeVisible();
@@ -90,7 +168,7 @@ for (const route of ['inicio', 'mapa-orbital', 'leyendas', 'leyendas/alfonsin_19
 }
 
 test('SEO técnico entrega robots, sitemap, manifest y rutas indexables', async ({ request }) => {
-  for (const path of ['/robots.txt', '/sitemap.xml', '/manifest.webmanifest', '/leyendas.html', '/videojuego.html']) {
+  for (const path of ['/robots.txt', '/sitemap.xml', '/manifest.webmanifest', '/laboratorio.html', '/leyendas.html', '/videojuego.html']) {
     const response = await request.get(path);
     expect(response.ok(), path).toBeTruthy();
   }

@@ -1,6 +1,6 @@
 # El problema de los tres cuerpos argentinos
 
-**Sitio doctrinario v0.5.0 · mapa empírico v0.4**
+**Sitio doctrinario v0.6.0 · mapa empírico v0.4**
 **Autora:** Alexandra Bustos Frati, PhD  
 **Estado empírico:** provisional; no apto todavía para cita académica formal
 
@@ -44,7 +44,23 @@ ocho funciones, 2.000 remuestreos por unidad y el diff completo frente a v0.3.
 - [Metodología v0.2](docs/metodologia/METHOD_PIPELINE_v0_2.md)
 - [Codebook simétrico](docs/metodologia/CODEBOOK_FUNCIONAL_SIMETRICO_v0_3.md)
 
-## Qué agrega la publicación v0.5
+## Qué agrega la publicación v0.6
+
+- laboratorio orbital para pegar o abrir localmente un texto político y
+  explorar sus señales TEC/MES/PAT;
+- procesamiento íntegro dentro del navegador: el texto no se sube, no se
+  almacena y no se incorpora a la descarga JSON;
+- ubicación ternaria, evidencia por fragmento y comparación diagnóstica con 52
+  discursos procesados por la misma capa automática;
+- separación explícita entre géneros comparables HCDN y lecturas exploratorias
+  de campaña, debate, entrevista o programa;
+- motor y referencia versionados, validación unitaria y pruebas Playwright de
+  archivos, XSS, descarga, accesibilidad y resultado móvil.
+
+- [Laboratorio orbital](https://lore.trescuerpos.arcagaucha.com/laboratorio.html)
+- [Contrato metodológico del analizador](docs/metodologia/ORBITAL_TEXT_ANALYZER_v0_1.md)
+
+## Qué agregó la publicación v0.5
 
 - recorrido guiado para una primera lectura;
 - búsqueda transversal de secciones, actores y Leyendas;

@@ -1,8 +1,8 @@
-# Manifiesto de export público de investigación v0.5
+# Manifiesto de export público de investigación v0.6
 
 **Repositorio objetivo:** `metternietzsche/tres-cuerpos-argentinos-investigacion`  
-**Versión:** `v0.5.0`
-**Fuente:** `web/static_prototype/` + derivados promovidos NB17–NB21 + traducción lúdica v0.2
+**Versión:** `v0.6.0`
+**Fuente:** `web/static_prototype/` + derivados promovidos NB17–NB21 + traducción lúdica v0.2 + analizador textual v0.1
 **Fecha:** 2026-08-15
 
 Este manifiesto separa la autoridad doctrinaria y empírica del videojuego. El
@@ -19,15 +19,17 @@ su build ni sus assets de runtime.
 | `docs/whitepaper/` | `include` | Whitepaper y materiales editoriales. |
 | `docs/mapa_orbital/v0_4/` | `include` | Mapa, fuente Draw.io y nueve tablas derivadas de sensibilidad. |
 | `docs/metodologia/` | `include` | Pipeline v0.2, codebook y esquema de codificación. |
+| `docs/metodologia/ORBITAL_TEXT_ANALYZER_v0_1.md` | `include` | Contrato, límites, privacidad y trazabilidad del laboratorio. |
 | `docs/evidencia/` | `include` | Síntesis y matrices derivadas públicas. |
 | `docs/licencia/` | `include` | Política ampliada. |
 | `docs/roadmap/` | `include` | Roadmap histórico, marcado como tal. |
 | `docs/videojuego.md` | `generate` | Enlazar el repo separado y documentar el contrato vigente de validación. |
 | `docs/videojuego/legend-methodology-v0.2.md` | `include` | Publicar la metodología de traducción investigación → Leyendas sin convertirla en medición nueva. |
 | `figures/` | `include` | Figuras empíricas promovidas. |
-| `data_public/` | `include` | Sólo datos derivados seleccionados, incluida la ficha trazable de las quince Leyendas. |
+| `data_public/` | `include` | Sólo datos derivados seleccionados, incluida la ficha de Leyendas y los registros del analizador sin texto fuente. |
 | `web/static_prototype/index.html` | `include` | Entrada del sitio doctrinario. |
 | `web/static_prototype/app.js` | `generate` | Retirar publicación conjunta y enlazar al repo real del juego. |
+| `web/static_prototype/orbital-analyzer.js` | `include` | Motor local determinista; no transmite ni persiste el texto ingresado. |
 | `web/static_prototype/styles.css` | `include` | Estilos del sitio. |
 | `web/static_prototype/data/` | `include` | Datos del sitio, sin runtime del juego. |
 | `web/static_prototype/assets/` | `include` | Logo, figuras y dieciséis retratos editoriales WebP: quince Leyendas y Rodríguez Saá como actor del corpus. |
@@ -38,6 +40,7 @@ su build ni sus assets de runtime.
 | `PUBLICATION_MANIFEST_v0_1.md`, `PUBLICATION_MANIFEST_v0_2.md` | `release-only` | Conservar fuera del clone inicial. |
 | `PUBLICATION_NOTES.md` | `exclude` | Decisión conjunta ya reemplazada. |
 | `scripts/generate-route-pages.mjs` | `generate` | Producir entradas indexables y `sitemap.xml` para las rutas principales. |
+| `scripts/build-text-analysis-data.mjs` | `generate` | Extraer el registro canónico y congelar la referencia automática de 52 documentos. |
 | `scripts/validate-publication.mjs` | `generate` | Verificar paridad, trazabilidad, versiones, SEO y presupuesto del logo. |
 | `e2e/`, `playwright.config.mjs` | `generate` | Validar navegación, fichas, búsqueda, resiliencia, accesibilidad y responsive. |
 | `.github/workflows/pages.yml` | `generate` | Validar, probar, publicar `web/static_prototype/` y ejecutar smoke de producción. |
@@ -55,6 +58,10 @@ su build ni sus assets de runtime.
 - Page estática navegable por rutas hash, entradas indexables y sin errores de consola;
 - búsqueda, carga parcial, acceso móvil y contraste pasan la matriz Playwright en desktop y Pixel 7;
 - ningún documento bruto del corpus ni ruta secreta o credencial;
+- el laboratorio procesa localmente, excluye el texto completo de su resultado y
+  separa comparación provisional HCDN de géneros exploratorios;
+- registro simétrico de 60 patrones, 20 por cuerpo, y 52 referencias automáticas
+  con pesos normalizados;
 - runtime y coeficientes internos del videojuego sin modificaciones: el sitio publica su traducción trazable, no una nueva calibración del juego.
 
 ## Decisión de licencia

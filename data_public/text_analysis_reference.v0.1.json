@@ -1,0 +1,1210 @@
+{
+  "version": "ORBITAL_TEXT_REFERENCE_v0_1",
+  "analyzerVersion": "ORBITAL_TEXT_ANALYZER_v0_1",
+  "corpus": "HCDN_NB17_v0_3",
+  "map": "MAPA_ORBITAL_ARGENTINO_v0_4",
+  "scope": "52 discursos presidenciales; capa diagnóstica automática recalculada con la misma masa positiva usada para textos nuevos.",
+  "caveat": "La cercanía sólo compara perfiles de señales automáticas. No traslada la adjudicación histórica del mapa v0.4 al texto ingresado.",
+  "sourceHashes": {
+    "documents": "457523288f913c6b2e3a9f8b5f45dd653029bc138410ac211edb6f44aa7da200",
+    "aggregates": "f6f725cd3e7d3b3b35878dadf7d7b0f68612031cb88da1b43e0033dac22bed76"
+  },
+  "documents": [
+    {
+      "filename": "1983-12-10_Mensaje_Presidencial_Alfonsin_Asuncixn.txt",
+      "actor": "Raúl Alfonsín",
+      "caseUnitId": "ALFONSIN_1983_1989",
+      "caseUnit": "Raúl Alfonsín (1983–1989)",
+      "year": 1983,
+      "genre": "apertura",
+      "analysisWindow": "full_presidential_document",
+      "wordCount": 24714,
+      "positiveStrength": 113.4,
+      "positiveDensityPer1000": 4.5885,
+      "weights": {
+        "tecnocracia": 0.643739,
+        "mesianismo": 0.05291,
+        "paternalismo": 0.303351
+      },
+      "leadership": {
+        "tecnocracia": 0.20913294797687862,
+        "mesianismo": 0.2890173410404624,
+        "paternalismo": 0.3336416184971098
+      },
+      "reviewRequired": true
+    },
+    {
+      "filename": "MENSAJE PRESIDENCIAL 1984.txt",
+      "actor": "Raúl Alfonsín",
+      "caseUnitId": "ALFONSIN_1983_1989",
+      "caseUnit": "Raúl Alfonsín (1983–1989)",
+      "year": 1984,
+      "genre": "apertura",
+      "analysisWindow": "full_presidential_document",
+      "wordCount": 18279,
+      "positiveStrength": 83,
+      "positiveDensityPer1000": 4.5407,
+      "weights": {
+        "tecnocracia": 0.554217,
+        "mesianismo": 0,
+        "paternalismo": 0.445783
+      },
+      "leadership": {
+        "tecnocracia": 0.20913294797687862,
+        "mesianismo": 0,
+        "paternalismo": 0.20647398843930637
+      },
+      "reviewRequired": false
+    },
+    {
+      "filename": "MENSAJE PRESIDENCIAL 1985.txt",
+      "actor": "Raúl Alfonsín",
+      "caseUnitId": "ALFONSIN_1983_1989",
+      "caseUnit": "Raúl Alfonsín (1983–1989)",
+      "year": 1985,
+      "genre": "apertura",
+      "analysisWindow": "full_presidential_document",
+      "wordCount": 12165,
+      "positiveStrength": 98.15,
+      "positiveDensityPer1000": 8.0682,
+      "weights": {
+        "tecnocracia": 0.580744,
+        "mesianismo": 0.091696,
+        "paternalismo": 0.32756
+      },
+      "leadership": {
+        "tecnocracia": 0.20913294797687862,
+        "mesianismo": 0.27167630057803466,
+        "paternalismo": 0.23095375722543351
+      },
+      "reviewRequired": true
+    },
+    {
+      "filename": "MENSAJE PRESIDENCIAL 1986.txt",
+      "actor": "Raúl Alfonsín",
+      "caseUnitId": "ALFONSIN_1983_1989",
+      "caseUnit": "Raúl Alfonsín (1983–1989)",
+      "year": 1986,
+      "genre": "apertura",
+      "analysisWindow": "full_presidential_document",
+      "wordCount": 13203,
+      "positiveStrength": 61,
+      "positiveDensityPer1000": 4.6202,
+      "weights": {
+        "tecnocracia": 0.52459,
+        "mesianismo": 0.213115,
+        "paternalismo": 0.262295
+      },
+      "leadership": {
+        "tecnocracia": 0.1239306358381503,
+        "mesianismo": 0.1445086705202312,
+        "paternalismo": 0.20647398843930637
+      },
+      "reviewRequired": false
+    },
+    {
+      "filename": "MENSAJE PRESIDENCIAL 1987.txt",
+      "actor": "Raúl Alfonsín",
+      "caseUnitId": "ALFONSIN_1983_1989",
+      "caseUnit": "Raúl Alfonsín (1983–1989)",
+      "year": 1987,
+      "genre": "apertura",
+      "analysisWindow": "full_presidential_document",
+      "wordCount": 12330,
+      "positiveStrength": 32,
+      "positiveDensityPer1000": 2.5953,
+      "weights": {
+        "tecnocracia": 0.65625,
+        "mesianismo": 0.09375,
+        "paternalismo": 0.25
+      },
+      "leadership": {
+        "tecnocracia": 0.06196531791907515,
+        "mesianismo": 0.1445086705202312,
+        "paternalismo": 0.1445086705202312
+      },
+      "reviewRequired": false
+    },
+    {
+      "filename": "1988-12-21_Asamblea_Legislativa_Extraordinaria_Alfonsin.txt",
+      "actor": "Raúl Alfonsín",
+      "caseUnitId": "ALFONSIN_1983_1989",
+      "caseUnit": "Raúl Alfonsín (1983–1989)",
+      "year": 1988,
+      "genre": "apertura",
+      "analysisWindow": "full_presidential_document",
+      "wordCount": 5155,
+      "positiveStrength": 6,
+      "positiveDensityPer1000": 1.1639,
+      "weights": {
+        "tecnocracia": 0.5,
+        "mesianismo": 0.5,
+        "paternalismo": 0
+      },
+      "leadership": {
+        "tecnocracia": 0.06196531791907515,
+        "mesianismo": 0.1445086705202312,
+        "paternalismo": 0
+      },
+      "reviewRequired": false
+    },
+    {
+      "filename": "MENSAJE PRESIDENCIAL 1988.txt",
+      "actor": "Raúl Alfonsín",
+      "caseUnitId": "ALFONSIN_1983_1989",
+      "caseUnit": "Raúl Alfonsín (1983–1989)",
+      "year": 1988,
+      "genre": "apertura",
+      "analysisWindow": "full_presidential_document",
+      "wordCount": 9234,
+      "positiveStrength": 63.75,
+      "positiveDensityPer1000": 6.9038,
+      "weights": {
+        "tecnocracia": 0.611765,
+        "mesianismo": 0,
+        "paternalismo": 0.388235
+      },
+      "leadership": {
+        "tecnocracia": 0.14716763005780348,
+        "mesianismo": 0,
+        "paternalismo": 0.20647398843930637
+      },
+      "reviewRequired": false
+    },
+    {
+      "filename": "MENSAJE PRESIDENCIAL 1989.txt",
+      "actor": "Raúl Alfonsín",
+      "caseUnitId": "ALFONSIN_1983_1989",
+      "caseUnit": "Raúl Alfonsín (1983–1989)",
+      "year": 1989,
+      "genre": "apertura",
+      "analysisWindow": "full_presidential_document",
+      "wordCount": 6253,
+      "positiveStrength": 20.65,
+      "positiveDensityPer1000": 3.3024,
+      "weights": {
+        "tecnocracia": 0.387409,
+        "mesianismo": 0.387409,
+        "paternalismo": 0.225182
+      },
+      "leadership": {
+        "tecnocracia": 0.14716763005780348,
+        "mesianismo": 0.2890173410404624,
+        "paternalismo": 0.16898843930635837
+      },
+      "reviewRequired": false
+    },
+    {
+      "filename": "MENSAJE PRESIDENCIAL 1990.txt",
+      "actor": "Carlos Menem",
+      "caseUnitId": "MENEM_I_1989_1995",
+      "caseUnit": "Carlos Menem I (1989–1995)",
+      "year": 1990,
+      "genre": "apertura",
+      "analysisWindow": "full_presidential_document",
+      "wordCount": 7762,
+      "positiveStrength": 47,
+      "positiveDensityPer1000": 6.0551,
+      "weights": {
+        "tecnocracia": 0.468085,
+        "mesianismo": 0.042553,
+        "paternalismo": 0.489362
+      },
+      "leadership": {
+        "tecnocracia": 0.06196531791907515,
+        "mesianismo": 0.12716763005780346,
+        "paternalismo": 0.2509826589595376
+      },
+      "reviewRequired": false
+    },
+    {
+      "filename": "MENSAJE PRESIDENCIAL 1991.txt",
+      "actor": "Carlos Menem",
+      "caseUnitId": "MENEM_I_1989_1995",
+      "caseUnit": "Carlos Menem I (1989–1995)",
+      "year": 1991,
+      "genre": "apertura",
+      "analysisWindow": "full_presidential_document",
+      "wordCount": 5925,
+      "positiveStrength": 17,
+      "positiveDensityPer1000": 2.8692,
+      "weights": {
+        "tecnocracia": 0.352941,
+        "mesianismo": 0,
+        "paternalismo": 0.647059
+      },
+      "leadership": {
+        "tecnocracia": 0.06196531791907515,
+        "mesianismo": 0,
+        "paternalismo": 0.20647398843930637
+      },
+      "reviewRequired": false
+    },
+    {
+      "filename": "MENSAJE PRESIDENCIAL 1992.txt",
+      "actor": "Carlos Menem",
+      "caseUnitId": "MENEM_I_1989_1995",
+      "caseUnit": "Carlos Menem I (1989–1995)",
+      "year": 1992,
+      "genre": "apertura",
+      "analysisWindow": "full_presidential_document",
+      "wordCount": 5827,
+      "positiveStrength": 57,
+      "positiveDensityPer1000": 9.782,
+      "weights": {
+        "tecnocracia": 0.245614,
+        "mesianismo": 0.070175,
+        "paternalismo": 0.684211
+      },
+      "leadership": {
+        "tecnocracia": 0.1239306358381503,
+        "mesianismo": 0.27167630057803466,
+        "paternalismo": 0.20647398843930637
+      },
+      "reviewRequired": false
+    },
+    {
+      "filename": "MENSAJE PRESIDENCIAL 1993.txt",
+      "actor": "Carlos Menem",
+      "caseUnitId": "MENEM_I_1989_1995",
+      "caseUnit": "Carlos Menem I (1989–1995)",
+      "year": 1993,
+      "genre": "apertura",
+      "analysisWindow": "full_presidential_document",
+      "wordCount": 4433,
+      "positiveStrength": 12,
+      "positiveDensityPer1000": 2.707,
+      "weights": {
+        "tecnocracia": 0.5,
+        "mesianismo": 0,
+        "paternalismo": 0.5
+      },
+      "leadership": {
+        "tecnocracia": 0.1239306358381503,
+        "mesianismo": 0,
+        "paternalismo": 0.20647398843930637
+      },
+      "reviewRequired": false
+    },
+    {
+      "filename": "MENSAJE PRESIDENCIAL 1994.txt",
+      "actor": "Carlos Menem",
+      "caseUnitId": "MENEM_I_1989_1995",
+      "caseUnit": "Carlos Menem I (1989–1995)",
+      "year": 1994,
+      "genre": "apertura",
+      "analysisWindow": "full_presidential_document",
+      "wordCount": 7492,
+      "positiveStrength": 45,
+      "positiveDensityPer1000": 6.0064,
+      "weights": {
+        "tecnocracia": 0.511111,
+        "mesianismo": 0.111111,
+        "paternalismo": 0.377778
+      },
+      "leadership": {
+        "tecnocracia": 0.1239306358381503,
+        "mesianismo": 0.2890173410404624,
+        "paternalismo": 0.20647398843930637
+      },
+      "reviewRequired": false
+    },
+    {
+      "filename": "1995-07-08_Mensaje_Presidencial_Menem_Asuncixn.txt",
+      "actor": "Carlos Menem",
+      "caseUnitId": "MENEM_II_1995_1999",
+      "caseUnit": "Carlos Menem II (1995–1999)",
+      "year": 1995,
+      "genre": "apertura",
+      "analysisWindow": "full_presidential_document",
+      "wordCount": 17659,
+      "positiveStrength": 20,
+      "positiveDensityPer1000": 1.1326,
+      "weights": {
+        "tecnocracia": 0.4,
+        "mesianismo": 0,
+        "paternalismo": 0.6
+      },
+      "leadership": {
+        "tecnocracia": 0.06196531791907515,
+        "mesianismo": 0,
+        "paternalismo": 0.1445086705202312
+      },
+      "reviewRequired": false
+    },
+    {
+      "filename": "MENSAJE PRESIDENCIAL 1995.txt",
+      "actor": "Carlos Menem",
+      "caseUnitId": "MENEM_I_1989_1995",
+      "caseUnit": "Carlos Menem I (1989–1995)",
+      "year": 1995,
+      "genre": "apertura",
+      "analysisWindow": "full_presidential_document",
+      "wordCount": 5489,
+      "positiveStrength": 43.1,
+      "positiveDensityPer1000": 7.8521,
+      "weights": {
+        "tecnocracia": 0.556845,
+        "mesianismo": 0,
+        "paternalismo": 0.443155
+      },
+      "leadership": {
+        "tecnocracia": 0.20913294797687862,
+        "mesianismo": 0,
+        "paternalismo": 0.16231213872832367
+      },
+      "reviewRequired": false
+    },
+    {
+      "filename": "MENSAJE PRESIDENCIAL 1996.txt",
+      "actor": "Carlos Menem",
+      "caseUnitId": "MENEM_II_1995_1999",
+      "caseUnit": "Carlos Menem II (1995–1999)",
+      "year": 1996,
+      "genre": "apertura",
+      "analysisWindow": "full_presidential_document",
+      "wordCount": 3389,
+      "positiveStrength": 9.65,
+      "positiveDensityPer1000": 2.8474,
+      "weights": {
+        "tecnocracia": 0,
+        "mesianismo": 0,
+        "paternalismo": 1
+      },
+      "leadership": {
+        "tecnocracia": 0,
+        "mesianismo": 0,
+        "paternalismo": 0.27167630057803466
+      },
+      "reviewRequired": false
+    },
+    {
+      "filename": "MENSAJE PRESIDENCIAL 1997.txt",
+      "actor": "Carlos Menem",
+      "caseUnitId": "MENEM_II_1995_1999",
+      "caseUnit": "Carlos Menem II (1995–1999)",
+      "year": 1997,
+      "genre": "apertura",
+      "analysisWindow": "full_presidential_document",
+      "wordCount": 5455,
+      "positiveStrength": 55.1,
+      "positiveDensityPer1000": 10.1008,
+      "weights": {
+        "tecnocracia": 0.526316,
+        "mesianismo": 0,
+        "paternalismo": 0.473684
+      },
+      "leadership": {
+        "tecnocracia": 0.1239306358381503,
+        "mesianismo": 0,
+        "paternalismo": 0.3336416184971098
+      },
+      "reviewRequired": true
+    },
+    {
+      "filename": "1998-03-01_Mensaje_Presidencial_Menem.txt",
+      "actor": "Carlos Menem",
+      "caseUnitId": "MENEM_II_1995_1999",
+      "caseUnit": "Carlos Menem II (1995–1999)",
+      "year": 1998,
+      "genre": "apertura",
+      "analysisWindow": "full_presidential_document",
+      "wordCount": 5851,
+      "positiveStrength": 41,
+      "positiveDensityPer1000": 7.0073,
+      "weights": {
+        "tecnocracia": 0.365854,
+        "mesianismo": 0.097561,
+        "paternalismo": 0.536585
+      },
+      "leadership": {
+        "tecnocracia": 0.1239306358381503,
+        "mesianismo": 0.1445086705202312,
+        "paternalismo": 0.20647398843930637
+      },
+      "reviewRequired": false
+    },
+    {
+      "filename": "1999-03-01_Mensaje_Presidencial_Menem.txt",
+      "actor": "Carlos Menem",
+      "caseUnitId": "MENEM_II_1995_1999",
+      "caseUnit": "Carlos Menem II (1995–1999)",
+      "year": 1999,
+      "genre": "apertura",
+      "analysisWindow": "full_presidential_document",
+      "wordCount": 8296,
+      "positiveStrength": 32.3,
+      "positiveDensityPer1000": 3.8934,
+      "weights": {
+        "tecnocracia": 0.433437,
+        "mesianismo": 0.092879,
+        "paternalismo": 0.473684
+      },
+      "leadership": {
+        "tecnocracia": 0.14716763005780348,
+        "mesianismo": 0.1445086705202312,
+        "paternalismo": 0.20647398843930637
+      },
+      "reviewRequired": false
+    },
+    {
+      "filename": "1999-12-10_Mensaje_presidencial_de_la_Rua_Asuncixn.txt",
+      "actor": "Fernando de la Rúa",
+      "caseUnitId": "DELARUA_1999_2001",
+      "caseUnit": "Fernando de la Rúa (1999–2001)",
+      "year": 1999,
+      "genre": "apertura",
+      "analysisWindow": "full_presidential_document",
+      "wordCount": 5258,
+      "positiveStrength": 24.65,
+      "positiveDensityPer1000": 4.6881,
+      "weights": {
+        "tecnocracia": 0.486815,
+        "mesianismo": 0.081136,
+        "paternalismo": 0.432049
+      },
+      "leadership": {
+        "tecnocracia": 0.14716763005780348,
+        "mesianismo": 0.1445086705202312,
+        "paternalismo": 0.23095375722543351
+      },
+      "reviewRequired": false
+    },
+    {
+      "filename": "2000-03-01_Mensaje_Presidencial_de_la_Rua.txt",
+      "actor": "Fernando de la Rúa",
+      "caseUnitId": "DELARUA_1999_2001",
+      "caseUnit": "Fernando de la Rúa (1999–2001)",
+      "year": 2000,
+      "genre": "apertura",
+      "analysisWindow": "full_presidential_document",
+      "wordCount": 4222,
+      "positiveStrength": 22.65,
+      "positiveDensityPer1000": 5.3648,
+      "weights": {
+        "tecnocracia": 0.485651,
+        "mesianismo": 0,
+        "paternalismo": 0.514349
+      },
+      "leadership": {
+        "tecnocracia": 0.20913294797687862,
+        "mesianismo": 0,
+        "paternalismo": 0.23095375722543351
+      },
+      "reviewRequired": false
+    },
+    {
+      "filename": "2001-03-01_Mensaje_Presidencial_de_la_Rua.txt",
+      "actor": "Fernando de la Rúa",
+      "caseUnitId": "DELARUA_1999_2001",
+      "caseUnit": "Fernando de la Rúa (1999–2001)",
+      "year": 2001,
+      "genre": "apertura",
+      "analysisWindow": "full_presidential_document",
+      "wordCount": 7888,
+      "positiveStrength": 60,
+      "positiveDensityPer1000": 7.6065,
+      "weights": {
+        "tecnocracia": 0.566667,
+        "mesianismo": 0.133333,
+        "paternalismo": 0.3
+      },
+      "leadership": {
+        "tecnocracia": 0.20913294797687862,
+        "mesianismo": 0.2890173410404624,
+        "paternalismo": 0.20647398843930637
+      },
+      "reviewRequired": false
+    },
+    {
+      "filename": "2001-12-22_23_Mensaje_Presidencial_Rodrxguez_Sax_Asuncixn.txt",
+      "actor": "Adolfo Rodríguez Saá",
+      "caseUnitId": "RODRIGUEZ_SAA_2001",
+      "caseUnit": "Adolfo Rodríguez Saá (2001)",
+      "year": 2001,
+      "genre": "apertura",
+      "analysisWindow": "segments_1084_1112_presidential_only",
+      "wordCount": 73455,
+      "positiveStrength": 18.65,
+      "positiveDensityPer1000": 0.2539,
+      "weights": {
+        "tecnocracia": 0.268097,
+        "mesianismo": 0.321716,
+        "paternalismo": 0.410188
+      },
+      "leadership": {
+        "tecnocracia": 0.14716763005780348,
+        "mesianismo": 0.1445086705202312,
+        "paternalismo": 0.20647398843930637
+      },
+      "reviewRequired": true
+    },
+    {
+      "filename": "2002-01-01_Mensaje_Presidencial_Duhalde_Asuncixn.txt",
+      "actor": "Eduardo Duhalde",
+      "caseUnitId": "DUHALDE_2002_2003",
+      "caseUnit": "Eduardo Duhalde (2002–2003)",
+      "year": 2002,
+      "genre": "apertura",
+      "analysisWindow": "full_presidential_document",
+      "wordCount": 2349,
+      "positiveStrength": 10,
+      "positiveDensityPer1000": 4.2571,
+      "weights": {
+        "tecnocracia": 0.5,
+        "mesianismo": 0.2,
+        "paternalismo": 0.3
+      },
+      "leadership": {
+        "tecnocracia": 0.20913294797687862,
+        "mesianismo": 0.1445086705202312,
+        "paternalismo": 0.1445086705202312
+      },
+      "reviewRequired": false
+    },
+    {
+      "filename": "2002-03-01_Mensaje_Presidencial_Duhalde.txt",
+      "actor": "Eduardo Duhalde",
+      "caseUnitId": "DUHALDE_2002_2003",
+      "caseUnit": "Eduardo Duhalde (2002–2003)",
+      "year": 2002,
+      "genre": "apertura",
+      "analysisWindow": "full_presidential_document",
+      "wordCount": 4971,
+      "positiveStrength": 52.65,
+      "positiveDensityPer1000": 10.5914,
+      "weights": {
+        "tecnocracia": 0.531814,
+        "mesianismo": 0.17094,
+        "paternalismo": 0.297246
+      },
+      "leadership": {
+        "tecnocracia": 0.14716763005780348,
+        "mesianismo": 0.1445086705202312,
+        "paternalismo": 0.23095375722543351
+      },
+      "reviewRequired": true
+    },
+    {
+      "filename": "2003-03-01_Mensaje_Presidencial_Duhalde.txt",
+      "actor": "Eduardo Duhalde",
+      "caseUnitId": "DUHALDE_2002_2003",
+      "caseUnit": "Eduardo Duhalde (2002–2003)",
+      "year": 2003,
+      "genre": "apertura",
+      "analysisWindow": "full_presidential_document",
+      "wordCount": 4787,
+      "positiveStrength": 20,
+      "positiveDensityPer1000": 4.178,
+      "weights": {
+        "tecnocracia": 0.55,
+        "mesianismo": 0.15,
+        "paternalismo": 0.3
+      },
+      "leadership": {
+        "tecnocracia": 0.06196531791907515,
+        "mesianismo": 0.1445086705202312,
+        "paternalismo": 0.20647398843930637
+      },
+      "reviewRequired": false
+    },
+    {
+      "filename": "2003-05-25_Mensaje_Presidencial_Kirchner_Asuncixn.txt",
+      "actor": "Néstor Kirchner",
+      "caseUnitId": "KIRCHNER_2003_2007",
+      "caseUnit": "Néstor Kirchner (2003–2007)",
+      "year": 2003,
+      "genre": "apertura",
+      "analysisWindow": "full_presidential_document",
+      "wordCount": 6456,
+      "positiveStrength": 49,
+      "positiveDensityPer1000": 7.5898,
+      "weights": {
+        "tecnocracia": 0.55102,
+        "mesianismo": 0.040816,
+        "paternalismo": 0.408163
+      },
+      "leadership": {
+        "tecnocracia": 0.14716763005780348,
+        "mesianismo": 0.1445086705202312,
+        "paternalismo": 0.20647398843930637
+      },
+      "reviewRequired": true
+    },
+    {
+      "filename": "2004-03-01_Mensaje_Presidencial_Kirchner.txt",
+      "actor": "Néstor Kirchner",
+      "caseUnitId": "KIRCHNER_2003_2007",
+      "caseUnit": "Néstor Kirchner (2003–2007)",
+      "year": 2004,
+      "genre": "apertura",
+      "analysisWindow": "full_presidential_document",
+      "wordCount": 10752,
+      "positiveStrength": 45.75,
+      "positiveDensityPer1000": 4.255,
+      "weights": {
+        "tecnocracia": 0.502732,
+        "mesianismo": 0,
+        "paternalismo": 0.497268
+      },
+      "leadership": {
+        "tecnocracia": 0.20913294797687862,
+        "mesianismo": 0,
+        "paternalismo": 0.20647398843930637
+      },
+      "reviewRequired": true
+    },
+    {
+      "filename": "2005-03-01_Mensaje_Presidencial_Kirchner.txt",
+      "actor": "Néstor Kirchner",
+      "caseUnitId": "KIRCHNER_2003_2007",
+      "caseUnit": "Néstor Kirchner (2003–2007)",
+      "year": 2005,
+      "genre": "apertura",
+      "analysisWindow": "full_presidential_document",
+      "wordCount": 13886,
+      "positiveStrength": 75.85,
+      "positiveDensityPer1000": 5.4623,
+      "weights": {
+        "tecnocracia": 0.60646,
+        "mesianismo": 0.026368,
+        "paternalismo": 0.367172
+      },
+      "leadership": {
+        "tecnocracia": 0.20913294797687862,
+        "mesianismo": 0.1445086705202312,
+        "paternalismo": 0.23095375722543351
+      },
+      "reviewRequired": false
+    },
+    {
+      "filename": "2006-03-01_Mensaje_Presidencial_Kirchner.txt",
+      "actor": "Néstor Kirchner",
+      "caseUnitId": "KIRCHNER_2003_2007",
+      "caseUnit": "Néstor Kirchner (2003–2007)",
+      "year": 2006,
+      "genre": "apertura",
+      "analysisWindow": "full_presidential_document",
+      "wordCount": 19694,
+      "positiveStrength": 150.35,
+      "positiveDensityPer1000": 7.6343,
+      "weights": {
+        "tecnocracia": 0.591952,
+        "mesianismo": 0.019953,
+        "paternalismo": 0.388094
+      },
+      "leadership": {
+        "tecnocracia": 0.20913294797687862,
+        "mesianismo": 0.1445086705202312,
+        "paternalismo": 0.3336416184971098
+      },
+      "reviewRequired": false
+    },
+    {
+      "filename": "2007-03-01_Mensaje_Presidencial_Kirchner.txt",
+      "actor": "Néstor Kirchner",
+      "caseUnitId": "KIRCHNER_2003_2007",
+      "caseUnit": "Néstor Kirchner (2003–2007)",
+      "year": 2007,
+      "genre": "apertura",
+      "analysisWindow": "full_presidential_document",
+      "wordCount": 21376,
+      "positiveStrength": 125.95,
+      "positiveDensityPer1000": 5.8921,
+      "weights": {
+        "tecnocracia": 0.531957,
+        "mesianismo": 0.055578,
+        "paternalismo": 0.412465
+      },
+      "leadership": {
+        "tecnocracia": 0.20913294797687862,
+        "mesianismo": 0.43352601156069365,
+        "paternalismo": 0.2509826589595376
+      },
+      "reviewRequired": false
+    },
+    {
+      "filename": "Asunción.Cristina.2007.txt",
+      "actor": "Cristina Fernández de Kirchner",
+      "caseUnitId": "CFK_I_2007_2011",
+      "caseUnit": "Cristina Fernández de Kirchner I (2007–2011)",
+      "year": 2007,
+      "genre": "apertura",
+      "analysisWindow": "full_presidential_document",
+      "wordCount": 5213,
+      "positiveStrength": 24,
+      "positiveDensityPer1000": 4.6039,
+      "weights": {
+        "tecnocracia": 0.208333,
+        "mesianismo": 0.166667,
+        "paternalismo": 0.625
+      },
+      "leadership": {
+        "tecnocracia": 0.14716763005780348,
+        "mesianismo": 0.1445086705202312,
+        "paternalismo": 0.2509826589595376
+      },
+      "reviewRequired": false
+    },
+    {
+      "filename": "MENSAJE PRESIDENCIAL.2008.txt",
+      "actor": "Cristina Fernández de Kirchner",
+      "caseUnitId": "CFK_I_2007_2011",
+      "caseUnit": "Cristina Fernández de Kirchner I (2007–2011)",
+      "year": 2008,
+      "genre": "apertura",
+      "analysisWindow": "full_presidential_document",
+      "wordCount": 9373,
+      "positiveStrength": 51,
+      "positiveDensityPer1000": 5.4412,
+      "weights": {
+        "tecnocracia": 0.882353,
+        "mesianismo": 0.039216,
+        "paternalismo": 0.078431
+      },
+      "leadership": {
+        "tecnocracia": 0.20913294797687862,
+        "mesianismo": 0.1445086705202312,
+        "paternalismo": 0.2890173410404624
+      },
+      "reviewRequired": false
+    },
+    {
+      "filename": "2010-03-01 Mensaje Presidencial Fernandez.txt",
+      "actor": "Cristina Fernández de Kirchner",
+      "caseUnitId": "CFK_I_2007_2011",
+      "caseUnit": "Cristina Fernández de Kirchner I (2007–2011)",
+      "year": 2010,
+      "genre": "apertura",
+      "analysisWindow": "full_presidential_document",
+      "wordCount": 11714,
+      "positiveStrength": 25,
+      "positiveDensityPer1000": 2.1342,
+      "weights": {
+        "tecnocracia": 0.4,
+        "mesianismo": 0,
+        "paternalismo": 0.6
+      },
+      "leadership": {
+        "tecnocracia": 0.1239306358381503,
+        "mesianismo": 0,
+        "paternalismo": 0.20647398843930637
+      },
+      "reviewRequired": false
+    },
+    {
+      "filename": "2011-03-01 Mensaje Presidencial Fernandez.txt",
+      "actor": "Cristina Fernández de Kirchner",
+      "caseUnitId": "CFK_I_2007_2011",
+      "caseUnit": "Cristina Fernández de Kirchner I (2007–2011)",
+      "year": 2011,
+      "genre": "apertura",
+      "analysisWindow": "full_presidential_document",
+      "wordCount": 11911,
+      "positiveStrength": 81,
+      "positiveDensityPer1000": 6.8004,
+      "weights": {
+        "tecnocracia": 0.654321,
+        "mesianismo": 0,
+        "paternalismo": 0.345679
+      },
+      "leadership": {
+        "tecnocracia": 0.1239306358381503,
+        "mesianismo": 0,
+        "paternalismo": 0.3336416184971098
+      },
+      "reviewRequired": true
+    },
+    {
+      "filename": "Asunción.Cristina.2011.txt",
+      "actor": "Cristina Fernández de Kirchner",
+      "caseUnitId": "CFK_II_2011_2015",
+      "caseUnit": "Cristina Fernández de Kirchner II (2011–2015)",
+      "year": 2011,
+      "genre": "apertura",
+      "analysisWindow": "full_presidential_document",
+      "wordCount": 8476,
+      "positiveStrength": 21,
+      "positiveDensityPer1000": 2.4776,
+      "weights": {
+        "tecnocracia": 0.714286,
+        "mesianismo": 0.142857,
+        "paternalismo": 0.142857
+      },
+      "leadership": {
+        "tecnocracia": 0.1239306358381503,
+        "mesianismo": 0.1445086705202312,
+        "paternalismo": 0.06196531791907515
+      },
+      "reviewRequired": false
+    },
+    {
+      "filename": "2012-03-01 Mensaje Presidencial Fernandez.txt",
+      "actor": "Cristina Fernández de Kirchner",
+      "caseUnitId": "CFK_II_2011_2015",
+      "caseUnit": "Cristina Fernández de Kirchner II (2011–2015)",
+      "year": 2012,
+      "genre": "apertura",
+      "analysisWindow": "full_presidential_document",
+      "wordCount": 24332,
+      "positiveStrength": 49.95,
+      "positiveDensityPer1000": 2.0529,
+      "weights": {
+        "tecnocracia": 0.520521,
+        "mesianismo": 0,
+        "paternalismo": 0.479479
+      },
+      "leadership": {
+        "tecnocracia": 0.1239306358381503,
+        "mesianismo": 0,
+        "paternalismo": 0.20647398843930637
+      },
+      "reviewRequired": true
+    },
+    {
+      "filename": "2013-03-01_Asamblea_Legislativa-Fernandez.txt",
+      "actor": "Cristina Fernández de Kirchner",
+      "caseUnitId": "CFK_II_2011_2015",
+      "caseUnit": "Cristina Fernández de Kirchner II (2011–2015)",
+      "year": 2013,
+      "genre": "apertura",
+      "analysisWindow": "full_presidential_document",
+      "wordCount": 28000,
+      "positiveStrength": 106.3,
+      "positiveDensityPer1000": 3.7964,
+      "weights": {
+        "tecnocracia": 0.451552,
+        "mesianismo": 0,
+        "paternalismo": 0.548448
+      },
+      "leadership": {
+        "tecnocracia": 0.1239306358381503,
+        "mesianismo": 0,
+        "paternalismo": 0.20647398843930637
+      },
+      "reviewRequired": false
+    },
+    {
+      "filename": "2014-03-01_Asamblea_Legislativa-Fernandez.txt",
+      "actor": "Cristina Fernández de Kirchner",
+      "caseUnitId": "CFK_II_2011_2015",
+      "caseUnit": "Cristina Fernández de Kirchner II (2011–2015)",
+      "year": 2014,
+      "genre": "apertura",
+      "analysisWindow": "full_presidential_document",
+      "wordCount": 20353,
+      "positiveStrength": 74,
+      "positiveDensityPer1000": 3.6358,
+      "weights": {
+        "tecnocracia": 0.540541,
+        "mesianismo": 0,
+        "paternalismo": 0.459459
+      },
+      "leadership": {
+        "tecnocracia": 0.20913294797687862,
+        "mesianismo": 0,
+        "paternalismo": 0.20647398843930637
+      },
+      "reviewRequired": true
+    },
+    {
+      "filename": "2015-03-01_Asamblea_Legislativa-Fernandez.txt",
+      "actor": "Cristina Fernández de Kirchner",
+      "caseUnitId": "CFK_II_2011_2015",
+      "caseUnit": "Cristina Fernández de Kirchner II (2011–2015)",
+      "year": 2015,
+      "genre": "apertura",
+      "analysisWindow": "full_presidential_document",
+      "wordCount": 27907,
+      "positiveStrength": 79,
+      "positiveDensityPer1000": 2.8308,
+      "weights": {
+        "tecnocracia": 0.506329,
+        "mesianismo": 0,
+        "paternalismo": 0.493671
+      },
+      "leadership": {
+        "tecnocracia": 0.1239306358381503,
+        "mesianismo": 0,
+        "paternalismo": 0.20647398843930637
+      },
+      "reviewRequired": false
+    },
+    {
+      "filename": "2015-12-10_Mensaje_Presidencial_Macri_Asuncixn.txt",
+      "actor": "Mauricio Macri",
+      "caseUnitId": "MACRI_2015_2019",
+      "caseUnit": "Mauricio Macri (2015–2019)",
+      "year": 2015,
+      "genre": "apertura",
+      "analysisWindow": "full_presidential_document",
+      "wordCount": 2960,
+      "positiveStrength": 11,
+      "positiveDensityPer1000": 3.7162,
+      "weights": {
+        "tecnocracia": 0.272727,
+        "mesianismo": 0,
+        "paternalismo": 0.727273
+      },
+      "leadership": {
+        "tecnocracia": 0.06196531791907515,
+        "mesianismo": 0,
+        "paternalismo": 0.20647398843930637
+      },
+      "reviewRequired": false
+    },
+    {
+      "filename": "2016-03-01_Asamblea_Legislativa-Macri.txt",
+      "actor": "Mauricio Macri",
+      "caseUnitId": "MACRI_2015_2019",
+      "caseUnit": "Mauricio Macri (2015–2019)",
+      "year": 2016,
+      "genre": "apertura",
+      "analysisWindow": "full_presidential_document",
+      "wordCount": 6959,
+      "positiveStrength": 30,
+      "positiveDensityPer1000": 4.311,
+      "weights": {
+        "tecnocracia": 0.866667,
+        "mesianismo": 0,
+        "paternalismo": 0.133333
+      },
+      "leadership": {
+        "tecnocracia": 0.20913294797687862,
+        "mesianismo": 0,
+        "paternalismo": 0.06196531791907515
+      },
+      "reviewRequired": true
+    },
+    {
+      "filename": "2017-03-01-Asamblea-Legislativa-Macri.txt",
+      "actor": "Mauricio Macri",
+      "caseUnitId": "MACRI_2015_2019",
+      "caseUnit": "Mauricio Macri (2015–2019)",
+      "year": 2017,
+      "genre": "apertura",
+      "analysisWindow": "full_presidential_document",
+      "wordCount": 5790,
+      "positiveStrength": 40,
+      "positiveDensityPer1000": 6.9085,
+      "weights": {
+        "tecnocracia": 0.725,
+        "mesianismo": 0,
+        "paternalismo": 0.275
+      },
+      "leadership": {
+        "tecnocracia": 0.1239306358381503,
+        "mesianismo": 0,
+        "paternalismo": 0.10647398843930636
+      },
+      "reviewRequired": false
+    },
+    {
+      "filename": "01.03.2018As.txt",
+      "actor": "Mauricio Macri",
+      "caseUnitId": "MACRI_2015_2019",
+      "caseUnit": "Mauricio Macri (2015–2019)",
+      "year": 2018,
+      "genre": "apertura",
+      "analysisWindow": "full_presidential_document",
+      "wordCount": 4789,
+      "positiveStrength": 5.65,
+      "positiveDensityPer1000": 1.1798,
+      "weights": {
+        "tecnocracia": 0.707965,
+        "mesianismo": 0,
+        "paternalismo": 0.292035
+      },
+      "leadership": {
+        "tecnocracia": 0.14716763005780348,
+        "mesianismo": 0,
+        "paternalismo": 0.02447976878612717
+      },
+      "reviewRequired": false
+    },
+    {
+      "filename": "Mensaje Presidencial 2019.txt",
+      "actor": "Alberto Fernández",
+      "caseUnitId": "ALBERTOF_2019_2023",
+      "caseUnit": "Alberto Fernández (2019–2023)",
+      "year": 2019,
+      "genre": "apertura",
+      "analysisWindow": "full_presidential_document",
+      "wordCount": 8571,
+      "positiveStrength": 29,
+      "positiveDensityPer1000": 3.3835,
+      "weights": {
+        "tecnocracia": 0.517241,
+        "mesianismo": 0.068966,
+        "paternalismo": 0.413793
+      },
+      "leadership": {
+        "tecnocracia": 0.14716763005780348,
+        "mesianismo": 0.1445086705202312,
+        "paternalismo": 0.20647398843930637
+      },
+      "reviewRequired": false
+    },
+    {
+      "filename": "VT-01-03-2019-AS-00.txt",
+      "actor": "Mauricio Macri",
+      "caseUnitId": "MACRI_2015_2019",
+      "caseUnit": "Mauricio Macri (2015–2019)",
+      "year": 2019,
+      "genre": "apertura",
+      "analysisWindow": "full_presidential_document",
+      "wordCount": 6902,
+      "positiveStrength": 17,
+      "positiveDensityPer1000": 2.4631,
+      "weights": {
+        "tecnocracia": 0.647059,
+        "mesianismo": 0.176471,
+        "paternalismo": 0.176471
+      },
+      "leadership": {
+        "tecnocracia": 0.14716763005780348,
+        "mesianismo": 0.1445086705202312,
+        "paternalismo": 0.1445086705202312
+      },
+      "reviewRequired": false
+    },
+    {
+      "filename": "Mensaje Presidencial 2020.txt",
+      "actor": "Alberto Fernández",
+      "caseUnitId": "ALBERTOF_2019_2023",
+      "caseUnit": "Alberto Fernández (2019–2023)",
+      "year": 2020,
+      "genre": "apertura",
+      "analysisWindow": "full_presidential_document",
+      "wordCount": 11447,
+      "positiveStrength": 42,
+      "positiveDensityPer1000": 3.6691,
+      "weights": {
+        "tecnocracia": 0.571429,
+        "mesianismo": 0,
+        "paternalismo": 0.428571
+      },
+      "leadership": {
+        "tecnocracia": 0.14716763005780348,
+        "mesianismo": 0,
+        "paternalismo": 0.20647398843930637
+      },
+      "reviewRequired": false
+    },
+    {
+      "filename": "Mensaje Presidencial 2021.txt",
+      "actor": "Alberto Fernández",
+      "caseUnitId": "ALBERTOF_2019_2023",
+      "caseUnit": "Alberto Fernández (2019–2023)",
+      "year": 2021,
+      "genre": "apertura",
+      "analysisWindow": "full_presidential_document",
+      "wordCount": 15089,
+      "positiveStrength": 42,
+      "positiveDensityPer1000": 2.7835,
+      "weights": {
+        "tecnocracia": 0.52381,
+        "mesianismo": 0,
+        "paternalismo": 0.47619
+      },
+      "leadership": {
+        "tecnocracia": 0.20913294797687862,
+        "mesianismo": 0,
+        "paternalismo": 0.20647398843930637
+      },
+      "reviewRequired": false
+    },
+    {
+      "filename": "Mensaje Presidencial 2022.txt",
+      "actor": "Alberto Fernández",
+      "caseUnitId": "ALBERTOF_2019_2023",
+      "caseUnit": "Alberto Fernández (2019–2023)",
+      "year": 2022,
+      "genre": "apertura",
+      "analysisWindow": "full_presidential_document",
+      "wordCount": 13423,
+      "positiveStrength": 52.1,
+      "positiveDensityPer1000": 3.8814,
+      "weights": {
+        "tecnocracia": 0.49904,
+        "mesianismo": 0.019194,
+        "paternalismo": 0.481766
+      },
+      "leadership": {
+        "tecnocracia": 0.1239306358381503,
+        "mesianismo": 0.1445086705202312,
+        "paternalismo": 0.20647398843930637
+      },
+      "reviewRequired": false
+    },
+    {
+      "filename": "2024_Mensaje_Asamblea_Legislativa_Milei.txt",
+      "actor": "Javier Milei",
+      "caseUnitId": "MILEI_2023_PRESENTE",
+      "caseUnit": "Javier Milei (2023–)",
+      "year": 2024,
+      "genre": "apertura",
+      "analysisWindow": "full_presidential_document",
+      "wordCount": 8997,
+      "positiveStrength": 29.75,
+      "positiveDensityPer1000": 3.3067,
+      "weights": {
+        "tecnocracia": 0.705882,
+        "mesianismo": 0.134454,
+        "paternalismo": 0.159664
+      },
+      "leadership": {
+        "tecnocracia": 0.20913294797687862,
+        "mesianismo": 0.2890173410404624,
+        "paternalismo": 0.05684971098265896
+      },
+      "reviewRequired": true
+    },
+    {
+      "filename": "2025_Mensaje_Asamblea_Legislativa_Milei.txt",
+      "actor": "Javier Milei",
+      "caseUnitId": "MILEI_2023_PRESENTE",
+      "caseUnit": "Javier Milei (2023–)",
+      "year": 2025,
+      "genre": "apertura",
+      "analysisWindow": "full_presidential_document",
+      "wordCount": 8868,
+      "positiveStrength": 50.1,
+      "positiveDensityPer1000": 5.6495,
+      "weights": {
+        "tecnocracia": 0.718563,
+        "mesianismo": 0.11976,
+        "paternalismo": 0.161677
+      },
+      "leadership": {
+        "tecnocracia": 0.20913294797687862,
+        "mesianismo": 0.27167630057803466,
+        "paternalismo": 0.10647398843930636
+      },
+      "reviewRequired": false
+    },
+    {
+      "filename": "2026-Asamblea-Legislativa-Milei.txt",
+      "actor": "Javier Milei",
+      "caseUnitId": "MILEI_2023_PRESENTE",
+      "caseUnit": "Javier Milei (2023–)",
+      "year": 2026,
+      "genre": "apertura",
+      "analysisWindow": "full_presidential_document",
+      "wordCount": 11028,
+      "positiveStrength": 52.65,
+      "positiveDensityPer1000": 4.7742,
+      "weights": {
+        "tecnocracia": 0.569801,
+        "mesianismo": 0.132953,
+        "paternalismo": 0.297246
+      },
+      "leadership": {
+        "tecnocracia": 0.20913294797687862,
+        "mesianismo": 0.2890173410404624,
+        "paternalismo": 0.22138728323699422
+      },
+      "reviewRequired": false
+    }
+  ]
+}

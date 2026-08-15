@@ -4,6 +4,21 @@
 
 - Sin cambios.
 
+## v0.6.0 · 2026-08-15
+
+- Publicado el laboratorio orbital para analizar textos políticos enteramente
+  en el navegador, sin subirlos ni almacenarlos.
+- Portados el registro simétrico de 60 señales, la lectura contextual y la
+  agregación funcional del pipeline canónico a un motor JavaScript auditable.
+- Añadidos pesos TEC/MES/PAT, configuración dirigida o indeterminada, mapa
+  ternario, fragmentos explicativos y tres referencias diagnósticas cercanas.
+- Reprocesados los 52 documentos HCDN con la misma capa automática, sin publicar
+  sus textos fuente ni confundir esa referencia con el mapa v0.4 adjudicado.
+- Documentada la frontera entre aperturas/asunciones comparables y géneros de
+  campaña exploratorios, junto con límites, precisión conocida y trazabilidad.
+- Incorporados controles unitarios y Playwright para carga `.txt`/`.md`,
+  descarga sin texto original, XSS, validación, accesibilidad y responsive.
+
 ## v0.5.0 · 2026-08-15
 
 - Publicadas quince fichas de trazabilidad de Leyendas con puntaje anterior y
