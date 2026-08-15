@@ -4,6 +4,12 @@
 
 - Sin cambios.
 
+## v0.4.6 · 2026-08-14
+
+- Sincronizada la vista Videojuego con `v0.52.0-beta.13` después del ajuste
+  responsive del cierre de Leyenda.
+- No cambian corpus, puntajes, fuentes ni traducción metodológica.
+
 ## v0.4.5 · 2026-08-14
 
 - Sincronizada la vista Videojuego con `v0.52.0-beta.12` y su fecha pública.

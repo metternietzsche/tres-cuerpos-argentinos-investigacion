@@ -1,4 +1,4 @@
-# Videojuego v0.52 beta.12 · frontera de evidencia
+# Videojuego v0.52 beta.13 · frontera de evidencia
 
 El videojuego se ofrece como
 [beta web jugable](https://trescuerpos.arcagaucha.com/).
@@ -9,7 +9,7 @@ su código, arte o audio.
 
 | Componente | Estado |
 |---|---|
-| Build | v0.52.0-beta.12 |
+| Build | v0.52.0-beta.13 |
 | Carrera | Municipio, Provincia o Nación; 12 decisiones; 3 campañas |
 | Leyenda | 15 Leyendas; 60 firmas; conflictos contemporáneos |
 | Catálogo | 41 conflictos disponibles; 12 por partida |
