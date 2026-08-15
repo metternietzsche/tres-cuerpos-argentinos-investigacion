@@ -22,6 +22,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install test dependencies
+        run: npm ci
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Validate generated publication
+        run: |
+          npm run generate:routes
+          git diff --exit-code -- web/static_prototype
+          npm run test:static
+      - name: Browser acceptance matrix
+        run: npm run test:e2e
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
@@ -29,3 +44,11 @@ jobs:
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
+      - name: Production smoke
+        env:
+          PAGE_URL: ${{ steps.deployment.outputs.page_url }}
+        run: |
+          SITE_ROOT="${PAGE_URL%/}"
+          curl --fail --location --retry 8 --retry-delay 5 "${SITE_ROOT}/"
+          curl --fail --location --retry 8 --retry-delay 5 "${SITE_ROOT}/data/site_meta.json" | grep 'SITE_PUBLICATION_v0_5_0'
+          curl --fail --location --retry 8 --retry-delay 5 "${SITE_ROOT}/leyendas.html" | grep 'Trazabilidad de Leyendas'

@@ -1,0 +1,13 @@
+{
+  "name": "El problema de los tres cuerpos argentinos",
+  "short_name": "Tres Cuerpos Lore",
+  "description": "Investigación, doctrina y videojuego sobre tres fuerzas de la política argentina.",
+  "lang": "es-AR",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#0c1420",
+  "theme_color": "#101116",
+  "icons": [
+    { "src": "assets/logo.webp", "sizes": "512x512", "type": "image/webp", "purpose": "any maskable" }
+  ]
+}

@@ -1,0 +1,66 @@
+import { readFileSync, statSync } from 'node:fs';
+import { resolve } from 'node:path';
+
+const root = resolve('.');
+const web = resolve(root, 'web/static_prototype');
+const read = path => readFileSync(resolve(root, path), 'utf8');
+const json = path => JSON.parse(read(path));
+const failures = [];
+const check = (condition, message) => { if (!condition) failures.push(message); };
+
+const translationWeb = json('web/static_prototype/data/legend_gameplay_translation.v0.2.json');
+const translationPublic = json('data_public/legend_gameplay_translation.v0.2.json');
+const publicationWeb = json('web/static_prototype/data/actor_publication.json');
+const publicationPublic = json('data_public/actor_publication.json');
+const gameWeb = json('web/static_prototype/data/game_meta.json');
+const gamePublic = json('data_public/game_meta.json');
+const site = json('web/static_prototype/data/site_meta.json');
+const index = read('web/static_prototype/index.html');
+const app = read('web/static_prototype/app.js');
+
+check(JSON.stringify(translationWeb) === JSON.stringify(translationPublic), 'La traducción de Leyendas difiere entre web y data_public.');
+check(JSON.stringify(publicationWeb) === JSON.stringify(publicationPublic), 'actor_publication difiere entre web y data_public.');
+check(JSON.stringify(gameWeb) === JSON.stringify(gamePublic), 'game_meta difiere entre web y data_public.');
+check(translationWeb.translations?.length === 15, 'La traducción debe contener exactamente 15 Leyendas.');
+
+const legendIds = new Set(publicationWeb.legends.map(item => item.id));
+const translationIds = new Set(translationWeb.translations.map(item => item.legendId));
+check(legendIds.size === 15, 'actor_publication debe publicar 15 Leyendas únicas.');
+check([...legendIds].every(id => translationIds.has(id)), 'Toda Leyenda publicada debe tener trazabilidad.');
+check([...translationIds].every(id => legendIds.has(id)), 'La trazabilidad no puede contener una Leyenda ajena al roster público.');
+
+const sourceIds = new Set(translationWeb.sources.map(item => item.id));
+for (const item of translationWeb.translations) {
+  check(['recalibrated', 'adjudicated_unchanged', 'editorial_hold'].includes(item.scoreStatus), `${item.legendId}: scoreStatus inválido.`);
+  check(item.sourceIds.length > 0 && item.sourceIds.every(id => sourceIds.has(id)), `${item.legendId}: fuente inexistente.`);
+  const priorSum = ['TEC', 'MES', 'PAT'].reduce((sum, vector) => sum + Number(item.priorScores[vector]), 0);
+  const scoreSum = ['TEC', 'MES', 'PAT'].reduce((sum, vector) => sum + Number(item.scores[vector]), 0);
+  check(priorSum === scoreSum, `${item.legendId}: T1 no conserva la suma.`);
+  for (const vector of ['TEC', 'MES', 'PAT']) {
+    const score = item.scores[vector];
+    check(Number.isInteger(score) && score >= 1 && score <= 10, `${item.legendId}/${vector}: puntaje fuera de 1–10.`);
+    check(Math.abs(score - item.priorScores[vector]) <= 1, `${item.legendId}/${vector}: delta mayor que uno.`);
+    check(Boolean(item.evidence?.vectorEvidence?.[vector]), `${item.legendId}/${vector}: falta evidencia narrativa.`);
+  }
+  check(Boolean(item.caveat && item.translationRule && item.sourceWindow), `${item.legendId}: faltan cautela, regla o alcance.`);
+}
+
+check(gameWeb.display_version === publicationWeb.game_version, 'game_meta.display_version y actor_publication.game_version no coinciden.');
+check(gameWeb.audit.vitest_tests === 227, 'El conteo público de tests del juego debe ser 227.');
+check(site.site_release === 'v0.5.0', 'site_meta.site_release debe ser v0.5.0.');
+check(!/v0\.49|game-(career|legend)-final-v42/.test(app), 'app.js conserva referencias visuales o de versión obsoletas.');
+check(/name="robots" content="index, follow/.test(index), 'index.html no habilita indexación.');
+check(/rel="canonical"/.test(index) && /application\/ld\+json/.test(index), 'index.html carece de canonical o datos estructurados.');
+check(!/noindex|nofollow/.test(index), 'index.html todavía bloquea robots.');
+
+for (const file of ['robots.txt', 'sitemap.xml', 'manifest.webmanifest', 'assets/logo.webp', 'tesis.html', 'mapa-orbital.html', 'actores.html', 'leyendas.html', 'evidencia.html', 'whitepaper.html', 'videojuego.html']) {
+  try { statSync(resolve(web, file)); } catch { failures.push(`Falta archivo público requerido: ${file}.`); }
+}
+check(statSync(resolve(web, 'assets/logo.webp')).size < 100_000, 'El logo optimizado debe pesar menos de 100 KB.');
+
+if (failures.length) {
+  console.error(`Validación fallida (${failures.length}):\n- ${failures.join('\n- ')}`);
+  process.exit(1);
+}
+
+console.log(`Publicación válida: ${translationIds.size} Leyendas trazadas, versiones sincronizadas y superficie SEO completa.`);

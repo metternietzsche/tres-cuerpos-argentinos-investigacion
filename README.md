@@ -1,6 +1,6 @@
 # El problema de los tres cuerpos argentinos
 
-**Sitio doctrinario y publicación v0.4.6**
+**Sitio doctrinario v0.5.0 · mapa empírico v0.4**
 **Autora:** Alexandra Bustos Frati, PhD  
 **Estado empírico:** provisional; no apto todavía para cita académica formal
 
@@ -44,6 +44,22 @@ ocho funciones, 2.000 remuestreos por unidad y el diff completo frente a v0.3.
 - [Metodología v0.2](docs/metodologia/METHOD_PIPELINE_v0_2.md)
 - [Codebook simétrico](docs/metodologia/CODEBOOK_FUNCIONAL_SIMETRICO_v0_3.md)
 
+## Qué agrega la publicación v0.5
+
+- recorrido guiado para una primera lectura;
+- búsqueda transversal de secciones, actores y Leyendas;
+- quince fichas que explican el alcance, las fuentes, la cautela y la regla
+  detrás de cada puntaje jugable;
+- traducción lúdica v0.2 publicada como JSON auditable, sin presentar la
+  estrella como coeficiente histórico;
+- carga tolerante a fallas, whitepaper bajo demanda, imágenes optimizadas y
+  metadatos para buscadores;
+- validación estática y matriz Playwright desktop/móvil como gate previo al
+  despliegue.
+
+- [Trazabilidad de Leyendas](data_public/legend_gameplay_translation.v0.2.json)
+- [Método de traducción lúdica](docs/videojuego/legend-methodology-v0.2.md)
+
 ## Abrir el sitio
 
 ```bash
@@ -51,6 +67,13 @@ python3 -m http.server 8000
 ```
 
 Luego abrir `http://localhost:8000/web/static_prototype/`.
+
+Para ejecutar el gate completo:
+
+```bash
+npm install
+npm test
+```
 
 ## Estructura
 

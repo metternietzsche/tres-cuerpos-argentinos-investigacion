@@ -1,0 +1,16 @@
+{
+  "name": "tres-cuerpos-argentinos-investigacion",
+  "version": "0.5.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate:routes": "node scripts/generate-route-pages.mjs",
+    "test:static": "node scripts/validate-publication.mjs",
+    "test:e2e": "playwright test",
+    "test": "npm run generate:routes && npm run test:static && npm run test:e2e"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.13.0",
+    "@playwright/test": "1.62.1"
+  }
+}

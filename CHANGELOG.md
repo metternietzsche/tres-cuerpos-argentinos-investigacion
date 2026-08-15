@@ -4,6 +4,25 @@
 
 - Sin cambios.
 
+## v0.5.0 · 2026-08-15
+
+- Publicadas quince fichas de trazabilidad de Leyendas con puntaje anterior y
+  vigente, alcance histórico, regla T1, evidencia por cuerpo, fuentes y cautela.
+- Incorporados un recorrido inicial y búsqueda transversal de actores,
+  Leyendas y secciones.
+- La portada reduce siete CTA equivalentes a dos entradas principales y enlaces
+  secundarios; Actores enlaza ahora cada Leyenda con su ficha.
+- Sincronizada toda la superficie visible con `v0.52 beta.13` y 227 tests del
+  juego; reemplazadas capturas obsoletas por imágenes del build vigente.
+- El whitepaper se carga bajo demanda y la caída de datos opcionales ya no
+  derriba toda la publicación.
+- Habilitada la indexación pública con canonical, datos estructurados, sitemap,
+  robots, manifest y páginas de entrada indexables.
+- Corregidos el SVG orbital interactivo y el contraste de las familias
+  civilizatorias; agregados controles axe, responsive y de overflow.
+- Añadido gate de CI con validación del contrato T1, Playwright desktop/móvil y
+  smoke posterior al despliegue.
+
 ## v0.4.6 · 2026-08-14
 
 - Sincronizada la vista Videojuego con `v0.52.0-beta.13` después del ajuste

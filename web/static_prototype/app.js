@@ -3,7 +3,9 @@
 // ─── Constants ─────────────────────────────────────────────────────────────────
 
 const DATA_PATH = 'data/';
-const PUBLICATION_CACHE_KEY = '20260814a';
+const PUBLICATION_CACHE_KEY = '20260815a';
+const OFFICIAL_HCDN_ARCHIVE = 'https://www.hcdn.gob.ar/secparl/dgral_info_parlamentaria/mensajes_presidenciales/index.html';
+const RESEARCH_REPOSITORY = 'https://github.com/metternietzsche/tres-cuerpos-argentinos-investigacion';
 
 const DATA_FILES = [
   'site_meta.json',
@@ -20,11 +22,11 @@ const DATA_FILES = [
   'caveat_badges.json',
   'roadmap.json',
   'evidence_excerpts.json',
+  'legend_gameplay_translation.v0.2.json',
 ];
 
-const TEXT_FILES = [
-  { file: 'WHITEPAPER_FULL_DRAFT_v0_4.md', key: 'whitepaper_v0_4' },
-];
+const REQUIRED_DATA_FILES = new Set(['site_meta.json', 'vectors.json', 'caveat_badges.json']);
+const WHITEPAPER_FILE = 'WHITEPAPER_FULL_DRAFT_v0_4.md';
 
 const VECTOR_COLORS = {
   tecnocracia:  '#50b5ff',
@@ -32,7 +34,7 @@ const VECTOR_COLORS = {
   paternalismo: '#efb64b',
 };
 
-const LOGO_PATH     = 'assets/logo.png?v=20260501';
+const LOGO_PATH     = 'assets/logo.webp?v=20260815';
 const FIGURES_PATH  = 'assets/figures/';
 
 // Known corpus gaps: actor_id → list of { year, note }
@@ -54,6 +56,8 @@ const SEVERITY_CSS = {
 let D        = {};  // data store: key (filename without .json) → parsed JSON
 let badgeMap = {};  // badge_id → badge object
 let actorMap = {};  // actor_id → actor object
+let whitepaperPromise = null;
+let routeEpoch = 0;
 
 // ─── Helpers ───────────────────────────────────────────────────────────────────
 
@@ -123,6 +127,29 @@ function actorLegends(actorId) {
   const entry = actorPublicationEntry(actorId);
   const ids = new Set(entry.legend_ids || []);
   return (D.actor_publication?.legends || []).filter(legend => ids.has(legend.id));
+}
+
+function legendById(legendId) {
+  return (D.actor_publication?.legends || []).find(legend => legend.id === legendId) || null;
+}
+
+function legendTranslation(legendId) {
+  return (D['legend_gameplay_translation.v0.2']?.translations || [])
+    .find(item => item.legendId === legendId) || null;
+}
+
+function translationStatusLabel(item) {
+  return {
+    recalibrated: 'Recalibrada con v0.4',
+    adjudicated_unchanged: 'Compatible, sin cambio',
+    editorial_hold: 'Puntaje editorial en revisión',
+  }[item?.scoreStatus] || item?.statusLabel || 'Estado no informado';
+}
+
+function translationStatusClass(item) {
+  if (item?.scoreStatus === 'recalibrated') return 'is-recalibrated';
+  if (item?.scoreStatus === 'editorial_hold') return 'is-hold';
+  return 'is-compatible';
 }
 
 function actorInitials(name) {
@@ -196,7 +223,7 @@ function buildActorLegendBridge(actor, legends) {
   return `<div class="actor-legend-bridge">
     <span class="actor-legend-bridge-label">Correspondencia con el videojuego</span>
     <div class="actor-legend-bridge-items">
-      ${legends.map(legend => `<a href="#videojuego" class="actor-legend-chip">
+      ${legends.map(legend => `<a href="#leyendas/${esc(legend.id)}" class="actor-legend-chip">
         <img src="${esc(legend.portrait)}" alt="" loading="lazy">
         <span><strong>${esc(legend.incarnation)}</strong><small>Leyenda · ${esc(legend.year_ref)}</small></span>
       </a>`).join('')}
@@ -206,12 +233,15 @@ function buildActorLegendBridge(actor, legends) {
 
 function buildLegendRosterCard(legend) {
   const vectorClass = String(legend.dominant_vector || '').toLowerCase();
-  return `<a href="#videojuego" class="legend-roster-card" aria-label="Ver ${esc(legend.incarnation)} en el videojuego">
+  const translation = legendTranslation(legend.id);
+  const scores = translation?.scores || {};
+  return `<a href="#leyendas/${esc(legend.id)}" class="legend-roster-card" aria-label="Abrir trazabilidad de ${esc(legend.incarnation)}">
     <img src="${esc(legend.portrait)}" alt="Retrato lúdico de ${esc(legend.incarnation)}" loading="lazy">
     <span class="legend-roster-copy">
       <span class="legend-roster-kicker">LEYENDA · ${esc(legend.year_ref)}</span>
       <strong>${esc(legend.incarnation)}</strong>
       <small>${esc(legend.name)}</small>
+      ${translation ? `<small class="legend-roster-score">TEC ${esc(scores.TEC)} · MES ${esc(scores.MES)} · PAT ${esc(scores.PAT)}</small>` : ''}
     </span>
     <span class="legend-vector-token vector-${esc(vectorClass)}" title="Vector conductor: ${esc(legendVectorLabel(legend.dominant_vector))}">${esc(legend.dominant_vector)}</span>
   </a>`;
@@ -220,30 +250,22 @@ function buildLegendRosterCard(legend) {
 // ─── Data loading ───────────────────────────────────────────────────────────────
 
 async function loadData() {
-  const [results, textResults] = await Promise.all([
-    Promise.all(
-      DATA_FILES.map(f =>
-        fetch(`${DATA_PATH}${f}?v=${PUBLICATION_CACHE_KEY}`, { cache: 'no-store' })
-          .then(r => {
-            if (!r.ok) throw new Error(`HTTP ${r.status} al cargar ${f}`);
-            return r.json();
-          })
-          .then(data => ({ key: f.replace('.json', ''), data }))
-      )
-    ),
-    Promise.all(
-      TEXT_FILES.map(({ file, key }) =>
-        fetch(`${DATA_PATH}${file}?v=${PUBLICATION_CACHE_KEY}`, { cache: 'no-store' })
-          .then(r => {
-            if (!r.ok) throw new Error(`HTTP ${r.status} al cargar ${file}`);
-            return r.text();
-          })
-          .then(data => ({ key, data }))
-      )
-    ),
-  ]);
+  const results = await Promise.allSettled(DATA_FILES.map(async file => {
+    const response = await fetch(`${DATA_PATH}${file}?v=${PUBLICATION_CACHE_KEY}`);
+    if (!response.ok) throw new Error(`HTTP ${response.status} al cargar ${file}`);
+    return { file, key: file.replace('.json', ''), data: await response.json() };
+  }));
 
-  for (const { key, data } of [...results, ...textResults]) D[key] = data;
+  D.load_warnings = [];
+  results.forEach((result, index) => {
+    const file = DATA_FILES[index];
+    if (result.status === 'fulfilled') {
+      D[result.value.key] = result.value.data;
+      return;
+    }
+    if (REQUIRED_DATA_FILES.has(file)) throw result.reason;
+    D.load_warnings.push(`${file}: ${String(result.reason?.message || result.reason)}`);
+  });
 
   if (Array.isArray(D.caveat_badges)) {
     for (const b of D.caveat_badges) {
@@ -258,6 +280,23 @@ async function loadData() {
   }
 
   applyGlobalSiteMeta();
+}
+
+async function ensureWhitepaperLoaded() {
+  if (typeof D.whitepaper_v0_4 === 'string') return;
+  if (!whitepaperPromise) {
+    whitepaperPromise = fetch(`${DATA_PATH}${WHITEPAPER_FILE}?v=${PUBLICATION_CACHE_KEY}`)
+      .then(response => {
+        if (!response.ok) throw new Error(`HTTP ${response.status} al cargar ${WHITEPAPER_FILE}`);
+        return response.text();
+      })
+      .then(markdown => { D.whitepaper_v0_4 = markdown; })
+      .catch(error => {
+        D.whitepaper_v0_4 = '';
+        D.load_warnings.push(`${WHITEPAPER_FILE}: ${String(error.message || error)}`);
+      });
+  }
+  await whitepaperPromise;
 }
 
 function applyGlobalSiteMeta() {
@@ -289,7 +328,11 @@ function initNav() {
 
 function updateActiveNav() {
   const rawSection = (location.hash.replace('#', '') || 'inicio').split('/')[0];
-  const section = ['figuras', 'peron', 'roadmap'].includes(rawSection) ? 'evidencia' : rawSection;
+  const section = ['figuras', 'peron', 'roadmap'].includes(rawSection)
+    ? 'evidencia'
+    : rawSection === 'leyendas'
+      ? 'actores'
+      : rawSection;
   document.querySelectorAll('.nav-link').forEach(link => {
     const s = link.dataset.section || '';
     const active = s === section;
@@ -304,8 +347,11 @@ const ROUTE_META = {
     description: 'Investigación doctrinaria sobre tecnocracia, mesianismo y paternalismo en el discurso presidencial argentino, con mapa empírico y videojuego.'
   },
   tesis: { title: 'La tesis', description: 'Por qué la política argentina no se reduce a un péndulo y cómo interactúan sus tres cuerpos.' },
+  recorrido: { title: 'Empezá acá', description: 'Un recorrido breve por la tesis, el mapa, la evidencia, las Leyendas y el videojuego.' },
   'mapa-orbital': { title: 'Mapa orbital', description: 'Campo ternario interactivo con 52 discursos, doce unidades de mandato y los tres vectores simultáneos del corpus presidencial democrático argentino.' },
   actores: { title: 'Actores y Leyendas', description: 'Actores del corpus presidencial y su correspondencia explícita con las Leyendas jugables.' },
+  leyendas: { title: 'Trazabilidad de Leyendas', description: 'Cómo se traducen fuentes, cautelas y configuraciones del mapa orbital a los puntajes del videojuego.' },
+  buscar: { title: 'Buscar', description: 'Buscar conceptos, actores, Leyendas, fuentes y secciones dentro de la publicación.' },
   evidencia: { title: 'Cómo leemos un discurso', description: 'Método, ejemplos, fuentes y límites para reconstruir relaciones entre los tres vectores.' },
   whitepaper: { title: 'Whitepaper v0.4', description: 'Recalibración funcional simétrica de los tres vectores, con polaridad, función, posición, sensibilidad y trayectoria publicadas.' },
   figuras: { title: 'Figuras', description: 'Galería guiada de figuras empíricas del corpus HCDN.' },
@@ -317,6 +363,7 @@ function updateDocumentMeta(section, param = '') {
   const meta = ROUTE_META[section] || ROUTE_META.inicio;
   let title = meta.title;
   if (section === 'actores' && param && actorMap[param]) title = actorMap[param].display_name;
+  if (section === 'leyendas' && param && legendById(param)) title = `Por qué ${legendById(param).incarnation} tiene ese puntaje`;
   document.title = section === 'inicio'
     ? title
     : `${title} · El problema de los tres cuerpos argentinos`;
@@ -330,22 +377,40 @@ function updateDocumentMeta(section, param = '') {
 
 // ─── Router ─────────────────────────────────────────────────────────────────────
 
-function router() {
+function renderLoadWarnings() {
+  if (!D.load_warnings?.length) return '';
+  return `<div class="partial-load-warning" role="status">
+    <strong>Parte del archivo no pudo cargarse.</strong> El resto del sitio sigue disponible.
+    <details><summary>Ver detalle técnico</summary><ul>${D.load_warnings.map(item => `<li>${esc(item)}</li>`).join('')}</ul></details>
+  </div>`;
+}
+
+async function router() {
+  const currentEpoch = ++routeEpoch;
   const raw              = location.hash.replace('#', '') || 'inicio';
   const [section, ...rest] = raw.split('/');
   const param            = rest.join('/');
   const app              = document.getElementById('app');
   if (!app) return;
 
-  window.scrollTo({ top: 0, behavior: 'instant' });
+  window.scrollTo({ top: 0, behavior: 'auto' });
+  app.setAttribute('aria-busy', 'true');
+
+  if (section === 'whitepaper') await ensureWhitepaperLoaded();
+  if (currentEpoch !== routeEpoch) return;
 
   switch (section) {
+    case 'recorrido':    app.innerHTML = renderRecorrido();                 break;
     case 'tesis':        app.innerHTML = renderTesis();                     break;
     case 'tres-cuerpos': location.replace('#tesis'); return;
     case 'mapa-orbital': app.innerHTML = renderMapaOrbital();               break;
     case 'actores':
       app.innerHTML = param ? renderActorDetail(param) : renderActores();
       break;
+    case 'leyendas':
+      app.innerHTML = param ? renderLegendTrace(param) : renderTrazabilidad();
+      break;
+    case 'buscar':       app.innerHTML = renderSearchPage(param);           break;
     case 'peron':        location.replace('#evidencia/peron'); return;
     case 'evidencia':    app.innerHTML = renderEvidencia();                 break;
     case 'roadmap':      location.replace('#evidencia/roadmap'); return;
@@ -356,12 +421,16 @@ function router() {
     default:             app.innerHTML = renderInicio();                    break;
   }
 
+  if (D.load_warnings?.length) app.insertAdjacentHTML('afterbegin', renderLoadWarnings());
+  app.setAttribute('aria-busy', 'false');
+
   updateDocumentMeta(section, param);
   updateActiveNav();
   bindAccordions();
   if (section === 'whitepaper') bindWpToc();
   if (section === 'mapa-orbital') bindOrbitalMap();
   if (section === 'evidencia' && param) scrollEvidenceSubsection(param);
+  if (section === 'buscar') bindSearchPage(param);
 }
 
 function scrollEvidenceSubsection(param) {
@@ -476,10 +545,220 @@ function bindOrbitalMap() {
   update('all', '');
 }
 
+// ─── Guided reading, search and Legend traceability ───────────────────────────
+
+function renderRecorrido() {
+  const game = D.game_meta || {};
+  return `<section class="page-section guided-page">
+    <div class="breadcrumb"><a href="#inicio">Inicio</a> <span>›</span> Empezá acá</div>
+    <div class="guided-hero">
+      <span class="section-kicker">RECORRIDO BREVE · CINCO PARADAS</span>
+      <h1>Una puerta de entrada al proyecto</h1>
+      <p class="hero-sub">Si es tu primera visita, este recorrido separa la hipótesis, la evidencia y el videojuego antes de volver a conectarlos.</p>
+    </div>
+    <ol class="guided-steps">
+      <li><span>01</span><div><h2>La hipótesis</h2><p>Argentina no se organiza como un péndulo de dos polos. Tecnocracia, mesianismo y paternalismo forman combinaciones dirigidas y trayectorias.</p><a href="#tesis">Leer la tesis →</a></div></li>
+      <li><span>02</span><div><h2>El mapa</h2><p>El campo orbital ubica 52 discursos y doce unidades actor × mandato. Muestra masa relativa y adjudicación funcional; no mide personalidad ni gobierno efectivo.</p><a href="#mapa-orbital">Explorar el mapa →</a></div></li>
+      <li><span>03</span><div><h2>La prueba y sus límites</h2><p>Cada conclusión debe poder volver a un documento, una regla de lectura y una cautela. Las brechas no se rellenan con relato.</p><a href="#evidencia">Revisar evidencia y método →</a></div></li>
+      <li><span>04</span><div><h2>De actor a Leyenda</h2><p>Una Leyenda es una ventana jugable, no un tipo histórico. La ficha muestra alcance, fuentes, puntaje anterior, puntaje vigente y regla de traducción.</p><a href="#leyendas">Abrir trazabilidad de las 15 Leyendas →</a></div></li>
+      <li><span>05</span><div><h2>El experimento lúdico</h2><p><em>${esc(game.title || 'Tres Cuerpos: República Inestable')}</em> usa ese marco para producir decisiones contemporáneas. Juego ≠ evidencia: una partida no prueba una tesis histórica.</p><a href="#videojuego">Ver ${esc(game.display_version || 'la beta')} →</a></div></li>
+    </ol>
+    <div class="guided-boundary" role="note">
+      <strong>La cadena completa:</strong>
+      <span>documento</span><b>→</b><span>fragmento</span><b>→</b><span>codificación</span><b>→</b><span>unidad de mandato</span><b>→</b><span>Leyenda</span><b>→</b><span>mecánica</span>.
+      Cada flecha cambia de estatuto y debe explicarse.
+    </div>
+  </section>`;
+}
+
+function normalizedSearchText(value) {
+  return String(value || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+}
+
+function searchEntries() {
+  const routes = [
+    ['#recorrido', 'Empezá acá', 'Recorrido guiado por tesis, mapa, evidencia, Leyendas y videojuego'],
+    ['#tesis', 'La tesis', 'Tecnocracia, mesianismo, paternalismo, configuración y trayectoria'],
+    ['#mapa-orbital', 'Mapa orbital', '52 discursos, doce unidades de mandato y campo ternario'],
+    ['#actores', 'Actores y Leyendas', 'Personas del corpus y encarnaciones jugables'],
+    ['#leyendas', 'Trazabilidad de Leyendas', 'Fuentes, puntajes, regla T1 y cautelas'],
+    ['#evidencia', 'Evidencia y método', 'Corpus HCDN, codificación, fuentes, límites y roadmap'],
+    ['#whitepaper', 'Whitepaper v0.4', 'Texto completo, tablas, figuras y cita'],
+    ['#videojuego', 'Videojuego', 'Tres Cuerpos República Inestable, Carrera y Modo Leyenda'],
+  ].map(([href, title, description]) => ({ href, title, description, kind: 'Sección' }));
+  const actors = (D.actors_hcdn || []).filter(actor => actor.include_in_actor_map !== false)
+    .map(actor => ({
+      href: `#actores/${actor.actor_id}`,
+      title: actor.display_name,
+      description: `${actor.period || ''} · ${actor.adjudicated_notation || actor.directed_configuration || ''} · ${actor.main_hypothesis || ''}`,
+      kind: 'Actor del corpus',
+    }));
+  const legends = (D.actor_publication?.legends || []).map(legend => {
+    const trace = legendTranslation(legend.id);
+    return {
+      href: `#leyendas/${legend.id}`,
+      title: legend.incarnation,
+      description: `${legend.name} · ${trace?.formula || legend.year_ref} · ${trace?.evidence?.summary || ''}`,
+      kind: 'Leyenda jugable',
+    };
+  });
+  return [...routes, ...actors, ...legends];
+}
+
+function renderSearchResults(query) {
+  const needle = normalizedSearchText(query).trim();
+  const matches = searchEntries().filter(entry => !needle || normalizedSearchText(`${entry.title} ${entry.description} ${entry.kind}`).includes(needle));
+  if (!matches.length) return '<p class="search-empty">No encontramos coincidencias. Probá con un apellido, un vector o “puntaje”.</p>';
+  return `<div class="search-results" aria-label="Resultados de búsqueda">${matches.slice(0, 40).map(entry => `<a href="${esc(entry.href)}" class="search-result">
+    <span>${esc(entry.kind)}</span><strong>${esc(entry.title)}</strong><p>${esc(entry.description)}</p>
+  </a>`).join('')}</div>`;
+}
+
+function renderSearchPage(param = '') {
+  const query = decodeURIComponent(param || '');
+  return `<section class="page-section search-page">
+    <div class="breadcrumb"><a href="#inicio">Inicio</a> <span>›</span> Buscar</div>
+    <span class="section-kicker">ÍNDICE DEL PROYECTO</span>
+    <h1>Buscar en Lore</h1>
+    <label class="search-field"><span class="sr-only">Buscar conceptos, actores o Leyendas</span><input id="site-search-input" type="search" value="${esc(query)}" placeholder="Ej.: Kirchner, PAT→TEC, evidencia…" autocomplete="off"></label>
+    <p class="search-count" id="search-count" aria-live="polite"></p>
+    <div id="search-results-root">${renderSearchResults(query)}</div>
+  </section>`;
+}
+
+function bindSearchPage() {
+  const input = document.getElementById('site-search-input');
+  const root = document.getElementById('search-results-root');
+  const count = document.getElementById('search-count');
+  if (!input || !root || !count) return;
+  const update = () => {
+    root.innerHTML = renderSearchResults(input.value);
+    const total = root.querySelectorAll('.search-result').length;
+    count.textContent = input.value.trim() ? `${total} ${total === 1 ? 'resultado' : 'resultados'}` : 'Explorá el índice completo o escribí para filtrar.';
+  };
+  input.addEventListener('input', update);
+  update();
+  requestAnimationFrame(() => input.focus({ preventScroll: true }));
+}
+
+function sourceHref(source) {
+  if (!source?.ref) return '';
+  if (/^https?:\/\//.test(source.ref)) return source.ref;
+  if (source.id === 'translation_method_v02') return `${RESEARCH_REPOSITORY}/blob/main/docs/videojuego/legend-methodology-v0.2.md`;
+  return `${RESEARCH_REPOSITORY}/blob/main/${source.ref}`;
+}
+
+function renderTrazabilidad() {
+  const translations = D['legend_gameplay_translation.v0.2']?.translations || [];
+  const legends = D.actor_publication?.legends || [];
+  const counts = translations.reduce((acc, item) => {
+    acc[item.scoreStatus] = (acc[item.scoreStatus] || 0) + 1;
+    return acc;
+  }, {});
+  return `<section class="page-section trace-index-page">
+    <div class="breadcrumb"><a href="#inicio">Inicio</a> <span>›</span> Trazabilidad de Leyendas</div>
+    <span class="section-kicker">INVESTIGACIÓN → TRADUCCIÓN LÚDICA</span>
+    <h1>Por qué cada Leyenda tiene ese puntaje</h1>
+    <p class="hero-sub">La estrella TEC/MES/PAT no es una medición literal de poder histórico. Es una traducción discreta y provisional de una ventana jugable, con fuente, alcance, regla y cautela publicados.</p>
+    <div class="trace-summary" aria-label="Estado de las quince traducciones">
+      <div><strong>${translations.length}</strong><span>Leyendas trazadas</span></div>
+      <div><strong>${counts.recalibrated || 0}</strong><span>recalibradas</span></div>
+      <div><strong>${counts.adjudicated_unchanged || 0}</strong><span>compatibles</span></div>
+      <div><strong>${counts.editorial_hold || 0}</strong><span>en hold editorial</span></div>
+    </div>
+    <div class="notice notice-amber">
+      <strong>Regla T1.</strong> Fija el alcance, identifica la pareja funcional y, sólo cuando el tercer cuerpo empata o supera al miembro menor, transfiere un punto. Conserva la suma, limita cada cambio a ±1 y no convierte dirección, estabilidad o feedback en bonus.
+    </div>
+    <div class="legend-roster-grid trace-roster-grid">${legends.map(buildLegendRosterCard).join('')}</div>
+    <div class="trace-method-links">
+      <a href="${RESEARCH_REPOSITORY}/blob/main/docs/videojuego/legend-methodology-v0.2.md" target="_blank" rel="noopener">Leer método de traducción v0.2 ↗</a>
+      <a href="data/legend_gameplay_translation.v0.2.json" target="_blank" rel="noopener">Abrir artefacto JSON ↗</a>
+    </div>
+  </section>`;
+}
+
+function renderScoreDelta(item, vector) {
+  const before = Number(item.priorScores?.[vector]);
+  const after = Number(item.scores?.[vector]);
+  const delta = after - before;
+  const deltaText = delta > 0 ? `+${delta}` : String(delta);
+  return `<div class="trace-score trace-score-${vector.toLowerCase()}">
+    <span>${vector}</span><strong>${esc(after)}</strong>
+    <small>${delta ? `${esc(before)} → ${esc(after)} · ${esc(deltaText)}` : `se conserva en ${esc(after)}`}</small>
+  </div>`;
+}
+
+function renderLegendTrace(legendId) {
+  const legend = legendById(legendId);
+  const item = legendTranslation(legendId);
+  if (!legend || !item) return `<section class="page-section error-panel"><h1>Leyenda no encontrada</h1><p>No hay una ficha de trazabilidad publicada para <code>${esc(legendId)}</code>.</p><a href="#leyendas">← Ver las quince Leyendas</a></section>`;
+  const sourceCatalog = D['legend_gameplay_translation.v0.2']?.sources || [];
+  const sources = item.sourceIds.map(id => sourceCatalog.find(source => source.id === id)).filter(Boolean);
+  const actorHref = legend.actor_id ? `#actores/${legend.actor_id}` : '#evidencia/peron';
+  return `<section class="page-section legend-trace-page">
+    <div class="breadcrumb"><a href="#inicio">Inicio</a> <span>›</span><a href="#leyendas">Trazabilidad</a> <span>›</span>${esc(legend.incarnation)}</div>
+    <header class="legend-trace-hero">
+      <img src="${esc(legend.portrait)}" alt="Retrato lúdico de ${esc(legend.incarnation)}">
+      <div>
+        <span class="section-kicker">LEYENDA JUGABLE · ${esc(item.scopeLabel)}</span>
+        <h1>Por qué ${esc(legend.incarnation)} tiene este puntaje</h1>
+        <p>${esc(item.formula)}</p>
+        <span class="trace-status ${translationStatusClass(item)}">${esc(translationStatusLabel(item))}</span>
+      </div>
+    </header>
+
+    <div class="trace-chain" aria-label="Cadena de trazabilidad">
+      <a href="${actorHref}">Actor o fase</a><b>→</b><span>${esc(item.sourceWindow)}</span><b>→</b><span>${esc(item.functionalPair)}</span><b>→</b><strong>TEC/MES/PAT jugable</strong>
+    </div>
+
+    <div class="trace-score-grid" aria-label="Puntaje de la Leyenda">
+      ${['TEC', 'MES', 'PAT'].map(vector => renderScoreDelta(item, vector)).join('')}
+    </div>
+
+    <section class="trace-section">
+      <span class="field-label">Cómo se llegó a la estrella</span>
+      <h2>${esc(item.evidence?.summary || item.statusLabel)}</h2>
+      <dl class="trace-facts">
+        <div><dt>Alcance</dt><dd>${esc(item.scopeLabel)}</dd></div>
+        <div><dt>Pareja funcional</dt><dd>${esc(item.functionalPair)}</dd></div>
+        <div><dt>Dirección</dt><dd>${esc(item.structuralDirection)} · ${esc(item.directionStatus)}</dd></div>
+        <div><dt>Trayectoria</dt><dd>${esc(item.trajectoryStatus)}</dd></div>
+        <div><dt>Documentos</dt><dd>${esc(item.documentCount)} · ${esc(item.evidenceTier)}</dd></div>
+        <div><dt>Confianza</dt><dd>${esc(item.confidence)}</dd></div>
+      </dl>
+      <div class="trace-rule"><strong>Regla aplicada:</strong> ${esc(item.translationRule)} <span>${esc(item.mechanicalDeltaSummary)}</span></div>
+    </section>
+
+    <section class="trace-section">
+      <span class="field-label">Evidencia por cuerpo</span>
+      <div class="trace-vector-evidence">
+        ${['TEC', 'MES', 'PAT'].map(vector => `<article class="trace-vector-${vector.toLowerCase()}"><h3>${vector}</h3><p>${esc(item.evidence?.vectorEvidence?.[vector] || 'Sin nota publicada.')}</p></article>`).join('')}
+      </div>
+    </section>
+
+    <section class="trace-section">
+      <span class="field-label">Fuentes utilizadas</span>
+      <div class="trace-sources">${sources.map(source => `<article><h3>${esc(source.label)}</h3><p>${esc(source.note)}</p>${sourceHref(source) ? `<a href="${esc(sourceHref(source))}" target="_blank" rel="noopener">Abrir fuente ↗</a>` : ''}</article>`).join('')}</div>
+    </section>
+
+    <div class="required-caveat-block">
+      <div class="required-caveat-label">QUÉ NO SIGNIFICA ESTE PUNTAJE</div>
+      <p class="required-caveat-text">${esc(item.caveat)}</p>
+      <p class="required-caveat-text">No clasifica una esencia personal, no predice conducta, no mide poder histórico y no convierte una partida en evidencia.</p>
+    </div>
+
+    <div class="cta-group mt-4">
+      <a href="#leyendas" class="btn btn-secondary">← Las quince Leyendas</a>
+      <a href="${esc(D.game_meta?.public_url || '#videojuego')}" class="btn btn-primary" ${D.game_meta?.public_url ? 'target="_blank" rel="noopener"' : ''}>Jugar esta Leyenda →</a>
+    </div>
+  </section>`;
+}
+
 // ─── Page: Inicio ───────────────────────────────────────────────────────────────
 
 function renderInicio() {
   const meta    = D.site_meta || {};
+  const game    = D.game_meta || {};
   const vectors = D.vectors   || [];
 
   const contribs = {
@@ -515,18 +794,14 @@ function renderInicio() {
         </div>
         <!-- Content column -->
         <div class="inicio-hero-content-col">
-          <div class="inicio-hero-eyebrow">PROTOTIPO DE INVESTIGACIÓN · ${esc(meta.version || 'v0.4')} · CORPUS HCDN 1983–2026</div>
+          <div class="inicio-hero-eyebrow">PUBLICACIÓN ${esc(meta.site_release || 'v0.5.0')} · MAPA ${esc(meta.version || 'v0.4')} · CORPUS HCDN 1983–2026</div>
           <h1 class="inicio-hero-headline">${esc(meta.site_title || 'El problema de los tres cuerpos argentinos')}</h1>
           <p class="inicio-hero-sub">Argentina no es un péndulo. Es un problema de tres cuerpos.</p>
           <nav class="cta-group inicio-hero-cta inicio-hero-nav" aria-label="Accesos principales del proyecto">
-            <a href="#tesis"        class="btn btn-secondary" data-hero-section="tesis">La tesis</a>
-            <a href="#whitepaper"   class="btn btn-secondary" data-hero-section="whitepaper">Whitepaper</a>
-            <a href="#mapa-orbital" class="btn btn-secondary" data-hero-section="mapa-orbital">Mapa orbital</a>
-            <a href="#actores"      class="btn btn-secondary" data-hero-section="actores">Actores</a>
-            <a href="#evidencia"    class="btn btn-secondary" data-hero-section="evidencia">Evidencia y método</a>
-            <a href="#videojuego"   class="btn btn-primary inicio-hero-vj" data-hero-section="videojuego">Videojuego →</a>
-            <a href="#licencia"     class="btn btn-secondary" data-hero-section="licencia">Licencia</a>
+            <a href="#recorrido" class="btn btn-primary" data-hero-section="recorrido">Empezá acá →</a>
+            <a href="#mapa-orbital" class="btn btn-secondary" data-hero-section="mapa-orbital">Explorar mapa orbital</a>
           </nav>
+          <div class="inicio-hero-text-links"><a href="#tesis">Leer la tesis</a><span>·</span><a href="#leyendas">Trazar puntajes</a><span>·</span><a href="#videojuego">Ver videojuego</a></div>
           <div class="inicio-hero-synthesis">
             <p>El problema de los tres cuerpos argentinos es un prototipo de investigación teórico-empírica que lee el discurso presidencial argentino a través de tres vectores político-históricos: modernización tecnocrática, mesianismo redentor y paternalismo conservador. No clasifica actores como tipos fijos; reconstruye configuraciones, trayectorias y atractores temporales.</p>
             <p>El péndulo entre apertura/endeudamiento y protección/mercado interno describe una alternancia visible, pero no alcanza para explicar la gramática con la que el liderazgo presidencial argentino organiza legitimidad. La hipótesis es que una órbita política estable suele requerir al menos dos cuerpos: un vector dominante y otro secundario o modulador.</p>
@@ -630,6 +905,11 @@ function renderInicio() {
             <div class="entry-card-title">Actores y Leyendas</div>
             <div class="entry-card-desc">Diez actores del corpus y su correspondencia con las quince Leyendas jugables, sin confundir investigación y diseño lúdico.</div>
           </a>
+          <a href="#leyendas" class="entry-card">
+            <div class="entry-card-icon" aria-hidden="true">↗</div>
+            <div class="entry-card-title">Por qué cada Leyenda tiene ese puntaje</div>
+            <div class="entry-card-desc">Quince fichas conectan alcance histórico, fuentes, cautelas, regla de traducción y estrella TEC/MES/PAT.</div>
+          </a>
           <a href="#evidencia/peron" class="entry-card">
             <div class="entry-card-icon" aria-hidden="true">◌</div>
             <div class="entry-card-title">En el método: Perón</div>
@@ -638,7 +918,7 @@ function renderInicio() {
           <a href="#videojuego" class="entry-card entry-card-vj">
             <div class="entry-card-icon" aria-hidden="true">▶</div>
             <div class="entry-card-title">Videojuego</div>
-            <div class="entry-card-desc">Beta v0.49 jugable: el final distingue el cuerpo que conduce, el que lo obliga a negociar y el límite que ninguno resolvió.</div>
+            <div class="entry-card-desc">${esc(game.display_version || 'Beta pública')} jugable: el final distingue el cuerpo que conduce, el que lo obliga a negociar y el límite que ninguno resolvió.</div>
           </a>
           <a href="#evidencia/roadmap" class="entry-card">
             <div class="entry-card-icon" aria-hidden="true">→</div>
@@ -659,7 +939,7 @@ function renderInicio() {
           </div>
           <div class="vj-teaser-content">
             <h3 class="vj-teaser-title">Una teoría que se puede jugar</h3>
-            <p><em>Tres Cuerpos: República Inestable</em> ya tiene una beta v0.49 jugable: Carrera desde tres escalas y Modo Leyenda con quince Leyendas frente a conflictos contemporáneos.</p>
+            <p><em>Tres Cuerpos: República Inestable</em> ya tiene una ${esc(game.display_version || 'beta pública')} jugable: Carrera desde tres escalas y Modo Leyenda con quince Leyendas frente a conflictos contemporáneos.</p>
             <p>Las decisiones TEC, MES y PAT distribuyen capacidad, legitimidad, cohesión y costos. Las nuevas familias de acontecimientos traducen deep research a conflictos lúdicos sin convertir la partida en evidencia histórica.</p>
             <div class="cta-group mt-2">
               <a href="#videojuego"   class="btn btn-primary">Ver videojuego →</a>
@@ -1041,7 +1321,7 @@ function renderOrbitalSvg(documents, units) {
     </g>`;
   }).join('');
 
-  return `<svg class="orbital-field" viewBox="0 0 720 620" role="img" aria-labelledby="orbital-field-title orbital-field-desc">
+  return `<svg class="orbital-field" viewBox="0 0 720 620" role="group" aria-labelledby="orbital-field-title orbital-field-desc">
     <title id="orbital-field-title">Campo orbital de tecnocracia, mesianismo y paternalismo</title>
     <desc id="orbital-field-desc">Cada punto es un discurso. Su posición usa simultáneamente el peso relativo de los tres vectores. Las líneas unen los documentos de cada unidad de mandato en orden temporal.</desc>
     <defs>
@@ -1335,12 +1615,12 @@ function renderActores() {
     <section id="leyendas-jugables" class="actor-layer-section legend-roster-section">
       <div class="actor-section-heading">
         <div><span class="section-kicker">VIDEOJUEGO · MODO LEYENDA</span><h2>Quince Leyendas jugables</h2></div>
-        <p>Cada tarjeta es una encarnación lúdica. Una persona puede ocupar más de una.</p>
+        <p>Cada tarjeta abre su puntaje, fuente, regla de traducción y cautela. Una persona puede ocupar más de una.</p>
       </div>
       <div class="legend-roster-grid">${legends.map(buildLegendRosterCard).join('')}</div>
       <div class="legend-roster-cta">
         <p>Las Leyendas llevan esa configuración al presente y enfrentan conflictos contemporáneos; no vuelven a una vida histórica.</p>
-        <a href="#videojuego" class="btn btn-primary">Ver y jugar las Leyendas →</a>
+        <a href="#leyendas" class="btn btn-primary">Ver trazabilidad completa →</a>
       </div>
     </section>
   </section>`;
@@ -1469,13 +1749,14 @@ function renderActorDetail(actorId) {
     <div class="field-block">
       <div class="field-label">Documentos en el corpus</div>
       ${buildTimeline(docs, gaps)}
+      <p class="timeline-source-link"><a href="${OFFICIAL_HCDN_ARCHIVE}" target="_blank" rel="noopener">Consultar archivo oficial de mensajes presidenciales HCDN ↗</a></p>
     </div>
 
     ${buildCaseUnitBlock(actor)}
 
     <div class="cta-group mt-4">
       <a href="#actores" class="btn btn-secondary">← Volver a Actores y Leyendas</a>
-      ${legends.length ? '<a href="#videojuego" class="btn btn-primary">Ver Modo Leyenda →</a>' : ''}
+      ${legends.length ? `<a href="#leyendas/${esc(legends[0].id)}" class="btn btn-primary">Ver por qué tiene ese puntaje →</a>` : ''}
     </div>
   </section>`;
 }
@@ -1523,7 +1804,8 @@ function buildCaseUnitBlock(actor) {
   return `<div class="actor-source-note">
     <span class="field-label">Procedencia de la ficha</span>
     <p>Corpus presidencial HCDN · agrupación por actor y cobertura documental · matriz interpretativa NB10.</p>
-    <a href="#evidencia">Ver fuentes, comparabilidad y método →</a>
+    <a href="#evidencia">Ver fuentes, comparabilidad y método →</a> ·
+    <a href="${RESEARCH_REPOSITORY}/blob/main/data_public/actor_publication.json" target="_blank" rel="noopener">Abrir ficha pública JSON ↗</a>
   </div>`;
 }
 
@@ -2706,19 +2988,20 @@ function renderVideojuego() {
 
     <div class="vj-screenshot-grid">
       <figure>
-        <img src="assets/game-career-final-v42.png?v=20260804" alt="Final de una Carrera v0.43: conductor, segundo cuerpo y tercer límite nacidos de decisiones jugadas" loading="lazy">
-        <figcaption>Carrera: el cargo no borra la disputa entre los dos cuerpos que gobernaron ni el límite del tercero.</figcaption>
+        <img src="assets/game-legend-final-current.webp?v=20260815" alt="Apertura vigente del final del Modo Leyenda, con desenlace, lectura política y proyecto de época" loading="lazy">
+        <figcaption>Leyenda: el desenlace electoral y la idea política se leen juntos, sin confundir victoria con representación.</figcaption>
       </figure>
       <figure>
-        <img src="assets/game-legend-final-v42.png?v=20260804" alt="Final del Modo Leyenda v0.43 con los tres cuerpos, campañas y archivo de decisiones" loading="lazy">
-        <figcaption>Leyenda: el presente responde a la figura jugada; no regresa a una vida histórica.</figcaption>
+        <img src="assets/game-legend-register-current.webp?v=20260815" alt="Registro vigente del final del Modo Leyenda con los tres cuerpos y resultados de la partida" loading="lazy">
+        <figcaption>Registro: las dieciocho decisiones conservan cuerpo, resultado, ejes y deuda; la leyenda final se puede auditar.</figcaption>
       </figure>
     </div>
 
     <hr class="light">
 
     <h2>Del deep research a una escritura de época</h2>
-    <p>v0.40 incorporó acontecimientos derivados de investigación. v0.40 hizo persistentes las posiciones sobre humanidad, demografía, pertenencia, soberanía cognitiva, frontera material y orden interdependiente. v0.41 las llevó a la prosa. v0.42 preservó la biografía híbrida del cierre. v0.43 reancla la evidencia de las quince Leyendas y distribuye una agenda de 41 desafíos sin volver casi fija la apertura.</p>
+    <p>La versión vigente conserva posiciones sobre humanidad, demografía, pertenencia, soberanía cognitiva, frontera planetaria y orden interdependiente; construye una biografía causal, separa autoridad electoral de representación y vuelve trazable la traducción de las quince Leyendas.</p>
+    <p><a href="#leyendas">Ver por qué cada Leyenda tiene su puntaje →</a></p>
     <div class="vj-research-grid">
       <div><strong>${esc(metrics.career_civilizational_events || 16)}</strong><span>situaciones civilizatorias nuevas en Carrera</span><small>transhumanismo, demografía, identidad y Luna en las tres escalas</small></div>
       <div><strong>${esc(metrics.legend_civilizational_challenges || 4)}</strong><span>desafíos civilizatorios nuevos en Leyenda</span><small>integrados al presente, no a una recreación histórica</small></div>

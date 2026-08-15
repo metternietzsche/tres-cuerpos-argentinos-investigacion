@@ -26,3 +26,7 @@ No modificar `NS`, `MX`, SPF, DKIM ni DMARC. El correo
 3. CSS, JavaScript, datos y figuras devuelven HTTP 200.
 4. La navegación hacia el juego usa `https://trescuerpos.arcagaucha.com`.
 5. `info@arcagaucha.com` continúa enviando y recibiendo correo.
+6. `robots.txt`, `sitemap.xml`, `manifest.webmanifest` y las páginas indexables
+   responden HTTP 200.
+7. El workflow ejecuta validación estática, matriz Playwright desktop/móvil y
+   smoke de producción antes de dar el despliegue por cerrado.

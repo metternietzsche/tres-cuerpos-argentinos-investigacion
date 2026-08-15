@@ -3,17 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <title>El problema de los tres cuerpos argentinos</title>
   <meta name="description" content="Investigación doctrinaria sobre tecnocracia, mesianismo y paternalismo en el discurso presidencial argentino, con mapa empírico y videojuego.">
-  <meta name="robots" content="noindex, nofollow">
+  <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="theme-color" content="#101116">
+  <link rel="canonical" href="https://lore.trescuerpos.arcagaucha.com/">
+  <link rel="icon" type="image/webp" href="assets/logo.webp?v=20260815">
+  <link rel="manifest" href="manifest.webmanifest?v=20260815">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_AR">
   <meta property="og:title" content="El problema de los tres cuerpos argentinos">
   <meta property="og:description" content="Investigación, doctrina y videojuego sobre tres fuerzas de la política argentina.">
-  <meta property="og:image" content="assets/logo.png?v=20260804">
-  <link rel="stylesheet" href="styles.css?v=20260811d">
+  <meta property="og:url" content="https://lore.trescuerpos.arcagaucha.com/">
+  <meta property="og:image" content="https://lore.trescuerpos.arcagaucha.com/assets/logo.webp?v=20260815">
+  <meta property="og:image:alt" content="Logo de El problema de los tres cuerpos argentinos">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="El problema de los tres cuerpos argentinos">
+  <meta name="twitter:description" content="Investigación, doctrina y videojuego sobre tres fuerzas de la política argentina.">
+  <meta name="twitter:image" content="https://lore.trescuerpos.arcagaucha.com/assets/logo.webp?v=20260815">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://lore.trescuerpos.arcagaucha.com/#website",
+        "url": "https://lore.trescuerpos.arcagaucha.com/",
+        "name": "El problema de los tres cuerpos argentinos",
+        "inLanguage": "es-AR",
+        "author": { "@id": "https://lore.trescuerpos.arcagaucha.com/#author" }
+      },
+      {
+        "@type": "ScholarlyArticle",
+        "headline": "El problema de los tres cuerpos argentinos: una lectura orbital del presidencialismo argentino",
+        "description": "Investigación doctrinaria sobre tecnocracia, mesianismo y paternalismo en el discurso presidencial argentino.",
+        "dateModified": "2026-08-15",
+        "inLanguage": "es-AR",
+        "license": "https://creativecommons.org/licenses/by-nc/4.0/",
+        "author": { "@id": "https://lore.trescuerpos.arcagaucha.com/#author" }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://lore.trescuerpos.arcagaucha.com/#author",
+        "name": "Alexandra Bustos Frati"
+      }
+    ]
+  }
+  </script>
+  <link rel="stylesheet" href="styles.css?v=20260815a">
 </head>
 <body>
 
@@ -22,7 +59,7 @@
   <header id="site-header" role="banner">
     <div class="site-title-wrap">
       <a href="#inicio" class="site-logo-link" aria-label="Inicio">
-        <img src="assets/logo.png?v=20260501" alt="" class="site-logo" aria-hidden="true"
+        <img src="assets/logo.webp?v=20260815" alt="" class="site-logo" aria-hidden="true"
              onerror="this.style.display='none';" loading="eager">
       </a>
       <p class="site-title">
@@ -36,20 +73,21 @@
             aria-controls="site-nav">☰ Menú</button>
     <nav id="site-nav" role="navigation" aria-label="Navegación principal">
       <a href="#inicio"       class="nav-link" data-section="inicio">Inicio</a>
-      <a href="#tesis"        class="nav-link" data-section="tesis">La tesis</a>
-      <a href="#whitepaper"   class="nav-link" data-section="whitepaper">Whitepaper</a>
+      <a href="#recorrido"    class="nav-link" data-section="recorrido">Empezá acá</a>
       <a href="#mapa-orbital" class="nav-link" data-section="mapa-orbital">Mapa orbital</a>
-      <a href="#actores"      class="nav-link" data-section="actores">Actores</a>
-      <a href="#evidencia"    class="nav-link" data-section="evidencia">Evidencia y método</a>
+      <a href="#actores"      class="nav-link" data-section="actores">Actores y Leyendas</a>
+      <a href="#evidencia"    class="nav-link" data-section="evidencia">Evidencia</a>
+      <a href="#whitepaper"   class="nav-link" data-section="whitepaper">Whitepaper</a>
       <a href="#videojuego"   class="nav-link" data-section="videojuego">Videojuego</a>
-      <a href="#licencia"     class="nav-link" data-section="licencia">Licencia</a>
     </nav>
+    <a href="#buscar" id="site-search-btn" aria-label="Buscar en el proyecto">⌕ <span>Buscar</span></a>
   </header>
 
   <div id="loading" role="status" aria-live="polite">
     <div class="loading-inner">
       <div class="loading-spinner" aria-hidden="true"></div>
-      <p class="loading-msg">Cargando datos…</p>
+      <h1>El problema de los tres cuerpos argentinos</h1>
+      <p class="loading-msg">Cargando investigación, mapa y trazabilidad…</p>
     </div>
   </div>
 
@@ -76,9 +114,12 @@
       Publicación conjunta ·
       <a href="#evidencia">Evidencia y método</a>
       · <a href="#licencia">Licencia</a>
+      · <a href="https://www.hcdn.gob.ar/secparl/dgral_info_parlamentaria/mensajes_presidenciales/index.html" target="_blank" rel="noopener">Archivo HCDN</a>
     </div>
   </footer>
 
-  <script src="app.js?v=20260814a"></script>
+  <a href="#app" id="back-to-top" aria-label="Volver al comienzo de la página">↑ Arriba</a>
+
+  <script src="app.js?v=20260815a"></script>
 </body>
 </html>

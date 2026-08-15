@@ -1,9 +1,9 @@
-# Manifiesto de export público de investigación v0.4
+# Manifiesto de export público de investigación v0.5
 
 **Repositorio objetivo:** `metternietzsche/tres-cuerpos-argentinos-investigacion`  
-**Versión:** `v0.4.4`
-**Fuente:** `web/static_prototype/` + derivados promovidos NB17–NB21
-**Fecha:** 2026-08-11
+**Versión:** `v0.5.0`
+**Fuente:** `web/static_prototype/` + derivados promovidos NB17–NB21 + traducción lúdica v0.2
+**Fecha:** 2026-08-15
 
 Este manifiesto separa la autoridad doctrinaria y empírica del videojuego. El
 sitio conserva su puente editorial hacia el juego, pero no vuelve a empaquetar
@@ -13,7 +13,7 @@ su build ni sus assets de runtime.
 
 | Ruta de origen | Acción | Destino o regla |
 |---|---|---|
-| `README.md` | `generate` | Actualizar la estructura separada y el estado v0.49 beta del juego. |
+| `README.md` | `generate` | Mantener la estructura separada y leer la versión pública actual del juego desde datos. |
 | `LICENSE.md` | `generate` | CC BY-NC 4.0 para contenido público; excepciones claras. |
 | `CITATION.cff` | `include` | Citar sitio y mapa v0.4 con caveat de réplica humana. |
 | `docs/whitepaper/` | `include` | Whitepaper y materiales editoriales. |
@@ -22,9 +22,10 @@ su build ni sus assets de runtime.
 | `docs/evidencia/` | `include` | Síntesis y matrices derivadas públicas. |
 | `docs/licencia/` | `include` | Política ampliada. |
 | `docs/roadmap/` | `include` | Roadmap histórico, marcado como tal. |
-| `docs/videojuego.md` | `generate` | Enlazar el repo separado; retirar referencias a v0.42 embebida. |
+| `docs/videojuego.md` | `generate` | Enlazar el repo separado y documentar el contrato vigente de validación. |
+| `docs/videojuego/legend-methodology-v0.2.md` | `include` | Publicar la metodología de traducción investigación → Leyendas sin convertirla en medición nueva. |
 | `figures/` | `include` | Figuras empíricas promovidas. |
-| `data_public/` | `include` | Sólo datos derivados ya seleccionados. |
+| `data_public/` | `include` | Sólo datos derivados seleccionados, incluida la ficha trazable de las quince Leyendas. |
 | `web/static_prototype/index.html` | `include` | Entrada del sitio doctrinario. |
 | `web/static_prototype/app.js` | `generate` | Retirar publicación conjunta y enlazar al repo real del juego. |
 | `web/static_prototype/styles.css` | `include` | Estilos del sitio. |
@@ -36,8 +37,11 @@ su build ni sus assets de runtime.
 | `audit/` | `exclude` | Auditoría interna pesada. |
 | `PUBLICATION_MANIFEST_v0_1.md`, `PUBLICATION_MANIFEST_v0_2.md` | `release-only` | Conservar fuera del clone inicial. |
 | `PUBLICATION_NOTES.md` | `exclude` | Decisión conjunta ya reemplazada. |
-| `.github/workflows/pages.yml` | `generate` | Publicar sólo `web/static_prototype/`. |
-| `CHANGELOG.md`, `.gitignore` | `generate` | Historial público y exclusiones. |
+| `scripts/generate-route-pages.mjs` | `generate` | Producir entradas indexables y `sitemap.xml` para las rutas principales. |
+| `scripts/validate-publication.mjs` | `generate` | Verificar paridad, trazabilidad, versiones, SEO y presupuesto del logo. |
+| `e2e/`, `playwright.config.mjs` | `generate` | Validar navegación, fichas, búsqueda, resiliencia, accesibilidad y responsive. |
+| `.github/workflows/pages.yml` | `generate` | Validar, probar, publicar `web/static_prototype/` y ejecutar smoke de producción. |
+| `CHANGELOG.md`, `.gitignore`, `package.json` | `generate` | Historial público, exclusiones y contrato reproducible de pruebas. |
 
 ## Gates
 
@@ -46,9 +50,12 @@ su build ni sus assets de runtime.
 - cero referencias que presenten v0.42 como versión actual;
 - enlaces cruzados al repositorio público real del videojuego;
 - caveat visible: datos provisionales, no aptos para cita académica formal;
-- Page estática navegable por rutas hash y sin errores de consola.
+- las quince Leyendas disponen de una ficha pública con puntaje anterior/actual, evidencia por cuerpo, fuentes, cautela y estado de traducción;
+- toda recalibración conserva suma, respeta `|Δ| ≤ 1` por cuerpo y queda separada de los puntajes empíricos del mapa;
+- Page estática navegable por rutas hash, entradas indexables y sin errores de consola;
+- búsqueda, carga parcial, acceso móvil y contraste pasan la matriz Playwright en desktop y Pixel 7;
 - ningún documento bruto del corpus ni ruta secreta o credencial;
-- videojuego y coeficientes de Leyendas sin modificaciones.
+- runtime y coeficientes internos del videojuego sin modificaciones: el sitio publica su traducción trazable, no una nueva calibración del juego.
 
 ## Decisión de licencia
 
