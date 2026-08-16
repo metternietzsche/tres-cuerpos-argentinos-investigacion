@@ -1,6 +1,6 @@
 # El problema de los tres cuerpos argentinos
 
-**Sitio doctrinario v0.6.4 · mapa empírico v0.4**
+**Sitio doctrinario v0.6.5 · mapa empírico v0.4**
 **Autora:** Alexandra Bustos Frati, PhD  
 **Estado empírico:** provisional; no apto todavía para cita académica formal
 
@@ -44,7 +44,18 @@ ocho funciones, 2.000 remuestreos por unidad y el diff completo frente a v0.3.
 - [Metodología v0.2](docs/metodologia/METHOD_PIPELINE_v0_2.md)
 - [Codebook simétrico](docs/metodologia/CODEBOOK_FUNCIONAL_SIMETRICO_v0_3.md)
 
-## Qué cambia la publicación v0.6.4
+## Qué cambia la publicación v0.6.5
+
+- tablet usa la navegación compacta y abandona las grillas de escritorio antes
+  de que el texto quede angosto;
+- el mapa orbital, sus filtros y la navegación interna de Evidencia dejan de
+  exigir paneos horizontales ocultos en móvil;
+- fichas de actores, controles táctiles y tablas largas reciben una composición
+  específica para 320, 390 y 768 px;
+- una prueba Playwright reproducible recorre esas tres anchuras y controla
+  overflow, controles, mapa, fichas y grillas del videojuego.
+
+## Qué cambió la publicación v0.6.4
 
 - “Empezá acá” deja de ser un recorrido técnico de seis pasos y se convierte en
   cuatro entradas orientadas por intención: entender, comparar, analizar o jugar;

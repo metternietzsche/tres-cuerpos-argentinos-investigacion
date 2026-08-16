@@ -40,7 +40,7 @@ for (const [file, hash, title, description] of routes) {
   <meta property="og:image" content="${canonical}/assets/logo.webp?v=20260815">
   <meta name="twitter:card" content="summary_large_image">
   <meta http-equiv="refresh" content="0; url=./#${hash}">
-  <link rel="stylesheet" href="styles.css?v=20260816b">
+  <link rel="stylesheet" href="styles.css?v=20260816c">
 </head>
 <body>
   <main class="redirect-page">
@@ -59,8 +59,8 @@ for (const [file, hash, title, description] of routes) {
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>${canonical}/</loc><lastmod>2026-08-15</lastmod><priority>1.0</priority></url>
-${routes.map(([file]) => `  <url><loc>${canonical}/${file}</loc><lastmod>2026-08-15</lastmod><priority>0.8</priority></url>`).join('\n')}
+  <url><loc>${canonical}/</loc><lastmod>2026-08-16</lastmod><priority>1.0</priority></url>
+${routes.map(([file]) => `  <url><loc>${canonical}/${file}</loc><lastmod>2026-08-16</lastmod><priority>0.8</priority></url>`).join('\n')}
 </urlset>
 `;
 writeFileSync(resolve(root, 'sitemap.xml'), sitemap);

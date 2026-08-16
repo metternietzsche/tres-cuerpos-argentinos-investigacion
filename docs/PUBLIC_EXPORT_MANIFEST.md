@@ -1,9 +1,9 @@
-# Manifiesto de export público de investigación v0.6.4
+# Manifiesto de export público de investigación v0.6.5
 
 **Repositorio objetivo:** `metternietzsche/tres-cuerpos-argentinos-investigacion`  
-**Versión:** `v0.6.4`
+**Versión:** `v0.6.5`
 **Fuente:** `web/static_prototype/` + derivados promovidos NB17–NB21 + traducción lúdica v0.2 + analizador textual v0.1.1
-**Fecha:** 2026-08-15
+**Fecha:** 2026-08-16
 
 Este manifiesto separa la autoridad doctrinaria y empírica del videojuego. El
 sitio conserva su puente editorial hacia el juego, pero no vuelve a empaquetar
@@ -56,7 +56,7 @@ su build ni sus assets de runtime.
 - las quince Leyendas disponen de una ficha pública con puntaje anterior/actual, evidencia por cuerpo, fuentes, cautela y estado de traducción;
 - toda recalibración conserva suma, respeta `|Δ| ≤ 1` por cuerpo y queda separada de los puntajes empíricos del mapa;
 - Page estática navegable por rutas hash, entradas indexables y sin errores de consola;
-- búsqueda, carga parcial, acceso móvil y contraste pasan la matriz Playwright en desktop y Pixel 7;
+- búsqueda, carga parcial, acceso móvil y contraste pasan la matriz Playwright en desktop, 768 px, 390 px y 320 px;
 - ningún documento bruto del corpus ni ruta secreta o credencial;
 - el laboratorio procesa localmente, no ofrece descargar el resultado personal
   y separa comparación provisional HCDN de géneros exploratorios;

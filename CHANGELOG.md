@@ -4,6 +4,17 @@
 
 - Sin cambios.
 
+## v0.6.5 · 2026-08-16
+
+- El breakpoint compacto cubre también tablets hasta 900 px y evita columnas
+  de escritorio demasiado estrechas.
+- El mapa orbital y sus filtros ya no requieren paneo horizontal en 320 o
+  390 px; la navegación de Evidencia se reorganiza como una grilla táctil.
+- Las fichas de actores se apilan en móvil, los controles principales alcanzan
+  44 px y las tablas que conservan desplazamiento lo anuncian visiblemente.
+- Nueva matriz Playwright en 320, 390 y 768 px, repetida antes del release, para
+  verificar overflow, navegación, mapa, controles y grillas críticas.
+
 ## v0.6.4 · 2026-08-16
 
 - “Empezá acá” deja de explicar la arquitectura interna como una secuencia de
