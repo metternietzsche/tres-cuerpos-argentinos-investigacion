@@ -1,7 +1,7 @@
-# Manifiesto de export público de investigación v0.6.3
+# Manifiesto de export público de investigación v0.6.4
 
 **Repositorio objetivo:** `metternietzsche/tres-cuerpos-argentinos-investigacion`  
-**Versión:** `v0.6.3`
+**Versión:** `v0.6.4`
 **Fuente:** `web/static_prototype/` + derivados promovidos NB17–NB21 + traducción lúdica v0.2 + analizador textual v0.1.1
 **Fecha:** 2026-08-15
 

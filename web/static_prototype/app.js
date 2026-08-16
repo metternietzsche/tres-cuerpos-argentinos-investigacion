@@ -3,7 +3,7 @@
 // ─── Constants ─────────────────────────────────────────────────────────────────
 
 const DATA_PATH = 'data/';
-const PUBLICATION_CACHE_KEY = '20260816a';
+const PUBLICATION_CACHE_KEY = '20260816b';
 const OFFICIAL_HCDN_ARCHIVE = 'https://www.hcdn.gob.ar/secparl/dgral_info_parlamentaria/mensajes_presidenciales/index.html';
 const RESEARCH_REPOSITORY = 'https://github.com/metternietzsche/tres-cuerpos-argentinos-investigacion';
 
@@ -852,28 +852,53 @@ function renderRecorrido() {
   const game = D.game_meta || {};
   const gameUrl = resolveGameUrl(game);
   const directPlay = gameUrl
-    ? `<a href="${esc(gameUrl)}" class="btn btn-primary" target="_blank" rel="noopener">Jugar ahora · ${esc(game.display_version || 'beta pública')} →</a>`
+    ? `<a href="${esc(gameUrl)}" class="btn btn-primary" target="_blank" rel="noopener">Jugar ${esc(game.display_version || 'la beta pública')} →</a>`
     : `<span class="btn btn-primary" aria-disabled="true">Publicación web pendiente</span>`;
   return `<section class="page-section guided-page">
     <div class="breadcrumb"><a href="#inicio">Inicio</a> <span>›</span> Empezá acá</div>
     <div class="guided-hero">
-      <span class="section-kicker">RECORRIDO BREVE · SEIS PARADAS</span>
-      <h1>Una puerta de entrada al proyecto</h1>
-      <p class="hero-sub">Si es tu primera visita, este recorrido separa la hipótesis, la evidencia y el videojuego antes de volver a conectarlos.</p>
+      <span class="section-kicker">UNA INVESTIGACIÓN · CUATRO PUERTAS</span>
+      <h1>¿Qué querés hacer?</h1>
+      <p class="hero-sub">No necesitás conocer el proyecto de antemano. Elegí una entrada: entender la idea, comparar presidencias, analizar un discurso o jugar.</p>
     </div>
-    <ol class="guided-steps">
-      <li><span>01</span><div><h2>La hipótesis</h2><p>Argentina no se organiza como un péndulo de dos polos. Tecnocracia, mesianismo y paternalismo forman combinaciones dirigidas y trayectorias.</p><a href="#tesis">Leer la tesis →</a></div></li>
-      <li><span>02</span><div><h2>El mapa</h2><p>El campo orbital ubica 52 discursos y doce unidades actor × mandato. Muestra masa relativa y adjudicación funcional; no mide personalidad ni gobierno efectivo.</p><a href="#mapa-orbital">Explorar el mapa →</a></div></li>
-      <li><span>03</span><div><h2>Tu texto en el campo</h2><p>El laboratorio aplica una primera pasada automática a un discurso que pegues o abras localmente. Devuelve señales y evidencia; no diagnostica a una persona.</p><a href="#laboratorio">Analizar un discurso →</a></div></li>
-      <li><span>04</span><div><h2>La prueba y sus límites</h2><p>Cada conclusión debe poder volver a un documento, una regla de lectura y una cautela. Las brechas no se rellenan con relato.</p><a href="#evidencia">Revisar evidencia y método →</a></div></li>
-      <li><span>05</span><div><h2>De actor a Leyenda</h2><p>Una Leyenda es una ventana jugable, no un tipo histórico. La ficha muestra alcance, fuentes, puntaje anterior, puntaje vigente y regla de traducción.</p><a href="#leyendas">Abrir trazabilidad de las 15 Leyendas →</a></div></li>
-      <li class="guided-game-step"><span>06</span><div><span class="section-kicker">VIDEOJUEGO · CARRERA Y MODO LEYENDA</span><h2>El experimento lúdico</h2><p><em>${esc(game.title || 'Tres Cuerpos: República Inestable')}</em> usa ese marco para producir decisiones contemporáneas. Juego ≠ evidencia: una partida no prueba una tesis histórica.</p><div class="guided-game-actions">${directPlay}<a href="#videojuego" class="btn btn-secondary">Conocer el videojuego →</a></div></div></li>
-    </ol>
-    <div class="guided-boundary" role="note">
-      <strong>La cadena completa:</strong>
-      <span>documento</span><b>→</b><span>fragmento</span><b>→</b><span>codificación</span><b>→</b><span>unidad de mandato</span><b>→</b><span>Leyenda</span><b>→</b><span>mecánica</span>.
-      Cada flecha cambia de estatuto y debe explicarse.
-    </div>
+    <nav class="guided-choice-grid" aria-label="Elegí qué querés hacer">
+      <article class="guided-choice guided-choice-thesis" aria-labelledby="guided-thesis-title">
+        <div class="guided-choice-topline"><span>01</span><b>LA IDEA · 4 MIN</b></div>
+        <h2 id="guided-thesis-title">Entender por qué no alcanza el péndulo</h2>
+        <p>Tecnocracia, mesianismo y paternalismo no se alternan de a dos: se combinan, compiten y dejan trayectorias.</p>
+        <a href="#tesis" class="guided-choice-link">Leer la tesis <span aria-hidden="true">→</span></a>
+      </article>
+      <article class="guided-choice guided-choice-map" aria-labelledby="guided-map-title">
+        <div class="guided-choice-topline"><span>02</span><b>MAPA · 52 DISCURSOS</b></div>
+        <h2 id="guided-map-title">Comparar presidencias</h2>
+        <p>Ubicá discursos y mandatos en el campo de los tres cuerpos. Compará posiciones sin convertirlas en diagnósticos personales.</p>
+        <a href="#mapa-orbital" class="guided-choice-link">Explorar el mapa <span aria-hidden="true">→</span></a>
+      </article>
+      <article class="guided-choice guided-choice-lab" aria-labelledby="guided-lab-title">
+        <div class="guided-choice-topline"><span>03</span><b>LABORATORIO · PRIVADO</b></div>
+        <h2 id="guided-lab-title">Analizar un discurso</h2>
+        <p>Pegá un texto y mirá qué señales TEC, MES y PAT aparecen. El análisis ocurre en tu navegador: no se envía ni se guarda.</p>
+        <a href="#laboratorio" class="guided-choice-link">Abrir el laboratorio <span aria-hidden="true">→</span></a>
+      </article>
+      <article class="guided-choice guided-choice-game" aria-labelledby="guided-game-title">
+        <div class="guided-choice-topline"><span>04</span><b>VIDEOJUEGO · CARRERA + LEYENDA</b></div>
+        <h2 id="guided-game-title">Jugar una república inestable</h2>
+        <p>Tomá doce decisiones, atravesá tres campañas y descubrí qué autoridad construiste. La partida usa la doctrina; no reemplaza la evidencia histórica.</p>
+        <div class="guided-game-actions">${directPlay}<a href="#videojuego" class="btn btn-secondary">Cómo se conecta con la investigación</a></div>
+      </article>
+    </nav>
+    <section class="guided-deeper" aria-labelledby="guided-deeper-title">
+      <div>
+        <span class="section-kicker">PARA PROFUNDIZAR</span>
+        <h2 id="guided-deeper-title">¿Querés revisar cómo llegamos a estas conclusiones?</h2>
+        <p>Acá viven las fuentes, las reglas de lectura y los límites. No hace falta recorrerlos antes de usar el mapa, el laboratorio o el juego.</p>
+      </div>
+      <div class="guided-deeper-links">
+        <a href="#evidencia"><b>Evidencia y método</b><span>Corpus, codificación y cautelas</span></a>
+        <a href="#leyendas"><b>Por qué puntúa así cada Leyenda</b><span>Fuentes, traducción y cambios</span></a>
+        <a href="#whitepaper"><b>Whitepaper completo</b><span>Argumento, tablas y referencias</span></a>
+      </div>
+    </section>
   </section>`;
 }
 
@@ -1101,7 +1126,7 @@ function renderInicio() {
         </div>
         <!-- Content column -->
         <div class="inicio-hero-content-col">
-          <div class="inicio-hero-eyebrow">PUBLICACIÓN ${esc(meta.site_release || 'v0.6.3')} · MAPA ${esc(meta.version || 'v0.4')} · CORPUS HCDN 1983–2026</div>
+          <div class="inicio-hero-eyebrow">PUBLICACIÓN ${esc(meta.site_release || 'v0.6.4')} · MAPA ${esc(meta.version || 'v0.4')} · CORPUS HCDN 1983–2026</div>
           <h1 class="inicio-hero-headline">${esc(meta.site_title || 'El problema de los tres cuerpos argentinos')}</h1>
           <p class="inicio-hero-sub">Argentina no es un péndulo. Es un problema de tres cuerpos.</p>
           <nav class="cta-group inicio-hero-cta inicio-hero-nav" aria-label="Accesos principales del proyecto">

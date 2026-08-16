@@ -4,6 +4,16 @@
 
 - Sin cambios.
 
+## v0.6.4 · 2026-08-16
+
+- “Empezá acá” deja de explicar la arquitectura interna como una secuencia de
+  seis pasos y pregunta directamente qué quiere hacer la persona.
+- Cuatro puertas principales: entender la tesis, comparar presidencias, analizar
+  un discurso o jugar.
+- Evidencia, trazabilidad de Leyendas y whitepaper pasan a una sección secundaria
+  para profundizar, sin bloquear el primer uso.
+- Nueva composición de tarjetas con jerarquía editorial y adaptación móvil.
+
 ## v0.6.3 · 2026-08-16
 
 - “Empezá acá” vuelve visible el videojuego como sexta parada destacada del

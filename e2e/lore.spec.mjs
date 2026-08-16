@@ -52,17 +52,28 @@ test('la búsqueda encuentra actores y abre la ficha correcta', async ({ page })
   await expect(page.locator('.legend-trace-page h1')).toContainText('Por qué Kirchner restaurador');
 });
 
-test('Empezá acá ofrece acceso directo y ficha del videojuego', async ({ page }) => {
+test('Empezá acá ofrece cuatro entradas claras y profundidad opcional', async ({ page }) => {
   await page.goto('/#recorrido');
-  const gameStep = page.getByRole('listitem').filter({ has: page.getByRole('heading', { name: 'El experimento lúdico' }) });
-  const playLink = gameStep.getByRole('link', { name: /Jugar ahora/ });
+  await expect(page.getByRole('heading', { name: '¿Qué querés hacer?' })).toBeVisible();
+  const choices = page.getByRole('navigation', { name: 'Elegí qué querés hacer' });
+  await expect(choices.getByRole('article')).toHaveCount(4);
+  await expect(choices.getByRole('heading', { name: 'Entender por qué no alcanza el péndulo' })).toBeVisible();
+  await expect(choices.getByRole('heading', { name: 'Comparar presidencias' })).toBeVisible();
+  await expect(choices.getByRole('heading', { name: 'Analizar un discurso' })).toBeVisible();
+
+  const gameChoice = choices.getByRole('article', { name: 'Jugar una república inestable' });
+  const playLink = gameChoice.getByRole('link', { name: /Jugar v0\.52 beta\.13/ });
   await expect(playLink).toBeVisible();
   await expect(playLink).toHaveAttribute('href', 'https://trescuerpos.arcagaucha.com/');
   await expect(playLink).toHaveAttribute('target', '_blank');
 
-  await gameStep.getByRole('link', { name: 'Conocer el videojuego' }).click();
+  await gameChoice.getByRole('link', { name: 'Cómo se conecta con la investigación' }).click();
   await expect(page).toHaveURL(/#videojuego$/);
   await expect(page.getByRole('heading', { name: 'Tres cuerpos, una república inestable' })).toBeVisible();
+
+  await page.goto('/#recorrido');
+  const deeper = page.getByRole('region', { name: '¿Querés revisar cómo llegamos a estas conclusiones?' });
+  await expect(deeper.getByRole('link')).toHaveCount(3);
 });
 
 test('el laboratorio analiza localmente y explica sin ofrecer descarga del resultado', async ({ page }) => {

@@ -51,7 +51,7 @@ jobs:
         run: |
           SITE_ROOT="${PAGE_URL%/}"
           curl --fail --location --retry 8 --retry-delay 5 "${SITE_ROOT}/"
-          curl --fail --location --retry 8 --retry-delay 5 "${SITE_ROOT}/data/site_meta.json" | grep 'SITE_PUBLICATION_v0_6_3'
+          curl --fail --location --retry 8 --retry-delay 5 "${SITE_ROOT}/data/site_meta.json" | grep 'SITE_PUBLICATION_v0_6_4'
           curl --fail --location --retry 8 --retry-delay 5 "${SITE_ROOT}/laboratorio.html" | grep 'Analizá un discurso'
           curl --fail --location --retry 8 --retry-delay 5 "${SITE_ROOT}/orbital-analyzer.js" | grep 'OrbitalAnalyzer'
           curl --fail --location --retry 8 --retry-delay 5 "${SITE_ROOT}/leyendas.html" | grep 'Trazabilidad de Leyendas'
