@@ -56,6 +56,9 @@ test('el laboratorio analiza localmente y explica sin ofrecer descarga del resul
   const failures = collectRuntimeFailures(page);
   await page.goto('/#laboratorio');
   await expect(page.getByRole('heading', { name: '¿Qué tres cuerpos aparecen en este discurso?' })).toBeVisible();
+  const privacyNotice = page.getByLabel('Privacidad del análisis');
+  await expect(privacyNotice).toContainText('No se envía al servidor ni se guarda en el sitio');
+  await expect(privacyNotice).toContainText('desaparecen al recargar o cerrar la página');
   await page.getByRole('button', { name: 'Cargar ejemplo' }).click();
   const postLoadRequests = [];
   page.on('request', request => postLoadRequests.push(request.url()));

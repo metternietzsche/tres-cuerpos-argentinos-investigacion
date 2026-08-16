@@ -4,6 +4,15 @@
 
 - Sin cambios.
 
+## v0.6.2 · 2026-08-15
+
+- El laboratorio declara de forma visible que el texto no se envía al servidor
+  ni se guarda en el sitio.
+- Aclarado que texto y diagnóstico sólo permanecen en la vista y desaparecen al
+  recargar o cerrar la página.
+- Añadida cobertura Playwright de la promesa de privacidad en escritorio y
+  móvil.
+
 ## v0.6.1 · 2026-08-15
 
 - Corregido el falso negativo de Mesianismo observado en la apertura

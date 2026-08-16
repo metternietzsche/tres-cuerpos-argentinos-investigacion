@@ -3,7 +3,7 @@
 // ─── Constants ─────────────────────────────────────────────────────────────────
 
 const DATA_PATH = 'data/';
-const PUBLICATION_CACHE_KEY = '20260815c';
+const PUBLICATION_CACHE_KEY = '20260815d';
 const OFFICIAL_HCDN_ARCHIVE = 'https://www.hcdn.gob.ar/secparl/dgral_info_parlamentaria/mensajes_presidenciales/index.html';
 const RESEARCH_REPOSITORY = 'https://github.com/metternietzsche/tres-cuerpos-argentinos-investigacion';
 
@@ -584,7 +584,7 @@ function renderLaboratory() {
       <aside class="laboratory-privacy-card" aria-label="Privacidad del análisis">
         <span aria-hidden="true">LOCAL</span>
         <strong>El texto no sale de tu dispositivo</strong>
-        <p>Se procesa dentro de este navegador. No se sube ni se almacena; el diagnóstico permanece en esta vista.</p>
+        <p>No se envía al servidor ni se guarda en el sitio. El texto y el diagnóstico sólo permanecen en esta vista: desaparecen al recargar o cerrar la página.</p>
       </aside>
     </header>
 
@@ -1097,7 +1097,7 @@ function renderInicio() {
         </div>
         <!-- Content column -->
         <div class="inicio-hero-content-col">
-          <div class="inicio-hero-eyebrow">PUBLICACIÓN ${esc(meta.site_release || 'v0.6.1')} · MAPA ${esc(meta.version || 'v0.4')} · CORPUS HCDN 1983–2026</div>
+          <div class="inicio-hero-eyebrow">PUBLICACIÓN ${esc(meta.site_release || 'v0.6.2')} · MAPA ${esc(meta.version || 'v0.4')} · CORPUS HCDN 1983–2026</div>
           <h1 class="inicio-hero-headline">${esc(meta.site_title || 'El problema de los tres cuerpos argentinos')}</h1>
           <p class="inicio-hero-sub">Argentina no es un péndulo. Es un problema de tres cuerpos.</p>
           <nav class="cta-group inicio-hero-cta inicio-hero-nav" aria-label="Accesos principales del proyecto">

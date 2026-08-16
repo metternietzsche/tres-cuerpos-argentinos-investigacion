@@ -1,6 +1,6 @@
 # El problema de los tres cuerpos argentinos
 
-**Sitio doctrinario v0.6.1 · mapa empírico v0.4**
+**Sitio doctrinario v0.6.2 · mapa empírico v0.4**
 **Autora:** Alexandra Bustos Frati, PhD  
 **Estado empírico:** provisional; no apto todavía para cita académica formal
 
@@ -43,6 +43,14 @@ ocho funciones, 2.000 remuestreos por unidad y el diff completo frente a v0.3.
 - [Mapa orbital v0.4](docs/mapa_orbital/v0_4/MAPA_ORBITAL_ARGENTINO_v0_4.md)
 - [Metodología v0.2](docs/metodologia/METHOD_PIPELINE_v0_2.md)
 - [Codebook simétrico](docs/metodologia/CODEBOOK_FUNCIONAL_SIMETRICO_v0_3.md)
+
+## Qué aclara la publicación v0.6.2
+
+- el laboratorio avisa antes del análisis que el texto no se envía al servidor
+  ni se guarda en el sitio;
+- texto y diagnóstico sólo permanecen en la vista y desaparecen al recargar o
+  cerrar la página;
+- la promesa de privacidad queda verificada en escritorio y móvil.
 
 ## Qué corrige la publicación v0.6.1
 
