@@ -91,6 +91,8 @@ test('el laboratorio analiza localmente y explica sin ofrecer descarga del resul
   await expect(page.locator('.laboratory-output')).toBeVisible();
   await expect(page.locator('.laboratory-score')).toHaveCount(3);
   await expect(page.locator('.laboratory-result-stamp')).toContainText(/TEC|MES|PAT/);
+  await expect(page.locator('.laboratory-direction-explanation')).toContainText('Los porcentajes eligen la pareja');
+  await expect(page.locator('.laboratory-direction-explanation')).toContainText('La flecha se calcula aparte');
   await expect(page.locator('.laboratory-confidence')).toContainText('fuera del dominio HCDN');
   await expect(page.locator('.laboratory-evidence-column')).toHaveCount(3);
   await expect(page.locator('.laboratory-reference-point')).toHaveCount(52);
@@ -98,6 +100,26 @@ test('el laboratorio analiza localmente y explica sin ofrecer descarga del resul
   await expect(page.getByRole('button', { name: 'Imprimir resultado' })).toBeVisible();
   expect(postLoadRequests).toEqual([]);
   expect(failures).toEqual([]);
+});
+
+test('el laboratorio pide y presenta la fecha en formato argentino', async ({ page }) => {
+  await page.goto('/#laboratorio');
+  const date = page.getByLabel('Fecha opcional');
+  await expect(date).toHaveAttribute('type', 'text');
+  await expect(date).toHaveAttribute('inputmode', 'numeric');
+  await expect(date).toHaveAttribute('placeholder', 'DD/MM/AAAA');
+  await expect(page.locator('#laboratory-date-format')).toHaveText('Formato argentino: día/mes/año.');
+
+  await page.getByRole('button', { name: 'Cargar ejemplo' }).click();
+  await date.fill('2/3/2026');
+  await page.getByRole('button', { name: 'Analizar discurso' }).click();
+  await expect(date).toHaveValue('02/03/2026');
+  await expect(page.locator('.laboratory-output-header')).toContainText('02/03/2026');
+
+  await date.fill('31/02/2026');
+  await page.getByRole('button', { name: 'Analizar discurso' }).click();
+  await expect(page.getByRole('alert')).toContainText('fecha válida en formato DD/MM/AAAA');
+  await expect(page.locator('.laboratory-output')).toHaveCount(0);
 });
 
 test('el laboratorio lee .md en memoria y rechaza archivos o textos inválidos', async ({ page }) => {

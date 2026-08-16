@@ -4,6 +4,17 @@
 
 - Sin cambios.
 
+## v0.6.6 · 2026-08-16
+
+- El laboratorio abandona el campo de fecha nativo dependiente del navegador y
+  usa explícitamente el formato argentino `DD/MM/AAAA`.
+- La fecha se normaliza, se valida contra el calendario y se conserva así en el
+  encabezado del resultado.
+- El resultado explica que los porcentajes seleccionan la pareja y que la
+  dirección se calcula por funciones, no por volumen.
+- Nueva cobertura Playwright de fecha, errores de calendario y lectura de la
+  flecha en escritorio y móvil.
+
 ## v0.6.5 · 2026-08-16
 
 - El breakpoint compacto cubre también tablets hasta 900 px y evita columnas

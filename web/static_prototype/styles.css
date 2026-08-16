@@ -4669,6 +4669,17 @@ summary {
 .laboratory-result-stamp { min-width: 160px; padding: .8rem 1rem; border: 1px solid var(--gold); text-align: center; }
 .laboratory-result-stamp span,
 .laboratory-result-stamp small { display: block; color: var(--paper-dim); font: .64rem var(--font-mono); text-transform: uppercase; }
+.laboratory-direction-explanation {
+  margin: .8rem 0 1.2rem;
+  padding: .85rem 1rem;
+  border-left: 3px solid var(--gold);
+  background: rgba(216, 180, 95, .08);
+  color: var(--paper-dim);
+  font-size: .82rem;
+  line-height: 1.55;
+}
+.laboratory-direction-explanation strong { display: block; margin-bottom: .18rem; color: var(--gold); font: 700 .68rem var(--font-mono); letter-spacing: .06em; text-transform: uppercase; }
+.laboratory-direction-explanation p { margin: 0; }
 .laboratory-result-stamp strong { display: block; margin: .2rem 0; color: var(--gold); font: 1.7rem var(--font-mono); }
 .laboratory-confidence { margin: 1rem 0; padding: .8rem 1rem; border-left: 4px solid var(--amber); background: rgba(72, 51, 20, .3); }
 .laboratory-confidence.is-comparable_provisional { border-left-color: var(--green); background: rgba(17, 48, 46, .35); }

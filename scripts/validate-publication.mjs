@@ -54,7 +54,7 @@ for (const item of translationWeb.translations) {
 
 check(gameWeb.display_version === publicationWeb.game_version, 'game_meta.display_version y actor_publication.game_version no coinciden.');
 check(gameWeb.audit.vitest_tests === 227, 'El conteo público de tests del juego debe ser 227.');
-check(site.site_release === 'v0.6.5', 'site_meta.site_release debe ser v0.6.5.');
+check(site.site_release === 'v0.6.6', 'site_meta.site_release debe ser v0.6.6.');
 check(!/v0\.49|game-(career|legend)-final-v42/.test(app), 'app.js conserva referencias visuales o de versión obsoletas.');
 check(/name="robots" content="index, follow/.test(index), 'index.html no habilita indexación.');
 check(/rel="canonical"/.test(index) && /application\/ld\+json/.test(index), 'index.html carece de canonical o datos estructurados.');

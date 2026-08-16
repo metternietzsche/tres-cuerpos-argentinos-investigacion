@@ -1,6 +1,6 @@
 # El problema de los tres cuerpos argentinos
 
-**Sitio doctrinario v0.6.5 · mapa empírico v0.4**
+**Sitio doctrinario v0.6.6 · mapa empírico v0.4**
 **Autora:** Alexandra Bustos Frati, PhD  
 **Estado empírico:** provisional; no apto todavía para cita académica formal
 
@@ -44,7 +44,17 @@ ocho funciones, 2.000 remuestreos por unidad y el diff completo frente a v0.3.
 - [Metodología v0.2](docs/metodologia/METHOD_PIPELINE_v0_2.md)
 - [Codebook simétrico](docs/metodologia/CODEBOOK_FUNCIONAL_SIMETRICO_v0_3.md)
 
-## Qué cambia la publicación v0.6.5
+## Qué cambia la publicación v0.6.6
+
+- el laboratorio pide y presenta las fechas como `DD/MM/AAAA`, con validación
+  del calendario y sin depender del formato regional del navegador;
+- el resultado distingue la masa porcentual —que elige la pareja— de las
+  funciones de conducción —que ordenan la flecha— para explicar casos como
+  `MES→TEC` aunque TEC tenga mayor volumen;
+- pruebas Playwright verifican fecha válida, fecha imposible, explicación de la
+  dirección y comportamiento móvil.
+
+## Qué cambió la publicación v0.6.5
 
 - tablet usa la navegación compacta y abandona las grillas de escritorio antes
   de que el texto quede angosto;

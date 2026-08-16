@@ -3,7 +3,7 @@
 // ─── Constants ─────────────────────────────────────────────────────────────────
 
 const DATA_PATH = 'data/';
-const PUBLICATION_CACHE_KEY = '20260816c';
+const PUBLICATION_CACHE_KEY = '20260816d';
 const OFFICIAL_HCDN_ARCHIVE = 'https://www.hcdn.gob.ar/secparl/dgral_info_parlamentaria/mensajes_presidenciales/index.html';
 const RESEARCH_REPOSITORY = 'https://github.com/metternietzsche/tres-cuerpos-argentinos-investigacion';
 
@@ -566,6 +566,22 @@ function laboratoryPercent(value) {
   return `${(Number(value || 0) * 100).toFixed(1).replace('.', ',')}%`;
 }
 
+function normalizeLaboratoryDate(value) {
+  const input = String(value || '').trim();
+  if (!input) return '';
+  const match = input.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+  if (!match) throw new RangeError('Ingresá la fecha como DD/MM/AAAA.');
+  const day = Number(match[1]);
+  const month = Number(match[2]);
+  const year = Number(match[3]);
+  const parsed = new Date(Date.UTC(year, month - 1, day));
+  const isValid = parsed.getUTCFullYear() === year
+    && parsed.getUTCMonth() === month - 1
+    && parsed.getUTCDate() === day;
+  if (!isValid) throw new RangeError('Ingresá una fecha válida en formato DD/MM/AAAA.');
+  return `${String(day).padStart(2, '0')}/${String(month).padStart(2, '0')}/${year}`;
+}
+
 function renderLaboratory() {
   const registry = D['text_analysis_registry.v0.1'];
   const reference = D['text_analysis_reference.v0.1'];
@@ -596,7 +612,7 @@ function renderLaboratory() {
       <div class="laboratory-meta-grid">
         <label><span>Título o identificación <small>opcional</small></span><input id="laboratory-title" name="title" maxlength="160" placeholder="Ej.: discurso de lanzamiento"></label>
         <label><span>Autoría <small>opcional</small></span><input id="laboratory-author" name="author" maxlength="120" placeholder="Ej.: nombre de la candidatura"></label>
-        <label><span>Fecha <small>opcional</small></span><input id="laboratory-date" name="date" type="date"></label>
+        <label><span>Fecha <small>opcional</small></span><input id="laboratory-date" name="date" type="text" inputmode="numeric" maxlength="10" autocomplete="off" placeholder="DD/MM/AAAA" aria-describedby="laboratory-date-format"><small id="laboratory-date-format">Formato argentino: día/mes/año.</small></label>
         <label><span>Género del texto</span><select id="laboratory-genre" name="genre">${genreOptions}</select></label>
       </div>
 
@@ -700,13 +716,21 @@ function renderLaboratoryResult(result) {
   const nearest = (result.comparison?.nearest || []).map((item, index) => `<li><b>${index + 1}</b><span><strong>${esc(item.actor)} · ${esc(item.year)}</strong><small>${esc(item.caseUnit)} · distancia ${Number(item.distance).toFixed(3).replace('.', ',')}</small></span></li>`).join('');
   const title = result.metadata.title || 'Texto sin título';
   const byline = [result.metadata.author, result.metadata.date].filter(Boolean).join(' · ');
+  const massPair = result.configuration.pair.map(laboratoryVectorName);
+  const leadershipPair = result.configuration.leadershipOrder.map(laboratoryVectorName);
+  const massLeader = laboratoryVectorName(result.configuration.dominantByMass);
+  const leadershipMatchesMass = result.configuration.leadershipOrder[0] === result.configuration.dominantByMass;
+  const directionExplanation = result.configuration.directionStatus === 'directed'
+    ? `Los porcentajes eligen la pareja ${massPair.join('–')}. La flecha se calcula aparte: en este texto, ${leadershipPair[0]} ocupa más funciones de conducción que ${leadershipPair[1]}. ${leadershipMatchesMass ? 'La dirección coincide con el cuerpo de mayor volumen.' : `Por eso la dirección automática es ${result.configuration.notation}, aunque ${massLeader} tenga más volumen.`}`
+    : `Los porcentajes eligen la pareja ${massPair.join('–')}. La flecha se calcula aparte, comparando funciones de conducción; como la diferencia no alcanza el umbral, el orden queda indeterminado.`;
   return `<section class="laboratory-output" tabindex="-1">
     <header class="laboratory-output-header">
       <div><span class="section-kicker">RESULTADO · ${esc(result.analyzerVersion)}</span><h2>${esc(title)}</h2>${byline ? `<p>${esc(byline)}</p>` : ''}</div>
-      <div class="laboratory-result-stamp"><span>CONFIGURACIÓN</span><strong>${esc(result.configuration.notation)}</strong><small>${result.configuration.directionStatus === 'directed' ? 'dirección automática' : 'orden indeterminado'}</small></div>
+      <div class="laboratory-result-stamp"><span>PAREJA Y DIRECCIÓN</span><strong>${esc(result.configuration.notation)}</strong><small>${result.configuration.directionStatus === 'directed' ? 'dirección automática' : 'orden indeterminado'}</small></div>
     </header>
     <div class="laboratory-confidence is-${esc(result.diagnostics.confidence)}" role="status"><strong>${esc(confidenceTitle)}</strong><p>${esc(confidenceCopy)}</p></div>
     <div class="laboratory-score-grid">${vectorCards}</div>
+    <div class="laboratory-direction-explanation" role="note"><strong>Cómo leer la flecha</strong><p>${esc(directionExplanation)}</p></div>
     <div class="laboratory-result-main">
       <div>${renderLaboratoryOrbital(result)}</div>
       <aside class="laboratory-diagnostics">
@@ -818,12 +842,15 @@ function bindLaboratory() {
     event.preventDefault();
     setError('');
     try {
+      const dateInput = document.getElementById('laboratory-date');
+      const normalizedDate = normalizeLaboratoryDate(dateInput.value);
+      dateInput.value = normalizedDate;
       const result = globalThis.OrbitalAnalyzer.analyze(textInput.value, {
         registry,
         reference,
         title: document.getElementById('laboratory-title').value,
         author: document.getElementById('laboratory-author').value,
-        date: document.getElementById('laboratory-date').value,
+        date: normalizedDate,
         genre: document.getElementById('laboratory-genre').value,
       });
       resultRoot.innerHTML = renderLaboratoryResult(result);
@@ -1126,7 +1153,7 @@ function renderInicio() {
         </div>
         <!-- Content column -->
         <div class="inicio-hero-content-col">
-          <div class="inicio-hero-eyebrow">PUBLICACIÓN ${esc(meta.site_release || 'v0.6.5')} · MAPA ${esc(meta.version || 'v0.4')} · CORPUS HCDN 1983–2026</div>
+          <div class="inicio-hero-eyebrow">PUBLICACIÓN ${esc(meta.site_release || 'v0.6.6')} · MAPA ${esc(meta.version || 'v0.4')} · CORPUS HCDN 1983–2026</div>
           <h1 class="inicio-hero-headline">${esc(meta.site_title || 'El problema de los tres cuerpos argentinos')}</h1>
           <p class="inicio-hero-sub">Argentina no es un péndulo. Es un problema de tres cuerpos.</p>
           <nav class="cta-group inicio-hero-cta inicio-hero-nav" aria-label="Accesos principales del proyecto">
