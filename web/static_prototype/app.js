@@ -3,7 +3,7 @@
 // ─── Constants ─────────────────────────────────────────────────────────────────
 
 const DATA_PATH = 'data/';
-const PUBLICATION_CACHE_KEY = '20260815b';
+const PUBLICATION_CACHE_KEY = '20260815c';
 const OFFICIAL_HCDN_ARCHIVE = 'https://www.hcdn.gob.ar/secparl/dgral_info_parlamentaria/mensajes_presidenciales/index.html';
 const RESEARCH_REPOSITORY = 'https://github.com/metternietzsche/tres-cuerpos-argentinos-investigacion';
 
@@ -60,7 +60,6 @@ let badgeMap = {};  // badge_id → badge object
 let actorMap = {};  // actor_id → actor object
 let whitepaperPromise = null;
 let routeEpoch = 0;
-let latestLaboratoryResult = null;
 
 const LABORATORY_SAMPLE = `Este es un texto sintético preparado para mostrar el laboratorio. Nuestro gobierno propone un plan de desarrollo con inversión pública, infraestructura energética y una reforma del Estado que publique datos oficiales. Vamos a sostener una gestión transparente, una política económica verificable y un presupuesto nacional capaz de financiar ciencia y tecnología. La planificación estratégica debe aumentar la capacidad productiva sin ocultar sus costos.
 
@@ -585,7 +584,7 @@ function renderLaboratory() {
       <aside class="laboratory-privacy-card" aria-label="Privacidad del análisis">
         <span aria-hidden="true">LOCAL</span>
         <strong>El texto no sale de tu dispositivo</strong>
-        <p>Se procesa dentro de este navegador. No se sube, no se almacena y no entra en el JSON descargable.</p>
+        <p>Se procesa dentro de este navegador. No se sube ni se almacena; el diagnóstico permanece en esta vista.</p>
       </aside>
     </header>
 
@@ -735,7 +734,6 @@ function renderLaboratoryResult(result) {
       <ul>${result.caveats.map(caveat => `<li>${esc(caveat)}</li>`).join('')}</ul>
     </div>
     <div class="laboratory-output-actions">
-      <button type="button" class="btn btn-secondary" data-laboratory-download>Descargar diagnóstico JSON</button>
       <button type="button" class="btn btn-secondary" data-laboratory-print>Imprimir resultado</button>
       <a href="#mapa-orbital" class="btn btn-quiet">Comparar con el mapa adjudicado →</a>
     </div>
@@ -763,7 +761,6 @@ function bindLaboratory() {
     counter.textContent = `${words.toLocaleString('es-AR')} ${words === 1 ? 'palabra' : 'palabras'} · ${textInput.value.length.toLocaleString('es-AR')} caracteres`;
   };
   const resetOutput = () => {
-    latestLaboratoryResult = null;
     resultRoot.innerHTML = '';
     setError('');
   };
@@ -821,7 +818,7 @@ function bindLaboratory() {
     event.preventDefault();
     setError('');
     try {
-      latestLaboratoryResult = globalThis.OrbitalAnalyzer.analyze(textInput.value, {
+      const result = globalThis.OrbitalAnalyzer.analyze(textInput.value, {
         registry,
         reference,
         title: document.getElementById('laboratory-title').value,
@@ -829,7 +826,7 @@ function bindLaboratory() {
         date: document.getElementById('laboratory-date').value,
         genre: document.getElementById('laboratory-genre').value,
       });
-      resultRoot.innerHTML = renderLaboratoryResult(latestLaboratoryResult);
+      resultRoot.innerHTML = renderLaboratoryResult(result);
       requestAnimationFrame(() => {
         const output = resultRoot.querySelector('.laboratory-output');
         output?.focus({ preventScroll: true });
@@ -844,18 +841,7 @@ function bindLaboratory() {
   resultRoot.addEventListener('click', event => {
     if (event.target.closest('[data-laboratory-print]')) {
       window.print();
-      return;
     }
-    if (!event.target.closest('[data-laboratory-download]') || !latestLaboratoryResult) return;
-    const blob = new Blob([JSON.stringify(latestLaboratoryResult, null, 2)], { type: 'application/json;charset=utf-8' });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = 'diagnostico-orbital.json';
-    document.body.append(link);
-    link.click();
-    link.remove();
-    setTimeout(() => URL.revokeObjectURL(url), 0);
   });
   updateCounter();
 }
@@ -1111,7 +1097,7 @@ function renderInicio() {
         </div>
         <!-- Content column -->
         <div class="inicio-hero-content-col">
-          <div class="inicio-hero-eyebrow">PUBLICACIÓN ${esc(meta.site_release || 'v0.6.0')} · MAPA ${esc(meta.version || 'v0.4')} · CORPUS HCDN 1983–2026</div>
+          <div class="inicio-hero-eyebrow">PUBLICACIÓN ${esc(meta.site_release || 'v0.6.1')} · MAPA ${esc(meta.version || 'v0.4')} · CORPUS HCDN 1983–2026</div>
           <h1 class="inicio-hero-headline">${esc(meta.site_title || 'El problema de los tres cuerpos argentinos')}</h1>
           <p class="inicio-hero-sub">Argentina no es un péndulo. Es un problema de tres cuerpos.</p>
           <nav class="cta-group inicio-hero-cta inicio-hero-nav" aria-label="Accesos principales del proyecto">

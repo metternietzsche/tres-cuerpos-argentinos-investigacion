@@ -52,12 +52,11 @@ test('la búsqueda encuentra actores y abre la ficha correcta', async ({ page })
   await expect(page.locator('.legend-trace-page h1')).toContainText('Por qué Kirchner restaurador');
 });
 
-test('el laboratorio analiza localmente, explica y descarga sin el texto original', async ({ page }) => {
+test('el laboratorio analiza localmente y explica sin ofrecer descarga del resultado', async ({ page }) => {
   const failures = collectRuntimeFailures(page);
   await page.goto('/#laboratorio');
   await expect(page.getByRole('heading', { name: '¿Qué tres cuerpos aparecen en este discurso?' })).toBeVisible();
   await page.getByRole('button', { name: 'Cargar ejemplo' }).click();
-  const originalText = await page.getByLabel('Texto a analizar').inputValue();
   const postLoadRequests = [];
   page.on('request', request => postLoadRequests.push(request.url()));
   await page.getByRole('button', { name: 'Analizar discurso' }).click();
@@ -68,18 +67,9 @@ test('el laboratorio analiza localmente, explica y descarga sin el texto origina
   await expect(page.locator('.laboratory-confidence')).toContainText('fuera del dominio HCDN');
   await expect(page.locator('.laboratory-evidence-column')).toHaveCount(3);
   await expect(page.locator('.laboratory-reference-point')).toHaveCount(52);
+  await expect(page.getByRole('button', { name: /Descargar diagnóstico/ })).toHaveCount(0);
+  await expect(page.getByRole('button', { name: 'Imprimir resultado' })).toBeVisible();
   expect(postLoadRequests).toEqual([]);
-
-  const downloadPromise = page.waitForEvent('download');
-  await page.getByRole('button', { name: 'Descargar diagnóstico JSON' }).click();
-  const download = await downloadPromise;
-  expect(download.suggestedFilename()).toBe('diagnostico-orbital.json');
-  const stream = await download.createReadStream();
-  const chunks = [];
-  for await (const chunk of stream) chunks.push(Buffer.from(chunk));
-  const payload = JSON.parse(Buffer.concat(chunks).toString('utf8'));
-  expect(payload.privacy).toEqual({ processedLocally: true, storedBySite: false, fullTextIncludedInResult: false });
-  expect(JSON.stringify(payload)).not.toContain(originalText);
   expect(failures).toEqual([]);
 });
 

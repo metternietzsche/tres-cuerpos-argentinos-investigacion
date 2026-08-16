@@ -1,8 +1,8 @@
-# Manifiesto de export público de investigación v0.6
+# Manifiesto de export público de investigación v0.6.1
 
 **Repositorio objetivo:** `metternietzsche/tres-cuerpos-argentinos-investigacion`  
-**Versión:** `v0.6.0`
-**Fuente:** `web/static_prototype/` + derivados promovidos NB17–NB21 + traducción lúdica v0.2 + analizador textual v0.1
+**Versión:** `v0.6.1`
+**Fuente:** `web/static_prototype/` + derivados promovidos NB17–NB21 + traducción lúdica v0.2 + analizador textual v0.1.1
 **Fecha:** 2026-08-15
 
 Este manifiesto separa la autoridad doctrinaria y empírica del videojuego. El
@@ -40,7 +40,7 @@ su build ni sus assets de runtime.
 | `PUBLICATION_MANIFEST_v0_1.md`, `PUBLICATION_MANIFEST_v0_2.md` | `release-only` | Conservar fuera del clone inicial. |
 | `PUBLICATION_NOTES.md` | `exclude` | Decisión conjunta ya reemplazada. |
 | `scripts/generate-route-pages.mjs` | `generate` | Producir entradas indexables y `sitemap.xml` para las rutas principales. |
-| `scripts/build-text-analysis-data.mjs` | `generate` | Extraer el registro canónico y congelar la referencia automática de 52 documentos. |
+| `scripts/build-text-analysis-data.mjs` | `generate` | Extraer el registro canónico, aplicar la calibración pública v0.1.1 y recalcular la referencia automática de 52 documentos. |
 | `scripts/validate-publication.mjs` | `generate` | Verificar paridad, trazabilidad, versiones, SEO y presupuesto del logo. |
 | `e2e/`, `playwright.config.mjs` | `generate` | Validar navegación, fichas, búsqueda, resiliencia, accesibilidad y responsive. |
 | `.github/workflows/pages.yml` | `generate` | Validar, probar, publicar `web/static_prototype/` y ejecutar smoke de producción. |
@@ -58,8 +58,8 @@ su build ni sus assets de runtime.
 - Page estática navegable por rutas hash, entradas indexables y sin errores de consola;
 - búsqueda, carga parcial, acceso móvil y contraste pasan la matriz Playwright en desktop y Pixel 7;
 - ningún documento bruto del corpus ni ruta secreta o credencial;
-- el laboratorio procesa localmente, excluye el texto completo de su resultado y
-  separa comparación provisional HCDN de géneros exploratorios;
+- el laboratorio procesa localmente, no ofrece descargar el resultado personal
+  y separa comparación provisional HCDN de géneros exploratorios;
 - registro simétrico de 60 patrones, 20 por cuerpo, y 52 referencias automáticas
   con pesos normalizados;
 - runtime y coeficientes internos del videojuego sin modificaciones: el sitio publica su traducción trazable, no una nueva calibración del juego.

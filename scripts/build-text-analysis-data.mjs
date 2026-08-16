@@ -13,6 +13,8 @@ const sources = {
   signals: resolve(corpus, 'notebooks/NB04_propositional_segment_signals.py'),
   rules: resolve(corpus, 'notebooks/HCDN_NB18_symmetric_rule_engine_v0_1.py'),
   aggregation: resolve(corpus, 'notebooks/HCDN_NB19_symmetric_candidate_map_v0_1.py'),
+  calibration: resolve(repository, 'scripts/text-analysis-calibration.v0.1.1.json'),
+  analyzer: resolve(repository, 'web/static_prototype/orbital-analyzer.js'),
   documents: resolve(research, 'empirical/mapa_orbital_v0_4/tables/MAPA_ORBITAL_DOCUMENTS_v0_4.csv'),
   aggregates: resolve(research, 'empirical/mapa_orbital_v0_4/tables/MAPA_ORBITAL_SIGNAL_AGGREGATES_v0_4.csv'),
 };
@@ -79,9 +81,17 @@ function wordCount(text) {
 const nb04 = readFileSync(sources.signals, 'utf8');
 const patterns = extractPatterns(nb04);
 if (patterns.length !== 60) throw new Error(`Se esperaban 60 patrones; se extrajeron ${patterns.length}.`);
+const calibration = JSON.parse(readFileSync(sources.calibration, 'utf8'));
+const calibrationByPattern = new Map(calibration.patternExtensions.map(extension => [extension.patternId, extension]));
+if (calibrationByPattern.size !== calibration.patternExtensions.length) throw new Error('La calibración contiene patternId duplicados.');
+for (const extension of calibration.patternExtensions) {
+  const pattern = patterns.find(item => item.patternId === extension.patternId);
+  if (!pattern) throw new Error(`La calibración refiere a un patrón inexistente: ${extension.patternId}.`);
+  pattern.regex = `(?:${pattern.regex})|(?:${extension.regex})`;
+}
 
 const registry = {
-  version: 'ORBITAL_TEXT_ANALYZER_v0_1',
+  version: 'ORBITAL_TEXT_ANALYZER_v0_1_1',
   publishedAt: '2026-08-15',
   language: 'es-AR',
   execution: 'client_side_only',
@@ -89,9 +99,10 @@ const registry = {
     signalRegistry: 'NB04_propositional_segment_signals.py',
     symmetricRuleEngine: 'HCDN_NB18_symmetric_rule_engine_v0_1.py',
     aggregation: 'HCDN_NB19_symmetric_candidate_map_v0_1.py',
+    calibration: calibration.version,
     statement: 'La masa positiva selecciona la pareja; las funciones ordenan la relación. El resultado automático no reemplaza adjudicación humana.',
   },
-  sourceHashes: Object.fromEntries(Object.entries(sources).slice(0, 3).map(([key, path]) => [key, sha256(path)])),
+  sourceHashes: Object.fromEntries(['signals', 'rules', 'aggregation', 'calibration', 'analyzer'].map(key => [key, sha256(sources[key])])),
   limits: {
     minWords: 120,
     maxCharacters: 120000,
@@ -116,22 +127,19 @@ const registry = {
 };
 
 const documents = parseCsv(readFileSync(sources.documents, 'utf8'));
-const aggregates = parseCsv(readFileSync(sources.aggregates, 'utf8'));
-const aggregateByFile = Map.groupBy(aggregates, row => row.filename);
 const vectors = ['tecnocracia', 'mesianismo', 'paternalismo'];
+await import('../web/static_prototype/orbital-analyzer.js');
+const analyzer = globalThis.OrbitalAnalyzer;
 const referenceDocuments = documents.map(document => {
-  const rows = aggregateByFile.get(document.filename) || [];
-  const positive = Object.fromEntries(vectors.map(vector => {
-    const row = rows.find(item => item.vector === vector);
-    return [vector, Number(row?.positive_strength || 0)];
-  }));
-  const leadership = Object.fromEntries(vectors.map(vector => {
-    const row = rows.find(item => item.vector === vector);
-    return [vector, Number(row?.leadership_score || 0)];
-  }));
-  const total = Object.values(positive).reduce((sum, value) => sum + value, 0) || 1;
   const sourcePath = resolve(corpus, document.source_path);
-  const words = wordCount(readFileSync(sourcePath, 'utf8'));
+  const sourceText = readFileSync(sourcePath, 'utf8');
+  const words = wordCount(sourceText);
+  const { signals } = analyzer.detectSignals(sourceText, registry);
+  const vectorMetrics = analyzer.aggregate(signals, registry);
+  const positive = Object.fromEntries(vectors.map(vector => [vector, vectorMetrics[vector].positiveStrength]));
+  const leadership = Object.fromEntries(vectors.map(vector => [vector, vectorMetrics[vector].leadership]));
+  const total = Object.values(positive).reduce((sum, value) => sum + value, 0);
+  if (total <= 0) throw new Error(`${document.filename}: la referencia recalculada no contiene masa positiva.`);
   return {
     filename: document.filename,
     actor: document.actor,
@@ -150,15 +158,17 @@ const referenceDocuments = documents.map(document => {
 });
 
 const reference = {
-  version: 'ORBITAL_TEXT_REFERENCE_v0_1',
+  version: 'ORBITAL_TEXT_REFERENCE_v0_1_1',
   analyzerVersion: registry.version,
   corpus: 'HCDN_NB17_v0_3',
   map: 'MAPA_ORBITAL_ARGENTINO_v0_4',
-  scope: '52 discursos presidenciales; capa diagnóstica automática recalculada con la misma masa positiva usada para textos nuevos.',
+  scope: '52 discursos presidenciales; capa diagnóstica automática v0.1.1 recalculada con el mismo motor y calibración usados para textos nuevos.',
   caveat: 'La cercanía sólo compara perfiles de señales automáticas. No traslada la adjudicación histórica del mapa v0.4 al texto ingresado.',
   sourceHashes: {
     documents: sha256(sources.documents),
     aggregates: sha256(sources.aggregates),
+    calibration: sha256(sources.calibration),
+    analyzer: sha256(sources.analyzer),
   },
   documents: referenceDocuments,
 };

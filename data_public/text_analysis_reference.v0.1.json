@@ -1,13 +1,15 @@
 {
-  "version": "ORBITAL_TEXT_REFERENCE_v0_1",
-  "analyzerVersion": "ORBITAL_TEXT_ANALYZER_v0_1",
+  "version": "ORBITAL_TEXT_REFERENCE_v0_1_1",
+  "analyzerVersion": "ORBITAL_TEXT_ANALYZER_v0_1_1",
   "corpus": "HCDN_NB17_v0_3",
   "map": "MAPA_ORBITAL_ARGENTINO_v0_4",
-  "scope": "52 discursos presidenciales; capa diagnóstica automática recalculada con la misma masa positiva usada para textos nuevos.",
+  "scope": "52 discursos presidenciales; capa diagnóstica automática v0.1.1 recalculada con el mismo motor y calibración usados para textos nuevos.",
   "caveat": "La cercanía sólo compara perfiles de señales automáticas. No traslada la adjudicación histórica del mapa v0.4 al texto ingresado.",
   "sourceHashes": {
     "documents": "457523288f913c6b2e3a9f8b5f45dd653029bc138410ac211edb6f44aa7da200",
-    "aggregates": "f6f725cd3e7d3b3b35878dadf7d7b0f68612031cb88da1b43e0033dac22bed76"
+    "aggregates": "f6f725cd3e7d3b3b35878dadf7d7b0f68612031cb88da1b43e0033dac22bed76",
+    "calibration": "bdf2e779f1109522e3589ef3d830ffbbf43de553889e05ee65fabcde301834e3",
+    "analyzer": "a1232be6508aefed47817040b3a91148342edfad973639e9ea40fc55199d0ac9"
   },
   "documents": [
     {
@@ -19,17 +21,17 @@
       "genre": "apertura",
       "analysisWindow": "full_presidential_document",
       "wordCount": 24714,
-      "positiveStrength": 113.4,
-      "positiveDensityPer1000": 4.5885,
+      "positiveStrength": 114.4,
+      "positiveDensityPer1000": 4.629,
       "weights": {
-        "tecnocracia": 0.643739,
-        "mesianismo": 0.05291,
-        "paternalismo": 0.303351
+        "tecnocracia": 0.646853,
+        "mesianismo": 0.052448,
+        "paternalismo": 0.300699
       },
       "leadership": {
-        "tecnocracia": 0.20913294797687862,
-        "mesianismo": 0.2890173410404624,
-        "paternalismo": 0.3336416184971098
+        "tecnocracia": 0.209133,
+        "mesianismo": 0.289017,
+        "paternalismo": 0.333642
       },
       "reviewRequired": true
     },
@@ -42,17 +44,17 @@
       "genre": "apertura",
       "analysisWindow": "full_presidential_document",
       "wordCount": 18279,
-      "positiveStrength": 83,
-      "positiveDensityPer1000": 4.5407,
+      "positiveStrength": 84,
+      "positiveDensityPer1000": 4.5954,
       "weights": {
-        "tecnocracia": 0.554217,
-        "mesianismo": 0,
-        "paternalismo": 0.445783
+        "tecnocracia": 0.547619,
+        "mesianismo": 0.011905,
+        "paternalismo": 0.440476
       },
       "leadership": {
-        "tecnocracia": 0.20913294797687862,
-        "mesianismo": 0,
-        "paternalismo": 0.20647398843930637
+        "tecnocracia": 0.209133,
+        "mesianismo": 0.144509,
+        "paternalismo": 0.206474
       },
       "reviewRequired": false
     },
@@ -73,9 +75,9 @@
         "paternalismo": 0.32756
       },
       "leadership": {
-        "tecnocracia": 0.20913294797687862,
-        "mesianismo": 0.27167630057803466,
-        "paternalismo": 0.23095375722543351
+        "tecnocracia": 0.209133,
+        "mesianismo": 0.271676,
+        "paternalismo": 0.230954
       },
       "reviewRequired": true
     },
@@ -96,9 +98,9 @@
         "paternalismo": 0.262295
       },
       "leadership": {
-        "tecnocracia": 0.1239306358381503,
-        "mesianismo": 0.1445086705202312,
-        "paternalismo": 0.20647398843930637
+        "tecnocracia": 0.123931,
+        "mesianismo": 0.144509,
+        "paternalismo": 0.206474
       },
       "reviewRequired": false
     },
@@ -111,17 +113,17 @@
       "genre": "apertura",
       "analysisWindow": "full_presidential_document",
       "wordCount": 12330,
-      "positiveStrength": 32,
-      "positiveDensityPer1000": 2.5953,
+      "positiveStrength": 36,
+      "positiveDensityPer1000": 2.9197,
       "weights": {
-        "tecnocracia": 0.65625,
-        "mesianismo": 0.09375,
-        "paternalismo": 0.25
+        "tecnocracia": 0.583333,
+        "mesianismo": 0.194444,
+        "paternalismo": 0.222222
       },
       "leadership": {
-        "tecnocracia": 0.06196531791907515,
-        "mesianismo": 0.1445086705202312,
-        "paternalismo": 0.1445086705202312
+        "tecnocracia": 0.061965,
+        "mesianismo": 0.289017,
+        "paternalismo": 0.144509
       },
       "reviewRequired": false
     },
@@ -142,8 +144,8 @@
         "paternalismo": 0
       },
       "leadership": {
-        "tecnocracia": 0.06196531791907515,
-        "mesianismo": 0.1445086705202312,
+        "tecnocracia": 0.061965,
+        "mesianismo": 0.144509,
         "paternalismo": 0
       },
       "reviewRequired": false
@@ -165,9 +167,9 @@
         "paternalismo": 0.388235
       },
       "leadership": {
-        "tecnocracia": 0.14716763005780348,
+        "tecnocracia": 0.147168,
         "mesianismo": 0,
-        "paternalismo": 0.20647398843930637
+        "paternalismo": 0.206474
       },
       "reviewRequired": false
     },
@@ -188,9 +190,9 @@
         "paternalismo": 0.225182
       },
       "leadership": {
-        "tecnocracia": 0.14716763005780348,
-        "mesianismo": 0.2890173410404624,
-        "paternalismo": 0.16898843930635837
+        "tecnocracia": 0.147168,
+        "mesianismo": 0.289017,
+        "paternalismo": 0.168988
       },
       "reviewRequired": false
     },
@@ -211,9 +213,9 @@
         "paternalismo": 0.489362
       },
       "leadership": {
-        "tecnocracia": 0.06196531791907515,
-        "mesianismo": 0.12716763005780346,
-        "paternalismo": 0.2509826589595376
+        "tecnocracia": 0.061965,
+        "mesianismo": 0.127168,
+        "paternalismo": 0.250983
       },
       "reviewRequired": false
     },
@@ -234,9 +236,9 @@
         "paternalismo": 0.647059
       },
       "leadership": {
-        "tecnocracia": 0.06196531791907515,
+        "tecnocracia": 0.061965,
         "mesianismo": 0,
-        "paternalismo": 0.20647398843930637
+        "paternalismo": 0.206474
       },
       "reviewRequired": false
     },
@@ -257,9 +259,9 @@
         "paternalismo": 0.684211
       },
       "leadership": {
-        "tecnocracia": 0.1239306358381503,
-        "mesianismo": 0.27167630057803466,
-        "paternalismo": 0.20647398843930637
+        "tecnocracia": 0.123931,
+        "mesianismo": 0.271676,
+        "paternalismo": 0.206474
       },
       "reviewRequired": false
     },
@@ -280,9 +282,9 @@
         "paternalismo": 0.5
       },
       "leadership": {
-        "tecnocracia": 0.1239306358381503,
+        "tecnocracia": 0.061965,
         "mesianismo": 0,
-        "paternalismo": 0.20647398843930637
+        "paternalismo": 0.206474
       },
       "reviewRequired": false
     },
@@ -303,9 +305,9 @@
         "paternalismo": 0.377778
       },
       "leadership": {
-        "tecnocracia": 0.1239306358381503,
-        "mesianismo": 0.2890173410404624,
-        "paternalismo": 0.20647398843930637
+        "tecnocracia": 0.123931,
+        "mesianismo": 0.289017,
+        "paternalismo": 0.206474
       },
       "reviewRequired": false
     },
@@ -326,9 +328,9 @@
         "paternalismo": 0.6
       },
       "leadership": {
-        "tecnocracia": 0.06196531791907515,
+        "tecnocracia": 0.061965,
         "mesianismo": 0,
-        "paternalismo": 0.1445086705202312
+        "paternalismo": 0.144509
       },
       "reviewRequired": false
     },
@@ -341,17 +343,17 @@
       "genre": "apertura",
       "analysisWindow": "full_presidential_document",
       "wordCount": 5489,
-      "positiveStrength": 43.1,
-      "positiveDensityPer1000": 7.8521,
+      "positiveStrength": 44,
+      "positiveDensityPer1000": 8.016,
       "weights": {
-        "tecnocracia": 0.556845,
+        "tecnocracia": 0.545455,
         "mesianismo": 0,
-        "paternalismo": 0.443155
+        "paternalismo": 0.454545
       },
       "leadership": {
-        "tecnocracia": 0.20913294797687862,
+        "tecnocracia": 0.209133,
         "mesianismo": 0,
-        "paternalismo": 0.16231213872832367
+        "paternalismo": 0.206474
       },
       "reviewRequired": false
     },
@@ -374,7 +376,7 @@
       "leadership": {
         "tecnocracia": 0,
         "mesianismo": 0,
-        "paternalismo": 0.27167630057803466
+        "paternalismo": 0.271676
       },
       "reviewRequired": false
     },
@@ -387,17 +389,17 @@
       "genre": "apertura",
       "analysisWindow": "full_presidential_document",
       "wordCount": 5455,
-      "positiveStrength": 55.1,
-      "positiveDensityPer1000": 10.1008,
+      "positiveStrength": 52.1,
+      "positiveDensityPer1000": 9.5509,
       "weights": {
-        "tecnocracia": 0.526316,
+        "tecnocracia": 0.49904,
         "mesianismo": 0,
-        "paternalismo": 0.473684
+        "paternalismo": 0.50096
       },
       "leadership": {
-        "tecnocracia": 0.1239306358381503,
+        "tecnocracia": 0.123931,
         "mesianismo": 0,
-        "paternalismo": 0.3336416184971098
+        "paternalismo": 0.333642
       },
       "reviewRequired": true
     },
@@ -410,17 +412,17 @@
       "genre": "apertura",
       "analysisWindow": "full_presidential_document",
       "wordCount": 5851,
-      "positiveStrength": 41,
-      "positiveDensityPer1000": 7.0073,
+      "positiveStrength": 43,
+      "positiveDensityPer1000": 7.3492,
       "weights": {
-        "tecnocracia": 0.365854,
-        "mesianismo": 0.097561,
-        "paternalismo": 0.536585
+        "tecnocracia": 0.348837,
+        "mesianismo": 0.093023,
+        "paternalismo": 0.55814
       },
       "leadership": {
-        "tecnocracia": 0.1239306358381503,
-        "mesianismo": 0.1445086705202312,
-        "paternalismo": 0.20647398843930637
+        "tecnocracia": 0.123931,
+        "mesianismo": 0.144509,
+        "paternalismo": 0.206474
       },
       "reviewRequired": false
     },
@@ -441,9 +443,9 @@
         "paternalismo": 0.473684
       },
       "leadership": {
-        "tecnocracia": 0.14716763005780348,
-        "mesianismo": 0.1445086705202312,
-        "paternalismo": 0.20647398843930637
+        "tecnocracia": 0.209133,
+        "mesianismo": 0.144509,
+        "paternalismo": 0.206474
       },
       "reviewRequired": false
     },
@@ -464,9 +466,9 @@
         "paternalismo": 0.432049
       },
       "leadership": {
-        "tecnocracia": 0.14716763005780348,
-        "mesianismo": 0.1445086705202312,
-        "paternalismo": 0.23095375722543351
+        "tecnocracia": 0.147168,
+        "mesianismo": 0.144509,
+        "paternalismo": 0.230954
       },
       "reviewRequired": false
     },
@@ -479,17 +481,17 @@
       "genre": "apertura",
       "analysisWindow": "full_presidential_document",
       "wordCount": 4222,
-      "positiveStrength": 22.65,
-      "positiveDensityPer1000": 5.3648,
+      "positiveStrength": 24.65,
+      "positiveDensityPer1000": 5.8385,
       "weights": {
-        "tecnocracia": 0.485651,
-        "mesianismo": 0,
-        "paternalismo": 0.514349
+        "tecnocracia": 0.446247,
+        "mesianismo": 0.081136,
+        "paternalismo": 0.472617
       },
       "leadership": {
-        "tecnocracia": 0.20913294797687862,
-        "mesianismo": 0,
-        "paternalismo": 0.23095375722543351
+        "tecnocracia": 0.209133,
+        "mesianismo": 0.144509,
+        "paternalismo": 0.230954
       },
       "reviewRequired": false
     },
@@ -510,9 +512,9 @@
         "paternalismo": 0.3
       },
       "leadership": {
-        "tecnocracia": 0.20913294797687862,
-        "mesianismo": 0.2890173410404624,
-        "paternalismo": 0.20647398843930637
+        "tecnocracia": 0.209133,
+        "mesianismo": 0.289017,
+        "paternalismo": 0.206474
       },
       "reviewRequired": false
     },
@@ -525,17 +527,17 @@
       "genre": "apertura",
       "analysisWindow": "segments_1084_1112_presidential_only",
       "wordCount": 73455,
-      "positiveStrength": 18.65,
-      "positiveDensityPer1000": 0.2539,
+      "positiveStrength": 152.45,
+      "positiveDensityPer1000": 2.0754,
       "weights": {
-        "tecnocracia": 0.268097,
-        "mesianismo": 0.321716,
-        "paternalismo": 0.410188
+        "tecnocracia": 0.314857,
+        "mesianismo": 0.288619,
+        "paternalismo": 0.396523
       },
       "leadership": {
-        "tecnocracia": 0.14716763005780348,
-        "mesianismo": 0.1445086705202312,
-        "paternalismo": 0.20647398843930637
+        "tecnocracia": 0.209133,
+        "mesianismo": 0.560694,
+        "paternalismo": 0.333642
       },
       "reviewRequired": true
     },
@@ -548,17 +550,17 @@
       "genre": "apertura",
       "analysisWindow": "full_presidential_document",
       "wordCount": 2349,
-      "positiveStrength": 10,
-      "positiveDensityPer1000": 4.2571,
+      "positiveStrength": 11,
+      "positiveDensityPer1000": 4.6828,
       "weights": {
-        "tecnocracia": 0.5,
-        "mesianismo": 0.2,
-        "paternalismo": 0.3
+        "tecnocracia": 0.454545,
+        "mesianismo": 0.272727,
+        "paternalismo": 0.272727
       },
       "leadership": {
-        "tecnocracia": 0.20913294797687862,
-        "mesianismo": 0.1445086705202312,
-        "paternalismo": 0.1445086705202312
+        "tecnocracia": 0.209133,
+        "mesianismo": 0.144509,
+        "paternalismo": 0.144509
       },
       "reviewRequired": false
     },
@@ -571,17 +573,17 @@
       "genre": "apertura",
       "analysisWindow": "full_presidential_document",
       "wordCount": 4971,
-      "positiveStrength": 52.65,
-      "positiveDensityPer1000": 10.5914,
+      "positiveStrength": 54.65,
+      "positiveDensityPer1000": 10.9938,
       "weights": {
-        "tecnocracia": 0.531814,
-        "mesianismo": 0.17094,
-        "paternalismo": 0.297246
+        "tecnocracia": 0.512351,
+        "mesianismo": 0.201281,
+        "paternalismo": 0.286368
       },
       "leadership": {
-        "tecnocracia": 0.14716763005780348,
-        "mesianismo": 0.1445086705202312,
-        "paternalismo": 0.23095375722543351
+        "tecnocracia": 0.147168,
+        "mesianismo": 0.289017,
+        "paternalismo": 0.230954
       },
       "reviewRequired": true
     },
@@ -602,9 +604,9 @@
         "paternalismo": 0.3
       },
       "leadership": {
-        "tecnocracia": 0.06196531791907515,
-        "mesianismo": 0.1445086705202312,
-        "paternalismo": 0.20647398843930637
+        "tecnocracia": 0.061965,
+        "mesianismo": 0.144509,
+        "paternalismo": 0.206474
       },
       "reviewRequired": false
     },
@@ -617,17 +619,17 @@
       "genre": "apertura",
       "analysisWindow": "full_presidential_document",
       "wordCount": 6456,
-      "positiveStrength": 49,
-      "positiveDensityPer1000": 7.5898,
+      "positiveStrength": 52,
+      "positiveDensityPer1000": 8.0545,
       "weights": {
-        "tecnocracia": 0.55102,
-        "mesianismo": 0.040816,
-        "paternalismo": 0.408163
+        "tecnocracia": 0.519231,
+        "mesianismo": 0.096154,
+        "paternalismo": 0.384615
       },
       "leadership": {
-        "tecnocracia": 0.14716763005780348,
-        "mesianismo": 0.1445086705202312,
-        "paternalismo": 0.20647398843930637
+        "tecnocracia": 0.147168,
+        "mesianismo": 0.289017,
+        "paternalismo": 0.206474
       },
       "reviewRequired": true
     },
@@ -640,17 +642,17 @@
       "genre": "apertura",
       "analysisWindow": "full_presidential_document",
       "wordCount": 10752,
-      "positiveStrength": 45.75,
-      "positiveDensityPer1000": 4.255,
+      "positiveStrength": 50.75,
+      "positiveDensityPer1000": 4.7201,
       "weights": {
-        "tecnocracia": 0.502732,
-        "mesianismo": 0,
-        "paternalismo": 0.497268
+        "tecnocracia": 0.453202,
+        "mesianismo": 0.098522,
+        "paternalismo": 0.448276
       },
       "leadership": {
-        "tecnocracia": 0.20913294797687862,
-        "mesianismo": 0,
-        "paternalismo": 0.20647398843930637
+        "tecnocracia": 0.209133,
+        "mesianismo": 0.144509,
+        "paternalismo": 0.206474
       },
       "reviewRequired": true
     },
@@ -663,17 +665,17 @@
       "genre": "apertura",
       "analysisWindow": "full_presidential_document",
       "wordCount": 13886,
-      "positiveStrength": 75.85,
-      "positiveDensityPer1000": 5.4623,
+      "positiveStrength": 77.85,
+      "positiveDensityPer1000": 5.6064,
       "weights": {
-        "tecnocracia": 0.60646,
-        "mesianismo": 0.026368,
-        "paternalismo": 0.367172
+        "tecnocracia": 0.59088,
+        "mesianismo": 0.051381,
+        "paternalismo": 0.357739
       },
       "leadership": {
-        "tecnocracia": 0.20913294797687862,
-        "mesianismo": 0.1445086705202312,
-        "paternalismo": 0.23095375722543351
+        "tecnocracia": 0.209133,
+        "mesianismo": 0.289017,
+        "paternalismo": 0.230954
       },
       "reviewRequired": false
     },
@@ -686,17 +688,17 @@
       "genre": "apertura",
       "analysisWindow": "full_presidential_document",
       "wordCount": 19694,
-      "positiveStrength": 150.35,
-      "positiveDensityPer1000": 7.6343,
+      "positiveStrength": 153.35,
+      "positiveDensityPer1000": 7.7866,
       "weights": {
-        "tecnocracia": 0.591952,
-        "mesianismo": 0.019953,
-        "paternalismo": 0.388094
+        "tecnocracia": 0.580372,
+        "mesianismo": 0.039126,
+        "paternalismo": 0.380502
       },
       "leadership": {
-        "tecnocracia": 0.20913294797687862,
-        "mesianismo": 0.1445086705202312,
-        "paternalismo": 0.3336416184971098
+        "tecnocracia": 0.209133,
+        "mesianismo": 0.289017,
+        "paternalismo": 0.333642
       },
       "reviewRequired": false
     },
@@ -709,17 +711,17 @@
       "genre": "apertura",
       "analysisWindow": "full_presidential_document",
       "wordCount": 21376,
-      "positiveStrength": 125.95,
-      "positiveDensityPer1000": 5.8921,
+      "positiveStrength": 127.85,
+      "positiveDensityPer1000": 5.981,
       "weights": {
-        "tecnocracia": 0.531957,
-        "mesianismo": 0.055578,
-        "paternalismo": 0.412465
+        "tecnocracia": 0.524052,
+        "mesianismo": 0.062573,
+        "paternalismo": 0.413375
       },
       "leadership": {
-        "tecnocracia": 0.20913294797687862,
-        "mesianismo": 0.43352601156069365,
-        "paternalismo": 0.2509826589595376
+        "tecnocracia": 0.209133,
+        "mesianismo": 0.433526,
+        "paternalismo": 0.333642
       },
       "reviewRequired": false
     },
@@ -740,9 +742,9 @@
         "paternalismo": 0.625
       },
       "leadership": {
-        "tecnocracia": 0.14716763005780348,
-        "mesianismo": 0.1445086705202312,
-        "paternalismo": 0.2509826589595376
+        "tecnocracia": 0.147168,
+        "mesianismo": 0.144509,
+        "paternalismo": 0.250983
       },
       "reviewRequired": false
     },
@@ -763,9 +765,9 @@
         "paternalismo": 0.078431
       },
       "leadership": {
-        "tecnocracia": 0.20913294797687862,
-        "mesianismo": 0.1445086705202312,
-        "paternalismo": 0.2890173410404624
+        "tecnocracia": 0.209133,
+        "mesianismo": 0.144509,
+        "paternalismo": 0.289017
       },
       "reviewRequired": false
     },
@@ -786,9 +788,9 @@
         "paternalismo": 0.6
       },
       "leadership": {
-        "tecnocracia": 0.1239306358381503,
+        "tecnocracia": 0.123931,
         "mesianismo": 0,
-        "paternalismo": 0.20647398843930637
+        "paternalismo": 0.206474
       },
       "reviewRequired": false
     },
@@ -809,9 +811,9 @@
         "paternalismo": 0.345679
       },
       "leadership": {
-        "tecnocracia": 0.1239306358381503,
+        "tecnocracia": 0.123931,
         "mesianismo": 0,
-        "paternalismo": 0.3336416184971098
+        "paternalismo": 0.333642
       },
       "reviewRequired": true
     },
@@ -824,17 +826,17 @@
       "genre": "apertura",
       "analysisWindow": "full_presidential_document",
       "wordCount": 8476,
-      "positiveStrength": 21,
-      "positiveDensityPer1000": 2.4776,
+      "positiveStrength": 26,
+      "positiveDensityPer1000": 3.0675,
       "weights": {
-        "tecnocracia": 0.714286,
-        "mesianismo": 0.142857,
-        "paternalismo": 0.142857
+        "tecnocracia": 0.576923,
+        "mesianismo": 0.307692,
+        "paternalismo": 0.115385
       },
       "leadership": {
-        "tecnocracia": 0.1239306358381503,
-        "mesianismo": 0.1445086705202312,
-        "paternalismo": 0.06196531791907515
+        "tecnocracia": 0.123931,
+        "mesianismo": 0.289017,
+        "paternalismo": 0.061965
       },
       "reviewRequired": false
     },
@@ -847,17 +849,17 @@
       "genre": "apertura",
       "analysisWindow": "full_presidential_document",
       "wordCount": 24332,
-      "positiveStrength": 49.95,
-      "positiveDensityPer1000": 2.0529,
+      "positiveStrength": 50.95,
+      "positiveDensityPer1000": 2.094,
       "weights": {
-        "tecnocracia": 0.520521,
-        "mesianismo": 0,
-        "paternalismo": 0.479479
+        "tecnocracia": 0.510304,
+        "mesianismo": 0.019627,
+        "paternalismo": 0.470069
       },
       "leadership": {
-        "tecnocracia": 0.1239306358381503,
-        "mesianismo": 0,
-        "paternalismo": 0.20647398843930637
+        "tecnocracia": 0.123931,
+        "mesianismo": 0.144509,
+        "paternalismo": 0.206474
       },
       "reviewRequired": true
     },
@@ -878,9 +880,9 @@
         "paternalismo": 0.548448
       },
       "leadership": {
-        "tecnocracia": 0.1239306358381503,
+        "tecnocracia": 0.209133,
         "mesianismo": 0,
-        "paternalismo": 0.20647398843930637
+        "paternalismo": 0.206474
       },
       "reviewRequired": false
     },
@@ -901,9 +903,9 @@
         "paternalismo": 0.459459
       },
       "leadership": {
-        "tecnocracia": 0.20913294797687862,
+        "tecnocracia": 0.209133,
         "mesianismo": 0,
-        "paternalismo": 0.20647398843930637
+        "paternalismo": 0.206474
       },
       "reviewRequired": true
     },
@@ -916,17 +918,17 @@
       "genre": "apertura",
       "analysisWindow": "full_presidential_document",
       "wordCount": 27907,
-      "positiveStrength": 79,
-      "positiveDensityPer1000": 2.8308,
+      "positiveStrength": 79.4,
+      "positiveDensityPer1000": 2.8452,
       "weights": {
-        "tecnocracia": 0.506329,
-        "mesianismo": 0,
-        "paternalismo": 0.493671
+        "tecnocracia": 0.503778,
+        "mesianismo": 0.012594,
+        "paternalismo": 0.483627
       },
       "leadership": {
-        "tecnocracia": 0.1239306358381503,
-        "mesianismo": 0,
-        "paternalismo": 0.20647398843930637
+        "tecnocracia": 0.123931,
+        "mesianismo": 0.144509,
+        "paternalismo": 0.206474
       },
       "reviewRequired": false
     },
@@ -947,9 +949,9 @@
         "paternalismo": 0.727273
       },
       "leadership": {
-        "tecnocracia": 0.06196531791907515,
+        "tecnocracia": 0.061965,
         "mesianismo": 0,
-        "paternalismo": 0.20647398843930637
+        "paternalismo": 0.206474
       },
       "reviewRequired": false
     },
@@ -962,17 +964,17 @@
       "genre": "apertura",
       "analysisWindow": "full_presidential_document",
       "wordCount": 6959,
-      "positiveStrength": 30,
-      "positiveDensityPer1000": 4.311,
+      "positiveStrength": 32,
+      "positiveDensityPer1000": 4.5984,
       "weights": {
-        "tecnocracia": 0.866667,
-        "mesianismo": 0,
-        "paternalismo": 0.133333
+        "tecnocracia": 0.8125,
+        "mesianismo": 0.0625,
+        "paternalismo": 0.125
       },
       "leadership": {
-        "tecnocracia": 0.20913294797687862,
-        "mesianismo": 0,
-        "paternalismo": 0.06196531791907515
+        "tecnocracia": 0.209133,
+        "mesianismo": 0.144509,
+        "paternalismo": 0.061965
       },
       "reviewRequired": true
     },
@@ -993,9 +995,9 @@
         "paternalismo": 0.275
       },
       "leadership": {
-        "tecnocracia": 0.1239306358381503,
+        "tecnocracia": 0.123931,
         "mesianismo": 0,
-        "paternalismo": 0.10647398843930636
+        "paternalismo": 0.106474
       },
       "reviewRequired": false
     },
@@ -1016,9 +1018,9 @@
         "paternalismo": 0.292035
       },
       "leadership": {
-        "tecnocracia": 0.14716763005780348,
+        "tecnocracia": 0.147168,
         "mesianismo": 0,
-        "paternalismo": 0.02447976878612717
+        "paternalismo": 0.02448
       },
       "reviewRequired": false
     },
@@ -1031,17 +1033,17 @@
       "genre": "apertura",
       "analysisWindow": "full_presidential_document",
       "wordCount": 8571,
-      "positiveStrength": 29,
-      "positiveDensityPer1000": 3.3835,
+      "positiveStrength": 32,
+      "positiveDensityPer1000": 3.7335,
       "weights": {
-        "tecnocracia": 0.517241,
-        "mesianismo": 0.068966,
-        "paternalismo": 0.413793
+        "tecnocracia": 0.46875,
+        "mesianismo": 0.15625,
+        "paternalismo": 0.375
       },
       "leadership": {
-        "tecnocracia": 0.14716763005780348,
-        "mesianismo": 0.1445086705202312,
-        "paternalismo": 0.20647398843930637
+        "tecnocracia": 0.147168,
+        "mesianismo": 0.289017,
+        "paternalismo": 0.206474
       },
       "reviewRequired": false
     },
@@ -1062,9 +1064,9 @@
         "paternalismo": 0.176471
       },
       "leadership": {
-        "tecnocracia": 0.14716763005780348,
-        "mesianismo": 0.1445086705202312,
-        "paternalismo": 0.1445086705202312
+        "tecnocracia": 0.147168,
+        "mesianismo": 0.144509,
+        "paternalismo": 0.144509
       },
       "reviewRequired": false
     },
@@ -1085,9 +1087,9 @@
         "paternalismo": 0.428571
       },
       "leadership": {
-        "tecnocracia": 0.14716763005780348,
+        "tecnocracia": 0.147168,
         "mesianismo": 0,
-        "paternalismo": 0.20647398843930637
+        "paternalismo": 0.206474
       },
       "reviewRequired": false
     },
@@ -1100,17 +1102,17 @@
       "genre": "apertura",
       "analysisWindow": "full_presidential_document",
       "wordCount": 15089,
-      "positiveStrength": 42,
-      "positiveDensityPer1000": 2.7835,
+      "positiveStrength": 43,
+      "positiveDensityPer1000": 2.8498,
       "weights": {
-        "tecnocracia": 0.52381,
-        "mesianismo": 0,
-        "paternalismo": 0.47619
+        "tecnocracia": 0.511628,
+        "mesianismo": 0.023256,
+        "paternalismo": 0.465116
       },
       "leadership": {
-        "tecnocracia": 0.20913294797687862,
-        "mesianismo": 0,
-        "paternalismo": 0.20647398843930637
+        "tecnocracia": 0.209133,
+        "mesianismo": 0.144509,
+        "paternalismo": 0.206474
       },
       "reviewRequired": false
     },
@@ -1131,9 +1133,9 @@
         "paternalismo": 0.481766
       },
       "leadership": {
-        "tecnocracia": 0.1239306358381503,
-        "mesianismo": 0.1445086705202312,
-        "paternalismo": 0.20647398843930637
+        "tecnocracia": 0.209133,
+        "mesianismo": 0.144509,
+        "paternalismo": 0.206474
       },
       "reviewRequired": false
     },
@@ -1146,17 +1148,17 @@
       "genre": "apertura",
       "analysisWindow": "full_presidential_document",
       "wordCount": 8997,
-      "positiveStrength": 29.75,
-      "positiveDensityPer1000": 3.3067,
+      "positiveStrength": 36.75,
+      "positiveDensityPer1000": 4.0847,
       "weights": {
-        "tecnocracia": 0.705882,
-        "mesianismo": 0.134454,
-        "paternalismo": 0.159664
+        "tecnocracia": 0.571429,
+        "mesianismo": 0.29932,
+        "paternalismo": 0.129252
       },
       "leadership": {
-        "tecnocracia": 0.20913294797687862,
-        "mesianismo": 0.2890173410404624,
-        "paternalismo": 0.05684971098265896
+        "tecnocracia": 0.209133,
+        "mesianismo": 0.416185,
+        "paternalismo": 0.05685
       },
       "reviewRequired": true
     },
@@ -1169,17 +1171,17 @@
       "genre": "apertura",
       "analysisWindow": "full_presidential_document",
       "wordCount": 8868,
-      "positiveStrength": 50.1,
-      "positiveDensityPer1000": 5.6495,
+      "positiveStrength": 56.1,
+      "positiveDensityPer1000": 6.3261,
       "weights": {
-        "tecnocracia": 0.718563,
-        "mesianismo": 0.11976,
-        "paternalismo": 0.161677
+        "tecnocracia": 0.641711,
+        "mesianismo": 0.213904,
+        "paternalismo": 0.144385
       },
       "leadership": {
-        "tecnocracia": 0.20913294797687862,
-        "mesianismo": 0.27167630057803466,
-        "paternalismo": 0.10647398843930636
+        "tecnocracia": 0.209133,
+        "mesianismo": 0.271676,
+        "paternalismo": 0.106474
       },
       "reviewRequired": false
     },
@@ -1192,17 +1194,17 @@
       "genre": "apertura",
       "analysisWindow": "full_presidential_document",
       "wordCount": 11028,
-      "positiveStrength": 52.65,
-      "positiveDensityPer1000": 4.7742,
+      "positiveStrength": 51.3,
+      "positiveDensityPer1000": 4.6518,
       "weights": {
-        "tecnocracia": 0.569801,
-        "mesianismo": 0.132953,
-        "paternalismo": 0.297246
+        "tecnocracia": 0.584795,
+        "mesianismo": 0.136452,
+        "paternalismo": 0.278752
       },
       "leadership": {
-        "tecnocracia": 0.20913294797687862,
-        "mesianismo": 0.2890173410404624,
-        "paternalismo": 0.22138728323699422
+        "tecnocracia": 0.209133,
+        "mesianismo": 0.289017,
+        "paternalismo": 0.221387
       },
       "reviewRequired": false
     }

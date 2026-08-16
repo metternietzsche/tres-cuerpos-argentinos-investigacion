@@ -40,7 +40,7 @@ for (const [file, hash, title, description] of routes) {
   <meta property="og:image" content="${canonical}/assets/logo.webp?v=20260815">
   <meta name="twitter:card" content="summary_large_image">
   <meta http-equiv="refresh" content="0; url=./#${hash}">
-  <link rel="stylesheet" href="styles.css?v=20260815b">
+  <link rel="stylesheet" href="styles.css?v=20260815c">
 </head>
 <body>
   <main class="redirect-page">

@@ -15,12 +15,27 @@ Vivimos un momento histórico. La voluntad popular nos dio un mandato popular pa
 El rumbo sólo vale si produce justicia social. Nuestro gobierno va a garantizar seguridad social, salud pública, educación pública y vivienda digna. Vamos a proteger los derechos de los trabajadores, fortalecer el salario mínimo y ampliar la protección social. El Estado debe garantizar el bienestar social, la inclusión social y la dignidad del trabajador. La modernización debe cuidar a las familias y a los más vulnerables.`;
 
 test('el registro conserva 60 patrones simétricos y compilables', () => {
+  assert.equal(registry.version, 'ORBITAL_TEXT_ANALYZER_v0_1_1');
+  assert.equal(registry.methodology.calibration, 'ORBITAL_TEXT_CALIBRATION_v0_1_1');
   assert.equal(registry.patterns.length, 60);
   for (const vector of analyzer.vectors) {
     assert.equal(registry.patterns.filter(item => item.vector === vector).length, 20);
   }
   for (const pattern of registry.patterns) assert.doesNotThrow(() => new RegExp(pattern.regex, 'giu'));
   assert.equal(new Set(registry.patterns.map(item => item.patternId)).size, 60);
+});
+
+test('la regresión Kicillof 2026 recupera antagonismo, ruptura y futuro mesiánicos', () => {
+  const passage = `Hoy observamos que las extremas derechas están atacando la convivencia democrática y la Constitución. Una minoría repleta de privilegios pretende naturalizar la desigualdad mientras las mayorías pierden la esperanza. No hay que resignarse: no estamos condenados a este modelo ni obligados a aceptar que el daño sea inevitable.
+
+  Hay otro camino hacia el futuro, sostenido por una comunidad que puede construir una alternativa política mejor. El futuro le pertenece al pueblo argentino y exige un proyecto nacional que reúna memoria, democracia y dignidad. Ese horizonte no elimina los problemas de gestión: requiere un plan de desarrollo, inversión pública, reglas verificables, presupuesto, infraestructura y capacidad estatal. También debe garantizar salud pública, educación, trabajo y protección social para las familias. La tarea combina instrumentos concretos con una causa colectiva y con amor a la patria. No alcanza con administrar cifras ni con enumerar derechos; el discurso también disputa quién puede abrir una etapa distinta, qué antagonismo debe enfrentar y qué futuro común busca autorizar.`;
+  const { signals } = analyzer.detectSignals(passage, registry);
+  const mesianismo = signals.filter(signal => signal.vector === 'mesianismo' && ['afirmada', 'subordinada', 'descriptiva'].includes(signal.polarity));
+  assert.ok(mesianismo.length >= 6);
+  assert.ok(mesianismo.some(signal => signal.patternId === 'MES-06' && signal.function === 'sujeto_enemigo'));
+  assert.ok(mesianismo.some(signal => signal.patternId === 'MES-07' && signal.function === 'sujeto_enemigo'));
+  assert.ok(mesianismo.some(signal => signal.patternId === 'MES-13' && signal.function === 'tiempo'));
+  assert.ok(mesianismo.some(signal => signal.patternId === 'MES-19' && signal.function === 'telos'));
 });
 
 test('el diagnóstico es determinista, suma uno y nunca devuelve el texto completo', () => {

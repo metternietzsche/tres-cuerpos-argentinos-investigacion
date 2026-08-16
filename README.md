@@ -1,6 +1,6 @@
 # El problema de los tres cuerpos argentinos
 
-**Sitio doctrinario v0.6.0 · mapa empírico v0.4**
+**Sitio doctrinario v0.6.1 · mapa empírico v0.4**
 **Autora:** Alexandra Bustos Frati, PhD  
 **Estado empírico:** provisional; no apto todavía para cita académica formal
 
@@ -44,18 +44,29 @@ ocho funciones, 2.000 remuestreos por unidad y el diff completo frente a v0.3.
 - [Metodología v0.2](docs/metodologia/METHOD_PIPELINE_v0_2.md)
 - [Codebook simétrico](docs/metodologia/CODEBOOK_FUNCIONAL_SIMETRICO_v0_3.md)
 
-## Qué agrega la publicación v0.6
+## Qué corrige la publicación v0.6.1
+
+- el caso de control Kicillof 2026 deja de producir un falso `0%` de
+  Mesianismo: el motor reconoce antagonismo democrático, ruptura con la
+  resignación y futuro colectivo;
+- cinco patrones MES reciben extensiones contemporáneas sin alterar la
+  simetría de 20 patrones por cuerpo;
+- las 52 referencias automáticas se recalculan con el mismo motor v0.1.1;
+- el diagnóstico ya no ofrece una descarga JSON: permanece en pantalla y puede
+  imprimirse.
+
+## Qué agregó la publicación v0.6
 
 - laboratorio orbital para pegar o abrir localmente un texto político y
   explorar sus señales TEC/MES/PAT;
-- procesamiento íntegro dentro del navegador: el texto no se sube, no se
-  almacena y no se incorpora a la descarga JSON;
+- procesamiento íntegro dentro del navegador: el texto no se sube ni se
+  almacena y el diagnóstico permanece en la vista;
 - ubicación ternaria, evidencia por fragmento y comparación diagnóstica con 52
   discursos procesados por la misma capa automática;
 - separación explícita entre géneros comparables HCDN y lecturas exploratorias
   de campaña, debate, entrevista o programa;
 - motor y referencia versionados, validación unitaria y pruebas Playwright de
-  archivos, XSS, descarga, accesibilidad y resultado móvil.
+  archivos, XSS, ausencia de descarga, accesibilidad y resultado móvil.
 
 - [Laboratorio orbital](https://lore.trescuerpos.arcagaucha.com/laboratorio.html)
 - [Contrato metodológico del analizador](docs/metodologia/ORBITAL_TEXT_ANALYZER_v0_1.md)

@@ -30,10 +30,13 @@
   };
 
   const CANONICAL = {
-    'MES-01': 'telos', 'MES-05': 'tiempo', 'MES-06': 'sujeto_enemigo',
-    'MES-08': 'problema', 'MES-09': 'tiempo', 'MES-11': 'telos',
-    'MES-13': 'tiempo', 'MES-15': 'autoridad', 'MES-16': 'sujeto_enemigo',
-    'MES-18': 'tiempo', 'MES-19': 'telos', 'MES-20': 'telos',
+    'MES-01': 'telos', 'MES-02': 'autoridad', 'MES-03': 'tiempo',
+    'MES-04': 'tiempo', 'MES-05': 'tiempo', 'MES-06': 'sujeto_enemigo',
+    'MES-07': 'sujeto_enemigo', 'MES-08': 'problema', 'MES-09': 'tiempo',
+    'MES-10': 'autoridad', 'MES-11': 'telos', 'MES-12': 'autoridad',
+    'MES-13': 'tiempo', 'MES-14': 'sacrificio', 'MES-15': 'autoridad',
+    'MES-16': 'sujeto_enemigo', 'MES-17': 'sacrificio', 'MES-18': 'tiempo',
+    'MES-19': 'telos', 'MES-20': 'telos',
     'PAT-01': 'telos', 'PAT-02': 'medios', 'PAT-03': 'sujeto_enemigo',
     'PAT-04': 'medios', 'PAT-05': 'telos', 'PAT-06': 'sujeto_enemigo',
     'PAT-08': 'telos', 'PAT-10': 'medios', 'PAT-11': 'medios',
@@ -119,6 +122,14 @@
       }
       if (rejected && !own) return ['negada_rechazada', 'exterior', 'mecanismo tutelar rechazado'];
       return [own ? 'afirmada' : 'subordinada', 'payload_beneficiario', 'protección material positiva'];
+    }
+
+    // En MES, condenar al antagonista o rechazar la resignación constituye la
+    // función detectada; no equivale a negar el vector. Sólo queda afuera si la
+    // formulación está atribuida a otra voz sin apropiación de quien habla.
+    if (vector === 'mesianismo' && ['MES-06', 'MES-07', 'MES-08', 'MES-13', 'MES-16'].includes(patternId)) {
+      if (attributed && !own) return ['atribuida', 'exterior', 'antagonismo o ruptura atribuidos a otra voz'];
+      return ['afirmada', '', 'antagonismo o ruptura adoptados por la voz del documento'];
     }
 
     if (attributed && !own) return ['atribuida', 'exterior', 'señal atribuida a otra voz o gestión'];
@@ -377,6 +388,6 @@
     };
   }
 
-  const api = Object.freeze({ analyze, countWords, detectSignals, normalize, segmentDocument, vectors: VECTORS });
+  const api = Object.freeze({ analyze, aggregate, countWords, detectSignals, normalize, segmentDocument, vectors: VECTORS });
   global.OrbitalAnalyzer = api;
 })(globalThis);

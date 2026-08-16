@@ -1,0 +1,44 @@
+{
+  "version": "ORBITAL_TEXT_CALIBRATION_v0_1_1",
+  "publishedAt": "2026-08-15",
+  "cases": [
+    {
+      "id": "kicillof_2026_apertura_bonaerense",
+      "source": "https://www.gba.gob.ar/discursos/palabras_del_gobernador_kicillof_durante_la_apertura_del_154%C2%BA_per%C3%ADodo_de_sesiones",
+      "genre": "apertura_legislativa",
+      "observedFailure": "El analizador v0.1 devolvía 0% de Mesianismo pese a una construcción explícita de antagonismo democrático, ruptura con la resignación y futuro colectivo.",
+      "acceptance": {
+        "minimumPositiveMesianismoSignals": 6,
+        "minimumMesianismoWeight": 0.15,
+        "maximumMesianismoWeight": 0.4
+      }
+    }
+  ],
+  "patternExtensions": [
+    {
+      "patternId": "MES-06",
+      "rationale": "Reconocer antagonistas colectivos contemporáneos sin exigir la fórmula histórica «casta política».",
+      "regex": "\\b(?:extremas?\\s+derechas?|minoría(?:\\s+\\p{L}+){0,5}\\s+(?:privilegiada|con\\s+privilegios|repleta\\s+de\\s+privilegios))\\b"
+    },
+    {
+      "patternId": "MES-07",
+      "rationale": "Reconocer la democracia o la Constitución como bien colectivo atacado.",
+      "regex": "\\batac\\p{L}*(?:\\s+\\p{L}+){0,5}\\s+(?:la\\s+)?(?:democracia|convivencia\\s+democrática|constitución)\\b"
+    },
+    {
+      "patternId": "MES-13",
+      "rationale": "Reconocer el rechazo de la resignación como umbral de ruptura política.",
+      "regex": "\\b(?:no\\s+hay\\s+que\\s+resignarse|no\\s+estamos\\s+condenados(?:\\s+a\\s+(?:este|ese)\\s+modelo)?)\\b"
+    },
+    {
+      "patternId": "MES-19",
+      "rationale": "Reconocer futuro colectivo y camino alternativo como telos político.",
+      "regex": "\\b(?:hay\\s+otro\\s+camino(?:\\s+hacia\\s+el\\s+futuro)?|el\\s+futuro\\s+le\\s+pertenece\\s+al\\s+pueblo(?:\\s+argentino)?)\\b"
+    },
+    {
+      "patternId": "MES-20",
+      "rationale": "Reconocer proyecto nacional o colectivo y amor a la patria como causa articuladora.",
+      "regex": "\\b(?:proyecto\\s+(?:de\\s+país|nacional|colectivo|histórico)|amor\\s+a\\s+la\\s+patria)\\b"
+    }
+  ]
+}

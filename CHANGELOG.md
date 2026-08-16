@@ -4,6 +4,20 @@
 
 - Sin cambios.
 
+## v0.6.1 · 2026-08-15
+
+- Corregido el falso negativo de Mesianismo observado en la apertura
+  bonaerense de Axel Kicillof de 2026.
+- Añadida una calibración pública y acotada para antagonismo democrático,
+  ruptura con la resignación y futuro colectivo, manteniendo 20 patrones por
+  cuerpo.
+- La polaridad MES ya no trata la condena de un antagonista como rechazo del
+  vector cuando la voz del documento adopta esa construcción.
+- Completada la función canónica de los veinte patrones MES y recalculada la
+  nube de 52 referencias con el mismo motor v0.1.1.
+- Retirada la descarga JSON del diagnóstico personal; se conservan impresión,
+  evidencia visible y procesamiento local.
+
 ## v0.6.0 · 2026-08-15
 
 - Publicado el laboratorio orbital para analizar textos políticos enteramente

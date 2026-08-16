@@ -1,5 +1,5 @@
 {
-  "version": "ORBITAL_TEXT_ANALYZER_v0_1",
+  "version": "ORBITAL_TEXT_ANALYZER_v0_1_1",
   "publishedAt": "2026-08-15",
   "language": "es-AR",
   "execution": "client_side_only",
@@ -7,12 +7,15 @@
     "signalRegistry": "NB04_propositional_segment_signals.py",
     "symmetricRuleEngine": "HCDN_NB18_symmetric_rule_engine_v0_1.py",
     "aggregation": "HCDN_NB19_symmetric_candidate_map_v0_1.py",
+    "calibration": "ORBITAL_TEXT_CALIBRATION_v0_1_1",
     "statement": "La masa positiva selecciona la pareja; las funciones ordenan la relación. El resultado automático no reemplaza adjudicación humana."
   },
   "sourceHashes": {
     "signals": "bef8341addd17278f327a66ea352935e31fda814b828304fe9a3b17c685c203e",
     "rules": "3cbdde228b027967fbc76eba0b3a728db7d3285b2521d70de1c938e7f9c6e891",
-    "aggregation": "f72f1aba515d7f8faf516a11807fce8e8f3ad8f3abd40953922ce368351fd910"
+    "aggregation": "f72f1aba515d7f8faf516a11807fce8e8f3ad8f3abd40953922ce368351fd910",
+    "calibration": "bdf2e779f1109522e3589ef3d830ffbbf43de553889e05ee65fabcde301834e3",
+    "analyzer": "a1232be6508aefed47817040b3a91148342edfad973639e9ea40fc55199d0ac9"
   },
   "limits": {
     "minWords": 120,
@@ -263,14 +266,14 @@
       "patternId": "MES-06",
       "signalStrength": 3,
       "label": "casta política/privilegiada/dominante",
-      "regex": "\\bcasta\\s+(?:política|privilegiada|dominante|gobernante|dirigente)\\b"
+      "regex": "(?:\\bcasta\\s+(?:política|privilegiada|dominante|gobernante|dirigente)\\b)|(?:\\b(?:extremas?\\s+derechas?|minoría(?:\\s+\\p{L}+){0,5}\\s+(?:privilegiada|con\\s+privilegios|repleta\\s+de\\s+privilegios))\\b)"
     },
     {
       "vector": "mesianismo",
       "patternId": "MES-07",
       "signalStrength": 3,
       "label": "enemigos de la patria/nación/libertad",
-      "regex": "\\benemigos\\s+de\\s+la\\s+(?:patria|nación|república|libertad)\\b"
+      "regex": "(?:\\benemigos\\s+de\\s+la\\s+(?:patria|nación|república|libertad)\\b)|(?:\\batac\\p{L}*(?:\\s+\\p{L}+){0,5}\\s+(?:la\\s+)?(?:democracia|convivencia\\s+democrática|constitución)\\b)"
     },
     {
       "vector": "mesianismo",
@@ -312,7 +315,7 @@
       "patternId": "MES-13",
       "signalStrength": 2,
       "label": "ruptura con el pasado/viejo orden/corrupción sistémica",
-      "regex": "\\b(?:terminar?\\s+con|romper?\\s+con|superar?)\\s+(?:el\\s+)?(?:pasado|viejo\\s+orden|vieja\\s+política|sistema\\s+corrupto|la\\s+corrupción)\\b"
+      "regex": "(?:\\b(?:terminar?\\s+con|romper?\\s+con|superar?)\\s+(?:el\\s+)?(?:pasado|viejo\\s+orden|vieja\\s+política|sistema\\s+corrupto|la\\s+corrupción)\\b)|(?:\\b(?:no\\s+hay\\s+que\\s+resignarse|no\\s+estamos\\s+condenados(?:\\s+a\\s+(?:este|ese)\\s+modelo)?)\\b)"
     },
     {
       "vector": "mesianismo",
@@ -354,14 +357,14 @@
       "patternId": "MES-19",
       "signalStrength": 1,
       "label": "destino de la nación/patria/argentina (genérico)",
-      "regex": "\\bdestino\\s+de\\s+(?:la\\s+(?:nación|patria|argentina|república)|nuestro\\s+país)\\b"
+      "regex": "(?:\\bdestino\\s+de\\s+(?:la\\s+(?:nación|patria|argentina|república)|nuestro\\s+país)\\b)|(?:\\b(?:hay\\s+otro\\s+camino(?:\\s+hacia\\s+el\\s+futuro)?|el\\s+futuro\\s+le\\s+pertenece\\s+al\\s+pueblo(?:\\s+argentino)?)\\b)"
     },
     {
       "vector": "mesianismo",
       "patternId": "MES-20",
       "signalStrength": 1,
       "label": "causa nacional/sagrada/de la patria",
-      "regex": "\\bcausa\\s+(?:nacional|sagrada|de\\s+la\\s+(?:patria|nación|libertad)|histórica)\\b"
+      "regex": "(?:\\bcausa\\s+(?:nacional|sagrada|de\\s+la\\s+(?:patria|nación|libertad)|histórica)\\b)|(?:\\b(?:proyecto\\s+(?:de\\s+país|nacional|colectivo|histórico)|amor\\s+a\\s+la\\s+patria)\\b)"
     },
     {
       "vector": "paternalismo",

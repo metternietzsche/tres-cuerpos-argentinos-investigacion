@@ -54,7 +54,7 @@ for (const item of translationWeb.translations) {
 
 check(gameWeb.display_version === publicationWeb.game_version, 'game_meta.display_version y actor_publication.game_version no coinciden.');
 check(gameWeb.audit.vitest_tests === 227, 'El conteo público de tests del juego debe ser 227.');
-check(site.site_release === 'v0.6.0', 'site_meta.site_release debe ser v0.6.0.');
+check(site.site_release === 'v0.6.1', 'site_meta.site_release debe ser v0.6.1.');
 check(!/v0\.49|game-(career|legend)-final-v42/.test(app), 'app.js conserva referencias visuales o de versión obsoletas.');
 check(/name="robots" content="index, follow/.test(index), 'index.html no habilita indexación.');
 check(/rel="canonical"/.test(index) && /application\/ld\+json/.test(index), 'index.html carece de canonical o datos estructurados.');
@@ -63,6 +63,8 @@ check(/orbital-analyzer\.js/.test(index) && /#laboratorio/.test(index), 'La port
 check(/WebApplication/.test(index), 'Faltan datos estructurados del laboratorio.');
 
 check(analysisRegistryWeb.patterns?.length === 60, 'El analizador debe publicar exactamente 60 patrones.');
+check(analysisRegistryWeb.version === 'ORBITAL_TEXT_ANALYZER_v0_1_1', 'El analizador debe publicar la corrección v0.1.1.');
+check(analysisRegistryWeb.methodology?.calibration === 'ORBITAL_TEXT_CALIBRATION_v0_1_1', 'Falta declarar la calibración Kicillof v0.1.1.');
 check(new Set(analysisRegistryWeb.patterns?.map(item => item.patternId)).size === 60, 'Los patternId del analizador deben ser únicos.');
 for (const vector of ['tecnocracia', 'mesianismo', 'paternalismo']) {
   check(analysisRegistryWeb.patterns?.filter(item => item.vector === vector).length === 20, `${vector}: deben publicarse 20 patrones.`);
@@ -71,6 +73,7 @@ for (const pattern of analysisRegistryWeb.patterns || []) {
   try { new RegExp(pattern.regex, 'giu'); } catch { failures.push(`${pattern.patternId}: regex inválida.`); }
 }
 check(analysisReferenceWeb.documents?.length === 52, 'La referencia diagnóstica debe contener 52 discursos.');
+check(analysisReferenceWeb.analyzerVersion === analysisRegistryWeb.version, 'La nube de referencia y el analizador usan versiones distintas.');
 for (const document of analysisReferenceWeb.documents || []) {
   const weightSum = Object.values(document.weights || {}).reduce((sum, value) => sum + Number(value), 0);
   check(Math.abs(weightSum - 1) < 0.00001, `${document.filename}: pesos diagnósticos no suman uno.`);
@@ -78,6 +81,7 @@ for (const document of analysisReferenceWeb.documents || []) {
 }
 check(/fullTextIncludedInResult:\s*false/.test(analyzer), 'El contrato del analizador debe excluir el texto completo del resultado.');
 check(/processedLocally:\s*true/.test(analyzer) && /storedBySite:\s*false/.test(analyzer), 'El contrato local/privado del analizador no está declarado.');
+check(!/data-laboratory-download|Descargar diagnóstico JSON|diagnostico-orbital\.json/.test(app), 'El laboratorio todavía ofrece descargar el resultado JSON.');
 
 for (const file of ['robots.txt', 'sitemap.xml', 'manifest.webmanifest', 'assets/logo.webp', 'orbital-analyzer.js', 'tesis.html', 'mapa-orbital.html', 'laboratorio.html', 'actores.html', 'leyendas.html', 'evidencia.html', 'whitepaper.html', 'videojuego.html']) {
   try { statSync(resolve(web, file)); } catch { failures.push(`Falta archivo público requerido: ${file}.`); }
