@@ -3,7 +3,7 @@
 // ─── Constants ─────────────────────────────────────────────────────────────────
 
 const DATA_PATH = 'data/';
-const PUBLICATION_CACHE_KEY = '20260815d';
+const PUBLICATION_CACHE_KEY = '20260816a';
 const OFFICIAL_HCDN_ARCHIVE = 'https://www.hcdn.gob.ar/secparl/dgral_info_parlamentaria/mensajes_presidenciales/index.html';
 const RESEARCH_REPOSITORY = 'https://github.com/metternietzsche/tres-cuerpos-argentinos-investigacion';
 
@@ -850,6 +850,10 @@ function bindLaboratory() {
 
 function renderRecorrido() {
   const game = D.game_meta || {};
+  const gameUrl = resolveGameUrl(game);
+  const directPlay = gameUrl
+    ? `<a href="${esc(gameUrl)}" class="btn btn-primary" target="_blank" rel="noopener">Jugar ahora · ${esc(game.display_version || 'beta pública')} →</a>`
+    : `<span class="btn btn-primary" aria-disabled="true">Publicación web pendiente</span>`;
   return `<section class="page-section guided-page">
     <div class="breadcrumb"><a href="#inicio">Inicio</a> <span>›</span> Empezá acá</div>
     <div class="guided-hero">
@@ -863,7 +867,7 @@ function renderRecorrido() {
       <li><span>03</span><div><h2>Tu texto en el campo</h2><p>El laboratorio aplica una primera pasada automática a un discurso que pegues o abras localmente. Devuelve señales y evidencia; no diagnostica a una persona.</p><a href="#laboratorio">Analizar un discurso →</a></div></li>
       <li><span>04</span><div><h2>La prueba y sus límites</h2><p>Cada conclusión debe poder volver a un documento, una regla de lectura y una cautela. Las brechas no se rellenan con relato.</p><a href="#evidencia">Revisar evidencia y método →</a></div></li>
       <li><span>05</span><div><h2>De actor a Leyenda</h2><p>Una Leyenda es una ventana jugable, no un tipo histórico. La ficha muestra alcance, fuentes, puntaje anterior, puntaje vigente y regla de traducción.</p><a href="#leyendas">Abrir trazabilidad de las 15 Leyendas →</a></div></li>
-      <li><span>06</span><div><h2>El experimento lúdico</h2><p><em>${esc(game.title || 'Tres Cuerpos: República Inestable')}</em> usa ese marco para producir decisiones contemporáneas. Juego ≠ evidencia: una partida no prueba una tesis histórica.</p><a href="#videojuego">Ver ${esc(game.display_version || 'la beta')} →</a></div></li>
+      <li class="guided-game-step"><span>06</span><div><span class="section-kicker">VIDEOJUEGO · CARRERA Y MODO LEYENDA</span><h2>El experimento lúdico</h2><p><em>${esc(game.title || 'Tres Cuerpos: República Inestable')}</em> usa ese marco para producir decisiones contemporáneas. Juego ≠ evidencia: una partida no prueba una tesis histórica.</p><div class="guided-game-actions">${directPlay}<a href="#videojuego" class="btn btn-secondary">Conocer el videojuego →</a></div></div></li>
     </ol>
     <div class="guided-boundary" role="note">
       <strong>La cadena completa:</strong>
@@ -1097,7 +1101,7 @@ function renderInicio() {
         </div>
         <!-- Content column -->
         <div class="inicio-hero-content-col">
-          <div class="inicio-hero-eyebrow">PUBLICACIÓN ${esc(meta.site_release || 'v0.6.2')} · MAPA ${esc(meta.version || 'v0.4')} · CORPUS HCDN 1983–2026</div>
+          <div class="inicio-hero-eyebrow">PUBLICACIÓN ${esc(meta.site_release || 'v0.6.3')} · MAPA ${esc(meta.version || 'v0.4')} · CORPUS HCDN 1983–2026</div>
           <h1 class="inicio-hero-headline">${esc(meta.site_title || 'El problema de los tres cuerpos argentinos')}</h1>
           <p class="inicio-hero-sub">Argentina no es un péndulo. Es un problema de tres cuerpos.</p>
           <nav class="cta-group inicio-hero-cta inicio-hero-nav" aria-label="Accesos principales del proyecto">

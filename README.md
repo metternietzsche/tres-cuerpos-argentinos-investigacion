@@ -1,6 +1,6 @@
 # El problema de los tres cuerpos argentinos
 
-**Sitio doctrinario v0.6.2 · mapa empírico v0.4**
+**Sitio doctrinario v0.6.3 · mapa empírico v0.4**
 **Autora:** Alexandra Bustos Frati, PhD  
 **Estado empírico:** provisional; no apto todavía para cita académica formal
 
@@ -43,6 +43,13 @@ ocho funciones, 2.000 remuestreos por unidad y el diff completo frente a v0.3.
 - [Mapa orbital v0.4](docs/mapa_orbital/v0_4/MAPA_ORBITAL_ARGENTINO_v0_4.md)
 - [Metodología v0.2](docs/metodologia/METHOD_PIPELINE_v0_2.md)
 - [Codebook simétrico](docs/metodologia/CODEBOOK_FUNCIONAL_SIMETRICO_v0_3.md)
+
+## Qué agrega la publicación v0.6.3
+
+- “Empezá acá” presenta el videojuego como una parada destacada del recorrido;
+- ofrece tanto “Jugar ahora” hacia la beta pública como “Conocer el videojuego”
+  hacia su ficha editorial;
+- los accesos se verifican en escritorio y móvil.
 
 ## Qué aclara la publicación v0.6.2
 

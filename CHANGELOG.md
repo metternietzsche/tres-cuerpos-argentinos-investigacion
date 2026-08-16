@@ -4,6 +4,15 @@
 
 - Sin cambios.
 
+## v0.6.3 · 2026-08-16
+
+- “Empezá acá” vuelve visible el videojuego como sexta parada destacada del
+  recorrido.
+- Añadido un acceso primario directo a la beta pública y un acceso secundario
+  a la ficha editorial del videojuego.
+- Los dos CTA se apilan a ancho completo en móvil y quedan cubiertos por una
+  prueba de navegación repetida en escritorio y móvil.
+
 ## v0.6.2 · 2026-08-15
 
 - El laboratorio declara de forma visible que el texto no se envía al servidor

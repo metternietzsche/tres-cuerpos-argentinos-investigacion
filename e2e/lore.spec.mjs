@@ -52,6 +52,19 @@ test('la búsqueda encuentra actores y abre la ficha correcta', async ({ page })
   await expect(page.locator('.legend-trace-page h1')).toContainText('Por qué Kirchner restaurador');
 });
 
+test('Empezá acá ofrece acceso directo y ficha del videojuego', async ({ page }) => {
+  await page.goto('/#recorrido');
+  const gameStep = page.getByRole('listitem').filter({ has: page.getByRole('heading', { name: 'El experimento lúdico' }) });
+  const playLink = gameStep.getByRole('link', { name: /Jugar ahora/ });
+  await expect(playLink).toBeVisible();
+  await expect(playLink).toHaveAttribute('href', 'https://trescuerpos.arcagaucha.com/');
+  await expect(playLink).toHaveAttribute('target', '_blank');
+
+  await gameStep.getByRole('link', { name: 'Conocer el videojuego' }).click();
+  await expect(page).toHaveURL(/#videojuego$/);
+  await expect(page.getByRole('heading', { name: 'Tres cuerpos, una república inestable' })).toBeVisible();
+});
+
 test('el laboratorio analiza localmente y explica sin ofrecer descarga del resultado', async ({ page }) => {
   const failures = collectRuntimeFailures(page);
   await page.goto('/#laboratorio');
