@@ -104,7 +104,8 @@ El modelo distingue además entre cuatro dimensiones analíticas que el corpus s
 La ambigüedad no es un defecto del modelo. Alfonsín, De la Rúa, Kirchner, CFK II y Macri presentan trayectorias documentales inestables o sensibles a fase. Eso no obliga a borrar su configuración agregada, pero sí impide leerla como tipo fijo.
 
 > **Figura 1. Mapa orbital por actor × mandato — configuración y estado de trayectoria**
-> Fuente: `../empirical/mapa_orbital_v0_4/figures/MAPA_ORBITAL_DIRECTION_MATRIX_v0_4.png` (NB21)
+> Fuente: mapa orbital argentino v0.4 (NB21).
+> Archivo: MAPA_ORBITAL_DIRECTION_MATRIX_v0_4.png
 > Uso: leer por separado la relación agregada y la estabilidad de la trayectoria documental.
 > Caveat: 52 documentos, 10 personas, 12 unidades. No incluye Perón ni modifica el videojuego.
 
@@ -184,7 +185,8 @@ El corpus HCDN muestra tres familias de pareja. TEC–PAT concentra el 83% de lo
 Las trayectorias que siguen son hipótesis de trabajo. Los perfiles se organizan como unidades `actor × mandato`, no como tipos de persona. Cada unidad informa línea de base, dirección estructural y estado. La capa documental conserva los cambios internos que el resumen del mandato no puede expresar.
 
 > **Figura 2. Trayectorias documentales**
-> Fuente: `../empirical/mapa_orbital_v0_4/figures/MAPA_ORBITAL_DOCUMENT_TRAJECTORIES_v0_4.png` (NB21)
+> Fuente: mapa orbital argentino v0.4, capa de trayectorias documentales (NB21).
+> Archivo: MAPA_ORBITAL_DOCUMENT_TRAJECTORIES_v0_4.png
 > Uso: mostrar qué cuerpo domina cada documento y por qué el mandato no se reduce al promedio.
 > Caveat: el color codifica el cuerpo dominante; la secuencia exacta está en la tabla documental.
 
@@ -370,7 +372,8 @@ Este artículo y el corpus que lo sustenta tienen límites que deben hacerse exp
 **No existen clasificaciones tipológicas finales.** Ningún actor tiene un tipo discursivo confirmado. Todos los perfiles son provisionales. El modelo no produce `final_type`. El uso de etiquetas de tipo fijo no está autorizado por la evidencia.
 
 > **Figura 5. Niveles de comparabilidad: misma teoría, dos pipelines, cuatro reglas de lectura**
-> Fuente: `../empirical/mapa_orbital_v0_3/figures/MAPA_ORBITAL_COMPARABILITY_TIERS_v0_3.drawio.png`; datos HCDN actualizados en `../empirical/mapa_orbital_v0_4/tables/MAPA_ORBITAL_CASE_UNITS_v0_4.csv` y casos Perón de `UNIFIED_CLEAN_CASE_MATRIX_v0_1.csv`.
+> Fuente: mapa orbital argentino v0.4 (NB17–NB21), matriz de casos HCDN y pipeline documental separada de Perón.
+> Archivo: MAPA_ORBITAL_COMPARABILITY_TIERS_v0_4.drawio.png
 > Uso: mostrar qué unidades pertenecen a cada tier y qué afirmaciones autoriza cada una sin recombinar mandatos.
 > Caveat: NB17–NB21 agregan polaridad, función, posición y sensibilidad sin volver comparables las dos pipelines. El tier mide comparabilidad, no importancia histórica.
 

@@ -279,6 +279,8 @@ test('el whitepaper abre con abstract y deja la ficha editorial al final', async
   const map = page.getByRole('link', { name: 'Abrir mapa orbital v0.4' });
   const abstract = page.locator('.wp-abstract');
   const body = page.locator('.wp-body');
+  const methodNote = page.locator('.wp-method-note');
+  const methodNoteBody = page.locator('.wp-method-note-body');
   const backmatter = page.locator('.wp-backmatter');
 
   await expect(download).toBeVisible();
@@ -286,7 +288,14 @@ test('el whitepaper abre con abstract y deja la ficha editorial al final', async
   await expect(abstract).toContainText('Este whitepaper propone');
   await expect(page.getByText(/Figura sugerida|Figura pendiente de integración/)).toHaveCount(0);
   await expect(page.locator('.wp-figure-placeholder-card')).toHaveCount(0);
-  await expect(page.locator('img[src*="MAPA_ORBITAL_COMPARABILITY_TIERS_v0_3"]')).toHaveCount(1);
+  await expect(page.locator('img[src*="MAPA_ORBITAL_COMPARABILITY_TIERS_v0_4"]')).toHaveCount(1);
+  await expect(methodNote.getByText('Nota metodológica · qué cambia en NB17–NB21')).toBeVisible();
+  await expect(methodNote).not.toHaveAttribute('open', '');
+  await expect(methodNoteBody).toBeHidden();
+  await methodNote.locator('summary').click();
+  await expect(methodNoteBody).toBeVisible();
+  await expect(methodNoteBody).toContainText('NB17 convierte a Milei 2024–2026');
+  await expect(methodNoteBody).toContainText('Ninguna notación es un tipo personal');
   await expect(backmatter.getByRole('heading', { name: 'Método, autoría y cita' })).toBeVisible();
   await expect(backmatter).toContainText('NB17 calibra');
   await expect(backmatter).toContainText('Alexandra Bustos Frati, PhD');
@@ -294,11 +303,13 @@ test('el whitepaper abre con abstract y deja la ficha editorial al final', async
     actions: document.querySelector('.wp-release-actions').getBoundingClientRect().top,
     abstract: document.querySelector('.wp-abstract').getBoundingClientRect().top,
     body: document.querySelector('.wp-body').getBoundingClientRect().top,
+    methodNote: document.querySelector('.wp-method-note').getBoundingClientRect().top,
     backmatter: document.querySelector('.wp-backmatter').getBoundingClientRect().top,
   }));
   expect(order.actions).toBeLessThan(order.abstract);
   expect(order.abstract).toBeLessThan(order.body);
-  expect(order.backmatter).toBeGreaterThan(order.body);
+  expect(order.methodNote).toBeGreaterThan(order.body);
+  expect(order.backmatter).toBeGreaterThan(order.methodNote);
   const sizing = await page.evaluate(() => {
     const article = document.querySelector('.wp-markdown-body');
     const paragraph = article.querySelector('p');

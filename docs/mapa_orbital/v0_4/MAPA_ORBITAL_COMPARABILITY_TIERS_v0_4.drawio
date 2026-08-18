@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="drawio" version="30.4.1" compressed="false">
+  <diagram id="comparability-v04" name="Comparabilidad v0.4">
+    <mxGraphModel dx="1800" dy="1140" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1140" math="0" shadow="0" background="#1A0505">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="2" value="NIVELES DE COMPARABILIDAD · MAPA ORBITAL v0.4" style="text=1;html=1;strokeColor=none;fillColor=none;fontColor=#E8D89C;fontFamily=Georgia;fontSize=30;fontStyle=1;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="60" y="30" width="1500" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="3" value="Misma teoría · dos pipelines documentales · cuatro reglas de lectura" style="text=1;html=1;strokeColor=none;fillColor=none;fontColor=#C8C0A8;fontFamily=Arial;fontSize=17;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="60" y="85" width="1300" height="35" as="geometry"/>
+        </mxCell>
+        <mxCell id="4" value="&lt;b&gt;MARCO COMPARTIDO&lt;/b&gt;&lt;br&gt;&lt;font color='#5BAEFF'&gt;TECNOCRACIA&lt;/font&gt; · &lt;font color='#F0A840'&gt;MESIANISMO&lt;/font&gt; · &lt;font color='#6BBF88'&gt;PATERNALISMO&lt;/font&gt;&lt;br&gt;&lt;font color='#C8C0A8'&gt;Compartir conceptos permite una lectura cualitativa; no vuelve equivalentes los instrumentos.&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#2D0A0A;strokeColor=#8B6B14;strokeWidth=2;fontColor=#F0EBD8;fontFamily=Arial;fontSize=16;align=center;verticalAlign=middle;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="60" y="135" width="1680" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="5" value="CORPUS HCDN 1983–2026 · 52 DOCUMENTOS · PIPELINE CALIBRADA" style="swimlane;startSize=48;rounded=0;html=1;container=1;pointerEvents=0;fillColor=#2D0A0A;swimlaneFillColor=#1A0505;strokeColor=#8B6B14;strokeWidth=2;fontColor=#E8D89C;fontFamily=Georgia;fontSize=18;fontStyle=1;horizontal=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="265" width="1080" height="650" as="geometry"/>
+        </mxCell>
+        <mxCell id="6" value="&lt;b&gt;TIER 1 · BASE MULTIDOCUMENTAL&lt;/b&gt;&lt;br&gt;&lt;font color='#C8C0A8'&gt;8 unidades actor × mandato&lt;/font&gt;&lt;br&gt;&lt;br&gt;Alfonsín · Menem I · Menem II · De la Rúa&lt;br&gt;Duhalde · N. Kirchner · CFK I · CFK II&lt;br&gt;&lt;br&gt;&lt;b&gt;Autoriza&lt;/b&gt;&lt;br&gt;Comparaciones cuantitativas internas y lectura de trayectorias, siempre con el nivel de cautela de cada unidad." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1A0505;strokeColor=#6BBF88;strokeWidth=3;fontColor=#F0EBD8;fontFamily=Arial;fontSize=16;align=left;verticalAlign=top;spacingTop=18;spacingLeft=20;spacingRight=18;" vertex="1" parent="5">
+          <mxGeometry x="35" y="80" width="465" height="325" as="geometry"/>
+        </mxCell>
+        <mxCell id="7" value="&lt;b&gt;TIER 3 · CAUTELA REFORZADA&lt;/b&gt;&lt;br&gt;&lt;font color='#C8C0A8'&gt;4 unidades actor × mandato&lt;/font&gt;&lt;br&gt;&lt;br&gt;Rodríguez Saá · Macri&lt;br&gt;Alberto Fernández · Milei (n=3 HCDN)&lt;br&gt;&lt;br&gt;&lt;b&gt;Autoriza&lt;/b&gt;&lt;br&gt;Comparación dentro de la misma escala HCDN, pero no cierres tipológicos. El corpus es delgado, corregido o estructuralmente ambiguo." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1A0505;strokeColor=#F0A840;strokeWidth=3;fontColor=#F0EBD8;fontFamily=Arial;fontSize=16;align=left;verticalAlign=top;spacingTop=18;spacingLeft=20;spacingRight=18;" vertex="1" parent="5">
+          <mxGeometry x="580" y="80" width="465" height="325" as="geometry"/>
+        </mxCell>
+        <mxCell id="8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#C9A84C;strokeWidth=3;dashed=0;startArrow=classic;startFill=1;endArrow=classic;endFill=1;exitX=1;exitY=0.42;exitDx=0;exitDy=0;entryX=0;entryY=0.42;entryDx=0;entryDy=0;" edge="1" parent="5" source="6" target="7">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="9" value="&lt;b&gt;DÓNDE ACTÚAN NB17–NB21&lt;/b&gt;&lt;br&gt;NB17 calibra el instrumento longitudinalmente; NB18 aplica a los tres cuerpos los mismos dictámenes de polaridad, función y posición. NB19–NB20 separan pareja, flecha y trayectoria mediante sensibilidad y remuestreo. NB21 adjudica y publica el mapa v0.4. ↔ informa falta de jerarquía; ↺ informa retroalimentación de la prueba." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#4A1010;strokeColor=#C9A84C;strokeWidth=2;fontColor=#F0EBD8;fontFamily=Arial;fontSize=14;align=left;verticalAlign=middle;spacingLeft=18;spacingRight=18;" vertex="1" parent="5">
+          <mxGeometry x="35" y="455" width="1010" height="155" as="geometry"/>
+        </mxCell>
+        <mxCell id="10" value="PERÓN · PIPELINE DOCUMENTAL SEPARADA" style="swimlane;startSize=48;rounded=0;html=1;container=1;pointerEvents=0;fillColor=#2D0A0A;swimlaneFillColor=#1A0505;strokeColor=#8B6B14;strokeWidth=2;fontColor=#E8D89C;fontFamily=Georgia;fontSize=18;fontStyle=1;horizontal=1;" vertex="1" parent="1">
+          <mxGeometry x="1190" y="265" width="550" height="650" as="geometry"/>
+        </mxCell>
+        <mxCell id="11" value="&lt;b&gt;TIER 2 · DOS DOCUMENTOS LIMPIOS&lt;/b&gt;&lt;br&gt;&lt;font color='#C8C0A8'&gt;Perón 1946 · Perón 1954&lt;/font&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Autoriza&lt;/b&gt;&lt;br&gt;Comparación interna entre fases y contraste cualitativo con HCDN mediante los tres vectores compartidos.&lt;br&gt;&lt;br&gt;&lt;b&gt;No autoriza&lt;/b&gt;&lt;br&gt;Comparar scores de Perón con scores HCDN." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1A0505;strokeColor=#5BAEFF;strokeWidth=3;fontColor=#F0EBD8;fontFamily=Arial;fontSize=16;align=left;verticalAlign=top;spacingTop=18;spacingLeft=20;spacingRight=18;" vertex="1" parent="10">
+          <mxGeometry x="35" y="80" width="480" height="320" as="geometry"/>
+        </mxCell>
+        <mxCell id="12" value="&lt;b&gt;TIER 4 · BLOQUEADO&lt;/b&gt;&lt;br&gt;&lt;font color='#C8C0A8'&gt;Perón 1973&lt;/font&gt;&lt;br&gt;&lt;br&gt;El archivo disponible no contiene el discurso presidencial. No ingresa en la síntesis ni en el mapa." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1A0505;strokeColor=#D26428;strokeWidth=3;fontColor=#F0EBD8;fontFamily=Arial;fontSize=16;align=left;verticalAlign=top;spacingTop=18;spacingLeft=20;spacingRight=18;" vertex="1" parent="10">
+          <mxGeometry x="35" y="455" width="480" height="155" as="geometry"/>
+        </mxCell>
+        <mxCell id="13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#E8D89C;strokeWidth=3;dashed=1;dashPattern=8 6;startArrow=classic;startFill=0;endArrow=classic;endFill=0;exitX=1;exitY=0.42;exitDx=0;exitDy=0;entryX=0;entryY=0.42;entryDx=0;entryDy=0;" edge="1" parent="1" source="7" target="11">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="14" value="&lt;b&gt;REGLA DE LECTURA&lt;/b&gt; · El tier no mide importancia histórica ni valor político. Mide qué inferencias autoriza la evidencia disponible y cuáles deben quedar fuera." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#4A1010;strokeColor=#C9A84C;strokeWidth=2;fontColor=#F0EBD8;fontFamily=Arial;fontSize=17;align=center;verticalAlign=middle;spacing=16;" vertex="1" parent="1">
+          <mxGeometry x="60" y="955" width="1680" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="15" value="Fuente: síntesis unificada v0.1 · NB17–NB21 · mapa orbital v0.4" style="text=1;html=1;strokeColor=none;fillColor=none;fontColor=#C9A84C;fontFamily=Arial;fontSize=13;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="400" y="1070" width="1000" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="16" value="MISMA ESCALA · DISTINTA ROBUSTEZ" style="text=1;html=1;strokeColor=none;fillColor=none;fontColor=#C9A84C;fontFamily=Arial;fontSize=13;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="5">
+          <mxGeometry x="350" y="45" width="380" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="17" value="CONTRASTE CUALITATIVO · SIN SCORES CRUZADOS" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#2D0A0A;strokeColor=#8B6B14;fontColor=#E8D89C;fontFamily=Arial;fontSize=12;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="940" y="235" width="520" height="30" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

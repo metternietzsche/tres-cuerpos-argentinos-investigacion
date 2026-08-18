@@ -3,7 +3,7 @@
 // ─── Constants ─────────────────────────────────────────────────────────────────
 
 const DATA_PATH = 'data/';
-const PUBLICATION_CACHE_KEY = '20260818d';
+const PUBLICATION_CACHE_KEY = '20260818e';
 const OFFICIAL_HCDN_ARCHIVE = 'https://www.hcdn.gob.ar/secparl/dgral_info_parlamentaria/mensajes_presidenciales/index.html';
 const RESEARCH_REPOSITORY = 'https://github.com/metternietzsche/tres-cuerpos-argentinos-investigacion';
 
@@ -2927,11 +2927,11 @@ function wpFigureFromQuote(lines) {
     return line ? line.slice(line.indexOf(':') + 1).trim() : '';
   };
   const source = field('Fuente');
-  const imageMatch = source.match(/([A-Za-z0-9_.-]+\.png)/);
+  const imageMatch = (field('Archivo') || source).match(/([A-Za-z0-9_.-]+\.png)/);
   const publishedFigures = new Set([
     'MAPA_ORBITAL_DIRECTION_MATRIX_v0_4.png',
     'MAPA_ORBITAL_DOCUMENT_TRAJECTORIES_v0_4.png',
-    'MAPA_ORBITAL_COMPARABILITY_TIERS_v0_3.drawio.png',
+    'MAPA_ORBITAL_COMPARABILITY_TIERS_v0_4.drawio.png',
   ]);
   const file = imageMatch && publishedFigures.has(imageMatch[1]) ? imageMatch[1] : '';
 
@@ -2983,7 +2983,7 @@ function whitepaperToc(markdown) {
 
 function renderWhitepaperMarkdown(markdown) {
   const lines = String(markdown || '').replace(/\r/g, '').split('\n');
-  const start = lines.findIndex(line => /^###\s+Antes de leer: qué cambia en NB17–NB21\s*$/.test(line));
+  const start = lines.findIndex(line => /^###\s+(?:Antes de leer: qué cambia en NB17–NB21|Resumen)\s*$/.test(line));
   const source = start >= 0 ? lines.slice(start) : lines;
   const html = [];
   let sectionOpen = false;
@@ -3043,11 +3043,39 @@ function renderWhitepaperMarkdown(markdown) {
   return html.join('');
 }
 
+function splitWhitepaperMethodNote(markdown) {
+  const lines = String(markdown || '').replace(/\r/g, '').split('\n');
+  const start = lines.findIndex(line => /^###\s+Antes de leer: qué cambia en NB17–NB21\s*$/.test(line));
+  if (start < 0) return { reading: markdown, methodNote: '' };
+  const nextSection = lines.findIndex((line, index) => index > start && /^###\s+/.test(line));
+  const end = nextSection >= 0 ? nextSection : lines.length;
+  return {
+    reading: [...lines.slice(0, start), ...lines.slice(end)].join('\n'),
+    methodNote: lines.slice(start, end).join('\n'),
+  };
+}
+
+function renderWhitepaperMethodNote(markdown) {
+  if (!markdown) return '';
+  const rendered = renderWhitepaperMarkdown(markdown);
+  const contents = rendered
+    .replace(/^<section class="wp-section" id="wp-nb17"><h2 class="wp-section-title">[\s\S]*?<\/h2>/, '')
+    .replace(/<\/section>$/, '');
+  return `<details class="wp-method-note">
+    <summary>
+      <span>Nota metodológica · qué cambia en NB17–NB21</span>
+      <small>Calibración, sensibilidad y notación</small>
+    </summary>
+    <div class="wp-method-note-body" id="wp-nb17">${contents}</div>
+  </details>`;
+}
+
 function renderWhitepaper() {
   const markdown = D.whitepaper_v0_4 || '';
   const toc = whitepaperToc(markdown);
-  const body = markdown
-    ? renderWhitepaperMarkdown(markdown)
+  const { reading, methodNote } = splitWhitepaperMethodNote(markdown);
+  const body = reading
+    ? renderWhitepaperMarkdown(reading)
     : '<div class="notice notice-red"><p>No se pudo cargar el whitepaper v0.4.</p></div>';
 
   return `<section class="page-section wp-page">
@@ -3088,6 +3116,8 @@ function renderWhitepaper() {
       <a href="#evidencia" class="btn btn-secondary">Evidencia y método</a>
       <a href="#evidencia/roadmap" class="btn btn-secondary">Roadmap →</a>
     </div>
+
+    ${renderWhitepaperMethodNote(methodNote)}
 
     <footer class="wp-backmatter" aria-labelledby="wp-backmatter-title">
       <div class="section-kicker">FICHA EDITORIAL</div>

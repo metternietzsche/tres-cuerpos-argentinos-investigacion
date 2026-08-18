@@ -8,6 +8,11 @@ const projectRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '
 const publicRoot = path.join(projectRoot, 'web', 'static_prototype');
 const output = path.join(publicRoot, 'data', 'EL_PROBLEMA_DE_LOS_TRES_CUERPOS_ARGENTINOS_WHITEPAPER_v0_4.pdf');
 const temporaryOutput = `${output}.tmp`;
+const printFigureVariants = {
+  'MAPA_ORBITAL_DIRECTION_MATRIX_v0_4.png': 'MAPA_ORBITAL_DIRECTION_MATRIX_v0_4.print.png',
+  'MAPA_ORBITAL_DOCUMENT_TRAJECTORIES_v0_4.png': 'MAPA_ORBITAL_DOCUMENT_TRAJECTORIES_v0_4.print.png',
+  'MAPA_ORBITAL_COMPARABILITY_TIERS_v0_4.drawio.png': 'MAPA_ORBITAL_COMPARABILITY_TIERS_v0_4.print.png',
+};
 const mimeTypes = new Map([
   ['.css', 'text/css; charset=utf-8'],
   ['.html', 'text/html; charset=utf-8'],
@@ -45,11 +50,16 @@ try {
   const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
   await page.goto(`http://127.0.0.1:${address.port}/whitepaper.html`, { waitUntil: 'networkidle' });
   await page.locator('.wp-markdown-body .wp-section').first().waitFor({ state: 'visible' });
-  await page.evaluate(async () => {
+  await page.evaluate(async variants => {
+    document.querySelector('.wp-method-note')?.setAttribute('open', '');
     const images = [...document.images];
-    images.forEach(image => { image.loading = 'eager'; });
+    images.forEach(image => {
+      image.loading = 'eager';
+      const file = new URL(image.src).pathname.split('/').pop();
+      if (variants[file]) image.src = `assets/figures/${variants[file]}`;
+    });
     await Promise.all(images.map(image => image.decode().catch(() => undefined)));
-  });
+  }, printFigureVariants);
   await page.emulateMedia({ media: 'print' });
   await page.pdf({
     path: temporaryOutput,
