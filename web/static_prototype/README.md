@@ -1,4 +1,4 @@
-# Sitio doctrinario estático
+# Sitio doctrinario estático prerenderizado
 
 El contenido de esta carpeta se publica mediante GitHub Pages.
 
@@ -8,8 +8,10 @@ python3 -m http.server 8000
 
 Abrir `http://localhost:8000/web/static_prototype/`.
 
-El sitio carga datos JSON con `fetch()`, por lo que no funciona correctamente
-desde una URL `file://`. El videojuego no está embebido: la sección `#videojuego`
+El HTML inicial ya contiene la lectura documental de cada ruta. JavaScript carga
+los datos JSON para hidratar esa lectura y activar mapa, filtros, búsqueda y
+laboratorio; por eso la experiencia interactiva no funciona completamente desde
+una URL `file://`. El videojuego no está embebido: la sección `#videojuego`
 enlaza su despliegue independiente.
 
 La publicación v0.6 agrega `#laboratorio` a las rutas de v0.5. El laboratorio
@@ -23,5 +25,9 @@ Gate local desde la raíz del repositorio:
 
 ```bash
 npm install
+npm run build
 npm test
 ```
+
+La arquitectura y el contrato del prerender están documentados en
+[`docs/PRERENDERING.md`](../../docs/PRERENDERING.md).

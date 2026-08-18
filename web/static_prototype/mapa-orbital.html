@@ -4,29 +4,610 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mapa orbital · El problema de los tres cuerpos argentinos</title>
-  <meta name="description" content="Campo ternario interactivo con 52 discursos y doce unidades actor × mandato.">
+  <meta name="description" content="Campo ternario interactivo con 52 discursos, doce unidades de mandato y los tres vectores simultáneos del corpus presidencial democrático argentino.">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="theme-color" content="#101116">
   <link rel="canonical" href="https://lore.trescuerpos.arcagaucha.com/mapa-orbital.html">
   <link rel="icon" type="image/webp" href="assets/logo.webp?v=20260815">
+  <link rel="manifest" href="manifest.webmanifest?v=20260815">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_AR">
-  <meta property="og:title" content="Mapa orbital">
-  <meta property="og:description" content="Campo ternario interactivo con 52 discursos y doce unidades actor × mandato.">
+  <meta property="og:title" content="Mapa orbital · El problema de los tres cuerpos argentinos">
+  <meta property="og:description" content="Campo ternario interactivo con 52 discursos, doce unidades de mandato y los tres vectores simultáneos del corpus presidencial democrático argentino.">
   <meta property="og:url" content="https://lore.trescuerpos.arcagaucha.com/mapa-orbital.html">
   <meta property="og:image" content="https://lore.trescuerpos.arcagaucha.com/assets/logo.webp?v=20260815">
+  <meta property="og:image:alt" content="Logo de El problema de los tres cuerpos argentinos">
   <meta name="twitter:card" content="summary_large_image">
-  <meta http-equiv="refresh" content="0; url=./#mapa-orbital">
+  <meta name="twitter:title" content="Mapa orbital · El problema de los tres cuerpos argentinos">
+  <meta name="twitter:description" content="Campo ternario interactivo con 52 discursos, doce unidades de mandato y los tres vectores simultáneos del corpus presidencial democrático argentino.">
+  <meta name="twitter:image" content="https://lore.trescuerpos.arcagaucha.com/assets/logo.webp?v=20260815">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://lore.trescuerpos.arcagaucha.com/#website",
+        "url": "https://lore.trescuerpos.arcagaucha.com/",
+        "name": "El problema de los tres cuerpos argentinos",
+        "inLanguage": "es-AR",
+        "author": { "@id": "https://lore.trescuerpos.arcagaucha.com/#author" }
+      },
+      {
+        "@type": "ScholarlyArticle",
+        "headline": "El problema de los tres cuerpos argentinos: una lectura orbital del presidencialismo argentino",
+        "description": "Investigación doctrinaria sobre tecnocracia, mesianismo y paternalismo en el discurso presidencial argentino.",
+        "dateModified": "2026-08-16",
+        "inLanguage": "es-AR",
+        "license": "https://creativecommons.org/licenses/by-nc/4.0/",
+        "author": { "@id": "https://lore.trescuerpos.arcagaucha.com/#author" }
+      },
+      {
+        "@type": "WebApplication",
+        "name": "Laboratorio orbital de textos políticos",
+        "url": "https://lore.trescuerpos.arcagaucha.com/laboratorio.html",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "Web",
+        "isAccessibleForFree": true,
+        "description": "Analizador local y exploratorio de señales de tecnocracia, mesianismo y paternalismo en textos políticos.",
+        "author": { "@id": "https://lore.trescuerpos.arcagaucha.com/#author" }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://lore.trescuerpos.arcagaucha.com/#author",
+        "name": "Alexandra Bustos Frati"
+      }
+    ]
+  }
+  </script>
   <link rel="stylesheet" href="styles.css?v=20260816d">
+  <noscript>
+    <style>
+      @media (max-width: 900px) {
+        #site-header { position: relative; height: auto; min-height: var(--header-h); flex-wrap: wrap; padding-block: .5rem; }
+        #mobile-menu-btn, #site-search-btn { display: none !important; }
+        #site-nav { display: flex; position: static; flex: 1 0 100%; padding: .5rem 0 0; border: 0; }
+        #app { margin-top: 0; }
+      }
+    </style>
+  </noscript>
 </head>
-<body>
-  <main class="redirect-page">
-    <a href="./#inicio"><img src="assets/logo.webp?v=20260815" alt="" width="72" height="72"></a>
-    <p class="section-kicker">EL PROBLEMA DE LOS TRES CUERPOS ARGENTINOS</p>
-    <h1>Mapa orbital</h1>
-    <p>Campo ternario interactivo con 52 discursos y doce unidades actor × mandato.</p>
-    <p><a href="./#mapa-orbital">Abrir esta sección →</a></p>
+<body data-prerender-route="mapa-orbital">
+
+  <a class="skip-link" href="#app">Saltar al contenido</a>
+
+  <header id="site-header" role="banner">
+    <div class="site-title-wrap">
+      <a href="./index.html" data-client-route="#inicio" class="site-logo-link" aria-label="Inicio">
+        <img src="assets/logo.webp?v=20260815" alt="" class="site-logo" aria-hidden="true"
+             onerror="this.style.display='none';" loading="eager">
+      </a>
+      <p class="site-title">
+        <a href="./index.html" data-client-route="#inicio">El problema de los tres cuerpos argentinos</a>
+      </p>
+      <span class="site-subtitle-small">INVESTIGACIÓN · DOCTRINA · VIDEOJUEGO</span>
+    </div>
+    <button id="mobile-menu-btn"
+            aria-label="Abrir menú de navegación"
+            aria-expanded="false"
+            aria-controls="site-nav">☰ Menú</button>
+    <nav id="site-nav" role="navigation" aria-label="Navegación principal">
+      <a href="./index.html" data-client-route="#inicio"       class="nav-link" data-section="inicio">Inicio</a>
+      <a href="./empeza-aca.html" data-client-route="#recorrido"    class="nav-link" data-section="recorrido">Empezá acá</a>
+      <a href="./mapa-orbital.html" data-client-route="#mapa-orbital" class="nav-link active" data-section="mapa-orbital" aria-current="page">Mapa orbital</a>
+      <a href="./laboratorio.html" data-client-route="#laboratorio"  class="nav-link" data-section="laboratorio">Analizar</a>
+      <a href="./actores.html" data-client-route="#actores"      class="nav-link" data-section="actores">Actores y Leyendas</a>
+      <a href="./evidencia.html" data-client-route="#evidencia"    class="nav-link" data-section="evidencia">Evidencia</a>
+      <a href="./whitepaper.html" data-client-route="#whitepaper"   class="nav-link" data-section="whitepaper">Whitepaper</a>
+      <a href="./videojuego.html" data-client-route="#videojuego"   class="nav-link" data-section="videojuego">Videojuego</a>
+    </nav>
+    <a href="./#buscar" data-client-route="#buscar" id="site-search-btn" aria-label="Buscar en el proyecto">⌕ <span>Buscar</span></a>
+  </header>
+
+  <div id="loading" role="status" aria-live="polite" hidden aria-hidden="true">
+    <div class="loading-inner">
+      <div class="loading-spinner" aria-hidden="true"></div>
+      <p class="loading-title">El problema de los tres cuerpos argentinos</p>
+      <p class="loading-msg">Cargando investigación, mapa y trazabilidad…</p>
+    </div>
+  </div>
+
+  <main id="app" role="main" data-prerendered="true">
+<section class="page-section orbital-page">
+    <div class="breadcrumb"><a href="./index.html" data-client-route="#inicio">Inicio</a> <span>›</span> Mapa orbital</div>
+    <div class="orbital-page-header">
+      <div class="section-kicker">52 DISCURSOS · 12 UNIDADES DE MANDATO · TRES FUERZAS SIMULTÁNEAS</div>
+      <h1>Mapa orbital de los tres cuerpos</h1>
+      <p class="hero-sub">Cada punto es un discurso presidencial. Su posición conserva tecnocracia, mesianismo y paternalismo; las líneas muestran cómo esa relación se desplaza en el tiempo.</p>
+    </div>
+
+    <div class="mapa-tc-intro">
+      <div class="mapa-tc-grid">
+        <div class="mapa-tc-item">
+          <span class="mapa-tc-dot" style="background:var(--tec);" aria-hidden="true"></span>
+          <strong style="color:var(--tec);">Modernización tecnocrática</strong>
+          <span class="mapa-tc-note">Reforma técnica del Estado, gestión, racionalización. El lenguaje de la transformación objetiva.</span>
+        </div>
+        <div class="mapa-tc-item">
+          <span class="mapa-tc-dot" style="background:var(--mes);" aria-hidden="true"></span>
+          <strong style="color:var(--mes);">Mesianismo redentor</strong>
+          <span class="mapa-tc-note">Ruptura histórica, misión, sacrificio y destino. Puede organizar una crisis o representar el gobierno como transición civilizatoria.</span>
+        </div>
+        <div class="mapa-tc-item">
+          <span class="mapa-tc-dot" style="background:var(--pat);" aria-hidden="true"></span>
+          <strong style="color:var(--pat);">Paternalismo conservador</strong>
+          <span class="mapa-tc-note">Tutela social, cuidado, protección. El vector más frecuente como dominante en el corpus HCDN.</span>
+        </div>
+      </div>
+      <div class="orbital-reading-rule">
+        <span><strong>1.</strong> Los vértices son fuerzas, no ideologías.</span>
+        <span><strong>2.</strong> Cada punto usa los tres pesos.</span>
+        <span><strong>3.</strong> La línea temporal es la órbita del mandato.</span>
+      </div>
+      <p class="muted mapa-tc-footer"><code>PAT→TEC</code> indica que PAT encuadra y TEC opera o prueba; <code>PAT↔TEC</code> conserva una dirección indeterminada. El tercer cuerpo sigue dentro del cálculo y de la posición.</p>
+    </div>
+
+    <section class="orbital-map" data-orbital-map="" data-selected-actor="all" data-selected-document="">
+      <div class="orbital-toolbar">
+        <div>
+          <span class="orbital-control-label">AISLAR UNA UNIDAD ACTOR × MANDATO</span>
+          <div class="orbital-actor-controls" role="group" aria-label="Seleccionar unidad de mandato del mapa orbital">
+            <button type="button" class="orbital-actor-button is-active" data-orbital-actor="all" aria-pressed="true">Corpus completo</button>
+            <button type="button" class="orbital-actor-button" data-orbital-actor="ALFONSIN_1983_1989" aria-pressed="false">Alfonsín</button><button type="button" class="orbital-actor-button" data-orbital-actor="MENEM_I_1989_1995" aria-pressed="false">Menem I</button><button type="button" class="orbital-actor-button" data-orbital-actor="MENEM_II_1995_1999" aria-pressed="false">Menem II</button><button type="button" class="orbital-actor-button" data-orbital-actor="DELARUA_1999_2001" aria-pressed="false">De la Rúa</button><button type="button" class="orbital-actor-button" data-orbital-actor="RODRIGUEZ_SAA_2001" aria-pressed="false">R. Saá</button><button type="button" class="orbital-actor-button" data-orbital-actor="DUHALDE_2002_2003" aria-pressed="false">Duhalde</button><button type="button" class="orbital-actor-button" data-orbital-actor="KIRCHNER_2003_2007" aria-pressed="false">N. Kirchner</button><button type="button" class="orbital-actor-button" data-orbital-actor="CFK_I_2007_2011" aria-pressed="false">CFK I</button><button type="button" class="orbital-actor-button" data-orbital-actor="CFK_II_2011_2015" aria-pressed="false">CFK II</button><button type="button" class="orbital-actor-button" data-orbital-actor="MACRI_2015_2019" aria-pressed="false">Macri</button><button type="button" class="orbital-actor-button" data-orbital-actor="ALBERTOF_2019_2023" aria-pressed="false">A. Fernández</button><button type="button" class="orbital-actor-button" data-orbital-actor="MILEI_2023_PRESENTE" aria-pressed="false">Milei</button>
+          </div>
+        </div>
+        <div class="orbital-symbol-key" aria-label="Leyenda de tamaño de puntos">
+          <span><i class="symbol-strong"></i>atractor fuerte</span>
+          <span><i class="symbol-medium"></i>medio</span>
+          <span><i class="symbol-weak"></i>débil</span>
+          <span><i class="symbol-indeterminate"></i>indeterminado</span>
+        </div>
+      </div>
+      <div class="orbital-stage">
+        <div class="orbital-field-wrap"><span class="orbital-pan-hint">Deslizá el campo ↔</span><svg class="orbital-field" viewBox="0 0 720 620" role="group" aria-labelledby="orbital-field-title orbital-field-desc">
+    <title id="orbital-field-title">Campo orbital de tecnocracia, mesianismo y paternalismo</title>
+    <desc id="orbital-field-desc">Cada punto es un discurso. Su posición usa simultáneamente el peso relativo de los tres vectores. Las líneas unen los documentos de cada unidad de mandato en orden temporal.</desc>
+    <defs>
+      <linearGradient id="orbital-field-fill" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#50b5ff" stop-opacity=".12"></stop>
+        <stop offset=".52" stop-color="#f05f8e" stop-opacity=".08"></stop>
+        <stop offset="1" stop-color="#efb64b" stop-opacity=".12"></stop>
+      </linearGradient>
+      <linearGradient id="orbital-line-gradient" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stop-color="#50b5ff"></stop>
+        <stop offset=".52" stop-color="#f05f8e"></stop>
+        <stop offset="1" stop-color="#efb64b"></stop>
+      </linearGradient>
+    </defs>
+    <polygon class="orbital-field-plane" points="360,54 76,548 644,548"></polygon>
+    <line class="orbital-grid-line orbital-grid-tecnocracia" x1="147.00" y1="424.50" x2="573.00" y2="424.50"></line><line class="orbital-grid-line orbital-grid-tecnocracia" x1="218.00" y1="301.00" x2="502.00" y2="301.00"></line><line class="orbital-grid-line orbital-grid-tecnocracia" x1="289.00" y1="177.50" x2="431.00" y2="177.50"></line><line class="orbital-grid-line orbital-grid-mesianismo" x1="289.00" y1="177.50" x2="502.00" y2="548.00"></line><line class="orbital-grid-line orbital-grid-mesianismo" x1="218.00" y1="301.00" x2="360.00" y2="548.00"></line><line class="orbital-grid-line orbital-grid-mesianismo" x1="147.00" y1="424.50" x2="218.00" y2="548.00"></line><line class="orbital-grid-line orbital-grid-paternalismo" x1="431.00" y1="177.50" x2="218.00" y2="548.00"></line><line class="orbital-grid-line orbital-grid-paternalismo" x1="502.00" y1="301.00" x2="360.00" y2="548.00"></line><line class="orbital-grid-line orbital-grid-paternalismo" x1="573.00" y1="424.50" x2="502.00" y2="548.00"></line>
+    <line class="orbital-axis axis-tec-mes" x1="360" y1="54" x2="76" y2="548"></line>
+    <line class="orbital-axis axis-mes-pat" x1="76" y1="548" x2="644" y2="548"></line>
+    <line class="orbital-axis axis-pat-tec" x1="644" y1="548" x2="360" y2="54"></line>
+    <g class="orbital-vertex orbital-vertex-tec"><circle cx="360" cy="54" r="7"></circle><text x="360" y="25" text-anchor="middle">TECNOCRACIA</text></g>
+    <g class="orbital-vertex orbital-vertex-mes"><circle cx="76" cy="548" r="7"></circle><text x="62" y="584" text-anchor="start">MESIANISMO</text></g>
+    <g class="orbital-vertex orbital-vertex-pat"><circle cx="644" cy="548" r="7"></circle><text x="658" y="584" text-anchor="end">PATERNALISMO</text></g>
+    <g class="orbital-paths"><polyline class="orbital-path" data-orbital-actor="ALFONSIN_1983_1989" points="453.69,278.09 521.75,335.35 458.05,330.40 375.78,319.29 405.80,229.28 218.00,301.00 492.21,283.96 331.59,399.80"></polyline><polyline class="orbital-path" data-orbital-actor="MENEM_I_1989_1995" points="505.46,355.22 543.76,373.64 542.75,440.61 522.29,336.29 462.65,351.59 503.56,303.71"></polyline><polyline class="orbital-path" data-orbital-actor="MENEM_II_1995_1999" points="530.40,350.40 644.00,548.00 499.42,296.51 505.65,408.67 504.41,405.66"></polyline><polyline class="orbital-path" data-orbital-actor="DELARUA_1999_2001" points="490.16,362.75 495.83,376.18 429.66,324.30"></polyline><polyline class="orbital-path" data-orbital-actor="RODRIGUEZ_SAA_2001" points="421.73,454.92"></polyline><polyline class="orbital-path" data-orbital-actor="DUHALDE_2002_2003" points="407.33,465.67 411.05,342.63 413.25,331.88"></polyline><polyline class="orbital-path" data-orbital-actor="KIRCHNER_2003_2007" points="490.58,326.55 540.42,367.84 478.51,288.56 481.45,284.75 475.01,311.21"></polyline><polyline class="orbital-path" data-orbital-actor="CFK_I_2007_2011" points="495.83,462.09 372.35,118.44 562.86,406.86 460.66,229.09"></polyline><polyline class="orbital-path" data-orbital-actor="CFK_II_2011_2015" points="360.00,218.65 540.72,368.35 527.38,345.15 505.74,307.50 529.41,348.67"></polyline><polyline class="orbital-path" data-orbital-actor="MACRI_2015_2019" points="566.55,413.27 445.20,202.20 442.21,197.00 530.40,350.40 360.00,265.72"></polyline><polyline class="orbital-path" data-orbital-actor="ALBERTOF_2019_2023" points="498.54,294.98 518.18,329.14 499.22,315.53 469.24,320.00"></polyline><polyline class="orbital-path" data-orbital-actor="MILEI_2023_PRESENTE" points="352.32,361.08 338.43,316.63 454.67,362.75"></polyline></g>
+    <g class="orbital-points"><g class="orbital-point is-indeterminate" data-orbital-actor="ALBERTOF_2019_2023" data-orbital-document="mensaje_presidencial_2019" role="button" tabindex="0" aria-label="Alberto Fernández · 2019 · TEC › PAT · Atractor indeterminado · sin orden concluyente" transform="translate(469.24 320.00)" style="--orbital-point-color:#50b5ff;" aria-pressed="false">
+      <title>Alberto Fernández · 2019 · TEC › PAT · Atractor indeterminado · sin orden concluyente</title>
+      <circle class="orbital-point-halo" r="14"></circle>
+      <circle class="orbital-point-core" r="9"></circle>
+      <text class="orbital-year-label" x="-9" y="-11" text-anchor="end">2019</text>
+    </g><g class="orbital-point " data-orbital-actor="ALBERTOF_2019_2023" data-orbital-document="mensaje_presidencial_2020" role="button" tabindex="0" aria-label="Alberto Fernández · 2020 · TEC › PAT · Atractor medio · predominio legible" transform="translate(498.54 294.98)" style="--orbital-point-color:#50b5ff;" aria-pressed="false">
+      <title>Alberto Fernández · 2020 · TEC › PAT · Atractor medio · predominio legible</title>
+      <circle class="orbital-point-halo" r="12"></circle>
+      <circle class="orbital-point-core" r="7"></circle>
+      <text class="orbital-year-label" x="9" y="-11" text-anchor="start">2020</text>
+    </g><g class="orbital-point " data-orbital-actor="ALBERTOF_2019_2023" data-orbital-document="mensaje_presidencial_2021" role="button" tabindex="0" aria-label="Alberto Fernández · 2021 · PAT › TEC · Atractor medio · predominio legible" transform="translate(518.18 329.14)" style="--orbital-point-color:#efb64b;" aria-pressed="false">
+      <title>Alberto Fernández · 2021 · PAT › TEC · Atractor medio · predominio legible</title>
+      <circle class="orbital-point-halo" r="12"></circle>
+      <circle class="orbital-point-core" r="7"></circle>
+      <text class="orbital-year-label" x="-9" y="-11" text-anchor="end">2021</text>
+    </g><g class="orbital-point " data-orbital-actor="ALBERTOF_2019_2023" data-orbital-document="mensaje_presidencial_2022" role="button" tabindex="0" aria-label="Alberto Fernández · 2022 · PAT › TEC · Atractor medio · predominio legible" transform="translate(499.22 315.53)" style="--orbital-point-color:#efb64b;" aria-pressed="false">
+      <title>Alberto Fernández · 2022 · PAT › TEC · Atractor medio · predominio legible</title>
+      <circle class="orbital-point-halo" r="12"></circle>
+      <circle class="orbital-point-core" r="7"></circle>
+      <text class="orbital-year-label" x="9" y="-11" text-anchor="start">2022</text>
+    </g><g class="orbital-point " data-orbital-actor="ALFONSIN_1983_1989" data-orbital-document="1983_12_10_mensaje_presidencial_alfonsin_asuncixn" role="button" tabindex="0" aria-label="Raúl Alfonsín · 1983 · TEC › PAT · Atractor medio · predominio legible" transform="translate(453.69 278.09)" style="--orbital-point-color:#50b5ff;" aria-pressed="false">
+      <title>Raúl Alfonsín · 1983 · TEC › PAT · Atractor medio · predominio legible</title>
+      <circle class="orbital-point-halo" r="12"></circle>
+      <circle class="orbital-point-core" r="7"></circle>
+      <text class="orbital-year-label" x="-9" y="-11" text-anchor="end">1983</text>
+    </g><g class="orbital-point " data-orbital-actor="ALFONSIN_1983_1989" data-orbital-document="mensaje_presidencial_1984" role="button" tabindex="0" aria-label="Raúl Alfonsín · 1984 · PAT › TEC · Atractor medio · predominio legible" transform="translate(521.75 335.35)" style="--orbital-point-color:#efb64b;" aria-pressed="false">
+      <title>Raúl Alfonsín · 1984 · PAT › TEC · Atractor medio · predominio legible</title>
+      <circle class="orbital-point-halo" r="12"></circle>
+      <circle class="orbital-point-core" r="7"></circle>
+      <text class="orbital-year-label" x="9" y="-11" text-anchor="start">1984</text>
+    </g><g class="orbital-point " data-orbital-actor="ALFONSIN_1983_1989" data-orbital-document="mensaje_presidencial_1985" role="button" tabindex="0" aria-label="Raúl Alfonsín · 1985 · PAT › TEC · Atractor medio · predominio legible" transform="translate(458.05 330.40)" style="--orbital-point-color:#efb64b;" aria-pressed="false">
+      <title>Raúl Alfonsín · 1985 · PAT › TEC · Atractor medio · predominio legible</title>
+      <circle class="orbital-point-halo" r="12"></circle>
+      <circle class="orbital-point-core" r="7"></circle>
+      <text class="orbital-year-label" x="-9" y="-11" text-anchor="end">1985</text>
+    </g><g class="orbital-point " data-orbital-actor="ALFONSIN_1983_1989" data-orbital-document="mensaje_presidencial_1986" role="button" tabindex="0" aria-label="Raúl Alfonsín · 1986 · TEC › PAT · Atractor fuerte · separación marcada" transform="translate(375.78 319.29)" style="--orbital-point-color:#50b5ff;" aria-pressed="false">
+      <title>Raúl Alfonsín · 1986 · TEC › PAT · Atractor fuerte · separación marcada</title>
+      <circle class="orbital-point-halo" r="14"></circle>
+      <circle class="orbital-point-core" r="9"></circle>
+      <text class="orbital-year-label" x="9" y="-11" text-anchor="start">1986</text>
+    </g><g class="orbital-point " data-orbital-actor="ALFONSIN_1983_1989" data-orbital-document="mensaje_presidencial_1987" role="button" tabindex="0" aria-label="Raúl Alfonsín · 1987 · TEC › PAT · Atractor fuerte · separación marcada" transform="translate(405.80 229.28)" style="--orbital-point-color:#50b5ff;" aria-pressed="false">
+      <title>Raúl Alfonsín · 1987 · TEC › PAT · Atractor fuerte · separación marcada</title>
+      <circle class="orbital-point-halo" r="14"></circle>
+      <circle class="orbital-point-core" r="9"></circle>
+      <text class="orbital-year-label" x="-9" y="-11" text-anchor="end">1987</text>
+    </g><g class="orbital-point is-indeterminate" data-orbital-actor="ALFONSIN_1983_1989" data-orbital-document="1988_12_21_asamblea_legislativa_extraordinaria_alfonsin" role="button" tabindex="0" aria-label="Raúl Alfonsín · 1988 · TEC › MES · Atractor indeterminado · sin orden concluyente" transform="translate(218.00 301.00)" style="--orbital-point-color:#50b5ff;" aria-pressed="false">
+      <title>Raúl Alfonsín · 1988 · TEC › MES · Atractor indeterminado · sin orden concluyente</title>
+      <circle class="orbital-point-halo" r="14"></circle>
+      <circle class="orbital-point-core" r="9"></circle>
+      <text class="orbital-year-label" x="9" y="-11" text-anchor="start">1988</text>
+    </g><g class="orbital-point " data-orbital-actor="ALFONSIN_1983_1989" data-orbital-document="mensaje_presidencial_1988" role="button" tabindex="0" aria-label="Raúl Alfonsín · 1988 · TEC › PAT · Atractor medio · predominio legible" transform="translate(492.21 283.96)" style="--orbital-point-color:#50b5ff;" aria-pressed="false">
+      <title>Raúl Alfonsín · 1988 · TEC › PAT · Atractor medio · predominio legible</title>
+      <circle class="orbital-point-halo" r="12"></circle>
+      <circle class="orbital-point-core" r="7"></circle>
+      <text class="orbital-year-label" x="-9" y="-11" text-anchor="end">1988</text>
+    </g><g class="orbital-point " data-orbital-actor="ALFONSIN_1983_1989" data-orbital-document="mensaje_presidencial_1989" role="button" tabindex="0" aria-label="Raúl Alfonsín · 1989 · MES › TEC · Atractor medio · predominio legible" transform="translate(331.59 399.80)" style="--orbital-point-color:#f05f8e;" aria-pressed="false">
+      <title>Raúl Alfonsín · 1989 · MES › TEC · Atractor medio · predominio legible</title>
+      <circle class="orbital-point-halo" r="12"></circle>
+      <circle class="orbital-point-core" r="7"></circle>
+      <text class="orbital-year-label" x="9" y="-11" text-anchor="start">1989</text>
+    </g><g class="orbital-point " data-orbital-actor="CFK_I_2007_2011" data-orbital-document="asuncion_cristina_2007" role="button" tabindex="0" aria-label="Cristina Fernández de Kirchner · 2007 · PAT › TEC · Atractor fuerte · separación marcada" transform="translate(495.83 462.09)" style="--orbital-point-color:#efb64b;" aria-pressed="false">
+      <title>Cristina Fernández de Kirchner · 2007 · PAT › TEC · Atractor fuerte · separación marcada</title>
+      <circle class="orbital-point-halo" r="14"></circle>
+      <circle class="orbital-point-core" r="9"></circle>
+      <text class="orbital-year-label" x="-9" y="-11" text-anchor="end">2007</text>
+    </g><g class="orbital-point " data-orbital-actor="CFK_I_2007_2011" data-orbital-document="mensaje_presidencial_2008" role="button" tabindex="0" aria-label="Cristina Fernández de Kirchner · 2008 · TEC › PAT · Atractor fuerte · separación marcada" transform="translate(372.35 118.44)" style="--orbital-point-color:#50b5ff;" aria-pressed="false">
+      <title>Cristina Fernández de Kirchner · 2008 · TEC › PAT · Atractor fuerte · separación marcada</title>
+      <circle class="orbital-point-halo" r="14"></circle>
+      <circle class="orbital-point-core" r="9"></circle>
+      <text class="orbital-year-label" x="9" y="-11" text-anchor="start">2008</text>
+    </g><g class="orbital-point " data-orbital-actor="CFK_I_2007_2011" data-orbital-document="2010_03_01_mensaje_presidencial_fernandez" role="button" tabindex="0" aria-label="Cristina Fernández de Kirchner · 2010 · PAT › TEC · Atractor fuerte · separación marcada" transform="translate(562.86 406.86)" style="--orbital-point-color:#efb64b;" aria-pressed="false">
+      <title>Cristina Fernández de Kirchner · 2010 · PAT › TEC · Atractor fuerte · separación marcada</title>
+      <circle class="orbital-point-halo" r="14"></circle>
+      <circle class="orbital-point-core" r="9"></circle>
+      <text class="orbital-year-label" x="-9" y="-11" text-anchor="end">2010</text>
+    </g><g class="orbital-point " data-orbital-actor="CFK_I_2007_2011" data-orbital-document="2011_03_01_mensaje_presidencial_fernandez" role="button" tabindex="0" aria-label="Cristina Fernández de Kirchner · 2011 · TEC › PAT · Atractor fuerte · separación marcada" transform="translate(460.66 229.09)" style="--orbital-point-color:#50b5ff;" aria-pressed="false">
+      <title>Cristina Fernández de Kirchner · 2011 · TEC › PAT · Atractor fuerte · separación marcada</title>
+      <circle class="orbital-point-halo" r="14"></circle>
+      <circle class="orbital-point-core" r="9"></circle>
+      <text class="orbital-year-label" x="9" y="-11" text-anchor="start">2011</text>
+    </g><g class="orbital-point " data-orbital-actor="CFK_II_2011_2015" data-orbital-document="asuncion_cristina_2011" role="button" tabindex="0" aria-label="Cristina Fernández de Kirchner · 2011 · TEC › PAT · Atractor fuerte · separación marcada" transform="translate(360.00 218.65)" style="--orbital-point-color:#50b5ff;" aria-pressed="false">
+      <title>Cristina Fernández de Kirchner · 2011 · TEC › PAT · Atractor fuerte · separación marcada</title>
+      <circle class="orbital-point-halo" r="14"></circle>
+      <circle class="orbital-point-core" r="9"></circle>
+      <text class="orbital-year-label" x="-9" y="-11" text-anchor="end">2011</text>
+    </g><g class="orbital-point " data-orbital-actor="CFK_II_2011_2015" data-orbital-document="2012_03_01_mensaje_presidencial_fernandez" role="button" tabindex="0" aria-label="Cristina Fernández de Kirchner · 2012 · PAT › TEC · Atractor fuerte · separación marcada" transform="translate(540.72 368.35)" style="--orbital-point-color:#efb64b;" aria-pressed="false">
+      <title>Cristina Fernández de Kirchner · 2012 · PAT › TEC · Atractor fuerte · separación marcada</title>
+      <circle class="orbital-point-halo" r="14"></circle>
+      <circle class="orbital-point-core" r="9"></circle>
+      <text class="orbital-year-label" x="9" y="-11" text-anchor="start">2012</text>
+    </g><g class="orbital-point " data-orbital-actor="CFK_II_2011_2015" data-orbital-document="2013_03_01_asamblea_legislativa_fernandez" role="button" tabindex="0" aria-label="Cristina Fernández de Kirchner · 2013 · PAT › TEC · Atractor medio · predominio legible" transform="translate(527.38 345.15)" style="--orbital-point-color:#efb64b;" aria-pressed="false">
+      <title>Cristina Fernández de Kirchner · 2013 · PAT › TEC · Atractor medio · predominio legible</title>
+      <circle class="orbital-point-halo" r="12"></circle>
+      <circle class="orbital-point-core" r="7"></circle>
+      <text class="orbital-year-label" x="-9" y="-11" text-anchor="end">2013</text>
+    </g><g class="orbital-point " data-orbital-actor="CFK_II_2011_2015" data-orbital-document="2014_03_01_asamblea_legislativa_fernandez" role="button" tabindex="0" aria-label="Cristina Fernández de Kirchner · 2014 · PAT › TEC · Atractor medio · predominio legible" transform="translate(505.74 307.50)" style="--orbital-point-color:#efb64b;" aria-pressed="false">
+      <title>Cristina Fernández de Kirchner · 2014 · PAT › TEC · Atractor medio · predominio legible</title>
+      <circle class="orbital-point-halo" r="12"></circle>
+      <circle class="orbital-point-core" r="7"></circle>
+      <text class="orbital-year-label" x="9" y="-11" text-anchor="start">2014</text>
+    </g><g class="orbital-point " data-orbital-actor="CFK_II_2011_2015" data-orbital-document="2015_03_01_asamblea_legislativa_fernandez" role="button" tabindex="0" aria-label="Cristina Fernández de Kirchner · 2015 · PAT › TEC · Atractor medio · predominio legible" transform="translate(529.41 348.67)" style="--orbital-point-color:#efb64b;" aria-pressed="false">
+      <title>Cristina Fernández de Kirchner · 2015 · PAT › TEC · Atractor medio · predominio legible</title>
+      <circle class="orbital-point-halo" r="12"></circle>
+      <circle class="orbital-point-core" r="7"></circle>
+      <text class="orbital-year-label" x="-9" y="-11" text-anchor="end">2015</text>
+    </g><g class="orbital-point " data-orbital-actor="DELARUA_1999_2001" data-orbital-document="1999_12_10_mensaje_presidencial_de_la_rua_asuncixn" role="button" tabindex="0" aria-label="Fernando de la Rúa · 1999 · PAT › TEC · Atractor medio · predominio legible" transform="translate(490.16 362.75)" style="--orbital-point-color:#efb64b;" aria-pressed="false">
+      <title>Fernando de la Rúa · 1999 · PAT › TEC · Atractor medio · predominio legible</title>
+      <circle class="orbital-point-halo" r="12"></circle>
+      <circle class="orbital-point-core" r="7"></circle>
+      <text class="orbital-year-label" x="9" y="-11" text-anchor="start">1999</text>
+    </g><g class="orbital-point " data-orbital-actor="DELARUA_1999_2001" data-orbital-document="2000_03_01_mensaje_presidencial_de_la_rua" role="button" tabindex="0" aria-label="Fernando de la Rúa · 2000 · PAT › TEC · Atractor fuerte · separación marcada" transform="translate(495.83 376.18)" style="--orbital-point-color:#efb64b;" aria-pressed="false">
+      <title>Fernando de la Rúa · 2000 · PAT › TEC · Atractor fuerte · separación marcada</title>
+      <circle class="orbital-point-halo" r="14"></circle>
+      <circle class="orbital-point-core" r="9"></circle>
+      <text class="orbital-year-label" x="-9" y="-11" text-anchor="end">2000</text>
+    </g><g class="orbital-point " data-orbital-actor="DELARUA_1999_2001" data-orbital-document="2001_03_01_mensaje_presidencial_de_la_rua" role="button" tabindex="0" aria-label="Fernando de la Rúa · 2001 · TEC › PAT · Atractor medio · predominio legible" transform="translate(429.66 324.30)" style="--orbital-point-color:#50b5ff;" aria-pressed="false">
+      <title>Fernando de la Rúa · 2001 · TEC › PAT · Atractor medio · predominio legible</title>
+      <circle class="orbital-point-halo" r="12"></circle>
+      <circle class="orbital-point-core" r="7"></circle>
+      <text class="orbital-year-label" x="9" y="-11" text-anchor="start">2001</text>
+    </g><g class="orbital-point " data-orbital-actor="DUHALDE_2002_2003" data-orbital-document="2002_01_01_mensaje_presidencial_duhalde_asuncixn" role="button" tabindex="0" aria-label="Eduardo Duhalde · 2002 · PAT › MES · Atractor fuerte · separación marcada" transform="translate(407.33 465.67)" style="--orbital-point-color:#efb64b;" aria-pressed="false">
+      <title>Eduardo Duhalde · 2002 · PAT › MES · Atractor fuerte · separación marcada</title>
+      <circle class="orbital-point-halo" r="14"></circle>
+      <circle class="orbital-point-core" r="9"></circle>
+      <text class="orbital-year-label" x="-9" y="-11" text-anchor="end">2002</text>
+    </g><g class="orbital-point " data-orbital-actor="DUHALDE_2002_2003" data-orbital-document="2002_03_01_mensaje_presidencial_duhalde" role="button" tabindex="0" aria-label="Eduardo Duhalde · 2002 · TEC › PAT · Atractor medio · predominio legible" transform="translate(411.05 342.63)" style="--orbital-point-color:#50b5ff;" aria-pressed="false">
+      <title>Eduardo Duhalde · 2002 · TEC › PAT · Atractor medio · predominio legible</title>
+      <circle class="orbital-point-halo" r="12"></circle>
+      <circle class="orbital-point-core" r="7"></circle>
+      <text class="orbital-year-label" x="9" y="-11" text-anchor="start">2002</text>
+    </g><g class="orbital-point " data-orbital-actor="DUHALDE_2002_2003" data-orbital-document="2003_03_01_mensaje_presidencial_duhalde" role="button" tabindex="0" aria-label="Eduardo Duhalde · 2003 · TEC › PAT · Atractor medio · predominio legible" transform="translate(413.25 331.88)" style="--orbital-point-color:#50b5ff;" aria-pressed="false">
+      <title>Eduardo Duhalde · 2003 · TEC › PAT · Atractor medio · predominio legible</title>
+      <circle class="orbital-point-halo" r="12"></circle>
+      <circle class="orbital-point-core" r="7"></circle>
+      <text class="orbital-year-label" x="-9" y="-11" text-anchor="end">2003</text>
+    </g><g class="orbital-point " data-orbital-actor="KIRCHNER_2003_2007" data-orbital-document="2003_05_25_mensaje_presidencial_kirchner_asuncixn" role="button" tabindex="0" aria-label="Néstor Kirchner · 2003 · PAT › TEC · Atractor medio · predominio legible" transform="translate(490.58 326.55)" style="--orbital-point-color:#efb64b;" aria-pressed="false">
+      <title>Néstor Kirchner · 2003 · PAT › TEC · Atractor medio · predominio legible</title>
+      <circle class="orbital-point-halo" r="12"></circle>
+      <circle class="orbital-point-core" r="7"></circle>
+      <text class="orbital-year-label" x="9" y="-11" text-anchor="start">2003</text>
+    </g><g class="orbital-point " data-orbital-actor="KIRCHNER_2003_2007" data-orbital-document="2004_03_01_mensaje_presidencial_kirchner" role="button" tabindex="0" aria-label="Néstor Kirchner · 2004 · PAT › TEC · Atractor fuerte · separación marcada" transform="translate(540.42 367.84)" style="--orbital-point-color:#efb64b;" aria-pressed="false">
+      <title>Néstor Kirchner · 2004 · PAT › TEC · Atractor fuerte · separación marcada</title>
+      <circle class="orbital-point-halo" r="14"></circle>
+      <circle class="orbital-point-core" r="9"></circle>
+      <text class="orbital-year-label" x="-9" y="-11" text-anchor="end">2004</text>
+    </g><g class="orbital-point " data-orbital-actor="KIRCHNER_2003_2007" data-orbital-document="2005_03_01_mensaje_presidencial_kirchner" role="button" tabindex="0" aria-label="Néstor Kirchner · 2005 · TEC › PAT · Atractor medio · predominio legible" transform="translate(478.51 288.56)" style="--orbital-point-color:#50b5ff;" aria-pressed="false">
+      <title>Néstor Kirchner · 2005 · TEC › PAT · Atractor medio · predominio legible</title>
+      <circle class="orbital-point-halo" r="12"></circle>
+      <circle class="orbital-point-core" r="7"></circle>
+      <text class="orbital-year-label" x="9" y="-11" text-anchor="start">2005</text>
+    </g><g class="orbital-point " data-orbital-actor="KIRCHNER_2003_2007" data-orbital-document="2006_03_01_mensaje_presidencial_kirchner" role="button" tabindex="0" aria-label="Néstor Kirchner · 2006 · TEC › PAT · Atractor medio · predominio legible" transform="translate(481.45 284.75)" style="--orbital-point-color:#50b5ff;" aria-pressed="false">
+      <title>Néstor Kirchner · 2006 · TEC › PAT · Atractor medio · predominio legible</title>
+      <circle class="orbital-point-halo" r="12"></circle>
+      <circle class="orbital-point-core" r="7"></circle>
+      <text class="orbital-year-label" x="-9" y="-11" text-anchor="end">2006</text>
+    </g><g class="orbital-point " data-orbital-actor="KIRCHNER_2003_2007" data-orbital-document="2007_03_01_mensaje_presidencial_kirchner" role="button" tabindex="0" aria-label="Néstor Kirchner · 2007 · TEC › PAT · Atractor medio · predominio legible" transform="translate(475.01 311.21)" style="--orbital-point-color:#50b5ff;" aria-pressed="false">
+      <title>Néstor Kirchner · 2007 · TEC › PAT · Atractor medio · predominio legible</title>
+      <circle class="orbital-point-halo" r="12"></circle>
+      <circle class="orbital-point-core" r="7"></circle>
+      <text class="orbital-year-label" x="9" y="-11" text-anchor="start">2007</text>
+    </g><g class="orbital-point " data-orbital-actor="MACRI_2015_2019" data-orbital-document="2015_12_10_mensaje_presidencial_macri_asuncixn" role="button" tabindex="0" aria-label="Mauricio Macri · 2015 · PAT › TEC · Atractor fuerte · separación marcada" transform="translate(566.55 413.27)" style="--orbital-point-color:#efb64b;" aria-pressed="false">
+      <title>Mauricio Macri · 2015 · PAT › TEC · Atractor fuerte · separación marcada</title>
+      <circle class="orbital-point-halo" r="14"></circle>
+      <circle class="orbital-point-core" r="9"></circle>
+      <text class="orbital-year-label" x="-9" y="-11" text-anchor="end">2015</text>
+    </g><g class="orbital-point " data-orbital-actor="MACRI_2015_2019" data-orbital-document="2016_03_01_asamblea_legislativa_macri" role="button" tabindex="0" aria-label="Mauricio Macri · 2016 · TEC › PAT · Atractor fuerte · separación marcada" transform="translate(445.20 202.20)" style="--orbital-point-color:#50b5ff;" aria-pressed="false">
+      <title>Mauricio Macri · 2016 · TEC › PAT · Atractor fuerte · separación marcada</title>
+      <circle class="orbital-point-halo" r="14"></circle>
+      <circle class="orbital-point-core" r="9"></circle>
+      <text class="orbital-year-label" x="9" y="-11" text-anchor="start">2016</text>
+    </g><g class="orbital-point " data-orbital-actor="MACRI_2015_2019" data-orbital-document="2017_03_01_asamblea_legislativa_macri" role="button" tabindex="0" aria-label="Mauricio Macri · 2017 · TEC › PAT · Atractor fuerte · separación marcada" transform="translate(442.21 197.00)" style="--orbital-point-color:#50b5ff;" aria-pressed="false">
+      <title>Mauricio Macri · 2017 · TEC › PAT · Atractor fuerte · separación marcada</title>
+      <circle class="orbital-point-halo" r="14"></circle>
+      <circle class="orbital-point-core" r="9"></circle>
+      <text class="orbital-year-label" x="-9" y="-11" text-anchor="end">2017</text>
+    </g><g class="orbital-point is-indeterminate" data-orbital-actor="MACRI_2015_2019" data-orbital-document="01_03_2018as" role="button" tabindex="0" aria-label="Mauricio Macri · 2018 · PAT › TEC · Atractor indeterminado · sin orden concluyente" transform="translate(530.40 350.40)" style="--orbital-point-color:#efb64b;" aria-pressed="false">
+      <title>Mauricio Macri · 2018 · PAT › TEC · Atractor indeterminado · sin orden concluyente</title>
+      <circle class="orbital-point-halo" r="14"></circle>
+      <circle class="orbital-point-core" r="9"></circle>
+      <text class="orbital-year-label" x="9" y="-11" text-anchor="start">2018</text>
+    </g><g class="orbital-point " data-orbital-actor="MACRI_2015_2019" data-orbital-document="vt_01_03_2019_as_00" role="button" tabindex="0" aria-label="Mauricio Macri · 2019 · TEC › PAT · Atractor fuerte · separación marcada" transform="translate(360.00 265.72)" style="--orbital-point-color:#50b5ff;" aria-pressed="false">
+      <title>Mauricio Macri · 2019 · TEC › PAT · Atractor fuerte · separación marcada</title>
+      <circle class="orbital-point-halo" r="14"></circle>
+      <circle class="orbital-point-core" r="9"></circle>
+      <text class="orbital-year-label" x="-9" y="-11" text-anchor="end">2019</text>
+    </g><g class="orbital-point " data-orbital-actor="MENEM_I_1989_1995" data-orbital-document="mensaje_presidencial_1990" role="button" tabindex="0" aria-label="Carlos Menem · 1990 · PAT › TEC · Atractor medio · predominio legible" transform="translate(505.46 355.22)" style="--orbital-point-color:#efb64b;" aria-pressed="false">
+      <title>Carlos Menem · 1990 · PAT › TEC · Atractor medio · predominio legible</title>
+      <circle class="orbital-point-halo" r="12"></circle>
+      <circle class="orbital-point-core" r="7"></circle>
+      <text class="orbital-year-label" x="9" y="-11" text-anchor="start">1990</text>
+    </g><g class="orbital-point " data-orbital-actor="MENEM_I_1989_1995" data-orbital-document="mensaje_presidencial_1991" role="button" tabindex="0" aria-label="Carlos Menem · 1991 · PAT › TEC · Atractor fuerte · separación marcada" transform="translate(543.76 373.64)" style="--orbital-point-color:#efb64b;" aria-pressed="false">
+      <title>Carlos Menem · 1991 · PAT › TEC · Atractor fuerte · separación marcada</title>
+      <circle class="orbital-point-halo" r="14"></circle>
+      <circle class="orbital-point-core" r="9"></circle>
+      <text class="orbital-year-label" x="-9" y="-11" text-anchor="end">1991</text>
+    </g><g class="orbital-point " data-orbital-actor="MENEM_I_1989_1995" data-orbital-document="mensaje_presidencial_1992" role="button" tabindex="0" aria-label="Carlos Menem · 1992 · PAT › TEC · Atractor fuerte · separación marcada" transform="translate(542.75 440.61)" style="--orbital-point-color:#efb64b;" aria-pressed="false">
+      <title>Carlos Menem · 1992 · PAT › TEC · Atractor fuerte · separación marcada</title>
+      <circle class="orbital-point-halo" r="14"></circle>
+      <circle class="orbital-point-core" r="9"></circle>
+      <text class="orbital-year-label" x="9" y="-11" text-anchor="start">1992</text>
+    </g><g class="orbital-point " data-orbital-actor="MENEM_I_1989_1995" data-orbital-document="mensaje_presidencial_1993" role="button" tabindex="0" aria-label="Carlos Menem · 1993 · PAT › TEC · Atractor medio · predominio legible" transform="translate(522.29 336.29)" style="--orbital-point-color:#efb64b;" aria-pressed="false">
+      <title>Carlos Menem · 1993 · PAT › TEC · Atractor medio · predominio legible</title>
+      <circle class="orbital-point-halo" r="12"></circle>
+      <circle class="orbital-point-core" r="7"></circle>
+      <text class="orbital-year-label" x="-9" y="-11" text-anchor="end">1993</text>
+    </g><g class="orbital-point " data-orbital-actor="MENEM_I_1989_1995" data-orbital-document="mensaje_presidencial_1994" role="button" tabindex="0" aria-label="Carlos Menem · 1994 · PAT › TEC · Atractor medio · predominio legible" transform="translate(462.65 351.59)" style="--orbital-point-color:#efb64b;" aria-pressed="false">
+      <title>Carlos Menem · 1994 · PAT › TEC · Atractor medio · predominio legible</title>
+      <circle class="orbital-point-halo" r="12"></circle>
+      <circle class="orbital-point-core" r="7"></circle>
+      <text class="orbital-year-label" x="9" y="-11" text-anchor="start">1994</text>
+    </g><g class="orbital-point " data-orbital-actor="MENEM_II_1995_1999" data-orbital-document="1995_07_08_mensaje_presidencial_menem_asuncixn" role="button" tabindex="0" aria-label="Carlos Menem · 1995 · PAT › TEC · Atractor débil · fuerzas próximas" transform="translate(530.40 350.40)" style="--orbital-point-color:#efb64b;" aria-pressed="false">
+      <title>Carlos Menem · 1995 · PAT › TEC · Atractor débil · fuerzas próximas</title>
+      <circle class="orbital-point-halo" r="10"></circle>
+      <circle class="orbital-point-core" r="5"></circle>
+      <text class="orbital-year-label" x="-9" y="-11" text-anchor="end">1995</text>
+    </g><g class="orbital-point " data-orbital-actor="MENEM_I_1989_1995" data-orbital-document="mensaje_presidencial_1995" role="button" tabindex="0" aria-label="Carlos Menem · 1995 · PAT › TEC · Atractor medio · predominio legible" transform="translate(503.56 303.71)" style="--orbital-point-color:#efb64b;" aria-pressed="false">
+      <title>Carlos Menem · 1995 · PAT › TEC · Atractor medio · predominio legible</title>
+      <circle class="orbital-point-halo" r="12"></circle>
+      <circle class="orbital-point-core" r="7"></circle>
+      <text class="orbital-year-label" x="9" y="-11" text-anchor="start">1995</text>
+    </g><g class="orbital-point " data-orbital-actor="MENEM_II_1995_1999" data-orbital-document="mensaje_presidencial_1996" role="button" tabindex="0" aria-label="Carlos Menem · 1996 · PAT › — · Atractor débil · fuerzas próximas" transform="translate(644.00 548.00)" style="--orbital-point-color:#efb64b;" aria-pressed="false">
+      <title>Carlos Menem · 1996 · PAT › — · Atractor débil · fuerzas próximas</title>
+      <circle class="orbital-point-halo" r="10"></circle>
+      <circle class="orbital-point-core" r="5"></circle>
+      <text class="orbital-year-label" x="-9" y="-11" text-anchor="end">1996</text>
+    </g><g class="orbital-point " data-orbital-actor="MENEM_II_1995_1999" data-orbital-document="mensaje_presidencial_1997" role="button" tabindex="0" aria-label="Carlos Menem · 1997 · TEC › PAT · Atractor medio · predominio legible" transform="translate(499.42 296.51)" style="--orbital-point-color:#50b5ff;" aria-pressed="false">
+      <title>Carlos Menem · 1997 · TEC › PAT · Atractor medio · predominio legible</title>
+      <circle class="orbital-point-halo" r="12"></circle>
+      <circle class="orbital-point-core" r="7"></circle>
+      <text class="orbital-year-label" x="9" y="-11" text-anchor="start">1997</text>
+    </g><g class="orbital-point " data-orbital-actor="MENEM_II_1995_1999" data-orbital-document="1998_03_01_mensaje_presidencial_menem" role="button" tabindex="0" aria-label="Carlos Menem · 1998 · PAT › TEC · Atractor fuerte · separación marcada" transform="translate(505.65 408.67)" style="--orbital-point-color:#efb64b;" aria-pressed="false">
+      <title>Carlos Menem · 1998 · PAT › TEC · Atractor fuerte · separación marcada</title>
+      <circle class="orbital-point-halo" r="14"></circle>
+      <circle class="orbital-point-core" r="9"></circle>
+      <text class="orbital-year-label" x="-9" y="-11" text-anchor="end">1998</text>
+    </g><g class="orbital-point " data-orbital-actor="MENEM_II_1995_1999" data-orbital-document="1999_03_01_mensaje_presidencial_menem" role="button" tabindex="0" aria-label="Carlos Menem · 1999 · PAT › TEC · Atractor fuerte · separación marcada" transform="translate(504.41 405.66)" style="--orbital-point-color:#efb64b;" aria-pressed="false">
+      <title>Carlos Menem · 1999 · PAT › TEC · Atractor fuerte · separación marcada</title>
+      <circle class="orbital-point-halo" r="14"></circle>
+      <circle class="orbital-point-core" r="9"></circle>
+      <text class="orbital-year-label" x="9" y="-11" text-anchor="start">1999</text>
+    </g><g class="orbital-point " data-orbital-actor="MILEI_2023_PRESENTE" data-orbital-document="2024_mensaje_asamblea_legislativa_milei" role="button" tabindex="0" aria-label="Javier Milei · 2024 · TEC › MES · Atractor medio · predominio legible" transform="translate(352.32 361.08)" style="--orbital-point-color:#50b5ff;" aria-pressed="false">
+      <title>Javier Milei · 2024 · TEC › MES · Atractor medio · predominio legible</title>
+      <circle class="orbital-point-halo" r="12"></circle>
+      <circle class="orbital-point-core" r="7"></circle>
+      <text class="orbital-year-label" x="-9" y="-11" text-anchor="end">2024</text>
+    </g><g class="orbital-point " data-orbital-actor="MILEI_2023_PRESENTE" data-orbital-document="2025_mensaje_asamblea_legislativa_milei" role="button" tabindex="0" aria-label="Javier Milei · 2025 · TEC › MES · Atractor fuerte · separación marcada" transform="translate(338.43 316.63)" style="--orbital-point-color:#50b5ff;" aria-pressed="false">
+      <title>Javier Milei · 2025 · TEC › MES · Atractor fuerte · separación marcada</title>
+      <circle class="orbital-point-halo" r="14"></circle>
+      <circle class="orbital-point-core" r="9"></circle>
+      <text class="orbital-year-label" x="9" y="-11" text-anchor="start">2025</text>
+    </g><g class="orbital-point " data-orbital-actor="MILEI_2023_PRESENTE" data-orbital-document="2026_asamblea_legislativa_milei" role="button" tabindex="0" aria-label="Javier Milei · 2026 · MES › TEC · Atractor medio · predominio legible" transform="translate(454.67 362.75)" style="--orbital-point-color:#f05f8e;" aria-pressed="false">
+      <title>Javier Milei · 2026 · MES › TEC · Atractor medio · predominio legible</title>
+      <circle class="orbital-point-halo" r="12"></circle>
+      <circle class="orbital-point-core" r="7"></circle>
+      <text class="orbital-year-label" x="-9" y="-11" text-anchor="end">2026</text>
+    </g><g class="orbital-point " data-orbital-actor="RODRIGUEZ_SAA_2001" data-orbital-document="2001_12_22_23_mensaje_presidencial_rodrxguez_sax_asuncixn" role="button" tabindex="0" aria-label="Adolfo Rodríguez Saá · 2001 · PAT › MES · Atractor fuerte · separación marcada" transform="translate(421.73 454.92)" style="--orbital-point-color:#efb64b;" aria-pressed="false">
+      <title>Adolfo Rodríguez Saá · 2001 · PAT › MES · Atractor fuerte · separación marcada</title>
+      <circle class="orbital-point-halo" r="14"></circle>
+      <circle class="orbital-point-core" r="9"></circle>
+      <text class="orbital-year-label" x="9" y="-11" text-anchor="start">2001</text>
+    </g></g>
+  </svg></div>
+        <aside class="orbital-inspector" aria-live="polite"><div class="orbital-inspector-kicker">CORPUS COMPLETO · HCDN 1983–2026</div>
+    <h3>El campo antes que la etiqueta</h3>
+    <p>Cada punto usa los <strong>tres cuerpos al mismo tiempo</strong>. La cercanía a un vértice indica qué fuerza pesa más; la posición interior conserva la presión de las otras dos.</p>
+    <div class="orbital-overview-metrics">
+      <div><strong>52</strong><span>discursos</span></div>
+      <div><strong>12</strong><span>unidades de mandato</span></div>
+      <div><strong>43</strong><span>con TEC y PAT al frente</span></div>
+    </div>
+    <p class="orbital-inspector-prompt">Elegí una unidad de mandato para aislar su órbita. También podés activar cualquier punto.</p></aside>
+      </div>
+      <div class="orbital-timeline" aria-live="polite"><div class="orbital-timeline-empty">Elegí una trayectoria para ver cómo cambia la configuración documento por documento.</div></div>
+    </section>
+
+    <section class="orbital-family-section">
+      <div class="section-sep-label"><span>LEYENDA ESTADÍSTICA</span></div>
+      <div class="orbital-family-heading">
+        <div><span class="section-kicker">FAMILIAS DE PRIMER PLANO</span><h2>Cómo se abrevia lo que muestra el campo</h2></div>
+        <p>Estas familias cuentan qué dos fuerzas ocupan el primer plano y en qué orden. Son una síntesis estadística del mapa, no órbitas independientes.</p>
+      </div>
+      <div class="config-cards">
+        <div class="config-card">
+    <button type="button" class="config-card-header" aria-expanded="false">
+      <span class="config-label-large"><span class="config-pat">Paternalismo</span><span class="config-plus"> + </span><span class="config-tec">tecnocracia</span></span>
+      <span class="config-stats">FRECUENTE · 30 DOC · 8 ACTORES</span>
+      <span class="config-card-expand" aria-hidden="true">›</span>
+    </button>
+    <div class="config-card-body">
+      <div class="config-card-inner">
+        <p>La configuración más frecuente. El lenguaje de protección social encuadra el discurso; la tecnocracia lo instrumenta. Aparece en contextos políticos opuestos. El caso Menem es el más robusto: discurso paternalista sostenido durante la mayor reforma de mercado de la democracia argentina. El discurso y el gobierno no son lo mismo.</p>
+        <p class="text-2"><strong>Actores:</strong> <a href="./actor-alfonsin.html" data-client-route="#actores/alfonsin">Raúl Alfonsín</a>, <a href="./actor-menem.html" data-client-route="#actores/menem">Carlos Menem</a>, <a href="./actor-delarua.html" data-client-route="#actores/delarua">Fernando de la Rúa</a>, <a href="./actor-kirchner.html" data-client-route="#actores/kirchner">Néstor Kirchner</a>, <a href="./actor-cfk.html" data-client-route="#actores/cfk">Cristina Fernández de Kirchner</a>, <a href="./actor-macri.html" data-client-route="#actores/macri">Mauricio Macri</a>, <a href="./actor-albertof.html" data-client-route="#actores/albertof">Alberto Fernández</a></p>
+        <ul><li class="muted" style="font-size:.85rem;">El registro discursivo paternalista no describe la orientación gubernamental. El caso Menem es el ejemplo más robusto de esta disociación.</li><li class="muted" style="font-size:.85rem;">Hipótesis provisional — no clasificación definitiva de los actores asociados.</li></ul>
+      </div>
+    </div>
+  </div><div class="config-card">
+    <button type="button" class="config-card-header" aria-expanded="false">
+      <span class="config-label-large"><span class="config-tec">Tecnocracia</span><span class="config-plus"> + </span><span class="config-pat">paternalismo</span></span>
+      <span class="config-stats">FRECUENTE · 2 DOC · 1 ACTORES</span>
+      <span class="config-card-expand" aria-hidden="true">›</span>
+    </button>
+    <div class="config-card-body">
+      <div class="config-card-inner">
+        <p>La cara inversa del díada. El lenguaje de modernización técnica, eficiencia institucional o racionalización del Estado domina; el registro tutelar acompaña. CFK es el caso más robusto: seis de nueve documentos con atractor fuerte, nivel de cautela bajo.</p>
+        <p class="text-2"><strong>Actores:</strong> <a href="./actor-alfonsin.html" data-client-route="#actores/alfonsin">Raúl Alfonsín</a>, <a href="./actor-menem.html" data-client-route="#actores/menem">Carlos Menem</a>, <a href="./actor-delarua.html" data-client-route="#actores/delarua">Fernando de la Rúa</a>, <a href="./actor-duhalde.html" data-client-route="#actores/duhalde">Eduardo Duhalde</a>, <a href="./actor-kirchner.html" data-client-route="#actores/kirchner">Néstor Kirchner</a>, <a href="./actor-cfk.html" data-client-route="#actores/cfk">Cristina Fernández de Kirchner</a>, <a href="./actor-macri.html" data-client-route="#actores/macri">Mauricio Macri</a>, <a href="./actor-albertof.html" data-client-route="#actores/albertof">Alberto Fernández</a></p>
+        <ul><li class="muted" style="font-size:.85rem;">La distincción entre pat+tec y tec+pat es analíticamente central. No fusionar bajo “díada tec/pat”.</li><li class="muted" style="font-size:.85rem;">Hipótesis provisional — no clasificación definitiva de los actores asociados.</li></ul>
+      </div>
+    </div>
+  </div><div class="config-card">
+    <button type="button" class="config-card-header" aria-expanded="false">
+      <span class="config-label-large"><span class="config-tec">Tecnocracia</span><span class="config-plus"> + </span><span class="config-mes">mesianismo</span></span>
+      <span class="config-stats">MINORITARIA · 0 DOC · 0 ACTORES</span>
+      <span class="config-card-expand" aria-hidden="true">›</span>
+    </button>
+    <div class="config-card-body">
+      <div class="config-card-inner">
+        <p>Tres documentos de la línea de base: Alfonsín 1988 y Milei 2024–2025. La auditoría funcional reabre la dirección agregada de Milei y la publica como MES→TEC↺.</p>
+        <p class="text-2"><strong>Actores:</strong> <a href="./actor-alfonsin.html" data-client-route="#actores/alfonsin">Raúl Alfonsín</a>, <a href="./actor-milei.html" data-client-route="#actores/milei">Javier Milei</a></p>
+        <ul><li class="muted" style="font-size:.85rem;">La familia conserva la pantalla documental histórica; no reemplaza la adjudicación funcional v0.4.</li></ul>
+      </div>
+    </div>
+  </div><div class="config-card">
+    <button type="button" class="config-card-header" aria-expanded="false">
+      <span class="config-label-large"><span class="config-pat">Paternalismo</span><span class="config-plus"> + </span><span class="config-mes">mesianismo</span></span>
+      <span class="config-stats">MINORITARIA · 1 DOC · 1 ACTORES</span>
+      <span class="config-card-expand" aria-hidden="true">›</span>
+    </button>
+    <div class="config-card-body">
+      <div class="config-card-inner">
+        <p>Aparece en las inauguraciones de Rodríguez Saá (diciembre 2001) y Duhalde (enero 2002). Ambos casos coinciden con ruptura institucional aguda: el colapso del Estado y el default. El patrón no describe a estos actores: describe el contexto.</p>
+        <p class="text-2"><strong>Actores:</strong> <a href="./actor-rodriguezsa.html" data-client-route="#actores/rodriguezsa">Adolfo Rodríguez Saá</a>, <a href="./actor-duhalde.html" data-client-route="#actores/duhalde">Eduardo Duhalde</a></p>
+        <ul><li class="muted" style="font-size:.85rem;">El patrón describe el contexto de crisis, no a los actores como tipo estructural.</li><li class="muted" style="font-size:.85rem;">n=2 documentos de dos actores distintos — no generalizar como configuración de actor.</li></ul>
+      </div>
+    </div>
+  </div><div class="config-card">
+    <button type="button" class="config-card-header" aria-expanded="false">
+      <span class="config-label-large"><span class="config-pat">Paternalismo</span><span class="config-plus"> + </span><span class="config-none">none</span></span>
+      <span class="config-stats">CASO LÍMITE · 0 DOC · 0 ACTORES</span>
+      <span class="config-card-expand" aria-hidden="true">›</span>
+    </button>
+    <div class="config-card-body">
+      <div class="config-card-inner">
+        <p>Un único documento: apertura de Menem de 1996 sin vector secundario discernible. Único en el corpus: paternalismo sin acompañamiento secundario, con atractor débil.</p>
+        <p class="text-2"><strong>Actores:</strong> <a href="./actor-menem.html" data-client-route="#actores/menem">Carlos Menem</a></p>
+        <ul><li class="muted" style="font-size:.85rem;">n=1 documento. No generalizar como configuración estable de ningún actor.</li></ul>
+      </div>
+    </div>
+  </div><div class="config-card">
+    <button type="button" class="config-card-header" aria-expanded="false">
+      <span class="config-label-large"><span class="config-mes">Mesianismo</span><span class="config-plus"> + </span><span class="config-tec">tecnocracia</span></span>
+      <span class="config-stats">MINORITARIA · 5 DOC · 2 ACTORES</span>
+      <span class="config-card-expand" aria-hidden="true">›</span>
+    </button>
+    <div class="config-card-body">
+      <div class="config-card-inner">
+        <p>Dos documentos adjudicados: la última apertura de Alfonsín en 1989 y la apertura de Milei de 2026. Comparten primer plano MES–TEC, pero no el mismo contexto ni la misma certeza.</p>
+        <p class="text-2"><strong>Actores:</strong> <a href="./actor-alfonsin.html" data-client-route="#actores/alfonsin">Raúl Alfonsín</a>, <a href="./actor-milei.html" data-client-route="#actores/milei">Javier Milei</a></p>
+        <ul><li class="muted" style="font-size:.85rem;">No igualar Alfonsín 1989 y Milei 2026: la pareja coincide, el régimen temporal y el estado de evidencia no.</li></ul>
+      </div>
+    </div>
+  </div><div class="config-card">
+    <button type="button" class="config-card-header" aria-expanded="false">
+      <span class="config-label-large"><span class="config-indeterminate">indeterminate</span></span>
+      <span class="config-stats">SIN POSICIÓN · 14 DOC · 8 ACTORES</span>
+      <span class="config-card-expand" aria-hidden="true">›</span>
+    </button>
+    <div class="config-card-body">
+      <div class="config-card-inner">
+        <p>Documentos sin configuración determinable: empate exacto entre vectores o score total insuficiente para establecer dominancia.</p>
+
+        <ul><li class="muted" style="font-size:.85rem;">Los documentos indeterminate se registran pero no contribuyen a perfiles de actor con igual peso que los documentos con atractor definido.</li></ul>
+      </div>
+    </div>
+  </div>
+      </div>
+
+    </section>
+
+    <div class="orbital-boundary-note">
+      <div class="orbital-boundary-main"><strong>Qué demuestra:</strong> masa relativa, adjudicación funcional y transiciones del lenguaje presidencial formal dentro del corpus HCDN.</div>
+      <div><strong>Qué no demuestra:</strong> ideología, políticas ejecutadas, personalidad del actor ni una conciliación estable de los tres cuerpos.</div>
+      <a href="./evidencia.html#evidencia-peron" data-client-route="#evidencia/peron">Perón se mantiene fuera de esta escala numérica →</a>
+    </div>
+    <div class="notice notice-amber mt-2">
+      <span class="badge-group"><span class="badge badge-caution" title="Hipótesis provisional — no clasificación histórica definitiva.">HIPÓTESIS PROVISIONAL</span><span class="badge badge-info" title="Corpus HCDN — no incluye Perón ni pipeline alternativa.">CORPUS HCDN — NO INCLUYE PERÓN</span></span>
+      La proyección deriva de NB05/NB10, la auditoría NB13 y la prueba temporal NB15. En 2026, la posición conserva la masa de pantalla y la ficha muestra la pareja funcional adjudicada. Ninguna magnitud es comparable con la pipeline de Perón.
+    </div>
+    <div class="cta-group mt-4">
+      <a href="./actores.html" data-client-route="#actores" class="btn btn-primary">Actores →</a>
+      <a href="./tesis.html" data-client-route="#tesis" class="btn btn-secondary">Leer la tesis</a>
+    </div>
+  </section>
   </main>
-  <script>location.replace('./#mapa-orbital');</script>
+
+  <footer id="site-footer" role="contentinfo">
+    <div class="footer-author">Investigación y autoría: Alexandra Bustos Frati, PhD · Videojuego: Arca Gaucha.</div>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/arcagaucha/" class="footer-social-link" target="_blank" rel="noopener noreferrer">Instagram · @arcagaucha</a>
+      <span class="footer-social-sep" aria-hidden="true">·</span>
+      <a href="https://www.linkedin.com/in/lexbustosfrati/" class="footer-social-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <span class="footer-social-sep" aria-hidden="true">·</span>
+      <a href="https://github.com/metternietzsche" class="footer-social-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <span class="footer-social-sep" aria-hidden="true">·</span>
+      <a href="https://www.threads.net/@lexy.futura" class="footer-social-link" target="_blank" rel="noopener noreferrer">Threads</a>
+      <span class="footer-social-sep" aria-hidden="true">·</span>
+      <a href="https://alexandrabustosfrati.substack.com" class="footer-social-link" target="_blank" rel="noopener noreferrer">Substack</a>
+      <span class="footer-social-sep" aria-hidden="true">·</span>
+      <a href="https://www.researchgate.net/profile/Alexandra-Bustos-Frati" class="footer-social-link" target="_blank" rel="noopener noreferrer">ResearchGate</a>
+    </div>
+    <div class="footer-meta">
+      Publicación conjunta ·
+      <a href="./evidencia.html" data-client-route="#evidencia">Evidencia y método</a>
+      · <a href="./licencia.html" data-client-route="#licencia">Licencia</a>
+      · <a href="https://www.hcdn.gob.ar/secparl/dgral_info_parlamentaria/mensajes_presidenciales/index.html" target="_blank" rel="noopener">Archivo HCDN</a>
+    </div>
+  </footer>
+
+  <a href="#app" id="back-to-top" aria-label="Volver al comienzo de la página">↑ Arriba</a>
+
+  <script src="orbital-analyzer.js?v=20260816d"></script>
+  <script src="app.js?v=20260816d"></script>
 </body>
 </html>

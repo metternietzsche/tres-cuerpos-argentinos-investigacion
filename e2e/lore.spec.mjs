@@ -24,6 +24,39 @@ test('las rutas principales cargan completas, sin errores ni overflow', async ({
   expect(failures).toEqual([]);
 });
 
+test('la portada reúne sus seis accesos principales como botones', async ({ page }) => {
+  await page.goto('/#inicio');
+  const actions = page.getByRole('navigation', { name: 'Accesos principales del proyecto' });
+
+  await expect(actions.getByRole('link')).toHaveCount(6);
+  await expect(actions.getByRole('link', { name: 'Analizá un discurso →' })).toHaveAttribute('href', '#laboratorio');
+  await expect(actions.getByRole('link', { name: 'Explorar mapa orbital' })).toHaveAttribute('href', '#mapa-orbital');
+  await expect(actions.getByRole('link', { name: 'Empezá acá' })).toHaveAttribute('href', '#recorrido');
+  await expect(actions.getByRole('link', { name: 'Leer la tesis' })).toHaveAttribute('href', '#tesis');
+  await expect(actions.getByRole('link', { name: 'Leer whitepaper' })).toHaveAttribute('href', '#whitepaper');
+
+  const play = actions.getByRole('link', { name: 'Jugar videojuego →' });
+  await expect(play).toHaveAttribute('href', 'https://trescuerpos.arcagaucha.com/');
+  await expect(play).toHaveAttribute('target', '_blank');
+  await expect(page.getByRole('link', { name: 'Trazar puntajes' })).toHaveCount(0);
+  await expect(page.getByRole('link', { name: 'Ver videojuego', exact: true })).toHaveCount(0);
+
+  const buttonStyles = await actions.getByRole('link').evaluateAll(links => links.map(link => {
+    const style = getComputedStyle(link);
+    return {
+      backgroundColor: style.backgroundColor,
+      backgroundImage: style.backgroundImage,
+      borderStyle: style.borderTopStyle,
+      borderWidth: style.borderTopWidth,
+    };
+  }));
+  expect(new Set(buttonStyles.map(style => JSON.stringify(style))).size).toBe(1);
+  expect(buttonStyles[0].backgroundImage).not.toBe('none');
+
+  const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
+  expect(overflow).toBeLessThanOrEqual(1);
+});
+
 test('las quince Leyendas exponen puntaje, evidencia, regla y cautela', async ({ page }) => {
   for (const id of legendIds) {
     await page.goto(`/#leyendas/${id}`);
@@ -294,7 +327,7 @@ for (const route of ['inicio', 'mapa-orbital', 'laboratorio', 'leyendas', 'leyen
 }
 
 test('SEO técnico entrega robots, sitemap, manifest y rutas indexables', async ({ request }) => {
-  for (const path of ['/robots.txt', '/sitemap.xml', '/manifest.webmanifest', '/laboratorio.html', '/leyendas.html', '/videojuego.html']) {
+  for (const path of ['/robots.txt', '/sitemap.xml', '/manifest.webmanifest', '/laboratorio.html', '/leyendas.html', '/videojuego.html', '/figuras.html', '/licencia.html', '/actor-kirchner.html', '/leyenda-nestor_kirchner_2003.html']) {
     const response = await request.get(path);
     expect(response.ok(), path).toBeTruthy();
   }
@@ -302,4 +335,70 @@ test('SEO técnico entrega robots, sitemap, manifest y rutas indexables', async 
   expect(index).toContain('index, follow');
   expect(index).toContain('application/ld+json');
   expect(index).not.toContain('noindex');
+});
+
+test('el HTML inicial contiene navegación, texto documental y SEO sin ejecutar JavaScript', async ({ request }) => {
+  const documents = [
+    { path: '/', heading: 'El problema de los tres cuerpos argentinos' },
+    { path: '/tesis.html', heading: 'La tesis' },
+    { path: '/mapa-orbital.html', heading: 'Mapa orbital de los tres cuerpos' },
+    { path: '/evidencia.html', heading: 'Cómo leemos un discurso' },
+    { path: '/whitepaper.html', heading: 'El problema de los tres cuerpos argentinos:' },
+    { path: '/videojuego.html', heading: 'Tres cuerpos, una república inestable' },
+    { path: '/actor-kirchner.html', heading: 'Néstor Kirchner' },
+    { path: '/leyenda-nestor_kirchner_2003.html', heading: 'Por qué Kirchner restaurador tiene este puntaje' },
+  ];
+
+  for (const document of documents) {
+    const html = await (await request.get(document.path)).text();
+    expect(html, document.path).toContain('data-prerendered="true"');
+    expect(html, document.path).toContain('aria-label="Navegación principal"');
+    expect(html, document.path).toContain(document.heading);
+    expect(html, document.path).toContain('rel="canonical"');
+    expect(html, document.path).toContain('property="og:title"');
+    expect(html, document.path).toContain('name="twitter:card"');
+    expect(html.match(/<h1\b/g), document.path).toHaveLength(1);
+    expect(html, document.path).not.toContain('http-equiv="refresh"');
+  }
+});
+
+test('las páginas documentales mantienen navegación y lectura básica con JavaScript deshabilitado', async ({ browser }, testInfo) => {
+  test.skip(testInfo.project.name !== 'desktop-chromium', 'La verificación sin JavaScript corre una sola vez.');
+  const context = await browser.newContext({
+    baseURL: testInfo.project.use.baseURL,
+    javaScriptEnabled: false,
+    viewport: { width: 390, height: 844 },
+  });
+  const page = await context.newPage();
+
+  await page.goto('/tesis.html');
+  await expect(page.getByRole('heading', { level: 1, name: 'La tesis' })).toBeVisible();
+  await expect(page.getByRole('navigation', { name: 'Navegación principal' })).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Mapa orbital' })).toHaveAttribute('href', './mapa-orbital.html');
+  expect(await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)).toBeLessThanOrEqual(1);
+
+  await page.getByRole('link', { name: 'Mapa orbital' }).click();
+  await expect(page).toHaveURL(/\/mapa-orbital\.html$/);
+  await expect(page.getByRole('heading', { level: 1, name: 'Mapa orbital de los tres cuerpos' })).toBeVisible();
+  await expect(page.locator('.orbital-map')).toBeVisible();
+
+  await page.goto('/evidencia.html#evidencia-metodologia');
+  await expect(page.locator('#evidencia-metodologia')).toBeVisible();
+  await expect(page.getByRole('heading', { level: 1, name: 'Cómo leemos un discurso' })).toBeVisible();
+
+  await page.goto('/videojuego.html');
+  await expect(page.getByRole('link', { name: /Jugar v0\.52 beta\.13/ }).first()).toHaveAttribute('href', 'https://trescuerpos.arcagaucha.com/');
+  expect(await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)).toBeLessThanOrEqual(1);
+  await context.close();
+});
+
+test('las rutas limpias conservan la experiencia interactiva y su canonical', async ({ page }) => {
+  const failures = collectRuntimeFailures(page);
+  await page.goto('/mapa-orbital.html');
+  await expect(page.locator('.orbital-map')).toBeVisible();
+  await expect(page.locator('html')).toHaveAttribute('data-client-enhanced', 'true');
+  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', 'https://lore.trescuerpos.arcagaucha.com/mapa-orbital.html');
+  await page.locator('.orbital-actor-button').nth(1).click();
+  await expect(page.locator('.orbital-map')).toHaveClass(/is-filtered/);
+  expect(failures).toEqual([]);
 });

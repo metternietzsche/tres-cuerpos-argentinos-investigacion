@@ -30,9 +30,9 @@ jobs:
         run: npm ci
       - name: Install Chromium
         run: npx playwright install --with-deps chromium
-      - name: Validate generated publication
+      - name: Build and validate prerendered publication
         run: |
-          npm run generate:routes
+          npm run build
           git diff --exit-code -- web/static_prototype
           npm run test:static
           npm run test:unit
@@ -53,5 +53,7 @@ jobs:
           curl --fail --location --retry 8 --retry-delay 5 "${SITE_ROOT}/"
           curl --fail --location --retry 8 --retry-delay 5 "${SITE_ROOT}/data/site_meta.json" | grep 'SITE_PUBLICATION_v0_6_6'
           curl --fail --location --retry 8 --retry-delay 5 "${SITE_ROOT}/laboratorio.html" | grep 'Analizá un discurso'
+          curl --fail --location --retry 8 --retry-delay 5 "${SITE_ROOT}/mapa-orbital.html" | grep 'Mapa orbital de los tres cuerpos'
+          curl --fail --location --retry 8 --retry-delay 5 "${SITE_ROOT}/tesis.html" | grep 'data-prerendered="true"'
           curl --fail --location --retry 8 --retry-delay 5 "${SITE_ROOT}/orbital-analyzer.js" | grep 'OrbitalAnalyzer'
           curl --fail --location --retry 8 --retry-delay 5 "${SITE_ROOT}/leyendas.html" | grep 'Trazabilidad de Leyendas'

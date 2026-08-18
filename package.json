@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "build": "npm run generate:routes",
     "generate:routes": "node scripts/generate-route-pages.mjs",
     "generate:analysis": "node scripts/build-text-analysis-data.mjs",
     "test:static": "node scripts/validate-publication.mjs",

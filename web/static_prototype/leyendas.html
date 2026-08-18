@@ -4,29 +4,298 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Trazabilidad de Leyendas · El problema de los tres cuerpos argentinos</title>
-  <meta name="description" content="Fuentes, cautelas y reglas detrás de los puntajes de las quince Leyendas jugables.">
+  <meta name="description" content="Cómo se traducen fuentes, cautelas y configuraciones del mapa orbital a los puntajes del videojuego.">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="theme-color" content="#101116">
   <link rel="canonical" href="https://lore.trescuerpos.arcagaucha.com/leyendas.html">
   <link rel="icon" type="image/webp" href="assets/logo.webp?v=20260815">
+  <link rel="manifest" href="manifest.webmanifest?v=20260815">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_AR">
-  <meta property="og:title" content="Trazabilidad de Leyendas">
-  <meta property="og:description" content="Fuentes, cautelas y reglas detrás de los puntajes de las quince Leyendas jugables.">
+  <meta property="og:title" content="Trazabilidad de Leyendas · El problema de los tres cuerpos argentinos">
+  <meta property="og:description" content="Cómo se traducen fuentes, cautelas y configuraciones del mapa orbital a los puntajes del videojuego.">
   <meta property="og:url" content="https://lore.trescuerpos.arcagaucha.com/leyendas.html">
   <meta property="og:image" content="https://lore.trescuerpos.arcagaucha.com/assets/logo.webp?v=20260815">
+  <meta property="og:image:alt" content="Logo de El problema de los tres cuerpos argentinos">
   <meta name="twitter:card" content="summary_large_image">
-  <meta http-equiv="refresh" content="0; url=./#leyendas">
+  <meta name="twitter:title" content="Trazabilidad de Leyendas · El problema de los tres cuerpos argentinos">
+  <meta name="twitter:description" content="Cómo se traducen fuentes, cautelas y configuraciones del mapa orbital a los puntajes del videojuego.">
+  <meta name="twitter:image" content="https://lore.trescuerpos.arcagaucha.com/assets/logo.webp?v=20260815">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://lore.trescuerpos.arcagaucha.com/#website",
+        "url": "https://lore.trescuerpos.arcagaucha.com/",
+        "name": "El problema de los tres cuerpos argentinos",
+        "inLanguage": "es-AR",
+        "author": { "@id": "https://lore.trescuerpos.arcagaucha.com/#author" }
+      },
+      {
+        "@type": "ScholarlyArticle",
+        "headline": "El problema de los tres cuerpos argentinos: una lectura orbital del presidencialismo argentino",
+        "description": "Investigación doctrinaria sobre tecnocracia, mesianismo y paternalismo en el discurso presidencial argentino.",
+        "dateModified": "2026-08-16",
+        "inLanguage": "es-AR",
+        "license": "https://creativecommons.org/licenses/by-nc/4.0/",
+        "author": { "@id": "https://lore.trescuerpos.arcagaucha.com/#author" }
+      },
+      {
+        "@type": "WebApplication",
+        "name": "Laboratorio orbital de textos políticos",
+        "url": "https://lore.trescuerpos.arcagaucha.com/laboratorio.html",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "Web",
+        "isAccessibleForFree": true,
+        "description": "Analizador local y exploratorio de señales de tecnocracia, mesianismo y paternalismo en textos políticos.",
+        "author": { "@id": "https://lore.trescuerpos.arcagaucha.com/#author" }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://lore.trescuerpos.arcagaucha.com/#author",
+        "name": "Alexandra Bustos Frati"
+      }
+    ]
+  }
+  </script>
   <link rel="stylesheet" href="styles.css?v=20260816d">
+  <noscript>
+    <style>
+      @media (max-width: 900px) {
+        #site-header { position: relative; height: auto; min-height: var(--header-h); flex-wrap: wrap; padding-block: .5rem; }
+        #mobile-menu-btn, #site-search-btn { display: none !important; }
+        #site-nav { display: flex; position: static; flex: 1 0 100%; padding: .5rem 0 0; border: 0; }
+        #app { margin-top: 0; }
+      }
+    </style>
+  </noscript>
 </head>
-<body>
-  <main class="redirect-page">
-    <a href="./#inicio"><img src="assets/logo.webp?v=20260815" alt="" width="72" height="72"></a>
-    <p class="section-kicker">EL PROBLEMA DE LOS TRES CUERPOS ARGENTINOS</p>
-    <h1>Trazabilidad de Leyendas</h1>
-    <p>Fuentes, cautelas y reglas detrás de los puntajes de las quince Leyendas jugables.</p>
-    <p><a href="./#leyendas">Abrir esta sección →</a></p>
+<body data-prerender-route="leyendas">
+
+  <a class="skip-link" href="#app">Saltar al contenido</a>
+
+  <header id="site-header" role="banner">
+    <div class="site-title-wrap">
+      <a href="./index.html" data-client-route="#inicio" class="site-logo-link" aria-label="Inicio">
+        <img src="assets/logo.webp?v=20260815" alt="" class="site-logo" aria-hidden="true"
+             onerror="this.style.display='none';" loading="eager">
+      </a>
+      <p class="site-title">
+        <a href="./index.html" data-client-route="#inicio">El problema de los tres cuerpos argentinos</a>
+      </p>
+      <span class="site-subtitle-small">INVESTIGACIÓN · DOCTRINA · VIDEOJUEGO</span>
+    </div>
+    <button id="mobile-menu-btn"
+            aria-label="Abrir menú de navegación"
+            aria-expanded="false"
+            aria-controls="site-nav">☰ Menú</button>
+    <nav id="site-nav" role="navigation" aria-label="Navegación principal">
+      <a href="./index.html" data-client-route="#inicio"       class="nav-link" data-section="inicio">Inicio</a>
+      <a href="./empeza-aca.html" data-client-route="#recorrido"    class="nav-link" data-section="recorrido">Empezá acá</a>
+      <a href="./mapa-orbital.html" data-client-route="#mapa-orbital" class="nav-link" data-section="mapa-orbital">Mapa orbital</a>
+      <a href="./laboratorio.html" data-client-route="#laboratorio"  class="nav-link" data-section="laboratorio">Analizar</a>
+      <a href="./actores.html" data-client-route="#actores"      class="nav-link active" data-section="actores" aria-current="page">Actores y Leyendas</a>
+      <a href="./evidencia.html" data-client-route="#evidencia"    class="nav-link" data-section="evidencia">Evidencia</a>
+      <a href="./whitepaper.html" data-client-route="#whitepaper"   class="nav-link" data-section="whitepaper">Whitepaper</a>
+      <a href="./videojuego.html" data-client-route="#videojuego"   class="nav-link" data-section="videojuego">Videojuego</a>
+    </nav>
+    <a href="./#buscar" data-client-route="#buscar" id="site-search-btn" aria-label="Buscar en el proyecto">⌕ <span>Buscar</span></a>
+  </header>
+
+  <div id="loading" role="status" aria-live="polite" hidden aria-hidden="true">
+    <div class="loading-inner">
+      <div class="loading-spinner" aria-hidden="true"></div>
+      <p class="loading-title">El problema de los tres cuerpos argentinos</p>
+      <p class="loading-msg">Cargando investigación, mapa y trazabilidad…</p>
+    </div>
+  </div>
+
+  <main id="app" role="main" data-prerendered="true">
+<section class="page-section trace-index-page">
+    <div class="breadcrumb"><a href="./index.html" data-client-route="#inicio">Inicio</a> <span>›</span> Trazabilidad de Leyendas</div>
+    <span class="section-kicker">INVESTIGACIÓN → TRADUCCIÓN LÚDICA</span>
+    <h1>Por qué cada Leyenda tiene ese puntaje</h1>
+    <p class="hero-sub">La estrella TEC/MES/PAT no es una medición literal de poder histórico. Es una traducción discreta y provisional de una ventana jugable, con fuente, alcance, regla y cautela publicados.</p>
+    <div class="trace-summary" aria-label="Estado de las quince traducciones">
+      <div><strong>15</strong><span>Leyendas trazadas</span></div>
+      <div><strong>4</strong><span>recalibradas</span></div>
+      <div><strong>7</strong><span>compatibles</span></div>
+      <div><strong>4</strong><span>en hold editorial</span></div>
+    </div>
+    <div class="notice notice-amber">
+      <strong>Regla T1.</strong> Fija el alcance, identifica la pareja funcional y, sólo cuando el tercer cuerpo empata o supera al miembro menor, transfiere un punto. Conserva la suma, limita cada cambio a ±1 y no convierte dirección, estabilidad o feedback en bonus.
+    </div>
+    <div class="legend-roster-grid trace-roster-grid"><a href="./leyenda-peron_I_1946.html" data-client-route="#leyendas/peron_I_1946" class="legend-roster-card" aria-label="Abrir trazabilidad de Perón fundacional">
+    <img src="assets/portraits/peron_I_1946.webp" alt="Retrato lúdico de Perón fundacional" loading="lazy">
+    <span class="legend-roster-copy">
+      <span class="legend-roster-kicker">LEYENDA · 1946</span>
+      <strong>Perón fundacional</strong>
+      <small>Juan Domingo Perón</small>
+      <small class="legend-roster-score">TEC 7 · MES 5 · PAT 8</small>
+    </span>
+    <span class="legend-vector-token vector-pat" title="Vector conductor: Paternalismo">PAT</span>
+  </a><a href="./leyenda-peron_II_1951.html" data-client-route="#leyendas/peron_II_1951" class="legend-roster-card" aria-label="Abrir trazabilidad de Perón orbital">
+    <img src="assets/portraits/peron_II_1951.webp" alt="Retrato lúdico de Perón orbital" loading="lazy">
+    <span class="legend-roster-copy">
+      <span class="legend-roster-kicker">LEYENDA · 1951</span>
+      <strong>Perón orbital</strong>
+      <small>Juan Domingo Perón</small>
+      <small class="legend-roster-score">TEC 7 · MES 7 · PAT 8</small>
+    </span>
+    <span class="legend-vector-token vector-pat" title="Vector conductor: Paternalismo">PAT</span>
+  </a><a href="./leyenda-peron_III_1973.html" data-client-route="#leyendas/peron_III_1973" class="legend-roster-card" aria-label="Abrir trazabilidad de Perón rector">
+    <img src="assets/portraits/peron_III_1973.webp" alt="Retrato lúdico de Perón rector" loading="lazy">
+    <span class="legend-roster-copy">
+      <span class="legend-roster-kicker">LEYENDA · 1973</span>
+      <strong>Perón rector</strong>
+      <small>Juan Domingo Perón</small>
+      <small class="legend-roster-score">TEC 6 · MES 4 · PAT 9</small>
+    </span>
+    <span class="legend-vector-token vector-pat" title="Vector conductor: Paternalismo">PAT</span>
+  </a><a href="./leyenda-alfonsin_1983.html" data-client-route="#leyendas/alfonsin_1983" class="legend-roster-card" aria-label="Abrir trazabilidad de Alfonsín democrático">
+    <img src="assets/portraits/alfonsin_1983.webp" alt="Retrato lúdico de Alfonsín democrático" loading="lazy">
+    <span class="legend-roster-copy">
+      <span class="legend-roster-kicker">LEYENDA · 1983</span>
+      <strong>Alfonsín democrático</strong>
+      <small>Raúl Alfonsín</small>
+      <small class="legend-roster-score">TEC 6 · MES 5 · PAT 6</small>
+    </span>
+    <span class="legend-vector-token vector-mes" title="Vector conductor: Mesianismo">MES</span>
+  </a><a href="./leyenda-alfonsin_1986.html" data-client-route="#leyendas/alfonsin_1986" class="legend-roster-card" aria-label="Abrir trazabilidad de Alfonsín austral">
+    <img src="assets/portraits/alfonsin_1986.webp" alt="Retrato lúdico de Alfonsín austral" loading="lazy">
+    <span class="legend-roster-copy">
+      <span class="legend-roster-kicker">LEYENDA · 1986</span>
+      <strong>Alfonsín austral</strong>
+      <small>Raúl Alfonsín</small>
+      <small class="legend-roster-score">TEC 6 · MES 4 · PAT 6</small>
+    </span>
+    <span class="legend-vector-token vector-tec" title="Vector conductor: Tecnocracia">TEC</span>
+  </a><a href="./leyenda-menem_I_1989.html" data-client-route="#leyendas/menem_I_1989" class="legend-roster-card" aria-label="Abrir trazabilidad de Menem caudillo">
+    <img src="assets/portraits/menem_I_1989.webp" alt="Retrato lúdico de Menem caudillo" loading="lazy">
+    <span class="legend-roster-copy">
+      <span class="legend-roster-kicker">LEYENDA · 1989</span>
+      <strong>Menem caudillo</strong>
+      <small>Carlos Menem</small>
+      <small class="legend-roster-score">TEC 4 · MES 7 · PAT 7</small>
+    </span>
+    <span class="legend-vector-token vector-mes" title="Vector conductor: Mesianismo">MES</span>
+  </a><a href="./leyenda-menem_II_1995.html" data-client-route="#leyendas/menem_II_1995" class="legend-roster-card" aria-label="Abrir trazabilidad de Menem moderno">
+    <img src="assets/portraits/menem_II_1995.webp" alt="Retrato lúdico de Menem moderno" loading="lazy">
+    <span class="legend-roster-copy">
+      <span class="legend-roster-kicker">LEYENDA · 1995</span>
+      <strong>Menem moderno</strong>
+      <small>Carlos Menem</small>
+      <small class="legend-roster-score">TEC 7 · MES 3 · PAT 7</small>
+    </span>
+    <span class="legend-vector-token vector-pat" title="Vector conductor: Paternalismo">PAT</span>
+  </a><a href="./leyenda-delarua_2000.html" data-client-route="#leyendas/delarua_2000" class="legend-roster-card" aria-label="Abrir trazabilidad de De la Rúa alianza">
+    <img src="assets/portraits/delarua_2000.webp" alt="Retrato lúdico de De la Rúa alianza" loading="lazy">
+    <span class="legend-roster-copy">
+      <span class="legend-roster-kicker">LEYENDA · 2000</span>
+      <strong>De la Rúa alianza</strong>
+      <small>Fernando de la Rúa</small>
+      <small class="legend-roster-score">TEC 5 · MES 4 · PAT 6</small>
+    </span>
+    <span class="legend-vector-token vector-pat" title="Vector conductor: Paternalismo">PAT</span>
+  </a><a href="./leyenda-duhalde_2002.html" data-client-route="#leyendas/duhalde_2002" class="legend-roster-card" aria-label="Abrir trazabilidad de Duhalde transición">
+    <img src="assets/portraits/duhalde_2002.webp" alt="Retrato lúdico de Duhalde transición" loading="lazy">
+    <span class="legend-roster-copy">
+      <span class="legend-roster-kicker">LEYENDA · 2002</span>
+      <strong>Duhalde transición</strong>
+      <small>Eduardo Duhalde</small>
+      <small class="legend-roster-score">TEC 4 · MES 7 · PAT 7</small>
+    </span>
+    <span class="legend-vector-token vector-mes" title="Vector conductor: Mesianismo">MES</span>
+  </a><a href="./leyenda-nestor_kirchner_2003.html" data-client-route="#leyendas/nestor_kirchner_2003" class="legend-roster-card" aria-label="Abrir trazabilidad de Kirchner restaurador">
+    <img src="assets/portraits/nestor_kirchner_2003.webp" alt="Retrato lúdico de Kirchner restaurador" loading="lazy">
+    <span class="legend-roster-copy">
+      <span class="legend-roster-kicker">LEYENDA · 2003</span>
+      <strong>Kirchner restaurador</strong>
+      <small>Néstor Kirchner</small>
+      <small class="legend-roster-score">TEC 7 · MES 5 · PAT 7</small>
+    </span>
+    <span class="legend-vector-token vector-pat" title="Vector conductor: Paternalismo">PAT</span>
+  </a><a href="./leyenda-cfk_I_2007.html" data-client-route="#leyendas/cfk_I_2007" class="legend-roster-card" aria-label="Abrir trazabilidad de CFK primera">
+    <img src="assets/portraits/cfk_I_2007.webp" alt="Retrato lúdico de CFK primera" loading="lazy">
+    <span class="legend-roster-copy">
+      <span class="legend-roster-kicker">LEYENDA · 2007</span>
+      <strong>CFK primera</strong>
+      <small>Cristina Fernández de Kirchner</small>
+      <small class="legend-roster-score">TEC 7 · MES 5 · PAT 7</small>
+    </span>
+    <span class="legend-vector-token vector-tec" title="Vector conductor: Tecnocracia">TEC</span>
+  </a><a href="./leyenda-cfk_II_2011.html" data-client-route="#leyendas/cfk_II_2011" class="legend-roster-card" aria-label="Abrir trazabilidad de CFK conducción">
+    <img src="assets/portraits/cfk_II_2011.webp" alt="Retrato lúdico de CFK conducción" loading="lazy">
+    <span class="legend-roster-copy">
+      <span class="legend-roster-kicker">LEYENDA · 2011</span>
+      <strong>CFK conducción</strong>
+      <small>Cristina Fernández de Kirchner</small>
+      <small class="legend-roster-score">TEC 8 · MES 4 · PAT 7</small>
+    </span>
+    <span class="legend-vector-token vector-tec" title="Vector conductor: Tecnocracia">TEC</span>
+  </a><a href="./leyenda-macri_2015.html" data-client-route="#leyendas/macri_2015" class="legend-roster-card" aria-label="Abrir trazabilidad de Macri modernizador">
+    <img src="assets/portraits/macri_2015.webp" alt="Retrato lúdico de Macri modernizador" loading="lazy">
+    <span class="legend-roster-copy">
+      <span class="legend-roster-kicker">LEYENDA · 2015</span>
+      <strong>Macri modernizador</strong>
+      <small>Mauricio Macri</small>
+      <small class="legend-roster-score">TEC 7 · MES 3 · PAT 6</small>
+    </span>
+    <span class="legend-vector-token vector-tec" title="Vector conductor: Tecnocracia">TEC</span>
+  </a><a href="./leyenda-albertoF_2019.html" data-client-route="#leyendas/albertoF_2019" class="legend-roster-card" aria-label="Abrir trazabilidad de Alberto coalición">
+    <img src="assets/portraits/albertoF_2019.webp" alt="Retrato lúdico de Alberto coalición" loading="lazy">
+    <span class="legend-roster-copy">
+      <span class="legend-roster-kicker">LEYENDA · 2019</span>
+      <strong>Alberto coalición</strong>
+      <small>Alberto Fernández</small>
+      <small class="legend-roster-score">TEC 6 · MES 4 · PAT 6</small>
+    </span>
+    <span class="legend-vector-token vector-pat" title="Vector conductor: Paternalismo">PAT</span>
+  </a><a href="./leyenda-milei_2023.html" data-client-route="#leyendas/milei_2023" class="legend-roster-card" aria-label="Abrir trazabilidad de Milei disruptor">
+    <img src="assets/portraits/milei_2023.webp" alt="Retrato lúdico de Milei disruptor" loading="lazy">
+    <span class="legend-roster-copy">
+      <span class="legend-roster-kicker">LEYENDA · 2023</span>
+      <strong>Milei disruptor</strong>
+      <small>Javier Milei</small>
+      <small class="legend-roster-score">TEC 7 · MES 7 · PAT 3</small>
+    </span>
+    <span class="legend-vector-token vector-tec" title="Vector conductor: Tecnocracia">TEC</span>
+  </a></div>
+    <div class="trace-method-links">
+      <a href="https://github.com/metternietzsche/tres-cuerpos-argentinos-investigacion/blob/main/docs/videojuego/legend-methodology-v0.2.md" target="_blank" rel="noopener">Leer método de traducción v0.2 ↗</a>
+      <a href="data/legend_gameplay_translation.v0.2.json" target="_blank" rel="noopener">Abrir artefacto JSON ↗</a>
+    </div>
+  </section>
   </main>
-  <script>location.replace('./#leyendas');</script>
+
+  <footer id="site-footer" role="contentinfo">
+    <div class="footer-author">Investigación y autoría: Alexandra Bustos Frati, PhD · Videojuego: Arca Gaucha.</div>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/arcagaucha/" class="footer-social-link" target="_blank" rel="noopener noreferrer">Instagram · @arcagaucha</a>
+      <span class="footer-social-sep" aria-hidden="true">·</span>
+      <a href="https://www.linkedin.com/in/lexbustosfrati/" class="footer-social-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <span class="footer-social-sep" aria-hidden="true">·</span>
+      <a href="https://github.com/metternietzsche" class="footer-social-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <span class="footer-social-sep" aria-hidden="true">·</span>
+      <a href="https://www.threads.net/@lexy.futura" class="footer-social-link" target="_blank" rel="noopener noreferrer">Threads</a>
+      <span class="footer-social-sep" aria-hidden="true">·</span>
+      <a href="https://alexandrabustosfrati.substack.com" class="footer-social-link" target="_blank" rel="noopener noreferrer">Substack</a>
+      <span class="footer-social-sep" aria-hidden="true">·</span>
+      <a href="https://www.researchgate.net/profile/Alexandra-Bustos-Frati" class="footer-social-link" target="_blank" rel="noopener noreferrer">ResearchGate</a>
+    </div>
+    <div class="footer-meta">
+      Publicación conjunta ·
+      <a href="./evidencia.html" data-client-route="#evidencia">Evidencia y método</a>
+      · <a href="./licencia.html" data-client-route="#licencia">Licencia</a>
+      · <a href="https://www.hcdn.gob.ar/secparl/dgral_info_parlamentaria/mensajes_presidenciales/index.html" target="_blank" rel="noopener">Archivo HCDN</a>
+    </div>
+  </footer>
+
+  <a href="#app" id="back-to-top" aria-label="Volver al comienzo de la página">↑ Arriba</a>
+
+  <script src="orbital-analyzer.js?v=20260816d"></script>
+  <script src="app.js?v=20260816d"></script>
 </body>
 </html>

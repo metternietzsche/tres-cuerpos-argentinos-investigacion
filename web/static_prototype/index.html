@@ -13,13 +13,13 @@
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_AR">
   <meta property="og:title" content="El problema de los tres cuerpos argentinos">
-  <meta property="og:description" content="Investigación, doctrina y videojuego sobre tres fuerzas de la política argentina.">
+  <meta property="og:description" content="Investigación doctrinaria sobre tecnocracia, mesianismo y paternalismo en el discurso presidencial argentino, con mapa empírico y videojuego.">
   <meta property="og:url" content="https://lore.trescuerpos.arcagaucha.com/">
   <meta property="og:image" content="https://lore.trescuerpos.arcagaucha.com/assets/logo.webp?v=20260815">
   <meta property="og:image:alt" content="Logo de El problema de los tres cuerpos argentinos">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="El problema de los tres cuerpos argentinos">
-  <meta name="twitter:description" content="Investigación, doctrina y videojuego sobre tres fuerzas de la política argentina.">
+  <meta name="twitter:description" content="Investigación doctrinaria sobre tecnocracia, mesianismo y paternalismo en el discurso presidencial argentino, con mapa empírico y videojuego.">
   <meta name="twitter:image" content="https://lore.trescuerpos.arcagaucha.com/assets/logo.webp?v=20260815">
   <script type="application/ld+json">
   {
@@ -61,19 +61,29 @@
   }
   </script>
   <link rel="stylesheet" href="styles.css?v=20260816d">
+  <noscript>
+    <style>
+      @media (max-width: 900px) {
+        #site-header { position: relative; height: auto; min-height: var(--header-h); flex-wrap: wrap; padding-block: .5rem; }
+        #mobile-menu-btn, #site-search-btn { display: none !important; }
+        #site-nav { display: flex; position: static; flex: 1 0 100%; padding: .5rem 0 0; border: 0; }
+        #app { margin-top: 0; }
+      }
+    </style>
+  </noscript>
 </head>
-<body>
+<body data-prerender-route="inicio">
 
   <a class="skip-link" href="#app">Saltar al contenido</a>
 
   <header id="site-header" role="banner">
     <div class="site-title-wrap">
-      <a href="#inicio" class="site-logo-link" aria-label="Inicio">
+      <a href="./index.html" data-client-route="#inicio" class="site-logo-link" aria-label="Inicio">
         <img src="assets/logo.webp?v=20260815" alt="" class="site-logo" aria-hidden="true"
              onerror="this.style.display='none';" loading="eager">
       </a>
       <p class="site-title">
-        <a href="#inicio">El problema de los tres cuerpos argentinos</a>
+        <a href="./index.html" data-client-route="#inicio">El problema de los tres cuerpos argentinos</a>
       </p>
       <span class="site-subtitle-small">INVESTIGACIÓN · DOCTRINA · VIDEOJUEGO</span>
     </div>
@@ -82,28 +92,228 @@
             aria-expanded="false"
             aria-controls="site-nav">☰ Menú</button>
     <nav id="site-nav" role="navigation" aria-label="Navegación principal">
-      <a href="#inicio"       class="nav-link" data-section="inicio">Inicio</a>
-      <a href="#recorrido"    class="nav-link" data-section="recorrido">Empezá acá</a>
-      <a href="#mapa-orbital" class="nav-link" data-section="mapa-orbital">Mapa orbital</a>
-      <a href="#laboratorio"  class="nav-link" data-section="laboratorio">Analizar</a>
-      <a href="#actores"      class="nav-link" data-section="actores">Actores y Leyendas</a>
-      <a href="#evidencia"    class="nav-link" data-section="evidencia">Evidencia</a>
-      <a href="#whitepaper"   class="nav-link" data-section="whitepaper">Whitepaper</a>
-      <a href="#videojuego"   class="nav-link" data-section="videojuego">Videojuego</a>
+      <a href="./index.html" data-client-route="#inicio"       class="nav-link active" data-section="inicio" aria-current="page">Inicio</a>
+      <a href="./empeza-aca.html" data-client-route="#recorrido"    class="nav-link" data-section="recorrido">Empezá acá</a>
+      <a href="./mapa-orbital.html" data-client-route="#mapa-orbital" class="nav-link" data-section="mapa-orbital">Mapa orbital</a>
+      <a href="./laboratorio.html" data-client-route="#laboratorio"  class="nav-link" data-section="laboratorio">Analizar</a>
+      <a href="./actores.html" data-client-route="#actores"      class="nav-link" data-section="actores">Actores y Leyendas</a>
+      <a href="./evidencia.html" data-client-route="#evidencia"    class="nav-link" data-section="evidencia">Evidencia</a>
+      <a href="./whitepaper.html" data-client-route="#whitepaper"   class="nav-link" data-section="whitepaper">Whitepaper</a>
+      <a href="./videojuego.html" data-client-route="#videojuego"   class="nav-link" data-section="videojuego">Videojuego</a>
     </nav>
-    <a href="#buscar" id="site-search-btn" aria-label="Buscar en el proyecto">⌕ <span>Buscar</span></a>
+    <a href="./#buscar" data-client-route="#buscar" id="site-search-btn" aria-label="Buscar en el proyecto">⌕ <span>Buscar</span></a>
   </header>
 
-  <div id="loading" role="status" aria-live="polite">
+  <div id="loading" role="status" aria-live="polite" hidden aria-hidden="true">
     <div class="loading-inner">
       <div class="loading-spinner" aria-hidden="true"></div>
-      <h1>El problema de los tres cuerpos argentinos</h1>
+      <p class="loading-title">El problema de los tres cuerpos argentinos</p>
       <p class="loading-msg">Cargando investigación, mapa y trazabilidad…</p>
     </div>
   </div>
 
-  <main id="app" role="main" hidden>
-    <!-- Rendered by app.js -->
+  <main id="app" role="main" data-prerendered="true">
+<div id="inicio-page">
+
+    <!-- ═══ HERO ════════════════════════════════════════════════════════════════ -->
+    <div id="inicio-hero">
+      <div class="inicio-hero-inner">
+        <!-- Logo column -->
+        <div class="inicio-hero-logo-col">
+          <div class="inicio-hero-logo-wrap">
+            <img src="assets/logo.webp?v=20260815" alt="Logo del proyecto El problema de los tres cuerpos argentinos" class="inicio-hero-logo" loading="eager" onerror="this.style.display='none';this.nextElementSibling.hidden=false;">
+            <div class="inicio-hero-logo-fallback" hidden="" aria-hidden="true">◈</div>
+          </div>
+        </div>
+        <!-- Content column -->
+        <div class="inicio-hero-content-col">
+          <div class="inicio-hero-eyebrow">PUBLICACIÓN v0.6.6 · MAPA v0.4 · CORPUS HCDN 1983–2026</div>
+          <h1 class="inicio-hero-headline">El problema de los tres cuerpos argentinos</h1>
+          <p class="inicio-hero-sub">Argentina no es un péndulo. Es un problema de tres cuerpos.</p>
+          <nav class="cta-group inicio-hero-cta inicio-hero-nav" aria-label="Accesos principales del proyecto">
+            <a href="./laboratorio.html" data-client-route="#laboratorio" class="btn btn-primary" data-hero-section="laboratorio">Analizá un discurso →</a>
+            <a href="./mapa-orbital.html" data-client-route="#mapa-orbital" class="btn btn-primary" data-hero-section="mapa-orbital">Explorar mapa orbital</a>
+            <a href="./empeza-aca.html" data-client-route="#recorrido" class="btn btn-primary" data-hero-section="recorrido">Empezá acá</a>
+            <a href="./tesis.html" data-client-route="#tesis" class="btn btn-primary" data-hero-section="tesis">Leer la tesis</a>
+            <a href="./whitepaper.html" data-client-route="#whitepaper" class="btn btn-primary" data-hero-section="whitepaper">Leer whitepaper</a>
+            <a href="https://trescuerpos.arcagaucha.com/" class="btn btn-primary" target="_blank" rel="noopener">Jugar videojuego →</a>
+          </nav>
+          <div class="inicio-hero-synthesis">
+            <p>El problema de los tres cuerpos argentinos es un prototipo de investigación teórico-empírica que lee el discurso presidencial argentino a través de tres vectores político-históricos: modernización tecnocrática, mesianismo redentor y paternalismo conservador. No clasifica actores como tipos fijos; reconstruye configuraciones, trayectorias y atractores temporales.</p>
+            <p>El péndulo entre apertura/endeudamiento y protección/mercado interno describe una alternancia visible, pero no alcanza para explicar la gramática con la que el liderazgo presidencial argentino organiza legitimidad. La hipótesis es que una órbita política estable suele requerir al menos dos cuerpos: un vector dominante y otro secundario o modulador.</p>
+          </div>
+          <div class="inicio-hero-author">Por Alexandra Bustos Frati, PhD</div>
+          <div class="inicio-hero-badges" role="note">
+            <span class="badge-group"><span class="badge badge-caution" title="Hipótesis provisional — no clasificación histórica definitiva.">HIPÓTESIS PROVISIONAL</span><span class="badge badge-info" title="Corpus HCDN — no incluye Perón ni pipeline alternativa.">CORPUS HCDN — NO INCLUYE PERÓN</span></span>
+            <span class="muted inicio-hero-badges-note">Corpus parcial · Ver <a href="./evidencia.html" data-client-route="#evidencia">§ Evidencia y método</a></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ BODY ═════════════════════════════════════════════════════════════════ -->
+    <div class="inicio-body">
+
+      <!-- ── LA DOCTRINA ───────────────────────────────────────────────────────── -->
+      <section class="inicio-section">
+        <div class="section-sep-label">LA DOCTRINA</div>
+        <div class="doctrine-block">
+          <blockquote class="doctrine-statement">
+            <p>El péndulo explica la alternancia. No explica por qué el presidente que ejecutó la mayor privatización del siglo XX habló durante toda su presidencia en registro de justicia social y protección popular.</p>
+          </blockquote>
+          <div class="doctrine-grid">
+            <div class="doctrine-item">
+              <div class="doctrine-num">01</div>
+              <p><strong>El péndulo es superficie.</strong> La alternancia entre apertura y protección, deuda y mercado interno, es documentable. Pero es síntoma, no gramática.</p>
+            </div>
+            <div class="doctrine-item">
+              <div class="doctrine-num">02</div>
+              <p><strong>La gramática tiene tres cuerpos.</strong> Tecnocracia, mesianismo, paternalismo. El campo retórico se configura entre estos tres vectores — no oscila entre dos polos.</p>
+            </div>
+            <div class="doctrine-item">
+              <div class="doctrine-num">03</div>
+              <p><strong>Un solo cuerpo rara vez estabiliza.</strong> La configuración monomodal es inestable en el corpus. La estabilización tiende a requerir al menos dos cuerpos en combinación dirigida sostenida.</p>
+            </div>
+            <div class="doctrine-item">
+              <div class="doctrine-num">04</div>
+              <p><strong>La dirección importa.</strong> <span class="config-pat">Paternalismo</span><span class="config-plus"> + </span><span class="config-tec">tecnocracia</span> no equivale a <span class="config-tec">tecnocracia</span><span class="config-plus"> + </span><span class="config-pat">paternalismo</span>. El orden expresa qué vector encuadra y qué vector modula.</p>
+            </div>
+            <div class="doctrine-item">
+              <div class="doctrine-num">05</div>
+              <p><strong>Los actores son trayectorias, no tipos.</strong> Alfonsín recorre cinco configuraciones distintas en ocho documentos. No existe clasificación tipológica final en este marco.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── LOS TRES VECTORES ─────────────────────────────────────────────────── -->
+      <section class="inicio-section">
+        <div class="section-sep-label">LOS TRES VECTORES</div>
+        <div class="inicio-vec-grid">
+          <div class="inicio-vec-card inicio-vec-tecnocracia">
+      <span class="inicio-vec-dot" style="background:#50b5ff;" aria-hidden="true"></span>
+      <div class="inicio-vec-name" style="color:#50b5ff;">Modernización tecnocrática</div>
+      <p class="inicio-vec-def">El lenguaje presidencial de la modernización técnica del Estado. Reforma, eficiencia, gestión, racionalización. El discurso de quien gobierna presentando sus decisiones como respuestas técnicas a problemas objetivos.</p>
+      <p class="inicio-vec-contrib">Aporta legitimidad técnica. El discurso de la modernización justifica la transformación institucional.</p>
+      <a href="./tesis.html" data-client-route="#tesis" class="inicio-vec-link">Ver en La tesis →</a>
+    </div><div class="inicio-vec-card inicio-vec-mesianismo">
+      <span class="inicio-vec-dot" style="background:#f05f8e;" aria-hidden="true"></span>
+      <div class="inicio-vec-name" style="color:#f05f8e;">Mesianismo redentor</div>
+      <p class="inicio-vec-def">El lenguaje presidencial de la ruptura histórica y el mandato trascendente. Un pueblo que espera ser redimido, un momento que reclama ser consumado, un liderazgo que se presenta como vehículo de algo más grande que sí mismo.</p>
+      <p class="inicio-vec-contrib">Aporta intensidad rupturista. El mandato trascendente justifica decisiones que rompen el statu quo.</p>
+      <a href="./tesis.html" data-client-route="#tesis" class="inicio-vec-link">Ver en La tesis →</a>
+    </div><div class="inicio-vec-card inicio-vec-paternalismo">
+      <span class="inicio-vec-dot" style="background:#efb64b;" aria-hidden="true"></span>
+      <div class="inicio-vec-name" style="color:#efb64b;">Paternalismo conservador</div>
+      <p class="inicio-vec-def">El lenguaje presidencial de la tutela social. El Estado que protege, conduce y se responsabiliza por el bienestar del pueblo. No la ruptura ni la reforma técnica: el cuidado como eje del discurso.</p>
+      <p class="inicio-vec-contrib">Aporta legitimidad de cuidado. El Estado tutelar justifica la intervención y la presencia.</p>
+      <a href="./tesis.html" data-client-route="#tesis" class="inicio-vec-link">Ver en La tesis →</a>
+    </div>
+        </div>
+      </section>
+
+      <!-- ── QUÉ MUESTRA LA EVIDENCIA ──────────────────────────────────────────── -->
+      <section class="inicio-section">
+        <div class="section-sep-label">QUÉ MUESTRA LA EVIDENCIA LIMPIA</div>
+        <h3>Hallazgos del corpus democrático HCDN 1983–2026</h3>
+        <p class="muted" style="font-size:.88rem;margin-bottom:1.25rem;">52 documentos · 10 personas · 12 unidades actor × mandato</p>
+        <div class="evidence-findings-list">
+          <div class="ef-item">
+            <div class="ef-label">Configuración modal</div>
+            <div class="ef-value"><span class="config-pat">Paternalismo</span><span class="config-plus"> + </span><span class="config-tec">tecnocracia</span> — 58% del corpus</div>
+            <div class="ef-note">Reúne a Menem y CFK, a De la Rúa y Kirchner. No es el sello de ninguna corriente política.</div>
+          </div>
+          <div class="ef-item">
+            <div class="ef-label">Núcleo dominante</div>
+            <div class="ef-value"><span class="config-tec">Tecnocracia</span> / <span class="config-pat">Paternalismo</span> — 83% del mapa adjudicado</div>
+            <div class="ef-note">Aparece en gobiernos con programas opuestos. El discurso y el programa son dimensiones separables.</div>
+          </div>
+          <div class="ef-item">
+            <div class="ef-label">Perón 1946–1954</div>
+            <div class="ef-value"><span class="config-mes">Mesianismo</span><span class="config-plus"> + </span><span class="config-pat">paternalismo</span> — contrapunto separado</div>
+            <div class="ef-note">Pipeline metodológica independiente. No numéricamente comparable al corpus HCDN. MES &gt; PAT &gt; TEC en ambos documentos disponibles.</div>
+          </div>
+          <div class="ef-item">
+            <div class="ef-label">Milei 2026 · prueba temporal</div>
+            <div class="ef-value"><span class="config-mes">Mesianismo</span><span class="config-plus"> + </span><span class="config-tec">tecnocracia</span> · MES→TEC↺</div>
+            <div class="ef-note">La pantalla léxica marca PAT–TEC; la comparación funcional favorece MES–TEC en 8/8 controles. La discrepancia queda visible.</div>
+          </div>
+          <div class="ef-item ef-item-blocked">
+            <div class="ef-label">Perón 1973</div>
+            <div class="ef-value"><span class="badge-group"><span class="badge badge-blocking" title="El contenido de esta entrada no está disponible en ninguna pipeline activa. La razón del bloqueo está documentada en el campo blocked_reason. Ver Roadmap para la condición de desbloqueo.">BLOQUEADO — EVIDENCIA NO DISPONIBLE</span></span> Sin análisis posible</div>
+            <div class="ef-note">Fuente primaria no verificada. Ver <a href="./evidencia.html#evidencia-roadmap" data-client-route="#evidencia/roadmap">§ Roadmap</a> para estado de condición P1.</div>
+          </div>
+        </div>
+        <div class="notice notice-amber mt-2">
+          <span class="badge-group"><span class="badge badge-caution" title="Hipótesis provisional — no clasificación histórica definitiva.">HIPÓTESIS PROVISIONAL</span><span class="badge badge-info" title="Corpus HCDN — no incluye Perón ni pipeline alternativa.">CORPUS HCDN — NO INCLUYE PERÓN</span></span>
+          Este es un mapa de trabajo: cada ficha distingue cobertura, nivel de evidencia y decisiones metodológicas. No describe personalidades políticas.
+        </div>
+      </section>
+
+      <!-- ── EXPLORAR EL PROYECTO ──────────────────────────────────────────────── -->
+      <section class="inicio-section">
+        <div class="section-sep-label">TAMBIÉN EN EL PROYECTO</div>
+        <div class="entry-card-grid">
+          <a href="./actores.html" data-client-route="#actores" class="entry-card">
+            <div class="entry-card-icon" aria-hidden="true">⬡</div>
+            <div class="entry-card-title">Actores y Leyendas</div>
+            <div class="entry-card-desc">Diez actores del corpus y su correspondencia con las quince Leyendas jugables, sin confundir investigación y diseño lúdico.</div>
+          </a>
+          <a href="./leyendas.html" data-client-route="#leyendas" class="entry-card">
+            <div class="entry-card-icon" aria-hidden="true">↗</div>
+            <div class="entry-card-title">Por qué cada Leyenda tiene ese puntaje</div>
+            <div class="entry-card-desc">Quince fichas conectan alcance histórico, fuentes, cautelas, regla de traducción y estrella TEC/MES/PAT.</div>
+          </a>
+          <a href="./evidencia.html#evidencia-peron" data-client-route="#evidencia/peron" class="entry-card">
+            <div class="entry-card-icon" aria-hidden="true">◌</div>
+            <div class="entry-card-title">En el método: Perón</div>
+            <div class="entry-card-desc">Contrapunto cualitativo dentro de Evidencia y método. Dos documentos limpios (1946, 1954), otra pipeline y el caso 1973 bloqueado.</div>
+          </a>
+          <a href="./videojuego.html" data-client-route="#videojuego" class="entry-card entry-card-vj">
+            <div class="entry-card-icon" aria-hidden="true">▶</div>
+            <div class="entry-card-title">Videojuego</div>
+            <div class="entry-card-desc">v0.52 beta.13 jugable: el final distingue el cuerpo que conduce, el que lo obliga a negociar y el límite que ninguno resolvió.</div>
+          </a>
+          <a href="./evidencia.html#evidencia-roadmap" data-client-route="#evidencia/roadmap" class="entry-card">
+            <div class="entry-card-icon" aria-hidden="true">→</div>
+            <div class="entry-card-title">Pendientes de evidencia</div>
+            <div class="entry-card-desc">El roadmap cierra Evidencia y método: siete condiciones hacia v1 y la fuente de 1973 como nodo crítico.</div>
+          </a>
+        </div>
+      </section>
+
+      <!-- ── VIDEOJUEGO TEASER ──────────────────────────────────────────────────── -->
+      <section class="inicio-section">
+        <div class="section-sep-label">EL EXPERIMENTO LÚDICO</div>
+        <div class="vj-teaser">
+          <div class="vj-teaser-logo-wrap">
+            <img src="assets/logo.webp?v=20260815" alt="Logo del proyecto" class="vj-teaser-logo" loading="lazy" onerror="this.style.display='none';">
+          </div>
+          <div class="vj-teaser-content">
+            <h3 class="vj-teaser-title">Una teoría que se puede jugar</h3>
+            <p><em>Tres Cuerpos: República Inestable</em> ya tiene una v0.52 beta.13 jugable: Carrera desde tres escalas y Modo Leyenda con quince Leyendas frente a conflictos contemporáneos.</p>
+            <p>Las decisiones TEC, MES y PAT distribuyen capacidad, legitimidad, cohesión y costos. Las nuevas familias de acontecimientos traducen deep research a conflictos lúdicos sin convertir la partida en evidencia histórica.</p>
+            <div class="cta-group mt-2">
+              <a href="./videojuego.html" data-client-route="#videojuego" class="btn btn-primary">Ver videojuego →</a>
+              <a href="./mapa-orbital.html" data-client-route="#mapa-orbital" class="btn btn-secondary">Ver mapa orbital</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── CAVEAT STRIP ───────────────────────────────────────────────────────── -->
+      <div class="inicio-caveat-strip" role="note">
+        <div class="cs-item"><span class="badge-group"><span class="badge badge-caution" title="Hipótesis provisional — no clasificación histórica definitiva.">HIPÓTESIS PROVISIONAL</span></span> v0.4 de trabajo — con fuentes, linaje y límites publicados</div>
+        <div class="cs-sep" aria-hidden="true">·</div>
+        <div class="cs-item">Discurso ≠ gobierno — el marco mide registro retórico, no política de Estado</div>
+        <div class="cs-sep" aria-hidden="true">·</div>
+        <div class="cs-item">Perón no es numéricamente comparable al corpus HCDN — pipeline distinta</div>
+        <div class="cs-sep" aria-hidden="true">·</div>
+        <div class="cs-item">Las unidades describen discursos y mandatos; no convierten personas en tipos</div>
+      </div>
+
+    </div><!-- /.inicio-body -->
+  </div><!-- /#inicio-page -->
   </main>
 
   <footer id="site-footer" role="contentinfo">
@@ -123,8 +333,8 @@
     </div>
     <div class="footer-meta">
       Publicación conjunta ·
-      <a href="#evidencia">Evidencia y método</a>
-      · <a href="#licencia">Licencia</a>
+      <a href="./evidencia.html" data-client-route="#evidencia">Evidencia y método</a>
+      · <a href="./licencia.html" data-client-route="#licencia">Licencia</a>
       · <a href="https://www.hcdn.gob.ar/secparl/dgral_info_parlamentaria/mensajes_presidenciales/index.html" target="_blank" rel="noopener">Archivo HCDN</a>
     </div>
   </footer>

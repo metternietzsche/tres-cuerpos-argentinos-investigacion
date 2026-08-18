@@ -334,8 +334,18 @@ function initNav() {
   updateActiveNav();
 }
 
+function enhancePrerenderedLinks() {
+  const basePath = location.pathname.endsWith('/')
+    ? location.pathname
+    : location.pathname.replace(/[^/]+$/, '');
+  document.querySelectorAll('a[data-client-route]').forEach(link => {
+    const route = link.dataset.clientRoute;
+    if (route?.startsWith('#')) link.setAttribute('href', `${basePath}${route}`);
+  });
+}
+
 function updateActiveNav() {
-  const rawSection = (location.hash.replace('#', '') || 'inicio').split('/')[0];
+  const rawSection = currentRouteValue().split('/')[0];
   const section = ['figuras', 'peron', 'roadmap'].includes(rawSection)
     ? 'evidencia'
     : rawSection === 'leyendas'
@@ -368,6 +378,32 @@ const ROUTE_META = {
   licencia: { title: 'Licencia', description: 'Licencias, atribución y condiciones de uso del sitio, los datos y el videojuego.' },
 };
 
+const ROUTE_PUBLIC_FILES = {
+  inicio: 'index.html',
+  recorrido: 'empeza-aca.html',
+  tesis: 'tesis.html',
+  'mapa-orbital': 'mapa-orbital.html',
+  laboratorio: 'laboratorio.html',
+  actores: 'actores.html',
+  leyendas: 'leyendas.html',
+  evidencia: 'evidencia.html',
+  whitepaper: 'whitepaper.html',
+  figuras: 'figuras.html',
+  videojuego: 'videojuego.html',
+  licencia: 'licencia.html',
+};
+
+function currentRouteValue() {
+  return location.hash.replace(/^#/, '') || document.body?.dataset.prerenderRoute || 'inicio';
+}
+
+function canonicalPathForRoute(section, param = '') {
+  if (section === 'actores' && param) return `/actor-${encodeURIComponent(param)}.html`;
+  if (section === 'leyendas' && param) return `/leyenda-${encodeURIComponent(param)}.html`;
+  const file = ROUTE_PUBLIC_FILES[section] || ROUTE_PUBLIC_FILES.inicio;
+  return file === 'index.html' ? '/' : `/${file}`;
+}
+
 function updateDocumentMeta(section, param = '') {
   const meta = ROUTE_META[section] || ROUTE_META.inicio;
   let title = meta.title;
@@ -379,9 +415,19 @@ function updateDocumentMeta(section, param = '') {
   const description = document.querySelector('meta[name="description"]');
   const ogTitle = document.querySelector('meta[property="og:title"]');
   const ogDescription = document.querySelector('meta[property="og:description"]');
+  const canonicalLink = document.querySelector('link[rel="canonical"]');
+  const ogUrl = document.querySelector('meta[property="og:url"]');
+  const twitterTitle = document.querySelector('meta[name="twitter:title"]');
+  const twitterDescription = document.querySelector('meta[name="twitter:description"]');
+  const canonicalBase = (D.site_meta?.canonical_url || 'https://lore.trescuerpos.arcagaucha.com').replace(/\/$/, '');
+  const canonicalUrl = `${canonicalBase}${canonicalPathForRoute(section, param)}`;
   if (description) description.setAttribute('content', meta.description);
   if (ogTitle) ogTitle.setAttribute('content', document.title);
   if (ogDescription) ogDescription.setAttribute('content', meta.description);
+  if (canonicalLink) canonicalLink.setAttribute('href', canonicalUrl);
+  if (ogUrl) ogUrl.setAttribute('content', canonicalUrl);
+  if (twitterTitle) twitterTitle.setAttribute('content', document.title);
+  if (twitterDescription) twitterDescription.setAttribute('content', meta.description);
 }
 
 // ─── Router ─────────────────────────────────────────────────────────────────────
@@ -396,7 +442,7 @@ function renderLoadWarnings() {
 
 async function router() {
   const currentEpoch = ++routeEpoch;
-  const raw              = location.hash.replace('#', '') || 'inicio';
+  const raw              = currentRouteValue();
   const [section, ...rest] = raw.split('/');
   const param            = rest.join('/');
   const app              = document.getElementById('app');
@@ -1119,6 +1165,10 @@ function renderInicio() {
   const meta    = D.site_meta || {};
   const game    = D.game_meta || {};
   const vectors = D.vectors   || [];
+  const gameUrl = resolveGameUrl(game);
+  const heroPlay = gameUrl
+    ? `<a href="${esc(gameUrl)}" class="btn btn-primary" target="_blank" rel="noopener">Jugar videojuego →</a>`
+    : `<a href="#videojuego" class="btn btn-primary">Conocer el videojuego →</a>`;
 
   const contribs = {
     tecnocracia:  'Aporta legitimidad técnica. El discurso de la modernización justifica la transformación institucional.',
@@ -1158,9 +1208,12 @@ function renderInicio() {
           <p class="inicio-hero-sub">Argentina no es un péndulo. Es un problema de tres cuerpos.</p>
           <nav class="cta-group inicio-hero-cta inicio-hero-nav" aria-label="Accesos principales del proyecto">
             <a href="#laboratorio" class="btn btn-primary" data-hero-section="laboratorio">Analizá un discurso →</a>
-            <a href="#mapa-orbital" class="btn btn-secondary" data-hero-section="mapa-orbital">Explorar mapa orbital</a>
+            <a href="#mapa-orbital" class="btn btn-primary" data-hero-section="mapa-orbital">Explorar mapa orbital</a>
+            <a href="#recorrido" class="btn btn-primary" data-hero-section="recorrido">Empezá acá</a>
+            <a href="#tesis" class="btn btn-primary" data-hero-section="tesis">Leer la tesis</a>
+            <a href="#whitepaper" class="btn btn-primary" data-hero-section="whitepaper">Leer whitepaper</a>
+            ${heroPlay}
           </nav>
-          <div class="inicio-hero-text-links"><a href="#recorrido">Empezá acá</a><span>·</span><a href="#tesis">Leer la tesis</a><span>·</span><a href="#leyendas">Trazar puntajes</a><span>·</span><a href="#videojuego">Ver videojuego</a></div>
           <div class="inicio-hero-synthesis">
             <p>El problema de los tres cuerpos argentinos es un prototipo de investigación teórico-empírica que lee el discurso presidencial argentino a través de tres vectores político-históricos: modernización tecnocrática, mesianismo redentor y paternalismo conservador. No clasifica actores como tipos fijos; reconstruye configuraciones, trayectorias y atractores temporales.</p>
             <p>El péndulo entre apertura/endeudamiento y protección/mercado interno describe una alternancia visible, pero no alcanza para explicar la gramática con la que el liderazgo presidencial argentino organiza legitimidad. La hipótesis es que una órbita política estable suele requerir al menos dos cuerpos: un vector dominante y otro secundario o modulador.</p>
@@ -3548,14 +3601,20 @@ async function init() {
     if (loading) loading.hidden = true;
     if (app)     app.hidden     = false;
 
+    enhancePrerenderedLinks();
     initNav();
     window.addEventListener('hashchange', router);
-    router();
+    await router();
+    document.documentElement.dataset.clientEnhanced = 'true';
   } catch (err) {
     if (loading) loading.hidden = true;
     if (app) {
       app.hidden    = false;
-      app.innerHTML = buildCorsError(err);
+      if (app.dataset.prerendered === 'true' && app.textContent.trim()) {
+        app.insertAdjacentHTML('afterbegin', `<div class="partial-load-warning" role="status"><strong>La mejora interactiva no pudo iniciarse.</strong> El contenido documental prerenderizado sigue disponible.</div>`);
+      } else {
+        app.innerHTML = buildCorsError(err);
+      }
     }
   }
 }

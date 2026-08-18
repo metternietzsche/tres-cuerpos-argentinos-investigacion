@@ -9,24 +9,184 @@
   <meta name="theme-color" content="#101116">
   <link rel="canonical" href="https://lore.trescuerpos.arcagaucha.com/empeza-aca.html">
   <link rel="icon" type="image/webp" href="assets/logo.webp?v=20260815">
+  <link rel="manifest" href="manifest.webmanifest?v=20260815">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_AR">
-  <meta property="og:title" content="Empezá acá">
+  <meta property="og:title" content="Empezá acá · El problema de los tres cuerpos argentinos">
   <meta property="og:description" content="Un recorrido breve por la tesis, el mapa, la evidencia, las Leyendas y el videojuego.">
   <meta property="og:url" content="https://lore.trescuerpos.arcagaucha.com/empeza-aca.html">
   <meta property="og:image" content="https://lore.trescuerpos.arcagaucha.com/assets/logo.webp?v=20260815">
+  <meta property="og:image:alt" content="Logo de El problema de los tres cuerpos argentinos">
   <meta name="twitter:card" content="summary_large_image">
-  <meta http-equiv="refresh" content="0; url=./#recorrido">
+  <meta name="twitter:title" content="Empezá acá · El problema de los tres cuerpos argentinos">
+  <meta name="twitter:description" content="Un recorrido breve por la tesis, el mapa, la evidencia, las Leyendas y el videojuego.">
+  <meta name="twitter:image" content="https://lore.trescuerpos.arcagaucha.com/assets/logo.webp?v=20260815">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://lore.trescuerpos.arcagaucha.com/#website",
+        "url": "https://lore.trescuerpos.arcagaucha.com/",
+        "name": "El problema de los tres cuerpos argentinos",
+        "inLanguage": "es-AR",
+        "author": { "@id": "https://lore.trescuerpos.arcagaucha.com/#author" }
+      },
+      {
+        "@type": "ScholarlyArticle",
+        "headline": "El problema de los tres cuerpos argentinos: una lectura orbital del presidencialismo argentino",
+        "description": "Investigación doctrinaria sobre tecnocracia, mesianismo y paternalismo en el discurso presidencial argentino.",
+        "dateModified": "2026-08-16",
+        "inLanguage": "es-AR",
+        "license": "https://creativecommons.org/licenses/by-nc/4.0/",
+        "author": { "@id": "https://lore.trescuerpos.arcagaucha.com/#author" }
+      },
+      {
+        "@type": "WebApplication",
+        "name": "Laboratorio orbital de textos políticos",
+        "url": "https://lore.trescuerpos.arcagaucha.com/laboratorio.html",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "Web",
+        "isAccessibleForFree": true,
+        "description": "Analizador local y exploratorio de señales de tecnocracia, mesianismo y paternalismo en textos políticos.",
+        "author": { "@id": "https://lore.trescuerpos.arcagaucha.com/#author" }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://lore.trescuerpos.arcagaucha.com/#author",
+        "name": "Alexandra Bustos Frati"
+      }
+    ]
+  }
+  </script>
   <link rel="stylesheet" href="styles.css?v=20260816d">
+  <noscript>
+    <style>
+      @media (max-width: 900px) {
+        #site-header { position: relative; height: auto; min-height: var(--header-h); flex-wrap: wrap; padding-block: .5rem; }
+        #mobile-menu-btn, #site-search-btn { display: none !important; }
+        #site-nav { display: flex; position: static; flex: 1 0 100%; padding: .5rem 0 0; border: 0; }
+        #app { margin-top: 0; }
+      }
+    </style>
+  </noscript>
 </head>
-<body>
-  <main class="redirect-page">
-    <a href="./#inicio"><img src="assets/logo.webp?v=20260815" alt="" width="72" height="72"></a>
-    <p class="section-kicker">EL PROBLEMA DE LOS TRES CUERPOS ARGENTINOS</p>
-    <h1>Empezá acá</h1>
-    <p>Un recorrido breve por la tesis, el mapa, la evidencia, las Leyendas y el videojuego.</p>
-    <p><a href="./#recorrido">Abrir esta sección →</a></p>
+<body data-prerender-route="recorrido">
+
+  <a class="skip-link" href="#app">Saltar al contenido</a>
+
+  <header id="site-header" role="banner">
+    <div class="site-title-wrap">
+      <a href="./index.html" data-client-route="#inicio" class="site-logo-link" aria-label="Inicio">
+        <img src="assets/logo.webp?v=20260815" alt="" class="site-logo" aria-hidden="true"
+             onerror="this.style.display='none';" loading="eager">
+      </a>
+      <p class="site-title">
+        <a href="./index.html" data-client-route="#inicio">El problema de los tres cuerpos argentinos</a>
+      </p>
+      <span class="site-subtitle-small">INVESTIGACIÓN · DOCTRINA · VIDEOJUEGO</span>
+    </div>
+    <button id="mobile-menu-btn"
+            aria-label="Abrir menú de navegación"
+            aria-expanded="false"
+            aria-controls="site-nav">☰ Menú</button>
+    <nav id="site-nav" role="navigation" aria-label="Navegación principal">
+      <a href="./index.html" data-client-route="#inicio"       class="nav-link" data-section="inicio">Inicio</a>
+      <a href="./empeza-aca.html" data-client-route="#recorrido"    class="nav-link active" data-section="recorrido" aria-current="page">Empezá acá</a>
+      <a href="./mapa-orbital.html" data-client-route="#mapa-orbital" class="nav-link" data-section="mapa-orbital">Mapa orbital</a>
+      <a href="./laboratorio.html" data-client-route="#laboratorio"  class="nav-link" data-section="laboratorio">Analizar</a>
+      <a href="./actores.html" data-client-route="#actores"      class="nav-link" data-section="actores">Actores y Leyendas</a>
+      <a href="./evidencia.html" data-client-route="#evidencia"    class="nav-link" data-section="evidencia">Evidencia</a>
+      <a href="./whitepaper.html" data-client-route="#whitepaper"   class="nav-link" data-section="whitepaper">Whitepaper</a>
+      <a href="./videojuego.html" data-client-route="#videojuego"   class="nav-link" data-section="videojuego">Videojuego</a>
+    </nav>
+    <a href="./#buscar" data-client-route="#buscar" id="site-search-btn" aria-label="Buscar en el proyecto">⌕ <span>Buscar</span></a>
+  </header>
+
+  <div id="loading" role="status" aria-live="polite" hidden aria-hidden="true">
+    <div class="loading-inner">
+      <div class="loading-spinner" aria-hidden="true"></div>
+      <p class="loading-title">El problema de los tres cuerpos argentinos</p>
+      <p class="loading-msg">Cargando investigación, mapa y trazabilidad…</p>
+    </div>
+  </div>
+
+  <main id="app" role="main" data-prerendered="true">
+<section class="page-section guided-page">
+    <div class="breadcrumb"><a href="./index.html" data-client-route="#inicio">Inicio</a> <span>›</span> Empezá acá</div>
+    <div class="guided-hero">
+      <span class="section-kicker">UNA INVESTIGACIÓN · CUATRO PUERTAS</span>
+      <h1>¿Qué querés hacer?</h1>
+      <p class="hero-sub">No necesitás conocer el proyecto de antemano. Elegí una entrada: entender la idea, comparar presidencias, analizar un discurso o jugar.</p>
+    </div>
+    <nav class="guided-choice-grid" aria-label="Elegí qué querés hacer">
+      <article class="guided-choice guided-choice-thesis" aria-labelledby="guided-thesis-title">
+        <div class="guided-choice-topline"><span>01</span><b>LA IDEA · 4 MIN</b></div>
+        <h2 id="guided-thesis-title">Entender por qué no alcanza el péndulo</h2>
+        <p>Tecnocracia, mesianismo y paternalismo no se alternan de a dos: se combinan, compiten y dejan trayectorias.</p>
+        <a href="./tesis.html" data-client-route="#tesis" class="guided-choice-link">Leer la tesis <span aria-hidden="true">→</span></a>
+      </article>
+      <article class="guided-choice guided-choice-map" aria-labelledby="guided-map-title">
+        <div class="guided-choice-topline"><span>02</span><b>MAPA · 52 DISCURSOS</b></div>
+        <h2 id="guided-map-title">Comparar presidencias</h2>
+        <p>Ubicá discursos y mandatos en el campo de los tres cuerpos. Compará posiciones sin convertirlas en diagnósticos personales.</p>
+        <a href="./mapa-orbital.html" data-client-route="#mapa-orbital" class="guided-choice-link">Explorar el mapa <span aria-hidden="true">→</span></a>
+      </article>
+      <article class="guided-choice guided-choice-lab" aria-labelledby="guided-lab-title">
+        <div class="guided-choice-topline"><span>03</span><b>LABORATORIO · PRIVADO</b></div>
+        <h2 id="guided-lab-title">Analizar un discurso</h2>
+        <p>Pegá un texto y mirá qué señales TEC, MES y PAT aparecen. El análisis ocurre en tu navegador: no se envía ni se guarda.</p>
+        <a href="./laboratorio.html" data-client-route="#laboratorio" class="guided-choice-link">Abrir el laboratorio <span aria-hidden="true">→</span></a>
+      </article>
+      <article class="guided-choice guided-choice-game" aria-labelledby="guided-game-title">
+        <div class="guided-choice-topline"><span>04</span><b>VIDEOJUEGO · CARRERA + LEYENDA</b></div>
+        <h2 id="guided-game-title">Jugar una república inestable</h2>
+        <p>Tomá doce decisiones, atravesá tres campañas y descubrí qué autoridad construiste. La partida usa la doctrina; no reemplaza la evidencia histórica.</p>
+        <div class="guided-game-actions"><a href="https://trescuerpos.arcagaucha.com/" class="btn btn-primary" target="_blank" rel="noopener">Jugar v0.52 beta.13 →</a><a href="./videojuego.html" data-client-route="#videojuego" class="btn btn-secondary">Cómo se conecta con la investigación</a></div>
+      </article>
+    </nav>
+    <section class="guided-deeper" aria-labelledby="guided-deeper-title">
+      <div>
+        <span class="section-kicker">PARA PROFUNDIZAR</span>
+        <h2 id="guided-deeper-title">¿Querés revisar cómo llegamos a estas conclusiones?</h2>
+        <p>Acá viven las fuentes, las reglas de lectura y los límites. No hace falta recorrerlos antes de usar el mapa, el laboratorio o el juego.</p>
+      </div>
+      <div class="guided-deeper-links">
+        <a href="./evidencia.html" data-client-route="#evidencia"><b>Evidencia y método</b><span>Corpus, codificación y cautelas</span></a>
+        <a href="./leyendas.html" data-client-route="#leyendas"><b>Por qué puntúa así cada Leyenda</b><span>Fuentes, traducción y cambios</span></a>
+        <a href="./whitepaper.html" data-client-route="#whitepaper"><b>Whitepaper completo</b><span>Argumento, tablas y referencias</span></a>
+      </div>
+    </section>
+  </section>
   </main>
-  <script>location.replace('./#recorrido');</script>
+
+  <footer id="site-footer" role="contentinfo">
+    <div class="footer-author">Investigación y autoría: Alexandra Bustos Frati, PhD · Videojuego: Arca Gaucha.</div>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/arcagaucha/" class="footer-social-link" target="_blank" rel="noopener noreferrer">Instagram · @arcagaucha</a>
+      <span class="footer-social-sep" aria-hidden="true">·</span>
+      <a href="https://www.linkedin.com/in/lexbustosfrati/" class="footer-social-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <span class="footer-social-sep" aria-hidden="true">·</span>
+      <a href="https://github.com/metternietzsche" class="footer-social-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <span class="footer-social-sep" aria-hidden="true">·</span>
+      <a href="https://www.threads.net/@lexy.futura" class="footer-social-link" target="_blank" rel="noopener noreferrer">Threads</a>
+      <span class="footer-social-sep" aria-hidden="true">·</span>
+      <a href="https://alexandrabustosfrati.substack.com" class="footer-social-link" target="_blank" rel="noopener noreferrer">Substack</a>
+      <span class="footer-social-sep" aria-hidden="true">·</span>
+      <a href="https://www.researchgate.net/profile/Alexandra-Bustos-Frati" class="footer-social-link" target="_blank" rel="noopener noreferrer">ResearchGate</a>
+    </div>
+    <div class="footer-meta">
+      Publicación conjunta ·
+      <a href="./evidencia.html" data-client-route="#evidencia">Evidencia y método</a>
+      · <a href="./licencia.html" data-client-route="#licencia">Licencia</a>
+      · <a href="https://www.hcdn.gob.ar/secparl/dgral_info_parlamentaria/mensajes_presidenciales/index.html" target="_blank" rel="noopener">Archivo HCDN</a>
+    </div>
+  </footer>
+
+  <a href="#app" id="back-to-top" aria-label="Volver al comienzo de la página">↑ Arriba</a>
+
+  <script src="orbital-analyzer.js?v=20260816d"></script>
+  <script src="app.js?v=20260816d"></script>
 </body>
 </html>

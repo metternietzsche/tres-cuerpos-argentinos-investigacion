@@ -83,7 +83,75 @@ check(/fullTextIncludedInResult:\s*false/.test(analyzer), 'El contrato del anali
 check(/processedLocally:\s*true/.test(analyzer) && /storedBySite:\s*false/.test(analyzer), 'El contrato local/privado del analizador no está declarado.');
 check(!/data-laboratory-download|Descargar diagnóstico JSON|diagnostico-orbital\.json/.test(app), 'El laboratorio todavía ofrece descargar el resultado JSON.');
 
-for (const file of ['robots.txt', 'sitemap.xml', 'manifest.webmanifest', 'assets/logo.webp', 'orbital-analyzer.js', 'tesis.html', 'mapa-orbital.html', 'laboratorio.html', 'actores.html', 'leyendas.html', 'evidencia.html', 'whitepaper.html', 'videojuego.html']) {
+const primaryDocuments = [
+  'index.html',
+  'empeza-aca.html',
+  'tesis.html',
+  'mapa-orbital.html',
+  'laboratorio.html',
+  'actores.html',
+  'leyendas.html',
+  'evidencia.html',
+  'whitepaper.html',
+  'figuras.html',
+  'videojuego.html',
+  'licencia.html',
+];
+const actorDocuments = (publicationWeb.actors || []).map(item => `actor-${item.actor_id}.html`);
+const legendDocuments = (publicationWeb.legends || []).map(item => `leyenda-${item.id}.html`);
+const prerenderedDocuments = [...primaryDocuments, ...actorDocuments, ...legendDocuments];
+
+for (const file of prerenderedDocuments) {
+  let html = '';
+  try { html = read(`web/static_prototype/${file}`); } catch {
+    failures.push(`Falta página prerenderizada: ${file}.`);
+    continue;
+  }
+  const main = html.match(/<main\s+id="app"[^>]*>([\s\S]*?)<\/main>/i)?.[1] || '';
+  const visibleText = main
+    .replace(/<script\b[\s\S]*?<\/script>/gi, ' ')
+    .replace(/<style\b[\s\S]*?<\/style>/gi, ' ')
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+  check(/<body\s+data-prerender-route="[^"]+">/i.test(html), `${file}: falta identificar la ruta prerenderizada.`);
+  check(/<main\s+id="app"[^>]*data-prerendered="true"/i.test(html), `${file}: main no contiene HTML prerenderizado.`);
+  check(!/<main\s+id="app"[^>]*\shidden\b/i.test(html), `${file}: el contenido principal sigue oculto.`);
+  check(!/http-equiv="refresh"|location\.replace\('\.\/#/i.test(html), `${file}: conserva una redirección cliente.`);
+  check((html.match(/<h1\b/gi) || []).length === 1, `${file}: debe contener exactamente un H1 en el HTML inicial.`);
+  check(/<nav\s+id="site-nav"[\s\S]*?<\/nav>/i.test(html), `${file}: falta la navegación principal en HTML.`);
+  check(visibleText.length >= 180, `${file}: el texto documental inicial es insuficiente.`);
+  check(/<a\b[^>]*href=/i.test(main), `${file}: el contenido no ofrece enlaces HTML rastreables.`);
+  check(/<title>[^<]+<\/title>/i.test(html), `${file}: falta title específico.`);
+  check(/<meta\s+name="description"\s+content="[^"]+"/i.test(html), `${file}: falta meta description.`);
+  check(/<link\s+rel="canonical"\s+href="https:\/\/lore\.trescuerpos\.arcagaucha\.com\/[^"]*"/i.test(html), `${file}: falta canonical público.`);
+  check(/<meta\s+property="og:title"\s+content="[^"]+"/i.test(html), `${file}: falta Open Graph title.`);
+  check(/<meta\s+property="og:description"\s+content="[^"]+"/i.test(html), `${file}: falta Open Graph description.`);
+  check(/<meta\s+property="og:image"\s+content="https:\/\//i.test(html), `${file}: falta Open Graph image.`);
+  check(/<meta\s+name="twitter:card"\s+content="summary_large_image"/i.test(html), `${file}: falta Twitter card.`);
+  check(/<meta\s+name="twitter:title"\s+content="[^"]+"/i.test(html), `${file}: falta Twitter title.`);
+  check(/<meta\s+name="twitter:description"\s+content="[^"]+"/i.test(html), `${file}: falta Twitter description.`);
+
+  for (const href of [...html.matchAll(/<a\b[^>]*href="([^"]+)"/gi)].map(match => match[1])) {
+    if (!href.startsWith('./') || href.startsWith('./#')) continue;
+    const target = href.slice(2).split('#')[0] || 'index.html';
+    try { statSync(resolve(web, target)); } catch { failures.push(`${file}: enlace interno roto hacia ${href}.`); }
+  }
+}
+
+check(prerenderedDocuments.length === 37, 'La publicación debe prerenderizar 12 páginas principales, 10 actores y 15 Leyendas.');
+const homeHtml = read('web/static_prototype/index.html');
+check(/Empezá acá/.test(homeHtml), 'La portada no expone el recorrido inicial como CTA en el HTML inicial.');
+check(/Leer la tesis/.test(homeHtml), 'La portada no expone la tesis como CTA en el HTML inicial.');
+check(/Leer whitepaper/.test(homeHtml), 'La portada no expone el acceso al whitepaper en el HTML inicial.');
+check(/Jugar videojuego/.test(homeHtml), 'La portada no expone el acceso directo al videojuego en el HTML inicial.');
+check(!/Trazar puntajes/.test(homeHtml), 'La portada todavía expone el enlace descartado “Trazar puntajes”.');
+check(/https:\/\/trescuerpos\.arcagaucha\.com\//.test(homeHtml), 'La portada no expone la URL pública del videojuego en el HTML inicial.');
+check(/https:\/\/trescuerpos\.arcagaucha\.com\//.test(read('web/static_prototype/videojuego.html')), 'La página del videojuego no expone su enlace en el HTML inicial.');
+const sitemap = read('web/static_prototype/sitemap.xml');
+check(prerenderedDocuments.every(file => file === 'index.html' || sitemap.includes(`/${file}</loc>`)), 'El sitemap no incluye todas las páginas documentales prerenderizadas.');
+
+for (const file of ['robots.txt', 'sitemap.xml', 'manifest.webmanifest', 'assets/logo.webp', 'orbital-analyzer.js', ...primaryDocuments]) {
   try { statSync(resolve(web, file)); } catch { failures.push(`Falta archivo público requerido: ${file}.`); }
 }
 check(statSync(resolve(web, 'assets/logo.webp')).size < 100_000, 'El logo optimizado debe pesar menos de 100 KB.');

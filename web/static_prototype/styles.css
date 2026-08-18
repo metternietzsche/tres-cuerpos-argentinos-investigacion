@@ -2571,10 +2571,6 @@ button.evidence-drawer-toggle {
   font: .72rem var(--font-mono);
   letter-spacing: .015em;
 }
-.inicio-hero-nav .inicio-hero-vj {
-  padding-inline: 1.05rem;
-  box-shadow: 0 0 0 1px rgba(80,181,255,.16), 0 7px 22px rgba(80,181,255,.12);
-}
 .inicio-hero-nav + .inicio-hero-synthesis { margin-top: 0; }
 .inicio-hero-badges { display: flex; align-items: center; gap: .5rem; flex-wrap: wrap; }
 .inicio-hero-badges-note { font-size: .8rem; color: var(--text-3); }
@@ -4263,7 +4259,7 @@ summary {
 #site-search-btn:hover { border-color: var(--tec); color: var(--paper); text-decoration: none; }
 
 #loading .loading-inner { max-width: 720px; padding: 2rem var(--px); text-align: center; }
-#loading h1 { margin: 0 0 .65rem; color: var(--paper); font-size: clamp(1.55rem, 4vw, 2.35rem); }
+#loading .loading-title { margin: 0 0 .65rem; color: var(--paper); font-family: var(--serif); font-size: clamp(1.55rem, 4vw, 2.35rem); font-weight: 700; line-height: 1.12; }
 
 #back-to-top {
   position: fixed;
