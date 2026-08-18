@@ -1354,7 +1354,7 @@ function renderInicio() {
             <p><em>Tres Cuerpos: República Inestable</em> ya tiene una ${esc(game.display_version || 'beta pública')} jugable: Carrera desde tres escalas y Modo Leyenda con quince Leyendas frente a conflictos contemporáneos.</p>
             <p>Las decisiones TEC, MES y PAT distribuyen capacidad, legitimidad, cohesión y costos. Las nuevas familias de acontecimientos traducen deep research a conflictos lúdicos sin convertir la partida en evidencia histórica.</p>
             <div class="cta-group mt-2">
-              <a href="#videojuego"   class="btn btn-primary">Ver videojuego →</a>
+              ${heroPlay}
               <a href="#mapa-orbital" class="btn btn-secondary">Ver mapa orbital</a>
             </div>
           </div>

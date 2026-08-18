@@ -39,7 +39,7 @@ test('la portada reúne sus seis accesos principales como botones', async ({ pag
   await expect(play).toHaveAttribute('href', 'https://trescuerpos.arcagaucha.com/');
   await expect(play).toHaveAttribute('target', '_blank');
   await expect(page.getByRole('link', { name: 'Trazar puntajes' })).toHaveCount(0);
-  await expect(page.getByRole('link', { name: 'Ver videojuego', exact: true })).toHaveCount(0);
+  await expect(page.getByRole('link', { name: /^Ver videojuego/ })).toHaveCount(0);
 
   const buttonStyles = await actions.getByRole('link').evaluateAll(links => links.map(link => {
     const style = getComputedStyle(link);

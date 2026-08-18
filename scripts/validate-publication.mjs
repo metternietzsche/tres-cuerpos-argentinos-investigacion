@@ -146,6 +146,7 @@ check(/Leer la tesis/.test(homeHtml), 'La portada no expone la tesis como CTA en
 check(/Leer whitepaper/.test(homeHtml), 'La portada no expone el acceso al whitepaper en el HTML inicial.');
 check(/Jugar videojuego/.test(homeHtml), 'La portada no expone el acceso directo al videojuego en el HTML inicial.');
 check(!/Trazar puntajes/.test(homeHtml), 'La portada todavía expone el enlace descartado “Trazar puntajes”.');
+check(!/Ver videojuego/.test(homeHtml), 'La portada todavía usa “Ver videojuego” en lugar de “Jugar videojuego”.');
 check(/https:\/\/trescuerpos\.arcagaucha\.com\//.test(homeHtml), 'La portada no expone la URL pública del videojuego en el HTML inicial.');
 check(/https:\/\/trescuerpos\.arcagaucha\.com\//.test(read('web/static_prototype/videojuego.html')), 'La página del videojuego no expone su enlace en el HTML inicial.');
 const sitemap = read('web/static_prototype/sitemap.xml');
