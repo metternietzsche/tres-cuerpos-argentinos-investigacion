@@ -227,7 +227,7 @@ test('el whitepaper pesado se carga sólo al abrir su ruta', async ({ page }) =>
   expect(whitepaperRequests).toBe(1);
 });
 
-test('el contenido del whitepaper queda arriba como una fila horizontal de chips', async ({ page }) => {
+test('el contenido del whitepaper persiste como una fila horizontal de chips compactos', async ({ page }) => {
   await page.goto('/#whitepaper');
   const contents = page.getByRole('navigation', { name: 'Contenido del whitepaper' });
   const chips = contents.getByRole('button');
@@ -243,15 +243,49 @@ test('el contenido del whitepaper queda arriba como una fila horizontal de chips
       height: root.getBoundingClientRect().height,
       viewportHeight: window.innerHeight,
       listOverflowX: getComputedStyle(list).overflowX,
+      chipRadius: getComputedStyle(items[0].querySelector('button')).borderRadius,
     };
   });
-  expect(layout.position).toBe('static');
+  expect(layout.position).toBe('sticky');
   expect(layout.rows).toBe(1);
-  expect(layout.height / layout.viewportHeight).toBeLessThan(0.2);
+  expect(layout.height / layout.viewportHeight).toBeLessThan(0.12);
   expect(['auto', 'scroll']).toContain(layout.listOverflowX);
+  expect(Number.parseFloat(layout.chipRadius)).toBeGreaterThan(20);
+
+  await page.locator('#wp-sec-8').scrollIntoViewIfNeeded();
+  await expect(contents).toBeInViewport();
+  const stickyOffset = await contents.evaluate(root => ({
+    top: root.getBoundingClientRect().top,
+    headerHeight: Number.parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--header-h')),
+  }));
+  expect(Math.abs(stickyOffset.top - stickyOffset.headerHeight)).toBeLessThanOrEqual(1);
 
   await chips.first().click();
-  await expect(page.locator('#wp-sec-1')).toBeInViewport();
+  await expect.poll(async () => page.locator('#wp-sec-1').evaluate(target => {
+    const targetTop = target.getBoundingClientRect().top;
+    const tocBottom = document.querySelector('.wp-toc').getBoundingClientRect().bottom;
+    return targetTop >= tocBottom - 1;
+  })).toBe(true);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)).toBeLessThanOrEqual(1);
+});
+
+test('el whitepaper abre con abstract y deja la ficha editorial al final', async ({ page }) => {
+  await page.goto('/#whitepaper');
+  const abstract = page.locator('.wp-abstract');
+  const body = page.locator('.wp-body');
+  const backmatter = page.locator('.wp-backmatter');
+
+  await expect(abstract).toContainText('Este whitepaper propone');
+  await expect(backmatter.getByRole('heading', { name: 'Método, autoría y cita' })).toBeVisible();
+  await expect(backmatter).toContainText('NB17 calibra');
+  await expect(backmatter).toContainText('Alexandra Bustos Frati, PhD');
+  const order = await page.evaluate(() => ({
+    abstract: document.querySelector('.wp-abstract').getBoundingClientRect().top,
+    body: document.querySelector('.wp-body').getBoundingClientRect().top,
+    backmatter: document.querySelector('.wp-backmatter').getBoundingClientRect().top,
+  }));
+  expect(order.abstract).toBeLessThan(order.body);
+  expect(order.backmatter).toBeGreaterThan(order.body);
   expect(await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)).toBeLessThanOrEqual(1);
 });
 

@@ -3,7 +3,7 @@
 // ─── Constants ─────────────────────────────────────────────────────────────────
 
 const DATA_PATH = 'data/';
-const PUBLICATION_CACHE_KEY = '20260818a';
+const PUBLICATION_CACHE_KEY = '20260818b';
 const OFFICIAL_HCDN_ARCHIVE = 'https://www.hcdn.gob.ar/secparl/dgral_info_parlamentaria/mensajes_presidenciales/index.html';
 const RESEARCH_REPOSITORY = 'https://github.com/metternietzsche/tres-cuerpos-argentinos-investigacion';
 
@@ -3036,17 +3036,11 @@ function renderWhitepaper() {
       <div class="wp-eyebrow">WHITEPAPER · v0.4 · AUTORA: ALEXANDRA BUSTOS FRATI, PhD</div>
       <h1 class="wp-title">El problema de los tres cuerpos argentinos:<br>una lectura orbital del presidencialismo argentino</h1>
       ${buildBadgeGroup(['HCDN_ONLY'])}
-      <div class="notice notice-amber mt-2">
-        <p><strong>NB17 calibra; NB18 aplica el instrumento simétrico; NB19–NB20 miden sensibilidad; NB21 publica el mapa.</strong> La versión v0.4 separa masa, función, posición y trayectoria, y publica también dónde la automatización no alcanza.</p>
+      <div class="wp-abstract">
+        <div class="wp-abstract-label">Abstract</div>
+        <p>Este whitepaper propone que el discurso presidencial argentino no se organiza como un péndulo entre dos polos, sino como un campo de interacción entre modernización tecnocrática, mesianismo redentor y paternalismo conservador.</p>
+        <p>Analiza 52 discursos de apertura y asunción ante la HCDN (1983–2026), agrupados en 12 unidades actor × mandato, y usa masa, función y trayectoria para distinguir qué cuerpos aparecen, cuál encuadra y cuál instrumenta. El mapa orbital v0.4 conserva las trayectorias y cautelas: no convierte personas en tipos, no equipara discurso con gobierno y mantiene a Perón en una pipeline cualitativa separada.</p>
       </div>
-      <dl class="wp-provenance" aria-label="Autoría, origen y datos editoriales del whitepaper">
-        <dt>Autora</dt><dd>Alexandra Bustos Frati, PhD</dd>
-        <dt>Origen</dt><dd>Mensajes presidenciales de los Diarios de Sesiones de la HCDN, 1983–2026; Perón 1946 y 1954 en una pipeline documental separada.</dd>
-        <dt>Corpus</dt><dd>52 documentos · 10 personas · 12 unidades actor × mandato.</dd>
-        <dt>Linaje</dt><dd>NB10 → NB12–NB16 → NB17 → NB18 → NB19–NB20 → NB21.</dd>
-        <dt>Cita</dt><dd>Bustos Frati, Alexandra (2026). <em>El problema de los tres cuerpos argentinos: una lectura orbital del presidencialismo argentino.</em> Whitepaper v0.4.</dd>
-        <dt>Licencia</dt><dd>Texto y figuras: CC BY-NC 4.0.</dd>
-      </dl>
       <div class="wp-release-actions">
         <a class="btn btn-primary" href="data/EL_PROBLEMA_DE_LOS_TRES_CUERPOS_ARGENTINOS_WHITEPAPER_v0_4.pdf" download>Descargar whitepaper (.pdf)</a>
         <a class="btn btn-secondary" href="#mapa-orbital">Abrir mapa orbital v0.4</a>
@@ -3073,6 +3067,22 @@ function renderWhitepaper() {
       <a href="#evidencia" class="btn btn-secondary">Evidencia y método</a>
       <a href="#evidencia/roadmap" class="btn btn-secondary">Roadmap →</a>
     </div>
+
+    <footer class="wp-backmatter" aria-labelledby="wp-backmatter-title">
+      <div class="section-kicker">FICHA EDITORIAL</div>
+      <h2 id="wp-backmatter-title">Método, autoría y cita</h2>
+      <div class="notice notice-amber mt-2">
+        <p><strong>NB17 calibra; NB18 aplica el instrumento simétrico; NB19–NB20 miden sensibilidad; NB21 publica el mapa.</strong> La versión v0.4 separa masa, función, posición y trayectoria, y publica también dónde la automatización no alcanza.</p>
+      </div>
+      <dl class="wp-provenance" aria-label="Autoría, origen y datos editoriales del whitepaper">
+        <dt>Autora</dt><dd>Alexandra Bustos Frati, PhD</dd>
+        <dt>Origen</dt><dd>Mensajes presidenciales de los Diarios de Sesiones de la HCDN, 1983–2026; Perón 1946 y 1954 en una pipeline documental separada.</dd>
+        <dt>Corpus</dt><dd>52 documentos · 10 personas · 12 unidades actor × mandato.</dd>
+        <dt>Linaje</dt><dd>NB10 → NB12–NB16 → NB17 → NB18 → NB19–NB20 → NB21.</dd>
+        <dt>Cita</dt><dd>Bustos Frati, Alexandra (2026). <em>El problema de los tres cuerpos argentinos: una lectura orbital del presidencialismo argentino.</em> Whitepaper v0.4.</dd>
+        <dt>Licencia</dt><dd>Texto y figuras: CC BY-NC 4.0.</dd>
+      </dl>
+    </footer>
   </section>`;
 }
 
