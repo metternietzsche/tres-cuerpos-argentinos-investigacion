@@ -284,6 +284,9 @@ test('el whitepaper abre con abstract y deja la ficha editorial al final', async
   await expect(download).toBeVisible();
   await expect(map).toBeVisible();
   await expect(abstract).toContainText('Este whitepaper propone');
+  await expect(page.getByText(/Figura sugerida|Figura pendiente de integración/)).toHaveCount(0);
+  await expect(page.locator('.wp-figure-placeholder-card')).toHaveCount(0);
+  await expect(page.locator('img[src*="MAPA_ORBITAL_COMPARABILITY_TIERS_v0_3"]')).toHaveCount(1);
   await expect(backmatter.getByRole('heading', { name: 'Método, autoría y cita' })).toBeVisible();
   await expect(backmatter).toContainText('NB17 calibra');
   await expect(backmatter).toContainText('Alexandra Bustos Frati, PhD');
@@ -304,12 +307,21 @@ test('el whitepaper abre con abstract y deja la ficha editorial al final', async
       articleWidth: article.getBoundingClientRect().width,
       pageWidth: document.querySelector('.wp-page').getBoundingClientRect().width,
       paragraphWidth: paragraph.getBoundingClientRect().width,
+      articleBackground: getComputedStyle(article).backgroundColor,
+      articleColor: getComputedStyle(article).color,
+      paragraphFont: getComputedStyle(paragraph).fontFamily,
+      paragraphLineHeight: Number.parseFloat(getComputedStyle(paragraph).lineHeight),
+      paragraphFontSize: Number.parseFloat(getComputedStyle(paragraph).fontSize),
       maxButtonHeight: Math.max(...buttons.map(button => button.getBoundingClientRect().height)),
       maxButtonFontSize: Math.max(...buttons.map(button => Number.parseFloat(getComputedStyle(button).fontSize))),
     };
   });
   expect(sizing.articleWidth / sizing.pageWidth).toBeGreaterThan(0.9);
-  expect(sizing.paragraphWidth / sizing.articleWidth).toBeGreaterThan(0.95);
+  expect(sizing.paragraphWidth / sizing.articleWidth).toBeGreaterThan(0.85);
+  expect(sizing.articleBackground).toBe('rgb(244, 239, 223)');
+  expect(sizing.articleColor).toBe('rgb(42, 35, 26)');
+  expect(sizing.paragraphFont).toMatch(/Iowan Old Style|Palatino|Book Antiqua|Georgia/);
+  expect(sizing.paragraphLineHeight / sizing.paragraphFontSize).toBeGreaterThan(1.7);
   expect(sizing.maxButtonHeight).toBeLessThanOrEqual(36);
   expect(sizing.maxButtonFontSize).toBeLessThanOrEqual(12);
   expect(await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)).toBeLessThanOrEqual(1);

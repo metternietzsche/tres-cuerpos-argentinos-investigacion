@@ -4988,9 +4988,111 @@ summary {
   .doctrine-item { grid-template-columns: 1fr; gap: .45rem; padding: 1rem; }
 }
 
+/* Whitepaper: la lectura extensa pasa a una hoja editorial cálida. */
+.wp-markdown-body {
+  padding: clamp(1.25rem, 4vw, 3.5rem);
+  border: 1px solid #d2c4a6;
+  background: #f4efdf;
+  box-shadow: 0 18px 46px rgba(0, 0, 0, .2);
+  color: #2a231a;
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  font-size: clamp(1rem, .35vw + .96rem, 1.08rem);
+}
+.wp-markdown-body .wp-section {
+  border-color: #d7c9ad;
+}
+.wp-markdown-body .wp-section-title,
+.wp-markdown-body .wp-subsection-title {
+  color: #1f1912;
+}
+.wp-markdown-body .wp-section-num,
+.wp-markdown-body .wp-figure-source,
+.wp-markdown-body .wp-figure-tabla-nota,
+.wp-markdown-body .wp-in-progress {
+  color: #6d6252;
+}
+.wp-markdown-body p,
+.wp-markdown-body li {
+  color: #2a231a;
+  line-height: 1.78;
+}
+.wp-markdown-body strong {
+  color: #1f1912;
+}
+.wp-markdown-body a {
+  color: #245b73;
+  text-decoration-thickness: .08em;
+  text-underline-offset: .16em;
+}
+.wp-markdown-body code {
+  padding: .08em .3em;
+  border: 1px solid #d0c2a5;
+  background: #e9e0cb;
+  color: #244451;
+}
+.wp-markdown-body .wp-subsection,
+.wp-markdown-body .wp-figure,
+.wp-markdown-body .wp-figure-placeholder-card {
+  border-color: #c8b894;
+  background: #eee5d1;
+}
+.wp-markdown-body .wp-subsection {
+  border-left-color: #9a7445;
+}
+.wp-markdown-body .wp-actor-badge,
+.wp-markdown-body .wp-status-pill {
+  border-color: #b8a784;
+  color: #5f5547;
+}
+.wp-markdown-body .wp-figure-label,
+.wp-markdown-body .wp-figure-td-label {
+  color: #315f70;
+}
+.wp-markdown-body .wp-figure-texto-disponible {
+  border-left-color: #658272;
+  background: #e5dcc6;
+  color: #2a231a;
+}
+.wp-markdown-body .wp-figure-tabla th {
+  border-color: #c8b99a;
+  background: #ded3bb;
+  color: #3d352a;
+}
+.wp-markdown-body .wp-figure-tabla td {
+  border-color: #c8b99a;
+  background: #f8f3e7;
+  color: #2a231a;
+}
+.wp-markdown-body .wp-figure-tabla tr:nth-child(even) td {
+  background: #eee6d5;
+}
+.wp-markdown-body .notice,
+.wp-markdown-body .notice p {
+  color: #43392c;
+}
+.wp-markdown-body .notice {
+  background: #ece2cc;
+}
+.wp-markdown-body .wp-pullquote {
+  border-left-color: #9a7445;
+  background: #e8dec8;
+  color: #43392c;
+  font-size: 1.02em;
+  line-height: 1.75;
+}
+
+@media (max-width: 640px) {
+  .wp-markdown-body {
+    padding: 1.15rem;
+    font-size: 1rem;
+  }
+}
+
 @media print {
+  @page { size: A4; margin: 14mm 15mm 16mm; }
   #site-header,
   #site-footer,
+  .skip-link,
   #back-to-top,
   .laboratory-hero,
   .laboratory-boundary,
@@ -4998,4 +5100,48 @@ summary {
   .laboratory-method-bridge,
   .laboratory-output-actions { display: none !important; }
   .laboratory-output { margin: 0; border: 0; color: #111; background: #fff; }
+  html,
+  body,
+  #app,
+  .wp-page {
+    background: #f4efdf !important;
+    color: #2a231a !important;
+  }
+  #app { margin: 0; }
+  .wp-page { max-width: none; padding: 0; }
+  .wp-page .breadcrumb,
+  .wp-page .wp-release-actions,
+  .wp-page .wp-toc,
+  .wp-page > .notice,
+  .wp-page > .cta-group { display: none !important; }
+  .wp-header { margin: 0 0 10mm; }
+  .wp-title,
+  .wp-eyebrow,
+  .wp-abstract,
+  .wp-abstract p,
+  .wp-backmatter,
+  .wp-backmatter h2,
+  .wp-provenance dd { color: #2a231a !important; }
+  .wp-abstract {
+    border-color: #9a7445;
+    background: #ece2cc !important;
+  }
+  .wp-markdown-body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    font-size: 10.5pt;
+    print-color-adjust: exact;
+  }
+  .wp-markdown-body .wp-section { break-inside: auto; }
+  .wp-markdown-body .wp-section-title,
+  .wp-markdown-body .wp-subsection-title { break-after: avoid; }
+  .wp-markdown-body .wp-figure,
+  .wp-markdown-body .wp-pullquote,
+  .wp-markdown-body .wp-figure-tabla { break-inside: avoid; }
+  .wp-backmatter { break-before: page; border-color: #b8a784; }
+  .wp-provenance { border-color: #b8a784; }
+  .wp-provenance dt { color: #654b2e; }
 }

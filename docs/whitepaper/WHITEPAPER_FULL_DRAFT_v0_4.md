@@ -10,7 +10,7 @@
 **Corpus:** HCDN v0.1 + extensión documentada 2026 · 52 documentos · 10 personas · 12 unidades `actor × mandato`  
 **Linaje metodológico:** NB10 (parejas y línea de base) → NB12–NB16 (dirección y prueba temporal) → NB17 (calibrador Milei) → NB18 (polaridad, función y posición simétricas) → NB19–NB21 (sensibilidad, adjudicación y mapa v0.4)  
 **Fuentes de base:** MAPA_ORBITAL_ARGENTINO_v0_1.md · UNIFIED_CLEAN_CORPUS_INTERPRETIVE_SYNTHESIS_v0_1.md · MEMO_INTERPRETIVE_FINDINGS_1983_2025_v0_1.md · NB10_interpretive_synthesis_democracy_1983_2025_v0_1.md · PERON_INTERIM_MEMO_1946_1954_v0_1.md  
-**Cita sugerida:** Bustos Frati, Alexandra (2026). *El problema de los tres cuerpos argentinos: una lectura orbital del presidencialismo argentino*. Whitepaper v0.4.  
+**Cita:** Bustos Frati, Alexandra (2026). *El problema de los tres cuerpos argentinos: una lectura orbital del presidencialismo argentino*. Whitepaper v0.4.
 **Licencia del texto y las figuras:** CC BY-NC 4.0.
 
 > **Condición de lectura:** La versión v0.4 aplica a los tres vectores una misma pregunta: si la señal es afirmada, subordinada, atribuida, rechazada o descriptiva; qué función cumple; y qué posición ocupa. La masa selecciona la pareja, la función ordena la relación y la trayectoria limita el promedio. El videojuego no forma parte de esta recalibración.
@@ -188,11 +188,6 @@ Las trayectorias que siguen son hipótesis de trabajo. Los perfiles se organizan
 > Uso: mostrar qué cuerpo domina cada documento y por qué el mandato no se reduce al promedio.
 > Caveat: el color codifica el cuerpo dominante; la secuencia exacta está en la tabla documental.
 
-> **Figura 3. Mapa de lectura editable del campo**
-> Fuente: `../empirical/mapa_orbital_v0_4/MAPA_ORBITAL_ARGENTINO_v0_4.drawio` (NB21)
-> Uso: auditar configuración, estado de trayectoria y razón de adjudicación en las 12 unidades.
-> Caveat: no representa distancias métricas entre presidentes ni posiciones tipológicas fijas.
-
 | Unidad | n | v0.4 | Estado de trayectoria |
 |---|---:|---|---|
 | Alfonsín (1983–1989) | 8 | `PAT↔TEC` | inestable |
@@ -298,11 +293,6 @@ Esta sección es metodológicamente distinta de las anteriores. Los datos que si
 
 Los dos documentos limpios disponibles de Perón son su asunción inaugural del 4 de junio de 1946 y su apertura anual del 19 de mayo de 1954. Ambos fueron procesados mediante extracción manual del Diario de Sesiones y revisión proposicional con un registro de patrones adaptado al contexto retórico del período. El status de ambos es `usable_one_document_hypothesis`.
 
-> **Figura sugerida 4. Perón 1946 vs. 1954: contraste de fase**
-> Fuente: PERON_NB03_1946_1954_PHASE_CONTRAST_v0_1.md (tabla de vectores por documento)
-> Uso: mostrar la estabilidad del ranking vectorial (MES > PAT > TEC) y los desplazamientos de contenido entre fases.
-> Caveat: dos documentos de la PERON_ALT_PIPELINE. No comparable numéricamente con corpus HCDN.
-
 **La jerarquía vectorial es estable en ambos documentos.** Tanto en 1946 como en 1954, el mesianismo domina, el paternalismo es secundario, y la tecnocracia es terciaria pero persistente. El ranking MES > PAT > TEC se sostiene a través de dos géneros distintos (asunción inaugural y apertura anual) y a ocho años de distancia. Esa estabilidad de ranking es analíticamente sugestiva.
 
 **El contenido de cada vector no es estático.** Este es el hallazgo más rico del contraste de fase.
@@ -380,7 +370,7 @@ Este artículo y el corpus que lo sustenta tienen límites que deben hacerse exp
 **No existen clasificaciones tipológicas finales.** Ningún actor tiene un tipo discursivo confirmado. Todos los perfiles son provisionales. El modelo no produce `final_type`. El uso de etiquetas de tipo fijo no está autorizado por la evidencia.
 
 > **Figura 5. Niveles de comparabilidad: misma teoría, dos pipelines, cuatro reglas de lectura**
-> Fuente visual heredada: `../empirical/mapa_orbital_v0_3/figures/MAPA_ORBITAL_COMPARABILITY_TIERS_v0_3.drawio.png`; datos HCDN actualizados en `../empirical/mapa_orbital_v0_4/tables/MAPA_ORBITAL_CASE_UNITS_v0_4.csv` y casos Perón de `UNIFIED_CLEAN_CASE_MATRIX_v0_1.csv`.
+> Fuente: `../empirical/mapa_orbital_v0_3/figures/MAPA_ORBITAL_COMPARABILITY_TIERS_v0_3.drawio.png`; datos HCDN actualizados en `../empirical/mapa_orbital_v0_4/tables/MAPA_ORBITAL_CASE_UNITS_v0_4.csv` y casos Perón de `UNIFIED_CLEAN_CASE_MATRIX_v0_1.csv`.
 > Uso: mostrar qué unidades pertenecen a cada tier y qué afirmaciones autoriza cada una sin recombinar mandatos.
 > Caveat: NB17–NB21 agregan polaridad, función, posición y sensibilidad sin volver comparables las dos pipelines. El tier mide comparabilidad, no importancia histórica.
 
@@ -410,11 +400,6 @@ NB17–NB21 ya propagaron la ventana de Rodríguez Saá, separaron mandatos, eje
 
 **Paso 7 — Solo entonces producir MAPA_ORBITAL_ARGENTINO_v1.md.**
 Una vez que la bridge note exista, el corpus Perón tenga al menos tres documentos procesados, y el corpus HCDN esté validado por mandato con dirección revisada, será posible producir una caracterización integrada del campo de fuerzas del discurso presidencial argentino.
-
-> **Figura sugerida 6. Diagrama del roadmap hacia v1**
-> Fuente: roadmap.json (datos del sitio) · MAPA_ORBITAL_ARGENTINO_v0_4.md
-> Uso: visualizar la secuencia de dependencias entre los siete pasos, con el desbloqueo de 1973 como nodo crítico.
-> Caveat: el diagrama visual está pendiente. Ver la sección § Roadmap del sitio para el estado actual de cada condición.
 
 ---
 

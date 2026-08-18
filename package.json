@@ -6,6 +6,7 @@
   "scripts": {
     "build": "npm run generate:routes",
     "generate:routes": "node scripts/generate-route-pages.mjs",
+    "generate:whitepaper-pdf": "node scripts/generate-whitepaper-pdf.mjs",
     "generate:analysis": "node scripts/build-text-analysis-data.mjs",
     "test:static": "node scripts/validate-publication.mjs",
     "test:unit": "node --test tests/*.test.mjs",

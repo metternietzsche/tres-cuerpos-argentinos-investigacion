@@ -3,7 +3,7 @@
 // ─── Constants ─────────────────────────────────────────────────────────────────
 
 const DATA_PATH = 'data/';
-const PUBLICATION_CACHE_KEY = '20260818c';
+const PUBLICATION_CACHE_KEY = '20260818d';
 const OFFICIAL_HCDN_ARCHIVE = 'https://www.hcdn.gob.ar/secparl/dgral_info_parlamentaria/mensajes_presidenciales/index.html';
 const RESEARCH_REPOSITORY = 'https://github.com/metternietzsche/tres-cuerpos-argentinos-investigacion';
 
@@ -2819,15 +2819,12 @@ function buildRoadmapItem(item) {
 // El contenido doctrinario se carga desde el Markdown versionado.
 
 function buildWpFigure(fig) {
+  if (!fig.file) return '';
   const imgContent = fig.file
     ? `<a href="${FIGURES_PATH}${esc(fig.file)}" target="_blank" rel="noopener" class="wp-figure-img-link" aria-label="Abrir figura: ${esc(fig.title)}">
         <img src="${FIGURES_PATH}${esc(fig.file)}" alt="${esc(fig.alt || fig.title)}" class="wp-figure-img" loading="lazy">
        </a>`
-    : `<div class="wp-figure-pending">
-        <span class="wp-figure-pending-icon" aria-hidden="true">◫</span>
-        <span class="wp-figure-pending-label">Figura pendiente de integración</span>
-        ${fig.pending_reason ? `<span class="wp-figure-pending-reason">${esc(fig.pending_reason)}</span>` : ''}
-       </div>`;
+    : '';
 
   const tablaHtml = fig.tabla ? buildWpFigureTabla(fig.tabla, fig.tabla_nota) : '';
   const textoHtml = fig.texto_disponible
@@ -2919,7 +2916,8 @@ function renderWpInline(text) {
 function wpFigureFromQuote(lines) {
   const clean = lines.map(line => line.replace(/^>\s?/, '').trim());
   const heading = clean[0].replace(/^\*\*|\*\*$/g, '');
-  const match = heading.match(/^Figura(?: sugerida)?\s+(\d+)\.\s*(.+)$/i);
+  if (/^Figura sugerida\b/i.test(heading)) return '';
+  const match = heading.match(/^Figura\s+(\d+)\.\s*(.+)$/i);
   if (!match) {
     return `<blockquote class="wp-pullquote">${clean.map(renderWpInline).join('<br>')}</blockquote>`;
   }
