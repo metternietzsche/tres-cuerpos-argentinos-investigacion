@@ -227,13 +227,14 @@ test('el whitepaper pesado se carga sólo al abrir su ruta', async ({ page }) =>
   expect(whitepaperRequests).toBe(1);
 });
 
-test('el contenido del whitepaper persiste como una fila horizontal de chips compactos', async ({ page }) => {
+test('el contenido del whitepaper se distribuye en varias filas sin desplazamiento lateral', async ({ page }) => {
   await page.goto('/#whitepaper');
   const contents = page.getByRole('navigation', { name: 'Contenido del whitepaper' });
   const chips = contents.getByRole('button');
 
   await expect(contents).toBeVisible();
   await expect(chips).toHaveCount(12);
+  await expect(chips.first()).toHaveAccessibleName('1. Introducción: por qué no alcanza el péndulo');
   const layout = await contents.evaluate(root => {
     const items = [...root.querySelectorAll('.wp-toc-item')];
     const list = root.querySelector('.wp-toc-list');
@@ -243,13 +244,15 @@ test('el contenido del whitepaper persiste como una fila horizontal de chips com
       height: root.getBoundingClientRect().height,
       viewportHeight: window.innerHeight,
       listOverflowX: getComputedStyle(list).overflowX,
+      listOverflow: list.scrollWidth - list.clientWidth,
       chipRadius: getComputedStyle(items[0].querySelector('button')).borderRadius,
     };
   });
   expect(layout.position).toBe('sticky');
-  expect(layout.rows).toBe(1);
-  expect(layout.height / layout.viewportHeight).toBeLessThan(0.12);
-  expect(['auto', 'scroll']).toContain(layout.listOverflowX);
+  expect(layout.rows).toBeGreaterThan(1);
+  expect(layout.height / layout.viewportHeight).toBeLessThan(0.35);
+  expect(['auto', 'scroll']).not.toContain(layout.listOverflowX);
+  expect(layout.listOverflow).toBeLessThanOrEqual(1);
   expect(Number.parseFloat(layout.chipRadius)).toBeGreaterThan(20);
 
   await page.locator('#wp-sec-8').scrollIntoViewIfNeeded();
@@ -271,21 +274,44 @@ test('el contenido del whitepaper persiste como una fila horizontal de chips com
 
 test('el whitepaper abre con abstract y deja la ficha editorial al final', async ({ page }) => {
   await page.goto('/#whitepaper');
+  const actions = page.locator('.wp-release-actions');
+  const download = page.getByRole('link', { name: 'Descargar whitepaper (.pdf)' });
+  const map = page.getByRole('link', { name: 'Abrir mapa orbital v0.4' });
   const abstract = page.locator('.wp-abstract');
   const body = page.locator('.wp-body');
   const backmatter = page.locator('.wp-backmatter');
 
+  await expect(download).toBeVisible();
+  await expect(map).toBeVisible();
   await expect(abstract).toContainText('Este whitepaper propone');
   await expect(backmatter.getByRole('heading', { name: 'Método, autoría y cita' })).toBeVisible();
   await expect(backmatter).toContainText('NB17 calibra');
   await expect(backmatter).toContainText('Alexandra Bustos Frati, PhD');
   const order = await page.evaluate(() => ({
+    actions: document.querySelector('.wp-release-actions').getBoundingClientRect().top,
     abstract: document.querySelector('.wp-abstract').getBoundingClientRect().top,
     body: document.querySelector('.wp-body').getBoundingClientRect().top,
     backmatter: document.querySelector('.wp-backmatter').getBoundingClientRect().top,
   }));
+  expect(order.actions).toBeLessThan(order.abstract);
   expect(order.abstract).toBeLessThan(order.body);
   expect(order.backmatter).toBeGreaterThan(order.body);
+  const sizing = await page.evaluate(() => {
+    const article = document.querySelector('.wp-markdown-body');
+    const paragraph = article.querySelector('p');
+    const buttons = [...document.querySelectorAll('.wp-release-actions .btn')];
+    return {
+      articleWidth: article.getBoundingClientRect().width,
+      pageWidth: document.querySelector('.wp-page').getBoundingClientRect().width,
+      paragraphWidth: paragraph.getBoundingClientRect().width,
+      maxButtonHeight: Math.max(...buttons.map(button => button.getBoundingClientRect().height)),
+      maxButtonFontSize: Math.max(...buttons.map(button => Number.parseFloat(getComputedStyle(button).fontSize))),
+    };
+  });
+  expect(sizing.articleWidth / sizing.pageWidth).toBeGreaterThan(0.9);
+  expect(sizing.paragraphWidth / sizing.articleWidth).toBeGreaterThan(0.95);
+  expect(sizing.maxButtonHeight).toBeLessThanOrEqual(36);
+  expect(sizing.maxButtonFontSize).toBeLessThanOrEqual(12);
   expect(await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)).toBeLessThanOrEqual(1);
 });
 

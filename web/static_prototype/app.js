@@ -3,7 +3,7 @@
 // ─── Constants ─────────────────────────────────────────────────────────────────
 
 const DATA_PATH = 'data/';
-const PUBLICATION_CACHE_KEY = '20260818b';
+const PUBLICATION_CACHE_KEY = '20260818c';
 const OFFICIAL_HCDN_ARCHIVE = 'https://www.hcdn.gob.ar/secparl/dgral_info_parlamentaria/mensajes_presidenciales/index.html';
 const RESEARCH_REPOSITORY = 'https://github.com/metternietzsche/tres-cuerpos-argentinos-investigacion';
 
@@ -535,7 +535,12 @@ function bindWpToc() {
   document.querySelectorAll('.wp-toc-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const target = document.getElementById(btn.dataset.scrollTarget);
-      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (!target) return;
+      const toc = btn.closest('.wp-toc');
+      const headerHeight = Number.parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--header-h')) || 0;
+      const tocHeight = toc?.getBoundingClientRect().height || 0;
+      const top = target.getBoundingClientRect().top + window.scrollY - headerHeight - tocHeight - 8;
+      window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
     });
   });
 }
@@ -2956,8 +2961,26 @@ function renderWpTable(lines) {
 }
 
 function whitepaperToc(markdown) {
+  const shortTitles = {
+    1: 'Introducción',
+    2: 'Tres cuerpos',
+    3: 'Configuraciones',
+    4: 'Corpus y método',
+    5: 'Pareja TEC–PAT',
+    6: 'Familias',
+    7: 'Trayectorias',
+    8: 'Perón 1946–1954',
+    9: 'Mapa orbital',
+    10: 'Límites',
+    11: 'Roadmap',
+    12: 'Conclusión',
+  };
   return [...String(markdown || '').matchAll(/^###\s+(\d+)\.\s+(.+)$/gm)]
-    .map(match => ({ n: match[1], title: match[2].trim() }));
+    .map(match => ({
+      n: match[1],
+      title: match[2].trim(),
+      shortTitle: shortTitles[match[1]] || match[2].trim(),
+    }));
 }
 
 function renderWhitepaperMarkdown(markdown) {
@@ -3036,21 +3059,21 @@ function renderWhitepaper() {
       <div class="wp-eyebrow">WHITEPAPER · v0.4 · AUTORA: ALEXANDRA BUSTOS FRATI, PhD</div>
       <h1 class="wp-title">El problema de los tres cuerpos argentinos:<br>una lectura orbital del presidencialismo argentino</h1>
       ${buildBadgeGroup(['HCDN_ONLY'])}
+      <div class="wp-release-actions">
+        <a class="btn btn-primary" href="data/EL_PROBLEMA_DE_LOS_TRES_CUERPOS_ARGENTINOS_WHITEPAPER_v0_4.pdf" download>Descargar whitepaper (.pdf)</a>
+        <a class="btn btn-secondary" href="#mapa-orbital">Abrir mapa orbital v0.4</a>
+      </div>
       <div class="wp-abstract">
         <div class="wp-abstract-label">Abstract</div>
         <p>Este whitepaper propone que el discurso presidencial argentino no se organiza como un péndulo entre dos polos, sino como un campo de interacción entre modernización tecnocrática, mesianismo redentor y paternalismo conservador.</p>
         <p>Analiza 52 discursos de apertura y asunción ante la HCDN (1983–2026), agrupados en 12 unidades actor × mandato, y usa masa, función y trayectoria para distinguir qué cuerpos aparecen, cuál encuadra y cuál instrumenta. El mapa orbital v0.4 conserva las trayectorias y cautelas: no convierte personas en tipos, no equipara discurso con gobierno y mantiene a Perón en una pipeline cualitativa separada.</p>
-      </div>
-      <div class="wp-release-actions">
-        <a class="btn btn-primary" href="data/EL_PROBLEMA_DE_LOS_TRES_CUERPOS_ARGENTINOS_WHITEPAPER_v0_4.pdf" download>Descargar whitepaper (.pdf)</a>
-        <a class="btn btn-secondary" href="#mapa-orbital">Abrir mapa orbital v0.4</a>
       </div>
     </div>
 
     <nav class="wp-toc" aria-label="Contenido del whitepaper">
       <h2 class="wp-toc-title">Contenido</h2>
       <ol class="wp-toc-list">
-        ${toc.map(item => `<li class="wp-toc-item"><button class="wp-toc-link wp-toc-btn" data-scroll-target="wp-sec-${esc(item.n)}" type="button"><span class="wp-toc-num" aria-hidden="true">${esc(item.n)}</span>${esc(item.title)}</button></li>`).join('')}
+        ${toc.map(item => `<li class="wp-toc-item"><button class="wp-toc-link wp-toc-btn" data-scroll-target="wp-sec-${esc(item.n)}" type="button" aria-label="${esc(item.n)}. ${esc(item.title)}"><span class="wp-toc-num" aria-hidden="true">${esc(item.n)}</span>${esc(item.shortTitle)}</button></li>`).join('')}
       </ol>
     </nav>
 
