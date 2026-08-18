@@ -24,15 +24,23 @@ test('las rutas principales cargan completas, sin errores ni overflow', async ({
   expect(failures).toEqual([]);
 });
 
-test('la portada reúne sus seis accesos principales como botones', async ({ page }) => {
+test('la portada prioriza Empezá acá y reúne sus seis accesos como botones', async ({ page }) => {
   await page.goto('/#inicio');
   const actions = page.getByRole('navigation', { name: 'Accesos principales del proyecto' });
 
   await expect(actions.getByRole('link')).toHaveCount(6);
+  await expect(actions.getByRole('link')).toHaveText([
+    'Empezá acá',
+    'Entender la idea central',
+    'Explorar mapa orbital',
+    'Analizá un discurso →',
+    'Leer whitepaper',
+    'Jugar videojuego →',
+  ]);
+  await expect(actions.getByRole('link', { name: 'Empezá acá' })).toHaveAttribute('href', '#recorrido');
+  await expect(actions.getByRole('link', { name: 'Entender la idea central' })).toHaveAttribute('href', '#tesis');
   await expect(actions.getByRole('link', { name: 'Analizá un discurso →' })).toHaveAttribute('href', '#laboratorio');
   await expect(actions.getByRole('link', { name: 'Explorar mapa orbital' })).toHaveAttribute('href', '#mapa-orbital');
-  await expect(actions.getByRole('link', { name: 'Empezá acá' })).toHaveAttribute('href', '#recorrido');
-  await expect(actions.getByRole('link', { name: 'Leer la tesis' })).toHaveAttribute('href', '#tesis');
   await expect(actions.getByRole('link', { name: 'Leer whitepaper' })).toHaveAttribute('href', '#whitepaper');
 
   const play = actions.getByRole('link', { name: 'Jugar videojuego →' });
@@ -219,6 +227,34 @@ test('el whitepaper pesado se carga sólo al abrir su ruta', async ({ page }) =>
   expect(whitepaperRequests).toBe(1);
 });
 
+test('el contenido del whitepaper queda arriba como una fila horizontal de chips', async ({ page }) => {
+  await page.goto('/#whitepaper');
+  const contents = page.getByRole('navigation', { name: 'Contenido del whitepaper' });
+  const chips = contents.getByRole('button');
+
+  await expect(contents).toBeVisible();
+  await expect(chips).toHaveCount(12);
+  const layout = await contents.evaluate(root => {
+    const items = [...root.querySelectorAll('.wp-toc-item')];
+    const list = root.querySelector('.wp-toc-list');
+    return {
+      position: getComputedStyle(root).position,
+      rows: new Set(items.map(item => Math.round(item.getBoundingClientRect().top))).size,
+      height: root.getBoundingClientRect().height,
+      viewportHeight: window.innerHeight,
+      listOverflowX: getComputedStyle(list).overflowX,
+    };
+  });
+  expect(layout.position).toBe('static');
+  expect(layout.rows).toBe(1);
+  expect(layout.height / layout.viewportHeight).toBeLessThan(0.2);
+  expect(['auto', 'scroll']).toContain(layout.listOverflowX);
+
+  await chips.first().click();
+  await expect(page.locator('#wp-sec-1')).toBeInViewport();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)).toBeLessThanOrEqual(1);
+});
+
 test('menú móvil y logo conservan navegación', async ({ page }, testInfo) => {
   test.skip(!testInfo.project.name.includes('mobile'), 'Control específico de viewport móvil.');
   await page.goto('/#videojuego');
@@ -340,7 +376,7 @@ test('SEO técnico entrega robots, sitemap, manifest y rutas indexables', async 
 test('el HTML inicial contiene navegación, texto documental y SEO sin ejecutar JavaScript', async ({ request }) => {
   const documents = [
     { path: '/', heading: 'El problema de los tres cuerpos argentinos' },
-    { path: '/tesis.html', heading: 'La tesis' },
+    { path: '/tesis.html', heading: 'La idea central' },
     { path: '/mapa-orbital.html', heading: 'Mapa orbital de los tres cuerpos' },
     { path: '/evidencia.html', heading: 'Cómo leemos un discurso' },
     { path: '/whitepaper.html', heading: 'El problema de los tres cuerpos argentinos:' },
@@ -372,7 +408,7 @@ test('las páginas documentales mantienen navegación y lectura básica con Java
   const page = await context.newPage();
 
   await page.goto('/tesis.html');
-  await expect(page.getByRole('heading', { level: 1, name: 'La tesis' })).toBeVisible();
+  await expect(page.getByRole('heading', { level: 1, name: 'La idea central' })).toBeVisible();
   await expect(page.getByRole('navigation', { name: 'Navegación principal' })).toBeVisible();
   await expect(page.getByRole('link', { name: 'Mapa orbital' })).toHaveAttribute('href', './mapa-orbital.html');
   expect(await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)).toBeLessThanOrEqual(1);

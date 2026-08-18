@@ -364,8 +364,8 @@ const ROUTE_META = {
     title: 'El problema de los tres cuerpos argentinos',
     description: 'Investigación doctrinaria sobre tecnocracia, mesianismo y paternalismo en el discurso presidencial argentino, con mapa empírico y videojuego.'
   },
-  tesis: { title: 'La tesis', description: 'Por qué la política argentina no se reduce a un péndulo y cómo interactúan sus tres cuerpos.' },
-  recorrido: { title: 'Empezá acá', description: 'Un recorrido breve por la tesis, el mapa, la evidencia, las Leyendas y el videojuego.' },
+  tesis: { title: 'La idea central', description: 'Por qué la política argentina no se reduce a un péndulo y cómo interactúan sus tres cuerpos.' },
+  recorrido: { title: 'Empezá acá', description: 'Un recorrido breve por la idea central, el mapa, la evidencia, las Leyendas y el videojuego.' },
   'mapa-orbital': { title: 'Mapa orbital', description: 'Campo ternario interactivo con 52 discursos, doce unidades de mandato y los tres vectores simultáneos del corpus presidencial democrático argentino.' },
   laboratorio: { title: 'Analizá un discurso', description: 'Laboratorio orbital local para explorar señales de tecnocracia, mesianismo y paternalismo en un texto político.' },
   actores: { title: 'Actores y Leyendas', description: 'Actores del corpus presidencial y su correspondencia explícita con las Leyendas jugables.' },
@@ -939,7 +939,7 @@ function renderRecorrido() {
         <div class="guided-choice-topline"><span>01</span><b>LA IDEA · 4 MIN</b></div>
         <h2 id="guided-thesis-title">Entender por qué no alcanza el péndulo</h2>
         <p>Tecnocracia, mesianismo y paternalismo no se alternan de a dos: se combinan, compiten y dejan trayectorias.</p>
-        <a href="#tesis" class="guided-choice-link">Leer la tesis <span aria-hidden="true">→</span></a>
+        <a href="#tesis" class="guided-choice-link">Entender la idea central <span aria-hidden="true">→</span></a>
       </article>
       <article class="guided-choice guided-choice-map" aria-labelledby="guided-map-title">
         <div class="guided-choice-topline"><span>02</span><b>MAPA · 52 DISCURSOS</b></div>
@@ -981,8 +981,8 @@ function normalizedSearchText(value) {
 
 function searchEntries() {
   const routes = [
-    ['#recorrido', 'Empezá acá', 'Recorrido guiado por tesis, mapa, evidencia, Leyendas y videojuego'],
-    ['#tesis', 'La tesis', 'Tecnocracia, mesianismo, paternalismo, configuración y trayectoria'],
+    ['#recorrido', 'Empezá acá', 'Recorrido guiado por la idea central, el mapa, la evidencia, las Leyendas y el videojuego'],
+    ['#tesis', 'La idea central', 'Tecnocracia, mesianismo, paternalismo, configuración y trayectoria'],
     ['#mapa-orbital', 'Mapa orbital', '52 discursos, doce unidades de mandato y campo ternario'],
     ['#laboratorio', 'Analizá un discurso', 'Laboratorio local para detectar señales TEC, MES y PAT y ubicar un texto en el campo orbital'],
     ['#actores', 'Actores y Leyendas', 'Personas del corpus y encarnaciones jugables'],
@@ -1183,7 +1183,7 @@ function renderInicio() {
       <div class="inicio-vec-name" style="color:${color};">${esc(v.name || vid)}</div>
       <p class="inicio-vec-def">${esc(v.short_definition || '')}</p>
       <p class="inicio-vec-contrib">${esc(contribs[vid] || '')}</p>
-      <a href="#tesis" class="inicio-vec-link">Ver en La tesis →</a>
+      <a href="#tesis" class="inicio-vec-link">Ver la idea central →</a>
     </div>`;
   }).join('');
 
@@ -1207,10 +1207,10 @@ function renderInicio() {
           <h1 class="inicio-hero-headline">${esc(meta.site_title || 'El problema de los tres cuerpos argentinos')}</h1>
           <p class="inicio-hero-sub">Argentina no es un péndulo. Es un problema de tres cuerpos.</p>
           <nav class="cta-group inicio-hero-cta inicio-hero-nav" aria-label="Accesos principales del proyecto">
-            <a href="#laboratorio" class="btn btn-primary" data-hero-section="laboratorio">Analizá un discurso →</a>
-            <a href="#mapa-orbital" class="btn btn-primary" data-hero-section="mapa-orbital">Explorar mapa orbital</a>
             <a href="#recorrido" class="btn btn-primary" data-hero-section="recorrido">Empezá acá</a>
-            <a href="#tesis" class="btn btn-primary" data-hero-section="tesis">Leer la tesis</a>
+            <a href="#tesis" class="btn btn-primary" data-hero-section="tesis">Entender la idea central</a>
+            <a href="#mapa-orbital" class="btn btn-primary" data-hero-section="mapa-orbital">Explorar mapa orbital</a>
+            <a href="#laboratorio" class="btn btn-primary" data-hero-section="laboratorio">Analizá un discurso →</a>
             <a href="#whitepaper" class="btn btn-primary" data-hero-section="whitepaper">Leer whitepaper</a>
             ${heroPlay}
           </nav>
@@ -1376,12 +1376,12 @@ function renderInicio() {
   </div><!-- /#inicio-page -->`;
 }
 
-// ─── Page: La tesis ─────────────────────────────────────────────────────────────
+// ─── Page: La idea central ──────────────────────────────────────────────────────
 
 function renderTesisLegacyV02() {
   return `<section class="page-section">
-    <div class="breadcrumb"><a href="#inicio">Inicio</a> <span>›</span> La tesis</div>
-    <h1>La tesis</h1>
+    <div class="breadcrumb"><a href="#inicio">Inicio</a> <span>›</span> La idea central</div>
+    <h1>La idea central</h1>
     <p class="hero-sub">Por qué la política argentina no es un péndulo — y qué estructura tiene en cambio.</p>
 
     <div class="tesis-hero-block">
@@ -1468,9 +1468,9 @@ function renderTesisLegacyV02() {
 
 function renderTesis() {
   return `<section class="page-section tesis-page">
-    <div class="breadcrumb"><a href="#inicio">Inicio</a> <span>›</span> La tesis</div>
-    <div class="section-kicker">TESIS v0.4 · MAPA ORBITAL 1983–2026</div>
-    <h1>La tesis</h1>
+    <div class="breadcrumb"><a href="#inicio">Inicio</a> <span>›</span> La idea central</div>
+    <div class="section-kicker">IDEA CENTRAL · MAPA ORBITAL 1983–2026</div>
+    <h1>La idea central</h1>
     <p class="hero-sub">Tres fuerzas ordenan el campo; cada mandato resuelve, casi siempre, una relación entre dos.</p>
 
     <div class="tesis-hero-block">
@@ -1930,7 +1930,7 @@ function renderMapaOrbital() {
     </div>
     <div class="cta-group mt-4">
       <a href="#actores" class="btn btn-primary">Actores →</a>
-      <a href="#tesis"   class="btn btn-secondary">Leer la tesis</a>
+      <a href="#tesis"   class="btn btn-secondary">Entender la idea central</a>
     </div>
   </section>`;
 }
@@ -3053,12 +3053,12 @@ function renderWhitepaper() {
       </div>
     </div>
 
-    <div class="wp-toc">
+    <nav class="wp-toc" aria-label="Contenido del whitepaper">
       <h2 class="wp-toc-title">Contenido</h2>
       <ol class="wp-toc-list">
-        ${toc.map(item => `<li class="wp-toc-item"><button class="wp-toc-link wp-toc-btn" data-scroll-target="wp-sec-${esc(item.n)}" type="button">${esc(item.title)}</button></li>`).join('')}
+        ${toc.map(item => `<li class="wp-toc-item"><button class="wp-toc-link wp-toc-btn" data-scroll-target="wp-sec-${esc(item.n)}" type="button"><span class="wp-toc-num" aria-hidden="true">${esc(item.n)}</span>${esc(item.title)}</button></li>`).join('')}
       </ol>
-    </div>
+    </nav>
 
     <article class="wp-body wp-markdown-body">
       ${body}

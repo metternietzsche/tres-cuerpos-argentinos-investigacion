@@ -142,7 +142,7 @@ for (const file of prerenderedDocuments) {
 check(prerenderedDocuments.length === 37, 'La publicación debe prerenderizar 12 páginas principales, 10 actores y 15 Leyendas.');
 const homeHtml = read('web/static_prototype/index.html');
 check(/Empezá acá/.test(homeHtml), 'La portada no expone el recorrido inicial como CTA en el HTML inicial.');
-check(/Leer la tesis/.test(homeHtml), 'La portada no expone la tesis como CTA en el HTML inicial.');
+check(/Entender la idea central/.test(homeHtml), 'La portada no expone la idea central como CTA en el HTML inicial.');
 check(/Leer whitepaper/.test(homeHtml), 'La portada no expone el acceso al whitepaper en el HTML inicial.');
 check(/Jugar videojuego/.test(homeHtml), 'La portada no expone el acceso directo al videojuego en el HTML inicial.');
 check(!/Trazar puntajes/.test(homeHtml), 'La portada todavía expone el enlace descartado “Trazar puntajes”.');
