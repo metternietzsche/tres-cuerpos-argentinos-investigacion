@@ -4,6 +4,15 @@
 
 - Sin cambios.
 
+## v0.6.8 · 2026-08-18
+
+- Materializado explícitamente el objeto del tag anotado dentro del workflow de
+  GitHub antes de comprobar su tipo y su commit.
+- El tag `v0.6.7` permanece como registro inmutable del primer intento, que se
+  detuvo antes de publicar artefactos; `v0.6.8` es la primera release preservada.
+- Los reintentos dejan de reemplazar assets: sólo aceptan una release existente
+  cuando sus cuatro artefactos son idénticos byte por byte.
+
 ## v0.6.7 · 2026-08-18
 
 - Normalizado el whitepaper PDF como documento académico A4 blanco, en serif y

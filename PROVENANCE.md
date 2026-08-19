@@ -79,4 +79,4 @@ coincidencia entre commit, tag, manifest, archivo, release y copias externas.
   de firma. La ausencia de firma se declara; no se simula.
 
 La preparación administrativa específica se documenta en
-[`docs/releases/DNDA_DEPOSIT_v0.6.7.md`](docs/releases/DNDA_DEPOSIT_v0.6.7.md).
+[`docs/releases/DNDA_DEPOSIT_v0.6.8.md`](docs/releases/DNDA_DEPOSIT_v0.6.8.md).

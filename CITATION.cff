@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "Si usás este trabajo, por favor citalo como se indica a continuación."
 type: dataset
 title: "El problema de los tres cuerpos argentinos: una lectura orbital del presidencialismo argentino"
-version: "0.6.7"
+version: "0.6.8"
 date-released: "2026-08-18"
 abstract: >
   Proyecto de investigación teórico-empírica que mapea configuraciones
@@ -47,9 +47,9 @@ preferred-citation:
     El problema de los tres cuerpos argentinos:
     una lectura orbital del presidencialismo argentino
   year: 2026
-  version: "sitio v0.6.7; mapa orbital v0.4"
+  version: "sitio v0.6.8; mapa orbital v0.4"
   notes: >
-    Proyecto de investigación teórico-empírica. Sitio v0.6.7 y mapa orbital v0.4.
+    Proyecto de investigación teórico-empírica. Sitio v0.6.8 y mapa orbital v0.4.
     El laboratorio textual v0.1.1 produce diagnósticos automáticos exploratorios;
     no sustituye la adjudicación humana del mapa.
     La traducción de puntajes para las Leyendas es una inferencia lúdica trazable;
