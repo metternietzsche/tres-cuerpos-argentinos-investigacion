@@ -1,0 +1,66 @@
+name: Preserve public release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  preserve:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Verify annotated release tag
+        run: |
+          test "v$(node -p "require('./package.json').version")" = "$GITHUB_REF_NAME"
+          test "$(git cat-file -t "$GITHUB_REF_NAME")" = "tag"
+      - name: Install test dependencies
+        run: npm ci
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Rebuild and test publication
+        run: |
+          npm run build
+          git diff --exit-code -- web/static_prototype
+          npm test
+      - name: Build and verify preserved snapshot
+        env:
+          RELEASE_VERSION: ${{ github.ref_name }}
+          RELEASE_COMMIT: ${{ github.sha }}
+        run: |
+          npm run release:build
+          npm run release:verify
+      - name: Publish immutable release assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_VERSION: ${{ github.ref_name }}
+        run: |
+          OUT="dist/releases/${RELEASE_VERSION}"
+          ARCHIVE="${OUT}/tres-cuerpos-lore-${RELEASE_VERSION}-public.tar.gz"
+          NOTES="docs/releases/${RELEASE_VERSION}.md"
+          if gh release view "${RELEASE_VERSION}" >/dev/null 2>&1; then
+            VERIFY_DIR="$(mktemp -d)"
+            gh release download "${RELEASE_VERSION}" --dir "${VERIFY_DIR}" \
+              --pattern "$(basename "${ARCHIVE}")" \
+              --pattern "$(basename "${ARCHIVE}.sha256")" \
+              --pattern "RELEASE_METADATA.json" \
+              --pattern "SHA256SUMS"
+            cmp "${ARCHIVE}" "${VERIFY_DIR}/$(basename "${ARCHIVE}")"
+            cmp "${ARCHIVE}.sha256" "${VERIFY_DIR}/$(basename "${ARCHIVE}.sha256")"
+            cmp "${OUT}/RELEASE_METADATA.json" "${VERIFY_DIR}/RELEASE_METADATA.json"
+            cmp "${OUT}/SHA256SUMS" "${VERIFY_DIR}/SHA256SUMS"
+            echo "La release ya existe y sus cuatro artefactos son idénticos; no se reemplazó nada."
+          elif test -f "${NOTES}"; then
+            gh release create "${RELEASE_VERSION}" "${ARCHIVE}" "${ARCHIVE}.sha256" "${OUT}/RELEASE_METADATA.json" "${OUT}/SHA256SUMS" --verify-tag --title "Lore ${RELEASE_VERSION}" --notes-file "${NOTES}"
+          else
+            gh release create "${RELEASE_VERSION}" "${ARCHIVE}" "${ARCHIVE}.sha256" "${OUT}/RELEASE_METADATA.json" "${OUT}/SHA256SUMS" --verify-tag --title "Lore ${RELEASE_VERSION}" --generate-notes
+          fi

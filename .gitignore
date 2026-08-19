@@ -6,5 +6,6 @@ audit/
 node_modules/
 playwright-report/
 test-results/
+dist/
 web/static_prototype/game/
 web/static_prototype/mobile_game_concept/

@@ -1,9 +1,9 @@
-# Manifiesto de export público de investigación v0.6.6
+# Manifiesto de export público de investigación v0.6.7
 
 **Repositorio objetivo:** `metternietzsche/tres-cuerpos-argentinos-investigacion`  
-**Versión:** `v0.6.6`
+**Versión:** `v0.6.7`
 **Fuente:** `web/static_prototype/` + derivados promovidos NB17–NB21 + traducción lúdica v0.2 + analizador textual v0.1.1
-**Fecha:** 2026-08-16
+**Fecha:** 2026-08-18
 
 Este manifiesto separa la autoridad doctrinaria y empírica del videojuego. El
 sitio conserva su puente editorial hacia el juego, pero no vuelve a empaquetar
@@ -44,6 +44,8 @@ su build ni sus assets de runtime.
 | `scripts/validate-publication.mjs` | `generate` | Verificar paridad, trazabilidad, versiones, SEO y presupuesto del logo. |
 | `e2e/`, `playwright.config.mjs` | `generate` | Validar navegación, fichas, búsqueda, resiliencia, accesibilidad y responsive. |
 | `.github/workflows/pages.yml` | `generate` | Validar, probar, publicar `web/static_prototype/` y ejecutar smoke de producción. |
+| `.github/workflows/release.yml` | `generate` | Exigir tag anotado y publicar un snapshot reproducible con hashes SHA-256. |
+| `PROVENANCE.md`, `docs/releases/` | `include` | Documentar procedencia, preservación e insumos preparados para el trámite personal ante DNDA. |
 | `CHANGELOG.md`, `.gitignore`, `package.json` | `generate` | Historial público, exclusiones y contrato reproducible de pruebas. |
 
 ## Gates

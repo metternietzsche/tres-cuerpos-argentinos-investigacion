@@ -1,6 +1,6 @@
 # El problema de los tres cuerpos argentinos
 
-**Sitio doctrinario v0.6.6 · mapa empírico v0.4**
+**Sitio doctrinario v0.6.7 · mapa empírico v0.4**
 **Autora:** Alexandra Bustos Frati, PhD  
 **Estado empírico:** provisional; no apto todavía para cita académica formal
 
@@ -43,6 +43,19 @@ ocho funciones, 2.000 remuestreos por unidad y el diff completo frente a v0.3.
 - [Mapa orbital v0.4](docs/mapa_orbital/v0_4/MAPA_ORBITAL_ARGENTINO_v0_4.md)
 - [Metodología v0.2](docs/metodologia/METHOD_PIPELINE_v0_2.md)
 - [Codebook simétrico](docs/metodologia/CODEBOOK_FUNCIONAL_SIMETRICO_v0_3.md)
+
+## Qué cambia la publicación v0.6.7
+
+- el whitepaper PDF adopta una composición académica blanca, tipografía serif y
+  figuras claras específicas para impresión;
+- la nota metodológica NB17–NB21 queda al final y replegada en la lectura web;
+- cada release estable produce metadata de autoría y commit, manifiestos
+  SHA-256 y un snapshot reproducible de los materiales ya publicados;
+- un workflow independiente exige tag anotado, repite los tests y conserva los
+  artefactos sin cambiar licencias ni incorporar el código privado del juego.
+
+La política y los comandos de verificación están en
+[PROVENANCE.md](PROVENANCE.md).
 
 ## Qué cambia la publicación v0.6.6
 

@@ -19,6 +19,7 @@ const analysisRegistryPublic = json('data_public/text_analysis_registry.v0.1.jso
 const analysisReferenceWeb = json('web/static_prototype/data/text_analysis_reference.v0.1.json');
 const analysisReferencePublic = json('data_public/text_analysis_reference.v0.1.json');
 const site = json('web/static_prototype/data/site_meta.json');
+const sitePublic = json('data_public/site_meta.json');
 const index = read('web/static_prototype/index.html');
 const app = read('web/static_prototype/app.js');
 const analyzer = read('web/static_prototype/orbital-analyzer.js');
@@ -28,6 +29,7 @@ check(JSON.stringify(publicationWeb) === JSON.stringify(publicationPublic), 'act
 check(JSON.stringify(gameWeb) === JSON.stringify(gamePublic), 'game_meta difiere entre web y data_public.');
 check(JSON.stringify(analysisRegistryWeb) === JSON.stringify(analysisRegistryPublic), 'El registro del analizador difiere entre web y data_public.');
 check(JSON.stringify(analysisReferenceWeb) === JSON.stringify(analysisReferencePublic), 'La referencia del analizador difiere entre web y data_public.');
+check(JSON.stringify(site) === JSON.stringify(sitePublic), 'site_meta difiere entre web y data_public.');
 check(translationWeb.translations?.length === 15, 'La traducción debe contener exactamente 15 Leyendas.');
 
 const legendIds = new Set(publicationWeb.legends.map(item => item.id));
@@ -54,7 +56,8 @@ for (const item of translationWeb.translations) {
 
 check(gameWeb.display_version === publicationWeb.game_version, 'game_meta.display_version y actor_publication.game_version no coinciden.');
 check(gameWeb.audit.vitest_tests === 227, 'El conteo público de tests del juego debe ser 227.');
-check(site.site_release === 'v0.6.6', 'site_meta.site_release debe ser v0.6.6.');
+check(site.site_release === 'v0.6.7', 'site_meta.site_release debe ser v0.6.7.');
+check(site.publication_version === 'SITE_PUBLICATION_v0_6_7', 'site_meta.publication_version debe ser SITE_PUBLICATION_v0_6_7.');
 check(!/v0\.49|game-(career|legend)-final-v42/.test(app), 'app.js conserva referencias visuales o de versión obsoletas.');
 check(/name="robots" content="index, follow/.test(index), 'index.html no habilita indexación.');
 check(/rel="canonical"/.test(index) && /application\/ld\+json/.test(index), 'index.html carece de canonical o datos estructurados.');

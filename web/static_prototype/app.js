@@ -3,7 +3,7 @@
 // ─── Constants ─────────────────────────────────────────────────────────────────
 
 const DATA_PATH = 'data/';
-const PUBLICATION_CACHE_KEY = '20260818e';
+const PUBLICATION_CACHE_KEY = '20260818f';
 const OFFICIAL_HCDN_ARCHIVE = 'https://www.hcdn.gob.ar/secparl/dgral_info_parlamentaria/mensajes_presidenciales/index.html';
 const RESEARCH_REPOSITORY = 'https://github.com/metternietzsche/tres-cuerpos-argentinos-investigacion';
 
@@ -1208,7 +1208,7 @@ function renderInicio() {
         </div>
         <!-- Content column -->
         <div class="inicio-hero-content-col">
-          <div class="inicio-hero-eyebrow">PUBLICACIÓN ${esc(meta.site_release || 'v0.6.6')} · MAPA ${esc(meta.version || 'v0.4')} · CORPUS HCDN 1983–2026</div>
+        <div class="inicio-hero-eyebrow">PUBLICACIÓN ${esc(meta.site_release || 'v0.6.7')} · MAPA ${esc(meta.version || 'v0.4')} · CORPUS HCDN 1983–2026</div>
           <h1 class="inicio-hero-headline">${esc(meta.site_title || 'El problema de los tres cuerpos argentinos')}</h1>
           <p class="inicio-hero-sub">Argentina no es un péndulo. Es un problema de tres cuerpos.</p>
           <nav class="cta-group inicio-hero-cta inicio-hero-nav" aria-label="Accesos principales del proyecto">

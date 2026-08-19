@@ -4,6 +4,19 @@
 
 - Sin cambios.
 
+## v0.6.7 · 2026-08-18
+
+- Normalizado el whitepaper PDF como documento académico A4 blanco, en serif y
+  sin el marco oscuro del sitio.
+- Añadidas variantes claras de las tres figuras para impresión; la matriz de
+  comparabilidad queda sincronizada con v0.4 y NB17–NB21.
+- La nota metodológica extensa pasa al final, replegada por defecto en la web y
+  desplegada dentro del PDF.
+- Incorporada una cadena de preservación con tag anotado, metadata de release,
+  manifiestos SHA-256, snapshot reproducible y assets de GitHub Release.
+- Documentado el límite entre procedencia técnica, Internet Archive como prueba
+  suplementaria y registro administrativo ante la DNDA.
+
 ## v0.6.6 · 2026-08-16
 
 - El laboratorio abandona el campo de fecha nativo dependiente del navegador y
